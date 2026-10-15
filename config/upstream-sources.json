@@ -3764,6 +3764,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/simdutf/simdutf-9.0.0.tar.gz/sha512/0c74226247cbe95368efa87ab84f5217485f16bcdf7a9def8741c6086cb86e6c378f0c437030d2be0934726e3ea9c28b5df2e593d0c654c78291c455a8d1e103/simdutf-9.0.0.tar.gz"
       ]
+    },
+    {
+      "name": "orca",
+      "version": "51.1",
+      "url": "https://download.gnome.org/sources/orca/51/orca-51.1.tar.xz",
+      "filename": "orca-51.1.tar.xz",
+      "sha512": "9a392636728624f04dc8fe37f0644b01fb8139e93ce73c5225f0c29c79a70e9b60dd4beed099558aeaf89f910b2ab867fef59e5b5db3ba8665d4110edfaeb5e1"
     }
   ]
 }
