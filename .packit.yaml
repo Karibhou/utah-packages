@@ -2050,6 +2050,12 @@ packages:
     downstream_package_name: snowball
     paths:
       - packages/snowball
+  sonic:
+    specfile_path: sonic.spec
+    upstream_package_name: sonic
+    downstream_package_name: sonic
+    paths:
+      - packages/sonic
   sound-theme-freedesktop:
     specfile_path: sound-theme-freedesktop.spec
     upstream_package_name: sound-theme-freedesktop
