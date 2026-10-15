@@ -149,6 +149,13 @@ feature for the same reason. When a feature is declined, decline every
 feature that pulls the same unresolvable dependency in the same commit, not
 one per run.
 
+Not every local decision is a bcond. The factory's flatpak drops Fedora's
+`flatpak-add-fedora-repos.service` (Source1, its install line, scriptlets and
+`%files` entry): it adds Fedora's OCI flatpak remotes on first boot, and
+Bluefin/Utah ships Flathub only. A hand re-import of `packages/flatpak` must
+diff for that unit and leave it out, along with the `%autorelease -b 2` that
+records the drop.
+
 ## 7. Repinning a digest that upstream garbage-collects is not a fix
 
 **What happened.** `quay.io/fedora/fedora:44` and `quay.io/packit/packit`
