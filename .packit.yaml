@@ -1912,6 +1912,12 @@ packages:
     downstream_package_name: pulseaudio
     paths:
       - packages/pulseaudio
+  pyatspi:
+    specfile_path: pyatspi.spec
+    upstream_package_name: pyatspi
+    downstream_package_name: pyatspi
+    paths:
+      - packages/pyatspi
   pycairo:
     specfile_path: pycairo.spec
     upstream_package_name: pycairo

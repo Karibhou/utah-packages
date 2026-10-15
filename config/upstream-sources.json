@@ -3806,6 +3806,13 @@
       "url": "https://github.com/williamh/dotconf/archive/v1.4.1/dotconf-1.4.1.tar.gz",
       "filename": "dotconf-1.4.1.tar.gz",
       "sha512": "a6cada8621295b268d4b4fd85bc0c207e78324c9e84754ead2fdf6c1598ec8bdf626f9c24e66063d921c95d73e83b50ab50416a9b4c9a7a631392552ec46f55a"
+    },
+    {
+      "name": "pyatspi",
+      "version": "2.58.2",
+      "url": "https://download.gnome.org/sources/pyatspi/2.58/pyatspi-2.58.2.tar.xz",
+      "filename": "pyatspi-2.58.2.tar.xz",
+      "sha512": "2e6fb18b3bd4bcad4ee25eb53cf4fade0030a1921a861e0a39c89a492dd382cd20071af93207033d9eaed59ae15319245e3e9221678aba5f8cf1790865057a9c"
     }
   ]
 }
