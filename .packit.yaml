@@ -2080,6 +2080,12 @@ packages:
     downstream_package_name: spandsp
     paths:
       - packages/spandsp
+  speech-dispatcher:
+    specfile_path: speech-dispatcher.spec
+    upstream_package_name: speech-dispatcher
+    downstream_package_name: speech-dispatcher
+    paths:
+      - packages/speech-dispatcher
   speex:
     specfile_path: speex.spec
     upstream_package_name: speex

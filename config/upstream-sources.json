@@ -3778,6 +3778,13 @@
       "url": "https://download.gnome.org/sources/orca/51/orca-51.1.tar.xz",
       "filename": "orca-51.1.tar.xz",
       "sha512": "9a392636728624f04dc8fe37f0644b01fb8139e93ce73c5225f0c29c79a70e9b60dd4beed099558aeaf89f910b2ab867fef59e5b5db3ba8665d4110edfaeb5e1"
+    },
+    {
+      "name": "speech-dispatcher",
+      "version": "0.12.1",
+      "url": "https://github.com/brailcom/speechd/releases/download/0.12.1/speech-dispatcher-0.12.1.tar.gz",
+      "filename": "speech-dispatcher-0.12.1.tar.gz",
+      "sha512": "f386bb25d80e85153db4907c5adece519a86084676a39f958a4f56e53bb957cb9b1232c4e648e73ef8dc5d1ab8e0cd64a5e0d151775fdd8f3b175f47f4864422"
     }
   ]
 }
