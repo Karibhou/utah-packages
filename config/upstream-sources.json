@@ -3827,6 +3827,17 @@
       "url": "https://github.com/liblouis/liblouis/releases/download/v3.33.0/liblouis-3.33.0.tar.gz",
       "filename": "liblouis-3.33.0.tar.gz",
       "sha512": "b5f2831b2602713ec7405ff8488fed76ecea3cdf3b55430153a4c40ed01fbecc413bc3866265ec0d18e74a9cec0dd41341d949f41e085afbca54a22e5d5c8db7"
+    },
+    {
+      "name": "libao",
+      "version": "1.2.0",
+      "url": "https://downloads.xiph.org/releases/ao/libao-1.2.0.tar.gz",
+      "filename": "libao-1.2.0.tar.gz",
+      "feed": "https://release-monitoring.org/project/7629",
+      "sha512": "9456953826c188d67129ad78366bb86d6243499f2cd340d20d61366f7e40a33f3f8ab601c7f18ce9e24aa22f898093b482b2415b7e428c1486ef7e5ac27b3ee4",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libao/libao-1.2.0.tar.gz/md5/9f5dd20d7e95fd0dd72df5353829f097/libao-1.2.0.tar.gz"
+      ]
     }
   ]
 }

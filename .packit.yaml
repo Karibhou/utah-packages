@@ -934,6 +934,12 @@ packages:
     downstream_package_name: libadwaita
     paths:
       - packages/libadwaita
+  libao:
+    specfile_path: libao.spec
+    upstream_package_name: libao
+    downstream_package_name: libao
+    paths:
+      - packages/libao
   libappindicator:
     specfile_path: libappindicator.spec
     upstream_package_name: libappindicator
