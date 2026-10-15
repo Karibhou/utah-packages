@@ -508,6 +508,16 @@ untrusted spec expansion off uid 0. A hardening change to a
 dispatch-only workflow needs one real dispatch before it merges: nothing
 else exercises it, and this one sat broken for nine days.
 
+**Also.** The first `main` build of the screen-reader stack (#466) failed
+liblouis and brltty the same way: a documentation BuildRequires
+(`texlive-xetex`, `linuxdoc-tools`) drags TeX Live, whose xetex requires
+Fedora's `libicuuc.so.77`, and the root excludes ICU 77 by default. The two
+fixes differ by whether the package itself links ICU. liblouis does not, so
+it opts in with `"buildroot_icu77": true`, as libvdpau does. brltty links
+ICU, so admitting ICU 77 would ship a brltty the consumer set rejects; it
+drops `linuxdoc-tools` instead (configure then skips the manuals). Before
+reaching for `buildroot_icu77`, check the package's own `libicu-devel`.
+
 **Rule.** Before merging an import, finish it on the import branch:
 
 - Lock the source with `tools/bootstrap_upstream_sources.py --package <name>

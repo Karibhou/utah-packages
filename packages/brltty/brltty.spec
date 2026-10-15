@@ -68,7 +68,10 @@ BuildRequires: automake
 BuildRequires: polkit-devel
 BuildRequires: libicu-devel
 BuildRequires: doxygen
-BuildRequires: linuxdoc-tools
+# Utah: no linuxdoc-tools. It pulls TeX Live, whose xetex links Fedora's
+# ICU 77, and brltty itself links ICU, so admitting ICU 77 to the root
+# (buildroot_icu77) would ship a brltty the consumer set rejects. Without
+# linuxdoc, configure sets can_make_manual=no and only the SGML manuals ship.
 BuildRequires: ncurses-devel
 %if %{with python2}
 BuildRequires: python2-docutils
@@ -468,7 +471,8 @@ install -Dpm 644 %{SOURCE1} %{buildroot}%{_unitdir}/brltty.service
 cp -p LICENSE* ../
 
 # clean up the manuals:
-rm Documents/Manual-*/*/{*.mk,*.made,Makefile*}
+# Utah: -f, since no manual is built without linuxdoc-tools (see BuildRequires).
+rm -f Documents/Manual-*/*/{*.mk,*.made,Makefile*}
 mv Documents/BrlAPIref/{html,BrlAPIref}
 
 for i in Drivers/Speech/SpeechDispatcher/README \
