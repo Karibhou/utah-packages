@@ -100,6 +100,12 @@ packages:
     downstream_package_name: bluez
     paths:
       - packages/bluez
+  brltty:
+    specfile_path: brltty.spec
+    upstream_package_name: brltty
+    downstream_package_name: brltty
+    paths:
+      - packages/brltty
   cairo:
     specfile_path: cairo.spec
     upstream_package_name: cairo
