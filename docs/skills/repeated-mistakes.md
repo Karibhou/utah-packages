@@ -502,8 +502,9 @@ pull request.
 **Also.** `7231f42` moved the source-lock step into the packit container
 with `--cap-drop=ALL`. That drops `CAP_DAC_OVERRIDE` too, so the container's
 root could not write the runner-owned `/output` directory, and every import
-failed with "Permission denied: /output/candidate.json" until the directory
-was made world-writable before `docker run`. A hardening change to a
+failed with "Permission denied: /output/candidate.json" until the container
+ran as the runner user (`--user "$(id -u):$(id -g)"`), which also keeps the
+untrusted spec expansion off uid 0. A hardening change to a
 dispatch-only workflow needs one real dispatch before it merges: nothing
 else exercises it, and this one sat broken for nine days.
 
