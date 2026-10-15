@@ -146,6 +146,15 @@ A checksum is not a signature. `tools/factory_manifest.py` counts each kind and
 names the packages in the checksum-only classes under `source_verification`, so
 the exceptions are a list to shorten rather than a property to grep for.
 
+## The scheduled verification run is never cancelled
+
+`.github/workflows/source-pipeline.yml` runs every 30 minutes over every
+lock. Keep `cancel-in-progress: false` and the job's `timeout-minutes`: with
+cancellation on, a slow-upstream day made each run outlast the cron tick and
+be cancelled by the next, so for hours no run reported a mismatch at all
+(#445). A newer run checks nothing an older one does not, and GitHub keeps
+only one pending run per group, so nothing piles up.
+
 ## FIPS-mode OpenSSL refuses `hashlib.new('md5')`
 
 `source_manifest()` in `tools/source_pipeline.py` reads only sha512 `sources`
