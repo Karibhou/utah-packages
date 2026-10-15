@@ -3785,6 +3785,13 @@
       "url": "https://github.com/brailcom/speechd/releases/download/0.12.1/speech-dispatcher-0.12.1.tar.gz",
       "filename": "speech-dispatcher-0.12.1.tar.gz",
       "sha512": "f386bb25d80e85153db4907c5adece519a86084676a39f958a4f56e53bb957cb9b1232c4e648e73ef8dc5d1ab8e0cd64a5e0d151775fdd8f3b175f47f4864422"
+    },
+    {
+      "name": "espeak-ng",
+      "version": "1.52.0",
+      "url": "https://github.com/espeak-ng/espeak-ng/archive/1.52.0/espeak-ng-1.52.0.tar.gz",
+      "filename": "espeak-ng-1.52.0.tar.gz",
+      "sha512": "28793503f2be00505c3fe1dada8197a4e2d3af0d143e31ef883130fe2685d048ae9dee8efab637cdbe972461d95e210d2277b8e8fed4ae580d0cca8b505b0662"
     }
   ]
 }

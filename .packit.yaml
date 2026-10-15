@@ -220,6 +220,12 @@ packages:
     downstream_package_name: enchant2
     paths:
       - packages/enchant2
+  espeak-ng:
+    specfile_path: espeak-ng.spec
+    upstream_package_name: espeak-ng
+    downstream_package_name: espeak-ng
+    paths:
+      - packages/espeak-ng
   evolution-data-server:
     specfile_path: evolution-data-server.spec
     upstream_package_name: evolution-data-server
