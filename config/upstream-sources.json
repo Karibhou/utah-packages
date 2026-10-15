@@ -3820,6 +3820,13 @@
       "url": "http://brltty.app/archive/brltty-6.9.1.tar.xz",
       "filename": "brltty-6.9.1.tar.xz",
       "sha512": "be1abb02274c937f56c94a211acdcccb3b870aa9cfa9282cca5e6859ae90ae075a9c65ea694c75a63ca81ae36ff0fa003fb38945f6dfed9786baab221247fdc7"
+    },
+    {
+      "name": "liblouis",
+      "version": "3.33.0",
+      "url": "https://github.com/liblouis/liblouis/releases/download/v3.33.0/liblouis-3.33.0.tar.gz",
+      "filename": "liblouis-3.33.0.tar.gz",
+      "sha512": "b5f2831b2602713ec7405ff8488fed76ecea3cdf3b55430153a4c40ed01fbecc413bc3866265ec0d18e74a9cec0dd41341d949f41e085afbca54a22e5d5c8db7"
     }
   ]
 }
