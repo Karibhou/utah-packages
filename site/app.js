@@ -72,7 +72,12 @@ function readHash() {
   return params.get("pkg");
 }
 
-function writeHash(pkg) {
+// A package's own address: just its name, none of the browsing state, so a
+// shared link opens the same package however the sender had filtered.
+const pkgHash = (name) => `#${new URLSearchParams({ pkg: name })}`;
+const permalink = (name) => `${location.origin}${location.pathname}${pkgHash(name)}`;
+
+function writeHash(pkg, push = false) {
   const params = new URLSearchParams();
   if (state.q) params.set("q", state.q);
   if (state.cat) params.set("cat", state.cat);
@@ -81,7 +86,10 @@ function writeHash(pkg) {
   if (state.failing) params.set("failing", "1");
   if (pkg) params.set("pkg", pkg);
   const hash = params.toString();
-  history.replaceState(null, "", hash ? `#${hash}` : location.pathname + location.search);
+  const url = hash ? `#${hash}` : location.pathname + location.search;
+  // Opening a package from the page pushes an entry, so Back closes it.
+  if (push) history.pushState({ detail: pkg }, "", url);
+  else history.replaceState(null, "", url);
 }
 
 // --- header widgets ---------------------------------------------------------
@@ -117,8 +125,8 @@ function renderStats() {
 
   const byName = new Map(data.packages.map((p) => [p.name, p]));
   $("headliners").innerHTML = HEADLINERS.filter((n) => byName.has(n)).map((n) =>
-    `<button class="chip" type="button" data-pkg="${esc(n)}"><span class="chip-k">${esc(n)}</span>` +
-    `<span class="chip-v">${esc(byName.get(n).version)}</span></button>`).join("");
+    `<a class="chip" href="${esc(pkgHash(n))}" data-pkg="${esc(n)}"><span class="chip-k">${esc(n)}</span>` +
+    `<span class="chip-v">${esc(byName.get(n).version)}</span></a>`).join("");
 
   $("generated").textContent = ago(new Date(generated));
   $("generated").title = generated;
@@ -239,7 +247,7 @@ function renderResults() {
     results.innerHTML = `<table><thead><tr><th>Package</th><th>Version</th><th>Summary</th>
       <th>Shelf</th><th class="num">RPMs</th><th class="num">Installed</th><th>Built</th></tr></thead><tbody>${
       rows.map((p) => `<tr data-pkg="${esc(p.name)}" tabindex="0">
-        <td><span class="name">${highlight(p.name)}</span>${p.failing ? ' <span class="badge-fail" title="Latest build failing">⚠</span>' : ""}</td>
+        <td><a class="name" href="${esc(pkgHash(p.name))}" tabindex="-1">${highlight(p.name)}</a>${p.failing ? ' <span class="badge-fail" title="Latest build failing">⚠</span>' : ""}</td>
         <td class="mono">${esc(evr(p))}</td>
         <td class="sum">${highlight(p.summary)}</td>
         <td><span class="sw" style="--c:${shelfColor(p.category)}"></span>${esc(p.category)}</td>
@@ -250,7 +258,7 @@ function renderResults() {
   }
   results.className = "grid";
   results.innerHTML = rows.map((p, i) => `
-    <button type="button" class="card" data-pkg="${esc(p.name)}"
+    <a class="card" href="${esc(pkgHash(p.name))}" data-pkg="${esc(p.name)}"
       style="--c:${shelfColor(p.category)};animation-delay:${Math.min(i, 30) * 12}ms">
       <span class="card-top"><span class="card-name">${highlight(p.name)}</span>
         <span class="card-ver" title="${esc(evr(p))}">${esc(p.version)}</span></span>
@@ -259,7 +267,7 @@ function renderResults() {
         <span>${p.rpms.length} RPM${p.rpms.length === 1 ? "" : "s"}</span>
         <span>${bytes(p.installed)}</span>
         ${p.failing ? '<span class="badge-fail">⚠ failing</span>' : ""}</span>
-    </button>`).join("");
+    </a>`).join("");
 }
 
 function update(pkg) {
@@ -271,7 +279,7 @@ function update(pkg) {
 
 // --- detail window ----------------------------------------------------------
 
-function openDetail(name) {
+function openDetail(name, push = false) {
   const p = data.packages.find((x) => x.name === name);
   if (!p) return;
   const stat = (k, v) => `<div class="stat"><span class="k">${esc(k)}</span><span class="v" title="${esc(v)}">${esc(v)}</span></div>`;
@@ -284,12 +292,14 @@ function openDetail(name) {
     p.recipe.remote && p.recipe.commit &&
       `<a class="btn ghost" href="${esc(p.recipe.remote.replace(/\.git$/, ""))}/blob/${esc(p.recipe.commit)}/f/${esc(p.name)}.spec" rel="noopener">Fedora recipe @ ${esc(p.recipe.commit.slice(0, 7))}</a>`,
     `<a class="btn ghost" href="https://github.com/projectbluefin/utah-packages/tree/main/packages/${esc(p.name)}" rel="noopener">Recipe in factory</a>`,
+    `<button class="btn ghost" type="button" id="copy-link">Copy link</button>`,
     `<button class="btn ghost" type="button" id="copy-install">Copy <code>${esc(install)}</code></button>`,
   ].filter(Boolean).join("");
 
   $("detail-url").textContent = `packages.local/${p.name}`;
   $("detail-body").innerHTML = `
-    <div class="d-head"><h2 id="detail-name">${esc(p.name)}</h2>
+    <div class="d-head"><h2 id="detail-name">${esc(p.name)}<a class="anchor" href="${esc(pkgHash(p.name))}"
+        title="Link to ${esc(p.name)}" aria-label="Link to ${esc(p.name)}">#</a></h2>
       <span class="chip"><span class="chip-k">version</span><span class="chip-v">${esc(evr(p))}</span></span>
       <span class="filter on" style="--c:${shelfColor(p.category)};cursor:default"><span class="sw"></span>${esc(p.category)}</span>
       ${p.failing ? '<span class="badge-fail">⚠ latest build failing; this is the previous build</span>' : ""}</div>
@@ -310,8 +320,9 @@ function openDetail(name) {
       p.rpms.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.arch)}</td><td>${esc(r.summary)}</td>
         <td class="num">${bytes(r.size)}</td><td class="num">${bytes(r.installed)}</td></tr>`).join("")}</tbody></table></div>`;
   $("copy-install").onclick = () => copy(install);
-  writeHash(p.name);
+  $("copy-link").onclick = () => copy(permalink(p.name), "Copied a link to " + p.name);
   const dialog = $("detail");
+  writeHash(p.name, push && !dialog.open);
   if (!dialog.open) dialog.showModal();
   $("detail-body").scrollTop = 0;
 }
@@ -332,13 +343,31 @@ function wire() {
   }
   document.addEventListener("click", (e) => {
     const target = e.target.closest("[data-pkg]");
-    if (target) openDetail(target.dataset.pkg);
+    if (!target) return;
+    // Ctrl/Cmd/Shift/middle-click keep their link meaning: a new tab or window.
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    openDetail(target.dataset.pkg, true);
   });
+  // Back/forward, or a #pkg= link pasted into this same tab.
+  const follow = () => {
+    const pkg = readHash();
+    update(pkg);
+    if (pkg) openDetail(pkg);
+    else if ($("detail").open) $("detail").close();
+  };
+  window.addEventListener("popstate", follow);
+  window.addEventListener("hashchange", follow);
   $("results").addEventListener("keydown", (e) => {
     const row = e.target.closest("tr[data-pkg]");
-    if (row && e.key === "Enter") openDetail(row.dataset.pkg);
+    if (row && e.key === "Enter") openDetail(row.dataset.pkg, true);
   });
-  $("detail").addEventListener("close", () => writeHash());
+  // Closing an entry this page pushed steps back over it, so Back does not
+  // reopen it; one opened from a pasted link just drops pkg from the hash.
+  $("detail").addEventListener("close", () => {
+    if (history.state?.detail) history.back();
+    else writeHash();
+  });
   $("detail").addEventListener("click", (e) => { if (e.target === $("detail")) $("detail").close(); });
   document.addEventListener("keydown", (e) => {
     if (e.key === "/" && document.activeElement !== $("q") && !$("detail").open) {
