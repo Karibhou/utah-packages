@@ -368,6 +368,7 @@ dialog[open] { animation: pop .2s ease; }
 .btn.ghost { background: none; color: var(--blue-light); border: 1px solid var(--border-strong); }
 .d-rpms td { white-space: normal; }
 .d-rpms td:first-child { font-family: var(--mono); font-size: .85rem; color: var(--text-strong); white-space: nowrap; }
+.d-rpms td.num { white-space: nowrap; }
 .toast {
   position: fixed; left: 50%; bottom: 24px; z-index: 40; transform: translateX(-50%);
   padding: 8px 16px; border-radius: 8px; background: var(--blue); color: #fff; font-weight: 600;

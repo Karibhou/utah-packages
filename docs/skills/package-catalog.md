@@ -50,6 +50,9 @@ Gotchas, learned rendering the first catalog:
   first one in repodata is `libjxl-doc`. `lead_rank` picks the text: the
   same-named binary, then a runtime package, then `-devel`, then docs and
   debug data.
+- **Numeric cells never wrap.** Size columns sit in tables whose text cells
+  wrap; a `.num` cell without `white-space: nowrap` splits "10.1 KiB" over
+  two lines in the detail window.
 - **Shelves are capped at eight.** The site colours them from the dataviz
   reference palette's eight categorical slots, in fixed order. Python modules
   fold into Libraries for that reason. `CATEGORIES` is a reading aid only;
