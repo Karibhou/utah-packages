@@ -53,7 +53,6 @@ packages = [
     "gstreamer1-plugins-good-qt6",
     "gstreamer1-plugins-ugly-free",
     "liba52",
-    "libao",
     "libavc1394",
     "libavcodec",
     "libavdevice",
@@ -138,8 +137,6 @@ packages = [
 # projectbluefin/utah#390 - 32 names
 consumer_issue = "projectbluefin/utah#390"
 packages = [
-    "brlapi",
-    "brltty",
     "c2esp",
     "dymo-cups-drivers",
     "foo2zjs",
@@ -151,8 +148,6 @@ packages = [
     "hplip-common",
     "hplip-libs",
     "ipp-usb",
-    "liblouis",
-    "liblouis-tables",
     "liblouisutdml",
     "liblouisutdml-utils",
     "libsane-airscan",
@@ -160,8 +155,6 @@ packages = [
     "mpage",
     "printer-driver-brlaser",
     "ptouch-driver",
-    "python3-brlapi",
-    "python3-louis",
     "sane-airscan",
     "sane-backends",
     "sane-backends-drivers-cameras",
@@ -207,7 +200,6 @@ packages = [
     "libmediaart",
     "libspelling",
     "libwnck3",
-    "orca",
     "pangomm2.48",
     "ptyxis",
     "rygel",
@@ -236,7 +228,6 @@ packages = [
     "distribution-gpg-keys",
     "djvulibre-libs",
     "dnsmasq",
-    "espeak-ng",
     "ethtool",
     "exfatprogs",
     "f2fs-tools",
@@ -339,10 +330,6 @@ packages = [
     "rsync",
     "smartmontools",
     "smartmontools-selinux",
-    "speech-dispatcher",
-    "speech-dispatcher-espeak-ng",
-    "speech-dispatcher-libs",
-    "speech-dispatcher-utils",
     "spice-vdagent",
     "spice-webdavd",
     "sshpass",
@@ -477,7 +464,6 @@ packages = [
     "criu",
     "criu-libs",
     "desktop-backgrounds-gnome",
-    "dotconf",
     "evolution-ews-core",
     "evolution-ews-langpacks",
     "f44-backgrounds-base",
@@ -572,7 +558,6 @@ packages = [
     "paps",
     "passwdqc",
     "passwdqc-utils",
-    "pcaudiolib",
     "perl-Unicode-Normalize",
     "pinfo",
     "plymouth",
@@ -589,10 +574,8 @@ packages = [
     "python3-linux-procfs",
     "python3-perf",
     "python3-pskc",
-    "python3-pyatspi",
     "python3-pyaudio",
     "python3-pyscard",
-    "python3-speechd",
     "qadwaitadecorations-qt5",
     "qpdf-libs",
     "qrencode-libs",
@@ -648,7 +631,27 @@ packages = [
 [resolved]
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
-packages = []
+packages = [
+    # Screen-reader stack (projectbluefin/utah-packages#447); pr = 0 until
+    # the closing pull request has a number.
+    { name = "brlapi", pr = 0 },
+    { name = "brltty", pr = 0 },
+    { name = "dotconf", pr = 0 },
+    { name = "espeak-ng", pr = 0 },
+    { name = "libao", pr = 0 },
+    { name = "liblouis", pr = 0 },
+    { name = "liblouis-tables", pr = 0 },
+    { name = "orca", pr = 0 },
+    { name = "pcaudiolib", pr = 0 },
+    { name = "python3-brlapi", pr = 0 },
+    { name = "python3-louis", pr = 0 },
+    { name = "python3-pyatspi", pr = 0 },
+    { name = "python3-speechd", pr = 0 },
+    { name = "speech-dispatcher", pr = 0 },
+    { name = "speech-dispatcher-espeak-ng", pr = 0 },
+    { name = "speech-dispatcher-libs", pr = 0 },
+    { name = "speech-dispatcher-utils", pr = 0 },
+]
 
 [wontfix]
 # Packages deliberately decided not to carry. Each entry: package
