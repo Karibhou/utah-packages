@@ -69,6 +69,11 @@ jobs:
           set -euo pipefail
           python3 -c 'import pathlib, sys; p = pathlib.Path("packages") / sys.argv[1]; assert not any(f.is_symlink() for f in p.rglob("*"))' "$PACKAGE"
           mkdir -p "$RUNNER_TEMP/import-output"
+          # The container's root has every capability dropped, CAP_DAC_OVERRIDE
+          # included, so it cannot write a directory the runner user owns.
+          # Without this the lock step dies on "Permission denied:
+          # /output/candidate.json" and no import can open a pull request.
+          chmod 0777 "$RUNNER_TEMP/import-output"
           docker run --rm --cap-drop=ALL --security-opt=no-new-privileges \
             -e PACKAGE \
             -v "$PWD/tools:/trusted/tools:ro" \

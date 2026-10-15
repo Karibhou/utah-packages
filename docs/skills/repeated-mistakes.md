@@ -499,6 +499,14 @@ missing Packit config: plymouth") and in eleven count tests (`401 != 402`),
 failing Canary, Unit tests and Package factory configuration on every open
 pull request.
 
+**Also.** `7231f42` moved the source-lock step into the packit container
+with `--cap-drop=ALL`. That drops `CAP_DAC_OVERRIDE` too, so the container's
+root could not write the runner-owned `/output` directory, and every import
+failed with "Permission denied: /output/candidate.json" until the directory
+was made world-writable before `docker run`. A hardening change to a
+dispatch-only workflow needs one real dispatch before it merges: nothing
+else exercises it, and this one sat broken for nine days.
+
 **Rule.** Before merging an import, finish it on the import branch:
 
 - Lock the source with `tools/bootstrap_upstream_sources.py --package <name>
