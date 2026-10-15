@@ -41,6 +41,11 @@ A GitHub Pages mirror used to be published alongside it. It was removed: it
 could only deploy from `main`, nothing consumed it, and the OCI image is the
 contract.
 
+GitHub Pages now serves a **package catalog** instead: a searchable index of
+every source package and RPM in `:latest`, read from the image's repodata
+layer. It is a view, not a repository — it serves no RPMs. See
+[`docs/skills/package-catalog.md`](docs/skills/package-catalog.md).
+
 The image is also the factory's own memory. `prepare` pulls it, extracts the
 repository, and skips every recipe the listing already carries at the same
 version and release -- then drags along whatever published package depends on

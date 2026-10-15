@@ -38,3 +38,6 @@ packages/icu/metaZones.txt
 packages/icu/timezoneTypes.txt
 packages/icu/windowsZones.txt
 packages/icu/zoneinfo64.txt
+
+# The Pages catalog payload; .github/workflows/pages.yml renders it at deploy.
+site/packages.json
