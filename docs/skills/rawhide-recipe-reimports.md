@@ -45,6 +45,10 @@ dependants for no change in bytes.
    edits (including fixes for inherited upstream scriptlet typos) are
    divergence: the recipe stays out of automated re-imports until a human
    re-imports it by hand.
+   A hand re-import has to carry the local deltas forward; for example
+   `packages/flatpak` drops Fedora's `flatpak-add-fedora-repos.service`
+   (Fedora OCI remotes; Utah uses Flathub) and bases `%autorelease` at 2
+   ([`repeated-mistakes.md` §6](repeated-mistakes.md#6-a-re-import-silently-reverts-every-local-decision)).
 5. Exactly one spec, same file name, on both commits.
 6. `sources`, `Name:`, `Epoch:`, `Version:` and `Release:` unchanged, so the
    SHA-512 lock in `config/upstream-sources.json` still describes the payload.
