@@ -108,7 +108,7 @@
     {
       "name": "osinfo-db-tools",
       "version": "1.12.0",
-      "url": "https://releases.pagure.org/libosinfo/osinfo-db-tools-1.12.0.tar.xz",
+      "url": "https://gitlab.com/libosinfo/osinfo-db-tools/-/releases/v1.12.0/downloads/osinfo-db-tools-1.12.0.tar.xz",
       "filename": "osinfo-db-tools-1.12.0.tar.xz",
       "feed": "https://release-monitoring.org/project/226782",
       "sha512": "3c5664036d161d428eaeef3d259cf96050313d4465d4a1121000e2d1f92266830bc02a124c8dcba28f2ab5e78cf6007d68c9fb89138f49e1bce9d8ea0f63d90a",
@@ -3482,11 +3482,14 @@
     {
       "name": "libosinfo",
       "version": "1.12.0",
-      "url": "https://releases.pagure.org/libosinfo/libosinfo-1.12.0.tar.xz",
+      "url": "https://gitlab.com/libosinfo/libosinfo/-/releases/v1.12.0/downloads/libosinfo-1.12.0.tar.xz",
       "filename": "libosinfo-1.12.0.tar.xz",
       "feed": "https://release-monitoring.org/project/155460",
       "sha512": "13647b6df14443f7e39bc09bd47be93fcd9f367ecfd7b13f3dac15e2614ad8a812d6077e070b2dc0f49f68f022881ad2fa59bac92f7731032358658a522e6572",
-      "stage": 3
+      "stage": 3,
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libosinfo/libosinfo-1.12.0.tar.xz/sha512/13647b6df14443f7e39bc09bd47be93fcd9f367ecfd7b13f3dac15e2614ad8a812d6077e070b2dc0f49f68f022881ad2fa59bac92f7731032358658a522e6572/libosinfo-1.12.0.tar.xz"
+      ]
     },
     {
       "name": "libdvdnav",

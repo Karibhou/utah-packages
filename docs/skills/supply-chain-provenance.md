@@ -132,6 +132,32 @@ verified GNOME release URL into a blanket promotion of all feeds: forge tag
 archives can differ from Fedora's pinned bytes. A digest mismatch must fail
 closed; Fedora fallbacks cover transport failures, not integrity failures.
 
+## Dead upstream hosts: releases.pagure.org
+
+`releases.pagure.org` stopped serving release tarballs around 2026-10-13
+(every path returns 404), and `source-pipeline.yml` failed every run from
+then on because `libosinfo` locked a pagure primary with no `fallback_urls`.
+The libosinfo projects (`libosinfo`, `osinfo-db-tools`, `osinfo-db`) now
+publish release assets on GitLab:
+`https://gitlab.com/libosinfo/<project>/-/releases/v<version>/downloads/<file>`
+(list them with `GET /api/v4/projects/libosinfo%2F<project>/releases/v<version>`).
+Those assets are byte-identical to the old pagure tarballs, so the locked
+SHA-512 did not change; the `/-/archive/` tag tarballs are generated and are
+not the same bytes. `volume_key` also used pagure, but its lock already has the
+Fedora lookaside as primary (ratchet-listed), so it was unaffected.
+
+When a primary host dies:
+
+- Find the project's new release-asset URL, download it, and compare the
+  SHA-512 with the committed lock. Keep the digest; never relock to new bytes
+  to get green.
+- Give every lock a Fedora lookaside entry in `fallback_urls`
+  (`https://src.fedoraproject.org/repo/pkgs/rpms/<pkg>/<file>/sha512/<sha512>/<file>`),
+  verified to serve the same digest. A lock without one turns a host outage
+  into a red pipeline.
+- Leave the recipe's `Source:` line alone: the spec is Fedora's, and the build
+  stages sources from the lock, not from the spec URL.
+
 ## Source verification reporting
 
 `tools/source_pipeline.py` records how each accepted source was verified:
