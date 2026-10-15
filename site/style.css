@@ -181,7 +181,7 @@ main { width: min(1180px, 100%); margin: -70px auto 0; padding: 0 16px; position
   background: none; color: inherit; padding: 0;
   transition: border-color .15s, transform .15s;
 }
-.chip:hover { border-color: var(--blue-light); transform: translateY(-1px); }
+.chip:hover { border-color: var(--blue-light); transform: translateY(-1px); text-decoration: none; }
 .chip-k { padding: 5px 6px; font-weight: 600; color: var(--text); }
 .chip-v {
   padding: 5px 6px; font: 700 .85rem var(--mono);
@@ -284,7 +284,7 @@ kbd {
   transition: background .15s, transform .15s, border-color .15s;
   animation: rise .35s ease both;
 }
-.card:hover { background: var(--card-hover); transform: translateY(-2px); }
+.card:hover { background: var(--card-hover); transform: translateY(-2px); text-decoration: none; }
 .card:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; }
 @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
 .card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
@@ -315,6 +315,11 @@ td.sum { white-space: normal; min-width: 240px; }
 tbody tr { cursor: pointer; }
 tbody tr:hover { background: var(--card-hover); }
 td .name { color: var(--text-strong); font-weight: 600; }
+.d-head .anchor {
+  margin-left: 10px; color: var(--text); font-weight: 400; opacity: .5;
+  transition: opacity .15s, color .15s;
+}
+.d-head .anchor:hover { opacity: 1; color: var(--blue-light); text-decoration: none; }
 td .sw { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--c); margin-right: 6px; }
 .num { text-align: right; font-family: var(--mono); }
 
@@ -368,6 +373,7 @@ dialog[open] { animation: pop .2s ease; }
 .btn.ghost { background: none; color: var(--blue-light); border: 1px solid var(--border-strong); }
 .d-rpms td { white-space: normal; }
 .d-rpms td:first-child { font-family: var(--mono); font-size: .85rem; color: var(--text-strong); white-space: nowrap; }
+.d-rpms td.num { white-space: nowrap; }
 .toast {
   position: fixed; left: 50%; bottom: 24px; z-index: 40; transform: translateX(-50%);
   padding: 8px 16px; border-radius: 8px; background: var(--blue); color: #fff; font-weight: 600;

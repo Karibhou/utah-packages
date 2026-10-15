@@ -50,10 +50,23 @@ Gotchas, learned rendering the first catalog:
   first one in repodata is `libjxl-doc`. `lead_rank` picks the text: the
   same-named binary, then a runtime package, then `-devel`, then docs and
   debug data.
+- **Numeric cells never wrap.** Size columns sit in tables whose text cells
+  wrap; a `.num` cell without `white-space: nowrap` splits "10.1 KiB" over
+  two lines in the detail window.
 - **Shelves are capped at eight.** The site colours them from the dataviz
   reference palette's eight categorical slots, in fixed order. Python modules
   fold into Libraries for that reason. `CATEGORIES` is a reading aid only;
   nothing in the factory relies on it.
+
+## Package links
+
+Every package has a shareable address, `<site>/#pkg=<name>`: cards, table
+names and headline chips are real `<a href="#pkg=…">` links, and the detail
+window has a `#` anchor and **Copy link**. Keep them links, not buttons:
+Ctrl/middle-click and "copy link address" only work on an `href`. The
+permalink carries the name alone, never the sender's search or filters.
+Opening a package from the page pushes a history entry so Back closes it;
+closing it steps back over that entry so Back does not reopen it.
 
 ## Run it locally
 
