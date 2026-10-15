@@ -3764,6 +3764,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/simdutf/simdutf-9.0.0.tar.gz/sha512/0c74226247cbe95368efa87ab84f5217485f16bcdf7a9def8741c6086cb86e6c378f0c437030d2be0934726e3ea9c28b5df2e593d0c654c78291c455a8d1e103/simdutf-9.0.0.tar.gz"
       ]
+    },
+    {
+      "name": "speech-dispatcher",
+      "version": "0.12.1",
+      "url": "https://github.com/brailcom/speechd/releases/download/0.12.1/speech-dispatcher-0.12.1.tar.gz",
+      "filename": "speech-dispatcher-0.12.1.tar.gz",
+      "sha512": "f386bb25d80e85153db4907c5adece519a86084676a39f958a4f56e53bb957cb9b1232c4e648e73ef8dc5d1ab8e0cd64a5e0d151775fdd8f3b175f47f4864422"
     }
   ]
 }
