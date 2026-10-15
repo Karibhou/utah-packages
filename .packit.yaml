@@ -1804,6 +1804,12 @@ packages:
     downstream_package_name: passim
     paths:
       - packages/passim
+  pcaudiolib:
+    specfile_path: pcaudiolib.spec
+    upstream_package_name: pcaudiolib
+    downstream_package_name: pcaudiolib
+    paths:
+      - packages/pcaudiolib
   pciutils:
     specfile_path: pciutils.spec
     upstream_package_name: pciutils

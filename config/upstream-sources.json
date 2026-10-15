@@ -3764,6 +3764,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/simdutf/simdutf-9.0.0.tar.gz/sha512/0c74226247cbe95368efa87ab84f5217485f16bcdf7a9def8741c6086cb86e6c378f0c437030d2be0934726e3ea9c28b5df2e593d0c654c78291c455a8d1e103/simdutf-9.0.0.tar.gz"
       ]
+    },
+    {
+      "name": "pcaudiolib",
+      "version": "1.1",
+      "url": "https://github.com/rhdunn/pcaudiolib/archive/1.1.tar.gz",
+      "filename": "1.1.tar.gz",
+      "sha512": "d503c11b355601e1e05f0f438a0cd9ce277d19fd53d3f7edf26f6e17f1f8184e8b2112a282e8ed74db8646bb5534d2a9a3c707b1742ce02ef13fd89669785007"
     }
   ]
 }
