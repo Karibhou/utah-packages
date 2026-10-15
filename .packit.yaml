@@ -202,6 +202,12 @@ packages:
     downstream_package_name: dmidecode
     paths:
       - packages/dmidecode
+  dotconf:
+    specfile_path: dotconf.spec
+    upstream_package_name: dotconf
+    downstream_package_name: dotconf
+    paths:
+      - packages/dotconf
   double-conversion:
     specfile_path: double-conversion.spec
     upstream_package_name: double-conversion
