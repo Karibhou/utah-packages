@@ -2,13 +2,13 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 39,
-      "total": 49
+      "pending": 38,
+      "total": 48
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 148,
-      "total": 150
+      "pending": 143,
+      "total": 145
     },
     "fonts-i18n": {
       "pending": 59,
@@ -16,22 +16,22 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 33,
-      "total": 38
+      "pending": 32,
+      "total": 37
     },
     "long-tail": {
       "already_recipe": 9,
       "manifest_wants": 1,
-      "pending": 174,
-      "total": 184
+      "pending": 170,
+      "total": 180
     },
     "power": {
       "pending": 6,
       "total": 6
     },
     "printing-scanning": {
-      "pending": 32,
-      "total": 32
+      "pending": 26,
+      "total": 26
     },
     "ujust-deps": {
       "pending": 2,
@@ -127,11 +127,6 @@
     {
       "area": "codecs-media",
       "name": "liba52",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libao",
       "state": "pending"
     },
     {
@@ -377,11 +372,6 @@
     {
       "area": "dev-tools",
       "name": "dnsmasq",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "espeak-ng",
       "state": "pending"
     },
     {
@@ -892,26 +882,6 @@
     {
       "area": "dev-tools",
       "name": "smartmontools-selinux",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "speech-dispatcher",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "speech-dispatcher-espeak-ng",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "speech-dispatcher-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "speech-dispatcher-utils",
       "state": "pending"
     },
     {
@@ -1501,11 +1471,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "orca",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "pangomm2.48",
       "state": "pending"
     },
@@ -1622,11 +1587,6 @@
     {
       "area": "long-tail",
       "name": "desktop-backgrounds-gnome",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "dotconf",
       "state": "pending"
     },
     {
@@ -2101,11 +2061,6 @@
     },
     {
       "area": "long-tail",
-      "name": "pcaudiolib",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "perl-Unicode-Normalize",
       "state": "pending"
     },
@@ -2186,22 +2141,12 @@
     },
     {
       "area": "long-tail",
-      "name": "python3-pyatspi",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "python3-pyaudio",
       "state": "pending"
     },
     {
       "area": "long-tail",
       "name": "python3-pyscard",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "python3-speechd",
       "state": "pending"
     },
     {
@@ -2486,16 +2431,6 @@
     },
     {
       "area": "printing-scanning",
-      "name": "brlapi",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "brltty",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
       "name": "c2esp",
       "state": "pending"
     },
@@ -2551,16 +2486,6 @@
     },
     {
       "area": "printing-scanning",
-      "name": "liblouis",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "liblouis-tables",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
       "name": "liblouisutdml",
       "state": "pending"
     },
@@ -2592,16 +2517,6 @@
     {
       "area": "printing-scanning",
       "name": "ptouch-driver",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "python3-brlapi",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "python3-louis",
       "state": "pending"
     },
     {
@@ -2814,11 +2729,11 @@
   "states": {
     "already_recipe": 29,
     "manifest_wants": 1,
-    "pending": 521
+    "pending": 504
   },
   "totals": {
-    "backlog": 551,
-    "resolved": 0,
+    "backlog": 534,
+    "resolved": 17,
     "wontfix": 0
   }
 }

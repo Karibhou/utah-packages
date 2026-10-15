@@ -3764,6 +3764,81 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/simdutf/simdutf-9.0.0.tar.gz/sha512/0c74226247cbe95368efa87ab84f5217485f16bcdf7a9def8741c6086cb86e6c378f0c437030d2be0934726e3ea9c28b5df2e593d0c654c78291c455a8d1e103/simdutf-9.0.0.tar.gz"
       ]
+    },
+    {
+      "name": "sonic",
+      "version": "0.2.0^20210316gitba33141",
+      "url": "https://github.com/waywardgeek/sonic/archive/ba331411f17702e01f6c2d7016eefebaa695871f/sonic-ba33141.tar.gz",
+      "filename": "sonic-ba33141.tar.gz",
+      "sha512": "a44246b1955cef87466162e02e29ea6595f7b4bdab51e90ee0904bf7f68e697a0d006162b367fed51ab8409bce7aee38d155dee0d95c5ac5f29ee8d390c0d488"
+    },
+    {
+      "name": "orca",
+      "version": "51.1",
+      "url": "https://download.gnome.org/sources/orca/51/orca-51.1.tar.xz",
+      "filename": "orca-51.1.tar.xz",
+      "sha512": "9a392636728624f04dc8fe37f0644b01fb8139e93ce73c5225f0c29c79a70e9b60dd4beed099558aeaf89f910b2ab867fef59e5b5db3ba8665d4110edfaeb5e1",
+      "stage": 1
+    },
+    {
+      "name": "speech-dispatcher",
+      "version": "0.12.1",
+      "url": "https://github.com/brailcom/speechd/releases/download/0.12.1/speech-dispatcher-0.12.1.tar.gz",
+      "filename": "speech-dispatcher-0.12.1.tar.gz",
+      "sha512": "f386bb25d80e85153db4907c5adece519a86084676a39f958a4f56e53bb957cb9b1232c4e648e73ef8dc5d1ab8e0cd64a5e0d151775fdd8f3b175f47f4864422"
+    },
+    {
+      "name": "espeak-ng",
+      "version": "1.52.0",
+      "url": "https://github.com/espeak-ng/espeak-ng/archive/1.52.0/espeak-ng-1.52.0.tar.gz",
+      "filename": "espeak-ng-1.52.0.tar.gz",
+      "sha512": "28793503f2be00505c3fe1dada8197a4e2d3af0d143e31ef883130fe2685d048ae9dee8efab637cdbe972461d95e210d2277b8e8fed4ae580d0cca8b505b0662"
+    },
+    {
+      "name": "pcaudiolib",
+      "version": "1.1",
+      "url": "https://github.com/rhdunn/pcaudiolib/archive/1.1.tar.gz",
+      "filename": "1.1.tar.gz",
+      "sha512": "d503c11b355601e1e05f0f438a0cd9ce277d19fd53d3f7edf26f6e17f1f8184e8b2112a282e8ed74db8646bb5534d2a9a3c707b1742ce02ef13fd89669785007"
+    },
+    {
+      "name": "dotconf",
+      "version": "1.4.1",
+      "url": "https://github.com/williamh/dotconf/archive/v1.4.1/dotconf-1.4.1.tar.gz",
+      "filename": "dotconf-1.4.1.tar.gz",
+      "sha512": "a6cada8621295b268d4b4fd85bc0c207e78324c9e84754ead2fdf6c1598ec8bdf626f9c24e66063d921c95d73e83b50ab50416a9b4c9a7a631392552ec46f55a"
+    },
+    {
+      "name": "pyatspi",
+      "version": "2.58.2",
+      "url": "https://download.gnome.org/sources/pyatspi/2.58/pyatspi-2.58.2.tar.xz",
+      "filename": "pyatspi-2.58.2.tar.xz",
+      "sha512": "2e6fb18b3bd4bcad4ee25eb53cf4fade0030a1921a861e0a39c89a492dd382cd20071af93207033d9eaed59ae15319245e3e9221678aba5f8cf1790865057a9c"
+    },
+    {
+      "name": "brltty",
+      "version": "6.9.1",
+      "url": "https://brltty.app/archive/brltty-6.9.1.tar.xz",
+      "filename": "brltty-6.9.1.tar.xz",
+      "sha512": "be1abb02274c937f56c94a211acdcccb3b870aa9cfa9282cca5e6859ae90ae075a9c65ea694c75a63ca81ae36ff0fa003fb38945f6dfed9786baab221247fdc7"
+    },
+    {
+      "name": "liblouis",
+      "version": "3.33.0",
+      "url": "https://github.com/liblouis/liblouis/releases/download/v3.33.0/liblouis-3.33.0.tar.gz",
+      "filename": "liblouis-3.33.0.tar.gz",
+      "sha512": "b5f2831b2602713ec7405ff8488fed76ecea3cdf3b55430153a4c40ed01fbecc413bc3866265ec0d18e74a9cec0dd41341d949f41e085afbca54a22e5d5c8db7"
+    },
+    {
+      "name": "libao",
+      "version": "1.2.0",
+      "url": "https://downloads.xiph.org/releases/ao/libao-1.2.0.tar.gz",
+      "filename": "libao-1.2.0.tar.gz",
+      "feed": "https://release-monitoring.org/project/7629",
+      "sha512": "9456953826c188d67129ad78366bb86d6243499f2cd340d20d61366f7e40a33f3f8ab601c7f18ce9e24aa22f898093b482b2415b7e428c1486ef7e5ac27b3ee4",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libao/libao-1.2.0.tar.gz/md5/9f5dd20d7e95fd0dd72df5353829f097/libao-1.2.0.tar.gz"
+      ]
     }
   ]
 }

@@ -522,6 +522,34 @@ else exercises it, and this one sat broken for nine days.
   four `tests/` files that used to carry the count no longer track it.
 - `just check` green on the import branch, not after merge.
 
+Several imports for one feature (the #447 screen-reader stack: orca,
+speech-dispatcher, espeak-ng, brltty, liblouis and their libraries) land as
+one branch that merges each `import/rawhide-<name>` in turn. Every bot branch
+appends to the same end of `config/upstream-sources.json`, so each merge
+conflicts there: resolve it as the union of both sides' `packages` (an entry
+present on both sides must be identical), keeping `json.dumps(..., indent=2)`
+formatting. Do not hand-resolve `.packit.yaml` or the counts in
+`docs/architecture.md`; after the last merge rerun
+`render_packit_config.py --write` and `render_architecture_counts.py --write`,
+because each bot branch counted only itself (+1) and git can merge those
+identical edits silently into a stale count. Then move every imported name
+and subpackage from the backlog in the same branch. Run the full test suite
+on the combined branch, not only per import: an edge between two of the
+imports appears only once both recipes exist. orca BuildRequires brltty's
+`brlapi-devel`, and brltty BuildRequires `libicu-devel`, so
+`tests/test_icu_staging.py` (which still reads hand `stage` values, unlike
+`build_graph.py`) failed until orca got `"stage": 1`, as ptyxis and vte291
+did in #413; the stage count in `docs/architecture.md` then needs another
+`render_architecture_counts.py --write`.
+
+A Fedora `sources` file that pins by MD5 (`<md5>  file`, libao) fails both
+the bot's lock step and `tools/validate.py` (`check_sources_digests`). Import
+it by hand: download the upstream release, confirm its MD5 equals Fedora's
+pin (the same bytes), repin `sources` to `SHA512 (file) = <hex>`, and lock
+the upstream URL with Fedora in `fallback_urls`. Old lookaside uploads exist
+only under the `/md5/<md5>/` path (the `/sha512/` path 404s), so the fallback
+uses that form; verify it serves the same bytes.
+
 The daily re-import of carried recipes (`tools/rawhide_reimport.py`, the
 `bump` job in `detect-rawhide-updates.yml`) cannot repeat this: it only
 replaces recipes already in every inventory, refuses any move that would
