@@ -184,6 +184,53 @@ def check_fedora_primary_sources(root: Path) -> None:
         )
 
 
+def plaintext_source_urls(path: Path) -> list[str]:
+    """Lock entries that fetch over plain http://, as "name: url" strings.
+
+    `tools/upstream_bump.py` pins the SHA-512 of whatever bytes the entry's
+    `url` serves at bump time and `planned_entry()` rebuilds the next
+    version's URL from the same base, so the scheme is inherited bump after
+    bump. Over plain http nothing authenticates the server at the one moment
+    the digest is chosen; the bump gate then self-merges that digest and
+    every later build validates against it. `fallback_urls` and `sha256_url`
+    are checked too: a fallback that is consulted only on transport failure
+    is exactly the one an attacker who can cause that failure gets to serve.
+    """
+    if not path.is_file():
+        return []
+    try:
+        data = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError):
+        raise SystemExit(f"invalid source lock: {path}")
+    offenders = []
+    for entry in data.get("packages", []):
+        if not isinstance(entry, dict):
+            continue
+        name = entry.get("name") or entry.get("filename") or "<unnamed>"
+        candidates = [entry.get("url"), entry.get("url_template"), entry.get("sha256_url")]
+        fallbacks = entry.get("fallback_urls")
+        if isinstance(fallbacks, list):
+            candidates.extend(fallbacks)
+        for url in candidates:
+            if isinstance(url, str) and url.lower().startswith("http://"):
+                offenders.append(f"{name}: {url}")
+    return sorted(offenders)
+
+
+def check_plaintext_source_urls(root: Path) -> None:
+    """Every URL the source lock fetches from must be https."""
+    offenders = plaintext_source_urls(root / "config" / "upstream-sources.json")
+    if offenders:
+        raise SystemExit(
+            "source lock fetches over plain http://, so the digest it pins is "
+            "whatever the network served:\n"
+            + "\n".join(offenders)
+            + "\nUse https:// (every upstream the lock names serves it); where a "
+            "host truly cannot, keep it out of the lock and add a generator in "
+            "tools/generated_sources.py that verifies the bytes another way."
+        )
+
+
 def check_bump_review_only(root: Path) -> None:
     """Every name in the review-only list is a lock the bump could move.
 
@@ -284,6 +331,9 @@ def main(root: Path = Path(".")) -> int:
     # Before the tally too: a lock that builds from the lookaside is a
     # provenance failure whether or not every recipe is otherwise accounted for.
     check_fedora_primary_sources(root)
+    # Same footing: a lock that fetches over plain http pins a digest nobody
+    # authenticated, whatever host it names.
+    check_plaintext_source_urls(root)
     check_sources_digests(root)
     check_bump_review_only(root)
     records = inventory(root)
