@@ -1774,6 +1774,12 @@ packages:
     downstream_package_name: orc
     paths:
       - packages/orc
+  orca:
+    specfile_path: orca.spec
+    upstream_package_name: orca
+    downstream_package_name: orca
+    paths:
+      - packages/orca
   osinfo-db:
     specfile_path: osinfo-db.spec
     upstream_package_name: osinfo-db
