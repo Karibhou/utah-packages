@@ -1246,6 +1246,12 @@ packages:
     downstream_package_name: libldac
     paths:
       - packages/libldac
+  liblouis:
+    specfile_path: liblouis.spec
+    upstream_package_name: liblouis
+    downstream_package_name: liblouis
+    paths:
+      - packages/liblouis
   libmanette:
     specfile_path: libmanette.spec
     upstream_package_name: libmanette
