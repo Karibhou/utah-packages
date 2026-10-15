@@ -132,6 +132,7 @@ must appear in the router.
 | `skill-improvement` | Finishing a task and deciding what learning to write back |
 | `repeated-mistakes` | Changing a stage, a container pin, a bcond, the rebuild workflow, or dropping a recipe: the history already reverted several of these once |
 | `multimedia-closure` | Adding a codec recipe, syncing Bluefin's package manifest, or answering whether the factory covers Bluefin's multimedia |
+| `package-catalog` | Changing the GitHub Pages package catalog: its data from the published image's repodata layer, the site, or its deploy |
 | `factory-build-backlog` | Tracking the backlog from projectbluefin/utah-packages#308 (live total in `reports/factory-build-backlog.json`), or closing a backlog gap |
 
 The `hummingbird` skill is vendored from
