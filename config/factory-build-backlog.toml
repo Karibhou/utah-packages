@@ -632,25 +632,24 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
-    # Screen-reader stack (projectbluefin/utah-packages#447); pr = 0 until
-    # the closing pull request has a number.
-    { name = "brlapi", pr = 0 },
-    { name = "brltty", pr = 0 },
-    { name = "dotconf", pr = 0 },
-    { name = "espeak-ng", pr = 0 },
-    { name = "libao", pr = 0 },
-    { name = "liblouis", pr = 0 },
-    { name = "liblouis-tables", pr = 0 },
-    { name = "orca", pr = 0 },
-    { name = "pcaudiolib", pr = 0 },
-    { name = "python3-brlapi", pr = 0 },
-    { name = "python3-louis", pr = 0 },
-    { name = "python3-pyatspi", pr = 0 },
-    { name = "python3-speechd", pr = 0 },
-    { name = "speech-dispatcher", pr = 0 },
-    { name = "speech-dispatcher-espeak-ng", pr = 0 },
-    { name = "speech-dispatcher-libs", pr = 0 },
-    { name = "speech-dispatcher-utils", pr = 0 },
+    # Screen-reader stack (projectbluefin/utah-packages#447).
+    { name = "brlapi", pr = 466 },
+    { name = "brltty", pr = 466 },
+    { name = "dotconf", pr = 466 },
+    { name = "espeak-ng", pr = 466 },
+    { name = "libao", pr = 466 },
+    { name = "liblouis", pr = 466 },
+    { name = "liblouis-tables", pr = 466 },
+    { name = "orca", pr = 466 },
+    { name = "pcaudiolib", pr = 466 },
+    { name = "python3-brlapi", pr = 466 },
+    { name = "python3-louis", pr = 466 },
+    { name = "python3-pyatspi", pr = 466 },
+    { name = "python3-speechd", pr = 466 },
+    { name = "speech-dispatcher", pr = 466 },
+    { name = "speech-dispatcher-espeak-ng", pr = 466 },
+    { name = "speech-dispatcher-libs", pr = 466 },
+    { name = "speech-dispatcher-utils", pr = 466 },
 ]
 
 [wontfix]
