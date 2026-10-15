@@ -160,7 +160,7 @@ validated 421 source RPMs (417 rawhide, 4 upstream)
 | `publish` | Seeds from the verified previous image, replaces the RPMs of each source package this run built (and did not lose precedence) by source name, removes the bootstrap RPM, creates and signs repository metadata, validates the Hummingbird-only transaction over the whole candidate, and publishes a GHCR OCI image that is both cosign-signed and provenance-attested. A failed package keeps its previous build. |
 | `report` | Runs whether or not publish did. Names every selected package that did not publish -- from the run's own artifact list -- in the job summary, and on `main` opens, updates or closes the tracking issue *Factory: packages failing on main*. |
 
-92 of 421 packages carry a hand-assigned `stage` in
+93 of 421 packages carry a hand-assigned `stage` in
 `config/upstream-sources.json`. Since waves are solved from BuildRequires it is
 consulted only between members of one BuildRequires cycle, to decide which
 builds first -- `malcontent-bootstrap` before `flatpak` before `malcontent`.

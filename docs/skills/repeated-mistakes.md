@@ -533,7 +533,14 @@ formatting. Do not hand-resolve `.packit.yaml` or the counts in
 `render_packit_config.py --write` and `render_architecture_counts.py --write`,
 because each bot branch counted only itself (+1) and git can merge those
 identical edits silently into a stale count. Then move every imported name
-and subpackage from the backlog in the same branch.
+and subpackage from the backlog in the same branch. Run the full test suite
+on the combined branch, not only per import: an edge between two of the
+imports appears only once both recipes exist. orca BuildRequires brltty's
+`brlapi-devel`, and brltty BuildRequires `libicu-devel`, so
+`tests/test_icu_staging.py` (which still reads hand `stage` values, unlike
+`build_graph.py`) failed until orca got `"stage": 1`, as ptyxis and vte291
+did in #413; the stage count in `docs/architecture.md` then needs another
+`render_architecture_counts.py --write`.
 
 A Fedora `sources` file that pins by MD5 (`<md5>  file`, libao) fails both
 the bot's lock step and `tools/validate.py` (`check_sources_digests`). Import
