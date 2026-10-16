@@ -172,10 +172,16 @@ class GroupTests(unittest.TestCase):
 
 
 class CatalogTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.root = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.root)
+        (self.root / "config").mkdir()
+        (self.root / "config" / "upstream-sources.json").write_text(json.dumps({"packages": []}))
+
     def test_labels_and_totals(self) -> None:
         payload = package_index.catalog(
             CONFIG, "sha256:d", parse_primary(primary_xml()),
-            image="ghcr.io/o/utah-packages:latest", root=Path(tempfile.gettempdir()),
+            image="ghcr.io/o/utah-packages:latest", root=self.root,
         )
         self.assertEqual(payload["image"]["revision"], "90ea7804")
         self.assertEqual(payload["image"]["run"], "42")
@@ -187,7 +193,7 @@ class CatalogTests(unittest.TestCase):
     def test_unreadable_state_label_is_no_failures(self) -> None:
         config = {"config": {"Labels": {"org.projectbluefin.factory.state": "{"}}}
         payload = package_index.catalog(
-            config, "", [], image="x", root=Path(tempfile.gettempdir())
+            config, "", [], image="x", root=self.root
         )
         self.assertEqual(payload["totals"]["failing"], [])
 

@@ -39,6 +39,10 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from tools.package_inventory import source_locks
+
 REGISTRY = "ghcr.io"
 STATE_LABEL = "org.projectbluefin.factory.state"
 # publish-repository.yml refuses a repodata layer of 64 MiB or more; anything
@@ -235,12 +239,6 @@ def category(name: str) -> str:
     return "Libraries"
 
 
-def inventory(root: Path) -> dict[str, dict]:
-    path = root / "config" / "upstream-sources.json"
-    data = json.loads(path.read_text()) if path.exists() else {}
-    return {entry["name"]: entry for entry in data.get("packages", [])}
-
-
 def recipe(root: Path, name: str) -> dict:
     path = root / "packages" / name / ".hummingbird-upstream.json"
     try:
@@ -296,7 +294,7 @@ def group(rpms: list[dict], root: Path, failed: set[str]) -> list[dict]:
         ]
         sources[name] = entry
 
-    known = inventory(root)
+    known = source_locks(root)
     for name, entry in sources.items():
         source = known.get(name, {})
         meta = recipe(root, name)
