@@ -70,6 +70,7 @@ class ValidateScriptTests(unittest.TestCase):
         buildroot_lock=DEFAULT_BUILDROOT_LOCK,
         buildroot_pin=DEFAULT_BUILDROOT_PIN,
         source_urls=None,
+        source_fallbacks=None,
         fedora_baseline=None,
         review_only=None,
         sources_files=None,
@@ -92,6 +93,8 @@ class ValidateScriptTests(unittest.TestCase):
         for entry in locks:
             if entry["name"] in (source_urls or {}):
                 entry["url"] = source_urls[entry["name"]]
+            if entry["name"] in (source_fallbacks or {}):
+                entry["fallback_urls"] = list(source_fallbacks[entry["name"]])
         (root / "config" / "upstream-sources.json").write_text(
             json.dumps({"packages": locks})
         )
@@ -343,6 +346,47 @@ class ValidateScriptTests(unittest.TestCase):
         )
         assert result.returncode != 0
         assert "takes its payload from Fedora" in result.stderr
+
+    def test_rejects_a_source_lock_that_fetches_over_plain_http(self) -> None:
+        # upstream_bump.py pins the SHA-512 of whatever the primary url serves
+        # at bump time and the gate self-merges it, so without TLS the digest
+        # authenticates nothing but the network path of one runner.
+        result = self.check(
+            source_urls={"example": "http://w1.fi/releases/example-1.tar.gz"},
+        )
+        assert result.returncode != 0
+        assert "fetches over plain http://" in result.stderr
+        assert "example: http://w1.fi/releases/example-1.tar.gz" in result.stderr
+
+    def test_rejects_a_plain_http_fallback_url(self) -> None:
+        # A fallback consulted only on transport failure is the URL an
+        # attacker who can cause that failure gets to serve.
+        result = self.check(
+            source_urls={"example": "https://example.org/example-1.tar.gz"},
+            source_fallbacks={"example": ["http://mirror.example.org/example-1.tar.gz"]},
+        )
+        assert result.returncode != 0
+        assert "fetches over plain http://" in result.stderr
+        assert "mirror.example.org" in result.stderr
+
+    def test_names_every_plain_http_entry_at_once(self) -> None:
+        result = self.check(
+            packages=("example", "second"),
+            source_urls={
+                "example": "http://example.org/example-1.tar.gz",
+                "second": "HTTP://second.org/second-1.tar.gz",
+            },
+        )
+        assert result.returncode != 0
+        offenders = [line for line in result.stderr.splitlines() if line.startswith(("example:", "second:"))]
+        assert len(offenders) == 2
+
+    def test_accepts_an_https_url_with_https_fallbacks(self) -> None:
+        result = self.check(
+            source_urls={"example": "https://example.org/example-1.tar.gz"},
+            source_fallbacks={"example": ["https://mirror.example.org/example-1.tar.gz"]},
+        )
+        assert result.returncode == 0, result.stdout + result.stderr
 
     def test_accepts_a_review_only_list_of_locked_packages(self) -> None:
         result = self.check(review_only=("example",))
