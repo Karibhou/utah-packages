@@ -20,6 +20,17 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const evr = (p) => `${p.epoch ? p.epoch + ":" : ""}${p.version}-${p.release}`;
+// Metadata-derived link targets (RPM URL:, upstream tarball, recipe remote)
+// are only ever web addresses; anything else (javascript:, data:) is dropped
+// rather than rendered as a clickable href. esc() still escapes the attribute.
+const safeUrl = (s) => {
+  try {
+    const url = new URL(String(s ?? ""));
+    return url.protocol === "https:" || url.protocol === "http:" ? String(s) : "";
+  } catch {
+    return "";
+  }
+};
 
 function bytes(n) {
   const units = ["B", "KiB", "MiB", "GiB", "TiB"];
@@ -286,11 +297,14 @@ function openDetail(name, push = false) {
   const built = dateOf(p.buildtime);
   const names = p.rpms.map((r) => r.name).filter((n) => !/-(debuginfo|debugsource)$/.test(n));
   const install = `dnf install ${p.rpms.some((r) => r.name === p.name) ? p.name : names[0]}`;
+  const homepage = safeUrl(p.url);
+  const tarball = safeUrl(p.upstream.url);
+  const remote = safeUrl((p.recipe.remote || "").replace(/\.git$/, ""));
   const links = [
-    p.url && `<a class="btn" href="${esc(p.url)}" rel="noopener">Project homepage</a>`,
-    p.upstream.url && `<a class="btn ghost" href="${esc(p.upstream.url)}" rel="noopener">Source tarball</a>`,
-    p.recipe.remote && p.recipe.commit &&
-      `<a class="btn ghost" href="${esc(p.recipe.remote.replace(/\.git$/, ""))}/blob/${esc(p.recipe.commit)}/f/${esc(p.name)}.spec" rel="noopener">Fedora recipe @ ${esc(p.recipe.commit.slice(0, 7))}</a>`,
+    homepage && `<a class="btn" href="${esc(homepage)}" rel="noopener">Project homepage</a>`,
+    tarball && `<a class="btn ghost" href="${esc(tarball)}" rel="noopener">Source tarball</a>`,
+    remote && p.recipe.commit &&
+      `<a class="btn ghost" href="${esc(remote)}/blob/${esc(p.recipe.commit)}/f/${esc(p.name)}.spec" rel="noopener">Fedora recipe @ ${esc(p.recipe.commit.slice(0, 7))}</a>`,
     `<a class="btn ghost" href="https://github.com/projectbluefin/utah-packages/tree/main/packages/${esc(p.name)}" rel="noopener">Recipe in factory</a>`,
     `<button class="btn ghost" type="button" id="copy-link">Copy link</button>`,
     `<button class="btn ghost" type="button" id="copy-install">Copy <code>${esc(install)}</code></button>`,
