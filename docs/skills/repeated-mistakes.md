@@ -446,8 +446,17 @@ planning time.
 **Rule.** Every factory tool and workflow step must consume
 `tools.package_inventory.source_locks` or `inventory` rather than parsing
 `config/upstream-sources.json` directly from the working tree. (Historical reads
-across git ranges, such as `git show ${base_sha}:...`, remain raw JSON.) The lock
-file is parsed and validated in exactly one place.
+across git ranges, such as `git show ${base_sha}:...`, remain raw JSON, and so do
+the tools that rewrite the document itself.) The lock file is parsed and
+validated in exactly one place.
+
+**It recurred.** After this rule was written, three more read-only tools grew
+their own `{entry["name"]: entry ...}` reader — `rawhide_reimport.load_locks`,
+`audit_gnome_build_meta._load_factory_sources` and `package_index.inventory` —
+each letting the last duplicate win. They now call `source_locks` /
+`load_source_locks`, and `tests/test_source_lock_readers.py` feeds each one a
+duplicated lock and expects the shared refusal. A new read-only consumer adds a
+case there.
 
 ## 21. `continue-on-error` on a matrix job leaves a red check run on the Checks API
 
