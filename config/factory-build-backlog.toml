@@ -224,7 +224,6 @@ packages = [
     "cifs-utils-info",
     "cryfs",
     "davfs2",
-    "default-editor",
     "distribution-gpg-keys",
     "djvulibre-libs",
     "dnsmasq",
@@ -243,7 +242,6 @@ packages = [
     "gssproxy",
     "hdparm",
     "hfsplus-tools",
-    "htop",
     "ifuse",
     "iwd",
     "kernel-devel-matched",
@@ -265,8 +263,6 @@ packages = [
     "lsof",
     "man-pages",
     "mtr",
-    "nano",
-    "nano-default-editor",
     "nfs-client-utils",
     "nfs-common-utils",
     "nfs-utils",
@@ -327,7 +323,6 @@ packages = [
     "restic",
     "rpm-ostree",
     "rpm-ostree-libs",
-    "rsync",
     "smartmontools",
     "smartmontools-selinux",
     "spice-vdagent",
@@ -341,7 +336,6 @@ packages = [
     "symlinks",
     "tcpdump",
     "time",
-    "tmux",
     "toolbox",
     "tpm2-tools",
     "traceroute",
@@ -356,7 +350,6 @@ packages = [
     "wget2-wget",
     "whois",
     "whois-nls",
-    "xdg-utils",
 ]
 
 [areas.fonts-i18n]
@@ -650,6 +643,17 @@ packages = [
     { name = "speech-dispatcher-espeak-ng", pr = 466 },
     { name = "speech-dispatcher-libs", pr = 466 },
     { name = "speech-dispatcher-utils", pr = 466 },
+    # Dev-tools essentials (fork #433, landing PR #514).
+    # default-editor and nano-default-editor are nano subpackages built under
+    # nano.spec's %bcond default_editor; the auditor does not resolve that
+    # conditional, so they are closed here explicitly.
+    { name = "default-editor", pr = 514 },
+    { name = "htop", pr = 514 },
+    { name = "nano", pr = 514 },
+    { name = "nano-default-editor", pr = 514 },
+    { name = "rsync", pr = 514 },
+    { name = "tmux", pr = 514 },
+    { name = "xdg-utils", pr = 514 },
 ]
 
 [wontfix]
