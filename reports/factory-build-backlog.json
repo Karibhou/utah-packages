@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 136,
-      "total": 138
+      "pending": 126,
+      "total": 128
     },
     "fonts-i18n": {
       "pending": 59,
@@ -20,10 +20,10 @@
       "total": 37
     },
     "long-tail": {
-      "already_recipe": 10,
+      "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 169,
-      "total": 180
+      "pending": 167,
+      "total": 179
     },
     "power": {
       "pending": 3,
@@ -306,11 +306,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "autofs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "bc",
       "state": "pending"
     },
@@ -332,16 +327,6 @@
     {
       "area": "dev-tools",
       "name": "borgbackup",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "cifs-utils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "cifs-utils-info",
       "state": "pending"
     },
     {
@@ -551,31 +536,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "nfs-client-utils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nfs-common-utils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nfs-utils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nfsv3-client-utils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nfsv4-client-utils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "nilfs-utils",
       "state": "pending"
     },
@@ -612,16 +572,6 @@
     {
       "area": "dev-tools",
       "name": "open-vm-tools-desktop",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "pinentry",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "pinentry-gnome3",
       "state": "pending"
     },
     {
@@ -1792,7 +1742,7 @@
     {
       "area": "long-tail",
       "name": "libnfsidmap",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -2172,11 +2122,6 @@
     {
       "area": "long-tail",
       "name": "redhat-menus",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "rpcbind",
       "state": "pending"
     },
     {
@@ -2662,13 +2607,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 30,
+    "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 490
+    "pending": 478
   },
   "totals": {
-    "backlog": 521,
-    "resolved": 30,
+    "backlog": 510,
+    "resolved": 41,
     "wontfix": 0
   }
 }
