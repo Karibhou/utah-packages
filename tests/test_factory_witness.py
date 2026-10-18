@@ -177,6 +177,33 @@ class FactoryWitnessTests(unittest.TestCase):
     def test_the_load_action_asserts_the_repository_arrived(self) -> None:
         self.assertIn('test -f "$TARGET/repodata/repomd.xml"', LOAD_ACTION.read_text())
 
+    def test_the_load_action_verifies_the_image_before_copying_from_it(self) -> None:
+        """Every build root installs this image's RPMs; it must be signed.
+
+        The publish seed check (repeated mistake 19) stops planted RPMs from
+        being copied forward, but the same image also feeds every build root
+        through this action, where its RPMs run under a privileged container
+        holding a packages:write token. Verify the pulled digest against the
+        same signer identities the seed check admits, before docker create.
+        """
+        action = yaml.safe_load(LOAD_ACTION.read_text())
+        script = next(step["run"] for step in action["runs"]["steps"] if "run" in step)
+        self.assertIn("cosign", script)
+        self.assertIn('verify "$IMAGE"', script)
+        self.assertIn("--certificate-oidc-issuer https://token.actions.githubusercontent.com", script)
+        self.assertIn("(rebuild-rpms|publish-repository)[.]yml@", script)
+        self.assertLess(script.index('verify "$IMAGE"'), script.index("docker create"))
+        # Verify the digest actually pulled, never a tag that can move again.
+        self.assertIn("*@sha256:*) ;;", script)
+        self.assertLess(script.index("*@sha256:*)"), script.index('verify "$IMAGE"'))
+        # Same cosign release and checksum as canary.yml and publish-repository.yml.
+        for path in (PUBLISH, WORKFLOWS / "canary.yml"):
+            with self.subTest(path=path.name):
+                self.assertIn("cosign/releases/download/v2.4.1/cosign-linux-amd64", path.read_text())
+        self.assertIn("cosign/releases/download/v2.4.1/cosign-linux-amd64", script)
+        self.assertIn("8b24b946dd5809c6bd93de08033bcf6bc0ed7d336b7785787c080f574b89249b", script)
+        self.assertIn("signer_ref", action["inputs"])
+
     def test_debuginfo_is_not_built_only_to_be_discarded(self) -> None:
         # Both lanes: the mock lane inline, the container lane in its script.
         text = uncommented(BUILD_STAGE) + uncommented(ROOT / "tools" / "build_container.sh")

@@ -433,6 +433,18 @@ reads `$DOCKER_CONFIG/config.json`, not podman's own auth file, so a
 "Publish the repository" step hit the same split; see its comment on
 `DOCKER_CONFIG`).
 
+The seed is not the only consumer. The same image is extracted by
+`.github/actions/load-factory-repo` in `prepare` and in every `build-stage`
+job, where its RPMs are installed into each build root with `gpgcheck=0`
+inside a privileged container holding a `packages: write` token -- so a
+planted RPM's scriptlets ran as root in CI long before the seed check could
+refuse the image at publish time. The action therefore runs the same
+`cosign verify` (same two signer files, same OIDC issuer) on the digest it
+pulled before `docker create`. Its `signer_ref` input pins the ref the way
+the seed check does; a caller that leaves it empty still requires this
+repository's own publish signature, on any ref of this repository (the
+canary's images are signed under `refs/pull/N/merge`). `tests/test_factory_witness.py` holds the order and the identity.
+
 ## 20. Bypassing the source-lock contract with direct JSON parsing
 
 **What happened.** `prepare` originally ran an inline heredoc that parsed
