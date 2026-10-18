@@ -20,9 +20,9 @@
       "total": 37
     },
     "long-tail": {
-      "already_recipe": 9,
+      "already_recipe": 10,
       "manifest_wants": 1,
-      "pending": 170,
+      "pending": 169,
       "total": 180
     },
     "power": {
@@ -1887,7 +1887,7 @@
     {
       "area": "long-tail",
       "name": "libvarlink",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -2692,9 +2692,9 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 29,
+    "already_recipe": 30,
     "manifest_wants": 1,
-    "pending": 497
+    "pending": 496
   },
   "totals": {
     "backlog": 527,
