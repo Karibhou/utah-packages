@@ -1,0 +1,8 @@
+{
+  "package": "rust-libglycin-rebind",
+  "branch": "rawhide",
+  "remote": "https://src.fedoraproject.org/rpms/rust-libglycin-rebind.git",
+  "commit": "ac57502ab84374ff5594515c17dd00e13cc7245a",
+  "tree": "682efbaf6bc9bf10ca195dc595445c72c87989c7",
+  "imported_at": "2026-10-18T12:48:22.324220+00:00"
+}
