@@ -100,6 +100,12 @@ packages:
     downstream_package_name: at-spi2-core
     paths:
       - packages/at-spi2-core
+  autofs:
+    specfile_path: autofs.spec
+    upstream_package_name: autofs
+    downstream_package_name: autofs
+    paths:
+      - packages/autofs
   bluez:
     specfile_path: bluez.spec
     upstream_package_name: bluez
@@ -124,6 +130,12 @@ packages:
     downstream_package_name: cdparanoia
     paths:
       - packages/cdparanoia
+  cifs-utils:
+    specfile_path: cifs-utils.spec
+    upstream_package_name: cifs-utils
+    downstream_package_name: cifs-utils
+    paths:
+      - packages/cifs-utils
   cjson:
     specfile_path: cjson.spec
     upstream_package_name: cjson
@@ -1768,6 +1780,12 @@ packages:
     downstream_package_name: nautilus-python
     paths:
       - packages/nautilus-python
+  nfs-utils:
+    specfile_path: nfs-utils.spec
+    upstream_package_name: nfs-utils
+    downstream_package_name: nfs-utils
+    paths:
+      - packages/nfs-utils
   noopenh264:
     specfile_path: noopenh264.spec
     upstream_package_name: noopenh264
@@ -1900,6 +1918,12 @@ packages:
     downstream_package_name: pdfio
     paths:
       - packages/pdfio
+  pinentry:
+    specfile_path: pinentry.spec
+    upstream_package_name: pinentry
+    downstream_package_name: pinentry
+    paths:
+      - packages/pinentry
   pipewire:
     specfile_path: pipewire.spec
     upstream_package_name: pipewire
@@ -2056,6 +2080,12 @@ packages:
     downstream_package_name: rest
     paths:
       - packages/rest
+  rpcbind:
+    specfile_path: rpcbind.spec
+    upstream_package_name: rpcbind
+    downstream_package_name: rpcbind
+    paths:
+      - packages/rpcbind
   rsync:
     specfile_path: rsync.spec
     upstream_package_name: rsync
