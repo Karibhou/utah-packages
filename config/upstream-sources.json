@@ -3890,6 +3890,27 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/htop/htop-3.5.3.tar.xz/sha512/54def5519eb63493740542012f29d3e9f31d58d9438fae63ac59cfb2d9bcab2139505130466ccdf4447217f0ac076234ef4e1c4eb760a502ee1aa5fedf02cb19/htop-3.5.3.tar.xz"
       ]
+    },
+    {
+      "name": "libvarlink",
+      "version": "24.0.1",
+      "url": "https://github.com/varlink/libvarlink/archive/v24.0.1/libvarlink-24.0.1.tar.gz",
+      "filename": "libvarlink-24.0.1.tar.gz",
+      "sha512": "712dd827a850f06c35cbe93e8517127d3bc0709b3d057dc63d0aea7143a630490da194dc26c75e6a97db1c3adac528a3c5f0b9cfb5fa647cb898d2d5f50b443e"
+    },
+    {
+      "name": "sysstat",
+      "version": "12.8.0",
+      "url": "https://github.com/sysstat/sysstat/archive/v12.8.0.tar.gz",
+      "filename": "v12.8.0.tar.gz",
+      "sha512": "42ddf7131b690be8927ceacdc35c23d6f1295f52446db68ecc2ea619e0e7ec955157b146216474e271bd0db242b3348e8ba4c8ebc03e518ac69b2564eec71857"
+    },
+    {
+      "name": "pv",
+      "version": "1.11.0",
+      "url": "https://www.ivarch.com/programs/sources/pv-1.11.0.tar.gz",
+      "filename": "pv-1.11.0.tar.gz",
+      "sha512": "d931ba3115426f962bd7bc74b6cdbd7e798e03cd9fb5994ac73a93cc9f8a2f43e8f28474c2baf1b8132199282a616858edb4ddd2009dadbf86e6e624a7028671"
     }
   ]
 }

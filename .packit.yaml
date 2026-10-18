@@ -1540,6 +1540,12 @@ packages:
     downstream_package_name: libva-utils
     paths:
       - packages/libva-utils
+  libvarlink:
+    specfile_path: libvarlink.spec
+    upstream_package_name: libvarlink
+    downstream_package_name: libvarlink
+    paths:
+      - packages/libvarlink
   libvdpau:
     specfile_path: libvdpau.spec
     upstream_package_name: libvdpau
@@ -1942,6 +1948,12 @@ packages:
     downstream_package_name: pulseaudio
     paths:
       - packages/pulseaudio
+  pv:
+    specfile_path: pv.spec
+    upstream_package_name: pv
+    downstream_package_name: pv
+    paths:
+      - packages/pv
   pyatspi:
     specfile_path: pyatspi.spec
     upstream_package_name: pyatspi
@@ -2188,6 +2200,12 @@ packages:
     downstream_package_name: switcheroo-control
     paths:
       - packages/switcheroo-control
+  sysstat:
+    specfile_path: sysstat.spec
+    upstream_package_name: sysstat
+    downstream_package_name: sysstat
+    paths:
+      - packages/sysstat
   taglib:
     specfile_path: taglib.spec
     upstream_package_name: taglib
