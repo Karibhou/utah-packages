@@ -3975,6 +3975,52 @@
       "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.3.tar.bz2",
       "filename": "pinentry-1.3.3.tar.bz2",
       "sha512": "3562d6a83af01ab9c12fb3e4710e3233078296c1275a69c6ac5ebe7461e95404d6504c4fde82f501f861b3ae960b7d13052bcb359a62dfc078ade29e08b86735"
+    },
+    {
+      "name": "faad2",
+      "version": "2.11.4",
+      "url": "https://github.com/knik0/faad2/archive/2.11.4/faad2-2.11.4.tar.gz",
+      "filename": "faad2-2.11.4.tar.gz",
+      "sha512": "19f66bf811b3debf2230debba2f9978c06172444be5fbd8046112e4e01736a81ef302bde66221742d132fd06e4c8167bc79f76a1434a6e7ff16fcd13cf5ef9e7"
+    },
+    {
+      "name": "openh264",
+      "version": "2.6.0",
+      "url": "https://github.com/cisco/openh264/archive/v2.6.0/openh264-2.6.0.tar.gz",
+      "filename": "openh264-2.6.0.tar.gz",
+      "sha512": "26a03acde7153a6b40b99f00641772433a244c72a3cc4bca6d903cf3b770174d028369a2fb73b2f0774e1124db0e269758eed6d88975347a815e0366c820d247"
+    },
+    {
+      "name": "rust-gst-plugin-dav1d",
+      "version": "0.15.0",
+      "url": "https://crates.io/api/v1/crates/gst-plugin-dav1d/0.15.0/download#/gst-plugin-dav1d-0.15.0.crate",
+      "filename": "gst-plugin-dav1d-0.15.0.crate",
+      "sha512": "9326a569da4ad762f743107577d4817bb28724cfb036b35eaf7d57acfb25d0b52239df86d778e519788651d867200e4c0c2a3cacf438fc3d3f3e2016e02f5cc8"
+    },
+    {
+      "name": "soundtouch",
+      "version": "2.4.0",
+      "url": "https://www.surina.net/soundtouch/soundtouch-2.4.0.tar.gz",
+      "filename": "soundtouch-2.4.0.tar.gz",
+      "sha512": "8bd199c6363104ba6c9af1abbd3c4da3567ccda5fe3a68298917817fc9312ecb0914609afba1abd864307b0a596becf450bc7073eeec17b1de5a7c5086fbc45e"
+    },
+    {
+      "name": "gstreamer1-plugins-ugly-free",
+      "version": "1.28.6",
+      "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.28.6.tar.xz",
+      "filename": "gst-plugins-ugly-1.28.6.tar.xz",
+      "sha512": "6356a7281366c278b21f1ad775fb82dbafebc9b52c64173f53bb037cc7dd5d989ec1f9d031fddbd4e1170915046907a3e2747becc3087a5c2d31a9c38bbb5a25"
+    },
+    {
+      "name": "openal-soft",
+      "version": "1.24.2",
+      "filename": "openal-soft-1.24.2-clean.tar.xz",
+      "sha512": "7d55e607b9218017dd47c3394de508f79487146c4933158abd81fe64a4601f786b4163f5379e4680489e9db8485d821130141050f2773f8bb01bf0432484c8c4",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://openal-soft.org/openal-releases/openal-soft-1.24.2.tar.bz2 (sha512-pinned)",
+        "method": "remove the bundled fmt-*/ tree and utils/*.def datasets (non-free, per make_tarball.sh) from the upstream release and repack deterministically as openal-soft-1.24.2-clean.tar.xz"
+      }
     }
   ]
 }

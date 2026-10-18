@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 38,
-      "total": 48
+      "pending": 35,
+      "total": 45
     },
     "dev-tools": {
       "already_recipe": 2,
@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 167,
-      "total": 179
+      "pending": 165,
+      "total": 177
     },
     "power": {
       "pending": 3,
@@ -81,11 +81,6 @@
     },
     {
       "area": "codecs-media",
-      "name": "faad2-libs",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
       "name": "ffmpeg",
       "state": "already_recipe"
     },
@@ -106,22 +101,12 @@
     },
     {
       "area": "codecs-media",
-      "name": "gstreamer1-plugin-dav1d",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
       "name": "gstreamer1-plugin-libav",
       "state": "pending"
     },
     {
       "area": "codecs-media",
       "name": "gstreamer1-plugins-good-qt6",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "gstreamer1-plugins-ugly-free",
       "state": "pending"
     },
     {
@@ -1936,11 +1921,6 @@
     },
     {
       "area": "long-tail",
-      "name": "openal-soft",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "openexr-libs",
       "state": "pending"
     },
@@ -2162,11 +2142,6 @@
     {
       "area": "long-tail",
       "name": "sos",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "soundtouch",
       "state": "pending"
     },
     {
@@ -2609,11 +2584,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 478
+    "pending": 473
   },
   "totals": {
-    "backlog": 510,
-    "resolved": 41,
+    "backlog": 505,
+    "resolved": 46,
     "wontfix": 0
   }
 }

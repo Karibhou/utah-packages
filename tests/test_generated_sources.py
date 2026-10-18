@@ -163,6 +163,74 @@ class GpmTransformTests(unittest.TestCase):
         self.assertIn("1.20.7", generated_sources.GPM_INPUT_SHA512)
 
 
+def build_openal_soft_archive(version: str) -> bytes:
+    """A synthetic upstream openal-soft .tar.bz2 carrying fmt and .def files."""
+    top = f"openal-soft-{version}"
+    members = {
+        f"{top}/CMakeLists.txt": b"kept",
+        f"{top}/fmt-11.1.1/src/format.cc": b"bundled",
+        f"{top}/fmt-11.1.1/include/fmt/core.h": b"bundled",
+        f"{top}/fmt-old/doc.txt": b"bundled: any fmt- prefix goes",
+        f"{top}/utils/CIAIR.def": b"non-free dataset",
+        f"{top}/utils/presets.txt": b"kept: only .def goes",
+        f"{top}/utils/nested/extra.def": b"kept: the recipe glob is not recursive",
+        f"{top}/utilsdef/kept.def": b"kept: utilsdef is not utils",
+    }
+    directories = {top, f"{top}/fmt-11.1.1", f"{top}/fmt-11.1.1/src",
+                   f"{top}/fmt-11.1.1/include", f"{top}/fmt-11.1.1/include/fmt",
+                   f"{top}/fmt-old", f"{top}/utils", f"{top}/utils/nested",
+                   f"{top}/utilsdef"}
+    raw = io.BytesIO()
+    with tarfile.open(fileobj=raw, mode="w:bz2") as tar:
+        for name in sorted(directories, reverse=True):
+            info = tarfile.TarInfo(name)
+            info.type = tarfile.DIRTYPE
+            info.mtime, info.uid, info.gid, info.uname, info.gname = 1748353371, 1000, 1000, "kcat", "kcat"
+            tar.addfile(info)
+        for name in sorted(members, reverse=True):
+            info = tarfile.TarInfo(name)
+            info.size = len(members[name])
+            info.mtime, info.uid, info.gid, info.uname, info.gname = 1748353371, 1000, 1000, "kcat", "kcat"
+            tar.addfile(info, io.BytesIO(members[name]))
+    return raw.getvalue()
+
+
+class OpenALSoftTransformTests(unittest.TestCase):
+    VERSION = "1.24.2"
+
+    def members(self, payload: bytes) -> list[tarfile.TarInfo]:
+        with tarfile.open(fileobj=io.BytesIO(payload), mode="r:xz") as tar:
+            return tar.getmembers()
+
+    def test_removes_exactly_fmt_and_top_level_utils_def(self):
+        result = generated_sources._openal_soft_transform(build_openal_soft_archive(self.VERSION), self.VERSION)
+        names = {member.name for member in self.members(result)}
+        self.assertNotIn("openal-soft-1.24.2/fmt-11.1.1", names)
+        self.assertNotIn("openal-soft-1.24.2/fmt-11.1.1/src/format.cc", names)
+        self.assertNotIn("openal-soft-1.24.2/fmt-old/doc.txt", names)
+        self.assertNotIn("openal-soft-1.24.2/utils/CIAIR.def", names)
+        self.assertIn("openal-soft-1.24.2/CMakeLists.txt", names)
+        self.assertIn("openal-soft-1.24.2/utils/presets.txt", names)
+        self.assertIn("openal-soft-1.24.2/utils/nested/extra.def", names)
+        self.assertIn("openal-soft-1.24.2/utilsdef/kept.def", names)
+
+    def test_transform_is_byte_reproducible_sorted_and_ownerless(self):
+        archive = build_openal_soft_archive(self.VERSION)
+        first = generated_sources._openal_soft_transform(archive, self.VERSION)
+        self.assertEqual(first, generated_sources._openal_soft_transform(archive, self.VERSION))
+        members = self.members(first)
+        self.assertEqual([m.name for m in members], sorted(m.name for m in members))
+        for member in members:
+            self.assertEqual((member.uid, member.gid, member.uname, member.gname), (0, 0, "", ""))
+            self.assertEqual(member.mtime, 1748353371)
+
+    def test_metadata_names_the_recipe_source_and_pinned_input(self):
+        metadata = generated_sources.metadata_for("openal-soft", ROOT / "packages" / "openal-soft")
+        self.assertEqual(metadata["filename"], "openal-soft-1.24.2-clean.tar.xz")
+        self.assertIn("openal-soft-1.24.2.tar.bz2", metadata["generate"]["input"])
+        self.assertIn("1.24.2", generated_sources.OPENAL_SOFT_INPUT_SHA512)
+
+
 class GeneratedMetadataTests(unittest.TestCase):
     def test_intel_media_metadata_uses_spec_version(self):
         metadata = generated_sources.metadata_for(

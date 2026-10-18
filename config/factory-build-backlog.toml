@@ -43,15 +43,12 @@ packages = [
     "LCEVCdec",
     "LibRaw",
     "davs2-libs",
-    "faad2-libs",
     "ffmpeg",
     "ffmpeg-libs",
     "ffmpegthumbnailer",
     "ffmpegthumbnailer-libs",
-    "gstreamer1-plugin-dav1d",
     "gstreamer1-plugin-libav",
     "gstreamer1-plugins-good-qt6",
-    "gstreamer1-plugins-ugly-free",
     "liba52",
     "libavc1394",
     "libavcodec",
@@ -527,7 +524,6 @@ packages = [
     "nm-connection-editor",
     "nss-altfiles",
     "nss-mdns",
-    "openal-soft",
     "openexr-libs",
     "oversteer-udev",
     "pam_afs_session",
@@ -573,7 +569,6 @@ packages = [
     "solaar-udev",
     "sord",
     "sos",
-    "soundtouch",
     "sratom",
     "sso-mib-libs",
     "tesseract-common",
@@ -659,6 +654,14 @@ packages = [
     { name = "pinentry", pr = 524 },
     { name = "pinentry-gnome3", pr = 524 },
     { name = "rpcbind", pr = 524 },
+    # H.264 decode path + bad-free dep closure wave (landing PR #526).
+    # gstreamer1-plugin-dav1d is the binary subpackage of rust-gst-plugin-dav1d;
+    # faad2-libs is faad2.spec's %package libs.
+    { name = "faad2-libs", pr = 526 },
+    { name = "gstreamer1-plugin-dav1d", pr = 526 },
+    { name = "gstreamer1-plugins-ugly-free", pr = 526 },
+    { name = "openal-soft", pr = 526 },
+    { name = "soundtouch", pr = 526 },
 ]
 
 [wontfix]

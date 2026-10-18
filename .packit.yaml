@@ -280,6 +280,12 @@ packages:
     downstream_package_name: exiv2
     paths:
       - packages/exiv2
+  faad2:
+    specfile_path: faad2.spec
+    upstream_package_name: faad2
+    downstream_package_name: faad2
+    paths:
+      - packages/faad2
   fastfetch:
     specfile_path: fastfetch.spec
     upstream_package_name: fastfetch
@@ -622,6 +628,12 @@ packages:
     downstream_package_name: gstreamer1-plugins-good
     paths:
       - packages/gstreamer1-plugins-good
+  gstreamer1-plugins-ugly-free:
+    specfile_path: gstreamer1-plugins-ugly-free.spec
+    upstream_package_name: gstreamer1-plugins-ugly-free
+    downstream_package_name: gstreamer1-plugins-ugly-free
+    paths:
+      - packages/gstreamer1-plugins-ugly-free
   gtk2:
     specfile_path: gtk2.spec
     upstream_package_name: gtk2
@@ -1804,6 +1816,12 @@ packages:
     downstream_package_name: nvtop
     paths:
       - packages/nvtop
+  openal-soft:
+    specfile_path: openal-soft.spec
+    upstream_package_name: openal-soft
+    downstream_package_name: openal-soft
+    paths:
+      - packages/openal-soft
   openapv:
     specfile_path: openapv.spec
     upstream_package_name: openapv
@@ -1816,6 +1834,12 @@ packages:
     downstream_package_name: opencore-amr
     paths:
       - packages/opencore-amr
+  openh264:
+    specfile_path: openh264.spec
+    upstream_package_name: openh264
+    downstream_package_name: openh264
+    paths:
+      - packages/openh264
   openjpeg:
     specfile_path: openjpeg.spec
     upstream_package_name: openjpeg
@@ -2110,6 +2134,12 @@ packages:
     downstream_package_name: runc
     paths:
       - packages/runc
+  rust-gst-plugin-dav1d:
+    specfile_path: rust-gst-plugin-dav1d.spec
+    upstream_package_name: rust-gst-plugin-dav1d
+    downstream_package_name: rust-gst-plugin-dav1d
+    paths:
+      - packages/rust-gst-plugin-dav1d
   rust-just:
     specfile_path: rust-just.spec
     upstream_package_name: rust-just
@@ -2182,6 +2212,12 @@ packages:
     downstream_package_name: sound-theme-freedesktop
     paths:
       - packages/sound-theme-freedesktop
+  soundtouch:
+    specfile_path: soundtouch.spec
+    upstream_package_name: soundtouch
+    downstream_package_name: soundtouch
+    paths:
+      - packages/soundtouch
   soxr:
     specfile_path: soxr.spec
     upstream_package_name: soxr
