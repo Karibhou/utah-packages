@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 32,
-      "total": 37
+      "pending": 29,
+      "total": 34
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1256,16 +1256,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-disk-utility",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-epub-thumbnailer",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-menus",
       "state": "pending"
     },
@@ -1357,11 +1347,6 @@
     {
       "area": "gnome-apps",
       "name": "libmediaart",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "libspelling",
       "state": "pending"
     },
     {
@@ -2584,11 +2569,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 473
+    "pending": 470
   },
   "totals": {
-    "backlog": 505,
-    "resolved": 46,
+    "backlog": 502,
+    "resolved": 49,
     "wontfix": 0
   }
 }

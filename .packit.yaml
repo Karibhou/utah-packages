@@ -478,6 +478,18 @@ packages:
     downstream_package_name: gnome-desktop3
     paths:
       - packages/gnome-desktop3
+  gnome-disk-utility:
+    specfile_path: gnome-disk-utility.spec
+    upstream_package_name: gnome-disk-utility
+    downstream_package_name: gnome-disk-utility
+    paths:
+      - packages/gnome-disk-utility
+  gnome-epub-thumbnailer:
+    specfile_path: gnome-epub-thumbnailer.spec
+    upstream_package_name: gnome-epub-thumbnailer
+    downstream_package_name: gnome-epub-thumbnailer
+    paths:
+      - packages/gnome-epub-thumbnailer
   gnome-initial-setup:
     specfile_path: gnome-initial-setup.spec
     upstream_package_name: gnome-initial-setup
@@ -1510,6 +1522,12 @@ packages:
     downstream_package_name: libsoup3
     paths:
       - packages/libsoup3
+  libspelling:
+    specfile_path: libspelling.spec
+    upstream_package_name: libspelling
+    downstream_package_name: libspelling
+    paths:
+      - packages/libspelling
   libtalloc:
     specfile_path: libtalloc.spec
     upstream_package_name: libtalloc
@@ -2320,6 +2338,12 @@ packages:
     downstream_package_name: tmux
     paths:
       - packages/tmux
+  totem:
+    specfile_path: totem.spec
+    upstream_package_name: totem
+    downstream_package_name: totem
+    paths:
+      - packages/totem
   totem-pl-parser:
     specfile_path: totem-pl-parser.spec
     upstream_package_name: totem-pl-parser
