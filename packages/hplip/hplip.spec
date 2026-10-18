@@ -662,6 +662,12 @@ cp -p %{SOURCE7} .
 %build
 # Work-around Makefile.am imperfections.
 sed -i 's|^AM_INIT_AUTOMAKE|AM_INIT_AUTOMAKE([foreign])|g' configure.in
+# The ipp-usb quirk install-data-hook writes to the absolute /usr path and
+# fails under mock whenever ipp-usb is in the buildroot. Install under
+# DESTDIR instead (a unified patch cannot touch these backslash-continued
+# lines reliably, so this stays a scripted edit next to the other one).
+sed -i '\|cp prnt/ipp-usb/HPLIP.conf /usr/share/ipp-usb/quirks/|i \\t\t$(mkinstalldirs) $(DESTDIR)/usr/share/ipp-usb/quirks/ ; \\' Makefile.am
+sed -i 's|cp prnt/ipp-usb/HPLIP.conf /usr/share/ipp-usb/quirks/|cp prnt/ipp-usb/HPLIP.conf $(DESTDIR)/usr/share/ipp-usb/quirks/|' Makefile.am
 # Upstream uses old libtool, which causes problems (due to libhpmud requiring
 # libhpdiscovery) when we try to remove rpath from it.
 # Regenerating all autotools files works-around these rpath issues.
