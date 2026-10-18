@@ -3975,6 +3975,27 @@
       "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.3.tar.bz2",
       "filename": "pinentry-1.3.3.tar.bz2",
       "sha512": "3562d6a83af01ab9c12fb3e4710e3233078296c1275a69c6ac5ebe7461e95404d6504c4fde82f501f861b3ae960b7d13052bcb359a62dfc078ade29e08b86735"
+    },
+    {
+      "name": "faad2",
+      "version": "2.11.4",
+      "url": "https://github.com/knik0/faad2/archive/2.11.4/faad2-2.11.4.tar.gz",
+      "filename": "faad2-2.11.4.tar.gz",
+      "sha512": "19f66bf811b3debf2230debba2f9978c06172444be5fbd8046112e4e01736a81ef302bde66221742d132fd06e4c8167bc79f76a1434a6e7ff16fcd13cf5ef9e7"
+    },
+    {
+      "name": "openh264",
+      "version": "2.6.0",
+      "url": "https://github.com/cisco/openh264/archive/v2.6.0/openh264-2.6.0.tar.gz",
+      "filename": "openh264-2.6.0.tar.gz",
+      "sha512": "26a03acde7153a6b40b99f00641772433a244c72a3cc4bca6d903cf3b770174d028369a2fb73b2f0774e1124db0e269758eed6d88975347a815e0366c820d247"
+    },
+    {
+      "name": "rust-gst-plugin-dav1d",
+      "version": "0.15.0",
+      "url": "https://crates.io/api/v1/crates/gst-plugin-dav1d/0.15.0/download#/gst-plugin-dav1d-0.15.0.crate",
+      "filename": "gst-plugin-dav1d-0.15.0.crate",
+      "sha512": "9326a569da4ad762f743107577d4817bb28724cfb036b35eaf7d57acfb25d0b52239df86d778e519788651d867200e4c0c2a3cacf438fc3d3f3e2016e02f5cc8"
     }
   ]
 }
