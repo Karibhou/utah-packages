@@ -718,6 +718,12 @@ packages:
     downstream_package_name: highway
     paths:
       - packages/highway
+  hplip:
+    specfile_path: hplip.spec
+    upstream_package_name: hplip
+    downstream_package_name: hplip
+    paths:
+      - packages/hplip
   htop:
     specfile_path: htop.spec
     upstream_package_name: htop
@@ -2302,6 +2308,12 @@ packages:
     downstream_package_name: sysstat
     paths:
       - packages/sysstat
+  system-config-printer:
+    specfile_path: system-config-printer.spec
+    upstream_package_name: system-config-printer
+    downstream_package_name: system-config-printer
+    paths:
+      - packages/system-config-printer
   taglib:
     specfile_path: taglib.spec
     upstream_package_name: taglib
