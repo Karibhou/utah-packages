@@ -24,6 +24,7 @@ import sys
 import tempfile
 import urllib.parse
 import urllib.request
+from collections.abc import Sequence
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -193,9 +194,24 @@ def build_outcomes(jobs: list[dict]) -> dict[str, dict[str, str]]:
     return outcomes
 
 
+def lock_nevras(lock: dict) -> list[str]:
+    """Sorted NEVRAs recorded in a buildroot_lock.json."""
+    rpms = lock.get("buildroot", {}).get("rpms", [])
+    nevras = []
+    for r in rpms:
+        epoch = f"{r['epoch']}:" if r.get("epoch") else ""
+        nevras.append(f"{r['name']}-{epoch}{r['version']}-{r['release']}.{r['arch']}")
+    return sorted(nevras)
+
+
 def cache_problems(
-    outcomes: dict[str, dict[str, str]], canary_set: set[str], perturbed: str
+    outcomes: dict[str, dict[str, str]], canary_set: set[str], perturbed: str,
+    locks: dict[str, dict[str, dict]] | None = None,
+    tolerated: list[str] | None = None,
 ) -> list[str]:
+    """Cache-verdict problems. A pass2/pass3 compile whose buildroot NEVRAs
+    moved since pass1 is a legitimate invalidation, not a problem: it is
+    appended to ``tolerated`` (or printed to stderr when none is given)."""
     problems = []
     for name, expected in (("pass2", canary_set), ("pass3", canary_set | {perturbed})):
         seen = outcomes.get(name, {})
@@ -205,6 +221,26 @@ def cache_problems(
         for name in ("pass2", "pass3"):
             outcome = outcomes.get(name, {}).get(package)
             if outcome is not None and outcome != "cache hit":
+                if (
+                    locks
+                    and outcome == "compiled"
+                    and name in locks
+                    and "pass1" in locks
+                    and package in locks[name]
+                    and package in locks["pass1"]
+                ):
+                    p1_nevras = lock_nevras(locks["pass1"][package])
+                    pn_nevras = lock_nevras(locks[name][package])
+                    if p1_nevras != pn_nevras:
+                        added = [f"+{n}" for n in pn_nevras if n not in p1_nevras]
+                        removed = [f"-{n}" for n in p1_nevras if n not in pn_nevras]
+                        diff_str = ", ".join((added + removed)[:5])
+                        note = f"{name}: {package} recompiled due to buildroot NEVRA changes ({diff_str})"
+                        if tolerated is None:
+                            print(f"info: {note}", file=sys.stderr)
+                        else:
+                            tolerated.append(note)
+                        continue
                 problems.append(f"{name}: {package} was {outcome}, not a cache hit")
     perturbed_outcome = outcomes.get("pass3", {}).get(perturbed)
     if perturbed_outcome is not None and perturbed_outcome != "compiled":
@@ -259,6 +295,7 @@ def built_problems(outcomes: dict[str, str], expected: set[str], name: str = "pa
 
 
 LOCK_ARTIFACT = re.compile(r"lock-s\d+-(?P<package>.+)$")
+PASS_LOCK_ARTIFACT = re.compile(r"^(?:(?P<pass>p\d+)-)?lock-s\d+-(?P<package>.+)$")
 
 
 def read_locks(directory: Path) -> dict[str, dict]:
@@ -270,6 +307,19 @@ def read_locks(directory: Path) -> dict[str, dict]:
         if match:
             locks[match["package"]] = json.loads(path.read_text())
     return locks
+
+
+def read_pass_locks(directory: Path) -> dict[str, dict[str, dict]]:
+    """pass -> package -> lock, from downloaded p<N>-lock-s<stage>-<package> artifacts."""
+    pass_locks: dict[str, dict[str, dict]] = {}
+    for path in sorted(directory.rglob("buildroot_lock.json")):
+        artifact = path.relative_to(directory).parts[0]
+        match = PASS_LOCK_ARTIFACT.search(artifact)
+        if match:
+            prefix = match["pass"] or "p1"
+            pass_name = f"pass{prefix[1:]}"
+            pass_locks.setdefault(pass_name, {})[match["package"]] = json.loads(path.read_text())
+    return pass_locks
 
 
 def hermetic_problems(
@@ -315,7 +365,9 @@ def early_publish_problems(jobs: list[dict], pass_name: str, wave: int) -> list[
     return problems
 
 
-def summary(outcomes: dict[str, dict[str, str]], problems: list[str]) -> str:
+def summary(
+    outcomes: dict[str, dict[str, str]], problems: list[str], tolerated: Sequence[str] = (),
+) -> str:
     lines = ["### Canary cache", "", "| pass | package | outcome |", "| --- | --- | --- |"]
     for name in sorted(outcomes):
         for package, outcome in sorted(outcomes[name].items()):
@@ -323,6 +375,20 @@ def summary(outcomes: dict[str, dict[str, str]], problems: list[str]) -> str:
     lines.append("")
     if problems:
         lines += ["**Failed:**", ""] + [f"- {problem}" for problem in problems]
+        if tolerated:
+            lines += [
+                "",
+                "**Tolerated compiles** (buildroot NEVRAs moved since pass1, so the cache key legitimately changed):",
+                "",
+            ] + [f"- {note}" for note in tolerated]
+    elif tolerated:
+        lines += [
+            "**Tolerated compiles** (buildroot NEVRAs moved since pass1, so the cache key legitimately changed):",
+            "",
+        ] + [f"- {note}" for note in tolerated] + [
+            "",
+            "Every other pass2/pass3 build was a cache hit; pass3 compiled the perturbed package.",
+        ]
     else:
         lines.append("pass2 compiled nothing; pass3 compiled only the perturbed package.")
     return "\n".join(lines) + "\n"
@@ -365,6 +431,7 @@ def main(argv: list[str] | None = None) -> int:
     cache.add_argument("jobs", type=Path)
     cache.add_argument("--set", required=True)
     cache.add_argument("--perturbed", required=True)
+    cache.add_argument("--locks", type=Path, help="Directory containing downloaded pass lock artifacts")
     args = parser.parse_args(argv)
 
     if args.command == "touches-pipeline":
@@ -441,8 +508,14 @@ def main(argv: list[str] | None = None) -> int:
         return 1 if problems else 0
     if args.command == "verify-cache":
         outcomes = build_outcomes(json.loads(args.jobs.read_text()))
-        problems = cache_problems(outcomes, set(json.loads(args.set)), args.perturbed)
-        print(summary(outcomes, problems))
+        locks = read_pass_locks(args.locks) if args.locks else None
+        tolerated: list[str] = []
+        problems = cache_problems(
+            outcomes, set(json.loads(args.set)), args.perturbed, locks=locks, tolerated=tolerated
+        )
+        print(summary(outcomes, problems, tolerated))
+        for note in tolerated:
+            print(f"::notice title=canary cache::{note}", file=sys.stderr)
         for problem in problems:
             print(f"::error title=canary cache::{problem}", file=sys.stderr)
         return 1 if problems else 0
