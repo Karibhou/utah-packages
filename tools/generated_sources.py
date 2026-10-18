@@ -10,8 +10,8 @@ that no upstream publishes verbatim:
 - tailscale: a go-vendored bundle (packages/tailscale/create-vendor-tarball.sh)
 - gpm: the upstream release with doc/specs removed, because those PDFs carry
   unclear licensing (the recipe's own comment above its Source line)
-- python-pydantic-core: the PyPI sdist plus its Cargo.lock dependencies
-  vendored, because neither Fedora 44 nor Hummingbird ships Rust crate RPMs
+- openal-soft: the upstream release with the bundled fmt tree and the
+  non-free utils HRTF datasets removed (packages/openal-soft/make_tarball.sh)
 
 For these, the source lock names this script and records the SHA-512 of the
 bytes the transformation produces. Verification re-runs the transformation
@@ -59,6 +59,11 @@ TAILSCALE_COMMITS = {
 
 GPM_INPUT_SHA512 = {
     "1.20.7": "a502741e2f457b47e41c6d155b1f7ef7c95384fd394503f82ddacf80cde9cdc286c906c77be12b6af8565ef1c3ab24d226379c1dcebcfcd15d64bcf3e94b63b9",
+}
+
+
+OPENAL_SOFT_INPUT_SHA512 = {
+    "1.24.2": "5ac05fb20b414dfe50e6ac80a69d1e36db5588fd2ccef2606ae1f3b6fc155881d45826031660123101a31469e24bc2bea42993d81b28dd5f18d0d0463988fa65",
 }
 
 PYDANTIC_CORE_INPUT_SHA512 = {
@@ -350,6 +355,82 @@ def _gpm_generate(package_dir: Path, out_dir: Path) -> Path:
     return target
 
 
+# --- openal-soft -----------------------------------------------------------------
+
+
+def _openal_soft_dropped(name: str, version: str) -> bool:
+    """The exact removal set of packages/openal-soft/make_tarball.sh.
+
+    The script deletes the bundled fmt tree (`rm -rf openal-soft-$VERSION/fmt-*/`)
+    and the non-free HRTF datasets (`rm -rf openal-soft-$VERSION/utils/*.def`,
+    a non-recursive glob, so a .def nested deeper would stay).
+    """
+    top = f"openal-soft-{version}"
+    rel = name.rstrip("/")
+    if rel == top or not rel.startswith(top + "/"):
+        return False
+    rest = rel[len(top) + 1:]
+    first, _, remainder = rest.partition("/")
+    if first.startswith("fmt-"):
+        return True
+    return first == "utils" and "/" not in remainder and remainder.endswith(".def")
+
+
+def _openal_soft_transform(archive: bytes, version: str) -> bytes:
+    """Repack the upstream .tar.bz2 without fmt and the non-free datasets.
+
+    Same tree make_tarball.sh produces by hand, made deterministically:
+    members keep the archive's own modes and mtimes, are sorted by name with
+    ownership zeroed, and are compressed as a single xz stream. Fedora's
+    lookaside copy is that tarball made by hand, so its bytes cannot be
+    reproduced; the kept 343 files were verified byte-identical against it.
+    """
+    raw = io.BytesIO()
+    with tarfile.open(fileobj=io.BytesIO(archive), mode="r:bz2") as source:
+        members = sorted(source.getmembers(), key=lambda m: m.name.rstrip("/"))
+        with tarfile.open(fileobj=raw, mode="w", format=tarfile.PAX_FORMAT) as result:
+            for member in members:
+                if _openal_soft_dropped(member.name, version):
+                    continue
+                member.uid = member.gid = 0
+                member.uname = member.gname = ""
+                result.addfile(member, source.extractfile(member) if member.isreg() else None)
+    out = io.BytesIO()
+    _xz_compress_stream(iter([raw.getvalue()]), out)
+    return out.getvalue()
+
+
+def _openal_soft_metadata(package_dir: Path) -> dict:
+    version = spec_version(package_dir, "openal-soft.spec")
+    return {
+        "name": "openal-soft",
+        "version": version,
+        "filename": f"openal-soft-{version}-clean.tar.xz",
+        "generate": {
+            "script": SCRIPT_PATH,
+            "input": f"https://openal-soft.org/openal-releases/openal-soft-{version}.tar.bz2 (sha512-pinned)",
+            "method": f"remove the bundled fmt-*/ tree and utils/*.def datasets (non-free, per make_tarball.sh) from the upstream release and repack deterministically as openal-soft-{version}-clean.tar.xz",
+        },
+    }
+
+
+def _openal_soft_generate(package_dir: Path, out_dir: Path) -> Path:
+    version = spec_version(package_dir, "openal-soft.spec")
+    pin = OPENAL_SOFT_INPUT_SHA512.get(version)
+    if pin is None:
+        raise RuntimeError(f"no pinned input SHA-512 for openal-soft {version}")
+    url = f"https://openal-soft.org/openal-releases/openal-soft-{version}.tar.bz2"
+    request = urllib.request.Request(url, headers={"User-Agent": "utah-packages-generated-source/1"})
+    with urllib.request.urlopen(request, timeout=300) as response:
+        payload = response.read()
+    actual = hashlib.sha512(payload).hexdigest()
+    if actual != pin:
+        raise RuntimeError(f"input archive mismatch for {url}: expected {pin}, got {actual}")
+    target = out_dir / f"openal-soft-{version}-clean.tar.xz"
+    target.write_bytes(_openal_soft_transform(payload, version))
+    return target
+
+
 # --- python-pydantic-core ------------------------------------------------------
 
 CRATES_IO_INDEX = "registry+https://github.com/rust-lang/crates.io-index"
@@ -511,6 +592,7 @@ METADATA = {
     "tailscale": _tailscale_metadata,
     "python-pydantic-core": _pydantic_core_metadata,
     "gpm": _gpm_metadata,
+    "openal-soft": _openal_soft_metadata,
 }
 
 GENERATORS = {
@@ -518,6 +600,7 @@ GENERATORS = {
     "tailscale": _tailscale_generate,
     "python-pydantic-core": _pydantic_core_generate,
     "gpm": _gpm_generate,
+    "openal-soft": _openal_soft_generate,
 }
 
 

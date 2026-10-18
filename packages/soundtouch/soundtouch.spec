@@ -5,7 +5,11 @@ Summary:        Audio Processing library for changing Tempo, Pitch and Playback 
 License:        LGPL-2.1-or-later
 URL:            http://www.surina.net/soundtouch/
 
-Source0:        https://codeberg.org/soundtouch/soundtouch/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Utah-local: Fedora's Source0 is a Codeberg forge archive, which the forge
+# re-rolls, so its bytes drift from the Fedora manifest pin. The author's
+# published release tarball below is byte-identical to that pin (verified
+# sha512 against packages/soundtouch/sources), so lock that instead.
+Source0:        https://www.surina.net/soundtouch/soundtouch-%{version}.tar.gz
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
 
