@@ -616,12 +616,6 @@ packages:
     downstream_package_name: gssdp
     paths:
       - packages/gssdp
-  gst-thumbnailers:
-    specfile_path: gst-thumbnailers.spec
-    upstream_package_name: gst-thumbnailers
-    downstream_package_name: gst-thumbnailers
-    paths:
-      - packages/gst-thumbnailers
   gstreamer1:
     specfile_path: gstreamer1.spec
     upstream_package_name: gstreamer1
@@ -1924,12 +1918,6 @@ packages:
     downstream_package_name: pango
     paths:
       - packages/pango
-  papers:
-    specfile_path: papers.spec
-    upstream_package_name: papers
-    downstream_package_name: papers
-    paths:
-      - packages/papers
   parted:
     specfile_path: parted.spec
     upstream_package_name: parted
@@ -2176,12 +2164,6 @@ packages:
     downstream_package_name: rust-just
     paths:
       - packages/rust-just
-  rust-libglycin-rebind:
-    specfile_path: rust-libglycin-rebind.spec
-    upstream_package_name: rust-libglycin-rebind
-    downstream_package_name: rust-libglycin-rebind
-    paths:
-      - packages/rust-libglycin-rebind
   samba:
     specfile_path: samba.spec
     upstream_package_name: samba

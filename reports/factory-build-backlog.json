@@ -1,8 +1,8 @@
 {
   "areas": {
     "codecs-media": {
-      "already_recipe": 14,
-      "pending": 31,
+      "already_recipe": 10,
+      "pending": 35,
       "total": 45
     },
     "dev-tools": {
@@ -20,9 +20,9 @@
       "total": 37
     },
     "long-tail": {
-      "already_recipe": 12,
+      "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 164,
+      "pending": 165,
       "total": 177
     },
     "power": {
@@ -232,22 +232,22 @@
     {
       "area": "codecs-media",
       "name": "papers-libs",
-      "state": "already_recipe"
+      "state": "pending"
     },
     {
       "area": "codecs-media",
       "name": "papers-nautilus",
-      "state": "already_recipe"
+      "state": "pending"
     },
     {
       "area": "codecs-media",
       "name": "papers-previewer",
-      "state": "already_recipe"
+      "state": "pending"
     },
     {
       "area": "codecs-media",
       "name": "papers-thumbnailer",
-      "state": "already_recipe"
+      "state": "pending"
     },
     {
       "area": "codecs-media",
@@ -1532,7 +1532,7 @@
     {
       "area": "long-tail",
       "name": "gst-thumbnailers",
-      "state": "already_recipe"
+      "state": "pending"
     },
     {
       "area": "long-tail",
@@ -2582,9 +2582,9 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 39,
+    "already_recipe": 34,
     "manifest_wants": 1,
-    "pending": 465
+    "pending": 470
   },
   "totals": {
     "backlog": 505,

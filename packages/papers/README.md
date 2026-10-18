@@ -1,3 +1,0 @@
-# papers
-
-The papers package
