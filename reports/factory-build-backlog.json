@@ -1,8 +1,8 @@
 {
   "areas": {
     "codecs-media": {
-      "already_recipe": 10,
-      "pending": 35,
+      "already_recipe": 14,
+      "pending": 31,
       "total": 45
     },
     "dev-tools": {
@@ -15,14 +15,15 @@
       "total": 59
     },
     "gnome-apps": {
-      "already_recipe": 5,
-      "pending": 32,
+      "already_locked": 1,
+      "already_recipe": 7,
+      "pending": 29,
       "total": 37
     },
     "long-tail": {
-      "already_recipe": 11,
+      "already_recipe": 12,
       "manifest_wants": 1,
-      "pending": 165,
+      "pending": 164,
       "total": 177
     },
     "power": {
@@ -232,22 +233,22 @@
     {
       "area": "codecs-media",
       "name": "papers-libs",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "codecs-media",
       "name": "papers-nautilus",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "codecs-media",
       "name": "papers-previewer",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "codecs-media",
       "name": "papers-thumbnailer",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "codecs-media",
@@ -1257,12 +1258,12 @@
     {
       "area": "gnome-apps",
       "name": "gnome-disk-utility",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
       "name": "gnome-epub-thumbnailer",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
@@ -1362,7 +1363,7 @@
     {
       "area": "gnome-apps",
       "name": "libspelling",
-      "state": "pending"
+      "state": "already_locked"
     },
     {
       "area": "gnome-apps",
@@ -1532,7 +1533,7 @@
     {
       "area": "long-tail",
       "name": "gst-thumbnailers",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -2582,9 +2583,10 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 31,
+    "already_locked": 1,
+    "already_recipe": 38,
     "manifest_wants": 1,
-    "pending": 473
+    "pending": 465
   },
   "totals": {
     "backlog": 505,

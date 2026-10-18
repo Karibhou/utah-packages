@@ -478,6 +478,18 @@ packages:
     downstream_package_name: gnome-desktop3
     paths:
       - packages/gnome-desktop3
+  gnome-disk-utility:
+    specfile_path: gnome-disk-utility.spec
+    upstream_package_name: gnome-disk-utility
+    downstream_package_name: gnome-disk-utility
+    paths:
+      - packages/gnome-disk-utility
+  gnome-epub-thumbnailer:
+    specfile_path: gnome-epub-thumbnailer.spec
+    upstream_package_name: gnome-epub-thumbnailer
+    downstream_package_name: gnome-epub-thumbnailer
+    paths:
+      - packages/gnome-epub-thumbnailer
   gnome-initial-setup:
     specfile_path: gnome-initial-setup.spec
     upstream_package_name: gnome-initial-setup
@@ -604,6 +616,12 @@ packages:
     downstream_package_name: gssdp
     paths:
       - packages/gssdp
+  gst-thumbnailers:
+    specfile_path: gst-thumbnailers.spec
+    upstream_package_name: gst-thumbnailers
+    downstream_package_name: gst-thumbnailers
+    paths:
+      - packages/gst-thumbnailers
   gstreamer1:
     specfile_path: gstreamer1.spec
     upstream_package_name: gstreamer1
@@ -1510,6 +1528,12 @@ packages:
     downstream_package_name: libsoup3
     paths:
       - packages/libsoup3
+  libspelling:
+    specfile_path: libspelling.spec
+    upstream_package_name: libspelling
+    downstream_package_name: libspelling
+    paths:
+      - packages/libspelling
   libtalloc:
     specfile_path: libtalloc.spec
     upstream_package_name: libtalloc
@@ -1900,6 +1924,12 @@ packages:
     downstream_package_name: pango
     paths:
       - packages/pango
+  papers:
+    specfile_path: papers.spec
+    upstream_package_name: papers
+    downstream_package_name: papers
+    paths:
+      - packages/papers
   parted:
     specfile_path: parted.spec
     upstream_package_name: parted
@@ -2140,6 +2170,12 @@ packages:
     downstream_package_name: rust-gst-plugin-dav1d
     paths:
       - packages/rust-gst-plugin-dav1d
+  rust-libglycin-rebind:
+    specfile_path: rust-libglycin-rebind.spec
+    upstream_package_name: rust-libglycin-rebind
+    downstream_package_name: rust-libglycin-rebind
+    paths:
+      - packages/rust-libglycin-rebind
   rust-just:
     specfile_path: rust-just.spec
     upstream_package_name: rust-just
@@ -2320,6 +2356,12 @@ packages:
     downstream_package_name: tmux
     paths:
       - packages/tmux
+  totem:
+    specfile_path: totem.spec
+    upstream_package_name: totem
+    downstream_package_name: totem
+    paths:
+      - packages/totem
   totem-pl-parser:
     specfile_path: totem-pl-parser.spec
     upstream_package_name: totem-pl-parser
