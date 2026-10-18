@@ -206,7 +206,11 @@ def lock_nevras(lock: dict) -> list[str]:
 def cache_problems(
     outcomes: dict[str, dict[str, str]], canary_set: set[str], perturbed: str,
     locks: dict[str, dict[str, dict]] | None = None,
+    tolerated: list[str] | None = None,
 ) -> list[str]:
+    """Cache-verdict problems. A pass2/pass3 compile whose buildroot NEVRAs
+    moved since pass1 is a legitimate invalidation, not a problem: it is
+    appended to ``tolerated`` (or printed to stderr when none is given)."""
     problems = []
     for name, expected in (("pass2", canary_set), ("pass3", canary_set | {perturbed})):
         seen = outcomes.get(name, {})
@@ -229,10 +233,11 @@ def cache_problems(
                     if p1_nevras != pn_nevras:
                         diff = [n for n in pn_nevras if n not in p1_nevras]
                         diff_str = ", ".join(diff[:5])
-                        print(
-                            f"info: {name} {package} recompiled due to buildroot NEVRA changes ({diff_str})",
-                            file=sys.stderr,
-                        )
+                        note = f"{name}: {package} recompiled due to buildroot NEVRA changes ({diff_str})"
+                        if tolerated is None:
+                            print(f"info: {note}", file=sys.stderr)
+                        else:
+                            tolerated.append(note)
                         continue
                 problems.append(f"{name}: {package} was {outcome}, not a cache hit")
     perturbed_outcome = outcomes.get("pass3", {}).get(perturbed)
@@ -358,7 +363,9 @@ def early_publish_problems(jobs: list[dict], pass_name: str, wave: int) -> list[
     return problems
 
 
-def summary(outcomes: dict[str, dict[str, str]], problems: list[str]) -> str:
+def summary(
+    outcomes: dict[str, dict[str, str]], problems: list[str], tolerated: list[str] = (),
+) -> str:
     lines = ["### Canary cache", "", "| pass | package | outcome |", "| --- | --- | --- |"]
     for name in sorted(outcomes):
         for package, outcome in sorted(outcomes[name].items()):
@@ -366,6 +373,14 @@ def summary(outcomes: dict[str, dict[str, str]], problems: list[str]) -> str:
     lines.append("")
     if problems:
         lines += ["**Failed:**", ""] + [f"- {problem}" for problem in problems]
+    elif tolerated:
+        lines += [
+            "**Tolerated compiles** (buildroot NEVRAs moved since pass1, so the cache key legitimately changed):",
+            "",
+        ] + [f"- {note}" for note in tolerated] + [
+            "",
+            "Every other pass2/pass3 build was a cache hit; pass3 compiled the perturbed package.",
+        ]
     else:
         lines.append("pass2 compiled nothing; pass3 compiled only the perturbed package.")
     return "\n".join(lines) + "\n"
@@ -486,8 +501,13 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "verify-cache":
         outcomes = build_outcomes(json.loads(args.jobs.read_text()))
         locks = read_pass_locks(args.locks) if args.locks else None
-        problems = cache_problems(outcomes, set(json.loads(args.set)), args.perturbed, locks=locks)
-        print(summary(outcomes, problems))
+        tolerated: list[str] = []
+        problems = cache_problems(
+            outcomes, set(json.loads(args.set)), args.perturbed, locks=locks, tolerated=tolerated
+        )
+        print(summary(outcomes, problems, tolerated))
+        for note in tolerated:
+            print(f"::notice title=canary cache::{note}", file=sys.stderr)
         for problem in problems:
             print(f"::error title=canary cache::{problem}", file=sys.stderr)
         return 1 if problems else 0
