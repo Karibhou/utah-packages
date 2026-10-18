@@ -10,6 +10,9 @@ that no upstream publishes verbatim:
 - tailscale: a go-vendored bundle (packages/tailscale/create-vendor-tarball.sh)
 - gpm: the upstream release with doc/specs removed, because those PDFs carry
   unclear licensing (the recipe's own comment above its Source line)
+- hplip: the upstream release with `locatedriver` removed (a license-related
+  removal the recipe's `hplip-repack.sh` performs by hand, documented by the
+  comment above the spec's Source0 line)
 - openal-soft: the upstream release with the bundled fmt tree and the
   non-free utils HRTF datasets removed (packages/openal-soft/make_tarball.sh)
 
@@ -68,6 +71,10 @@ OPENAL_SOFT_INPUT_SHA512 = {
 
 PYDANTIC_CORE_INPUT_SHA512 = {
     "2.46.5": "7af13f280d74ab0ded8e9299820930b0257502017f6a688d7d598e72351e127e178db11aeab987decaf95ca8619e151f244392ad9638ea184625728dcbb7cfff",
+}
+
+HPLIP_INPUT_SHA512 = {
+    "3.26.6": "1bebae77c6a71029647e391b743dae1b52b0e4ea7ff4a728fbf592160f9f8607e0196d8045189b1f032654d1e9724de464bf9ad2c79c553c4d6ffe9af7d3c5fa",
 }
 
 
@@ -431,6 +438,77 @@ def _openal_soft_generate(package_dir: Path, out_dir: Path) -> Path:
     return target
 
 
+# --- hplip ---------------------------------------------------------------------
+
+HPLIP_UPSTREAM_URL = "https://downloads.sourceforge.net/project/hplip/hplip/{version}/hplip-{version}.tar.gz"
+
+
+def _hplip_transform(archive: bytes, version: str) -> bytes:
+    """Repack the upstream .tar.gz without `locatedriver`, as Fedora's recipe does.
+
+    packages/hplip/hplip.spec documents the transformation above its Source0
+    line: unpack the upstream tarball, remove `locatedriver` (a
+    license-related removal, see https://bugs.launchpad.net/hplip/+bug/2028938
+    via the recipe's `hplip-repack.sh`), and recompress. Fedora's lookaside
+    copy is that tarball made by hand, so its bytes cannot be reproduced;
+    this makes the same tree deterministically. Members keep the archive's
+    own modes and mtimes, are sorted by name with ownership zeroed, and are
+    compressed with `gzip -n -9` so no name or timestamp enters the header.
+    """
+    doomed = f"hplip-{version}/locatedriver"
+    tar_buf = io.BytesIO()
+    with tarfile.open(fileobj=io.BytesIO(archive), mode="r:gz") as source:
+        members = sorted(source.getmembers(), key=lambda m: m.name.rstrip("/"))
+        with tarfile.open(fileobj=tar_buf, mode="w", format=tarfile.PAX_FORMAT) as result:
+            for member in members:
+                name = member.name.rstrip("/")
+                if name == doomed:
+                    continue
+                member.uid = member.gid = 0
+                member.uname = member.gname = ""
+                result.addfile(member, source.extractfile(member) if member.isreg() else None)
+    tar_bytes = tar_buf.getvalue()
+    proc = subprocess.Popen(
+        ["gzip", "-n", "-9"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+    )
+    out, _ = proc.communicate(tar_bytes)
+    if proc.returncode != 0:
+        raise RuntimeError("gzip failed")
+    return out
+
+
+def _hplip_metadata(package_dir: Path) -> dict:
+    version = spec_version(package_dir, "hplip.spec")
+    return {
+        "name": "hplip",
+        "version": version,
+        "filename": f"hplip-{version}-repack.tar.gz",
+        "generate": {
+            "script": SCRIPT_PATH,
+            "input": f"{HPLIP_UPSTREAM_URL.format(version=version)} (sha512-pinned)",
+            "method": f"remove locatedriver (license-related, per hplip.spec/hplip-repack.sh) from the upstream release and repack deterministically as hplip-{version}-repack.tar.gz",
+        },
+    }
+
+
+def _hplip_generate(package_dir: Path, out_dir: Path) -> Path:
+    version = spec_version(package_dir, "hplip.spec")
+    pin = HPLIP_INPUT_SHA512.get(version)
+    if pin is None:
+        raise RuntimeError(f"no pinned input SHA-512 for hplip {version}")
+    url = HPLIP_UPSTREAM_URL.format(version=version)
+    request = urllib.request.Request(url, headers={"User-Agent": "utah-packages-generated-source/1"})
+    with urllib.request.urlopen(request, timeout=300) as response:
+        payload = response.read()
+    actual = hashlib.sha512(payload).hexdigest()
+    if actual != pin:
+        raise RuntimeError(f"input archive mismatch for {url}: expected {pin}, got {actual}")
+    target = out_dir / f"hplip-{version}-repack.tar.gz"
+    target.write_bytes(_hplip_transform(payload, version))
+    return target
+
 # --- python-pydantic-core ------------------------------------------------------
 
 CRATES_IO_INDEX = "registry+https://github.com/rust-lang/crates.io-index"
@@ -592,6 +670,7 @@ METADATA = {
     "tailscale": _tailscale_metadata,
     "python-pydantic-core": _pydantic_core_metadata,
     "gpm": _gpm_metadata,
+    "hplip": _hplip_metadata,
     "openal-soft": _openal_soft_metadata,
 }
 
@@ -599,6 +678,7 @@ GENERATORS = {
     "intel-media-driver-free": _imd_generate,
     "tailscale": _tailscale_generate,
     "python-pydantic-core": _pydantic_core_generate,
+    "hplip": _hplip_generate,
     "gpm": _gpm_generate,
     "openal-soft": _openal_soft_generate,
 }
