@@ -12,6 +12,15 @@ Name the **source** package, not a binary subpackage: `gnome-desktop3`, not
 `gnome-desktop-4`. Fedora's source package name is often not the one you were
 looking for, which is why searching for the binary finds nothing to fork.
 
+Flatpak-first (standing policy): do not import recipes for end-user
+applications Utah already ships as Flatpaks (see the `[flatpak]` app list in
+projectbluefin/utah `contracts/bluefin-desktop.toml` — e.g. Papers,
+Showtime). Factory RPM builds are for system components, drivers,
+thumbnailers, CLI tools, and libraries. The one narrow exception is a
+transitional native payload with no Flatpak-provided equivalent (e.g.
+`totem-video-thumbnailer` until a native GStreamer thumbnailer lands);
+record the exception and its drop condition in the import PR.
+
 Then give it a source. A recipe with no entry in
 `config/upstream-sources.json` is not eligible to build: `tools/validate.py`
 fails, because the recipe alone says nothing about which upstream release its
