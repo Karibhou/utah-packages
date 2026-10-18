@@ -168,8 +168,6 @@ packages = [
     "gnome-browser-connector",
     "gnome-classic-session",
     "gnome-color-manager",
-    "gnome-disk-utility",
-    "gnome-epub-thumbnailer",
     "gnome-menus",
     "gnome-remote-desktop",
     "gnome-rounded-blur",
@@ -189,7 +187,6 @@ packages = [
     "libgee",
     "libhandy",
     "libmediaart",
-    "libspelling",
     "libwnck3",
     "pangomm2.48",
     "ptyxis",
@@ -662,6 +659,11 @@ packages = [
     { name = "gstreamer1-plugins-ugly-free", pr = 526 },
     { name = "openal-soft", pr = 526 },
     { name = "soundtouch", pr = 526 },
+    # Thumbnailers + Disks wave (landing PR #523). libspelling ships as a
+    # standalone recipe; papers/gst-thumbnailers deferred to #527.
+    { name = "gnome-disk-utility", pr = 523 },
+    { name = "gnome-epub-thumbnailer", pr = 523 },
+    { name = "libspelling", pr = 523 },
 ]
 
 [wontfix]
