@@ -254,6 +254,14 @@ class CacheVerdictTests(unittest.TestCase):
         text = canary.summary(outcomes, [])
         self.assertIn("| pass2 | `vulkan-headers` | cache hit |", text)
 
+    def test_the_summary_keeps_tolerated_compiles_next_to_failures(self) -> None:
+        outcomes = canary.build_outcomes(healthy_jobs())
+        text = canary.summary(outcomes, ["pass2: libical was failed, not a cache hit"], ["pass3: vulkan-headers recompiled"])
+        self.assertIn("**Failed:**", text)
+        self.assertIn("- pass2: libical was failed, not a cache hit", text)
+        self.assertIn("**Tolerated compiles**", text)
+        self.assertIn("- pass3: vulkan-headers recompiled", text)
+
 
 class FlakyCheckVerdictTests(unittest.TestCase):
     JOBS = [job('pass4 / rebuild0 (["libical"]) / build (libical)', "success", "success")]

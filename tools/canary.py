@@ -24,6 +24,7 @@ import sys
 import tempfile
 import urllib.parse
 import urllib.request
+from collections.abc import Sequence
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -364,7 +365,7 @@ def early_publish_problems(jobs: list[dict], pass_name: str, wave: int) -> list[
 
 
 def summary(
-    outcomes: dict[str, dict[str, str]], problems: list[str], tolerated: list[str] = (),
+    outcomes: dict[str, dict[str, str]], problems: list[str], tolerated: Sequence[str] = (),
 ) -> str:
     lines = ["### Canary cache", "", "| pass | package | outcome |", "| --- | --- | --- |"]
     for name in sorted(outcomes):
@@ -373,6 +374,12 @@ def summary(
     lines.append("")
     if problems:
         lines += ["**Failed:**", ""] + [f"- {problem}" for problem in problems]
+        if tolerated:
+            lines += [
+                "",
+                "**Tolerated compiles** (buildroot NEVRAs moved since pass1, so the cache key legitimately changed):",
+                "",
+            ] + [f"- {note}" for note in tolerated]
     elif tolerated:
         lines += [
             "**Tolerated compiles** (buildroot NEVRAs moved since pass1, so the cache key legitimately changed):",
