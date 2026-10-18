@@ -3911,6 +3911,34 @@
       "url": "https://www.ivarch.com/programs/sources/pv-1.11.0.tar.gz",
       "filename": "pv-1.11.0.tar.gz",
       "sha512": "d931ba3115426f962bd7bc74b6cdbd7e798e03cd9fb5994ac73a93cc9f8a2f43e8f28474c2baf1b8132199282a616858edb4ddd2009dadbf86e6e624a7028671"
+    },
+    {
+      "name": "tuned",
+      "version": "2.28.0",
+      "url": "https://github.com/redhat-performance/tuned/archive/v2.28.0/tuned-2.28.0.tar.gz",
+      "filename": "tuned-2.28.0.tar.gz",
+      "sha512": "3bdefbcc45afa651eecf5d59625babd83d5bed73594eb1db17e56edd0f1a25d60f346e7cb7bb8061a98833b228440e14730126b7f9b9ac5c97841d068574b27f"
+    },
+    {
+      "name": "thermald",
+      "version": "2.5.13",
+      "url": "https://github.com/intel/thermal_daemon/archive/v2.5.13/thermald-2.5.13.tar.gz",
+      "filename": "thermald-2.5.13.tar.gz",
+      "sha512": "3efa93be0dc72db4d761305202674e65635eb4493b68607ee46be56e8720d12a429cf7e628c248f871d667b0c6e4a23db27174e24d861f814138146a176bd670"
+    },
+    {
+      "name": "openvpn",
+      "version": "2.7.8",
+      "url": "https://build.openvpn.net/downloads/releases/openvpn-2.7.8.tar.gz",
+      "filename": "openvpn-2.7.8.tar.gz",
+      "sha512": "1461dbe00e35219c06c0e8f5836877522a8d5db786a6f3a6049aebdbb0b326dd816a6fc3197ebd3a5c1019a54e703d52c28af77c747e266e31438d1a9f64b631"
+    },
+    {
+      "name": "NetworkManager-openvpn",
+      "version": "1.12.5",
+      "url": "https://download.gnome.org/sources/NetworkManager-openvpn/1.12/NetworkManager-openvpn-1.12.5.tar.xz",
+      "filename": "NetworkManager-openvpn-1.12.5.tar.xz",
+      "sha512": "8a58732b7152b9ce551f484b8ed5d98c329108728234d895471323bd19251507af9dc47521273c3238a52fe6f2541ede9e1c13f0fbed50632e0890aea4dbc7ba"
     }
   ]
 }

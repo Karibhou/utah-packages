@@ -26,8 +26,8 @@
       "total": 180
     },
     "power": {
-      "pending": 6,
-      "total": 6
+      "pending": 3,
+      "total": 3
     },
     "printing-scanning": {
       "pending": 26,
@@ -43,8 +43,8 @@
     },
     "vpn": {
       "already_recipe": 3,
-      "pending": 24,
-      "total": 27
+      "pending": 21,
+      "total": 24
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -2380,21 +2380,6 @@
       "state": "pending"
     },
     {
-      "area": "power",
-      "name": "thermald",
-      "state": "pending"
-    },
-    {
-      "area": "power",
-      "name": "tuned",
-      "state": "pending"
-    },
-    {
-      "area": "power",
-      "name": "tuned-ppd",
-      "state": "pending"
-    },
-    {
       "area": "printing-scanning",
       "name": "c2esp",
       "state": "pending"
@@ -2566,16 +2551,6 @@
     },
     {
       "area": "vpn",
-      "name": "NetworkManager-openvpn",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "NetworkManager-openvpn-gnome",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "NetworkManager-vpnc",
       "state": "pending"
     },
@@ -2607,11 +2582,6 @@
     {
       "area": "vpn",
       "name": "opensc-libs",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "openvpn",
       "state": "pending"
     },
     {
@@ -2694,11 +2664,11 @@
   "states": {
     "already_recipe": 30,
     "manifest_wants": 1,
-    "pending": 496
+    "pending": 490
   },
   "totals": {
-    "backlog": 527,
-    "resolved": 24,
+    "backlog": 521,
+    "resolved": 30,
     "wontfix": 0
   }
 }

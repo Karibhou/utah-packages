@@ -1,0 +1,8 @@
+{
+  "package": "thermald",
+  "branch": "rawhide",
+  "remote": "https://src.fedoraproject.org/rpms/thermald.git",
+  "commit": "dbfb69a9b7eea8dfa8a73683e5b778738410edd5",
+  "tree": "fefe14186c87a036e50f1e67866d27957f82b21b",
+  "imported_at": "2026-10-18T08:53:45.246310+00:00"
+}

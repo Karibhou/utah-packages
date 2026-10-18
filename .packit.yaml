@@ -10,6 +10,12 @@ packages:
     downstream_package_name: ModemManager
     paths:
       - packages/ModemManager
+  NetworkManager-openvpn:
+    specfile_path: NetworkManager-openvpn.spec
+    upstream_package_name: NetworkManager-openvpn
+    downstream_package_name: NetworkManager-openvpn
+    paths:
+      - packages/NetworkManager-openvpn
   SDL3:
     specfile_path: SDL3.spec
     upstream_package_name: SDL3
@@ -1810,6 +1816,12 @@ packages:
     downstream_package_name: openrgb
     paths:
       - packages/openrgb
+  openvpn:
+    specfile_path: openvpn.spec
+    upstream_package_name: openvpn
+    downstream_package_name: openvpn
+    paths:
+      - packages/openvpn
   opus:
     specfile_path: opus.spec
     upstream_package_name: opus
@@ -2224,6 +2236,12 @@ packages:
     downstream_package_name: tecla
     paths:
       - packages/tecla
+  thermald:
+    specfile_path: thermald.spec
+    upstream_package_name: thermald
+    downstream_package_name: thermald
+    paths:
+      - packages/thermald
   tinyxml2:
     specfile_path: tinyxml2.spec
     upstream_package_name: tinyxml2
@@ -2248,6 +2266,12 @@ packages:
     downstream_package_name: tpm2-tools
     paths:
       - packages/tpm2-tools
+  tuned:
+    specfile_path: tuned.spec
+    upstream_package_name: tuned
+    downstream_package_name: tuned
+    paths:
+      - packages/tuned
   twolame:
     specfile_path: twolame.spec
     upstream_package_name: twolame

@@ -95,9 +95,6 @@ packages = [
     "intel-lpmd",
     "powerstat",
     "powertop",
-    "thermald",
-    "tuned",
-    "tuned-ppd",
 ]
 
 [areas.vpn]
@@ -106,8 +103,6 @@ consumer_issue = "projectbluefin/utah#389"
 packages = [
     "NetworkManager-openconnect",
     "NetworkManager-openconnect-gnome",
-    "NetworkManager-openvpn",
-    "NetworkManager-openvpn-gnome",
     "NetworkManager-vpnc",
     "NetworkManager-vpnc-gnome",
     "libyubikey",
@@ -115,7 +110,6 @@ packages = [
     "openpace",
     "opensc",
     "opensc-libs",
-    "openvpn",
     "pam-u2f",
     "pam_yubico",
     "pamu2fcfg",
@@ -654,6 +648,14 @@ packages = [
     { name = "rsync", pr = 514 },
     { name = "tmux", pr = 514 },
     { name = "xdg-utils", pr = 514 },
+    # Laptop-power and VPN wave (landing PR #522). tuned-ppd and
+    # NetworkManager-openvpn-gnome are subpackages (no dist-git source).
+    { name = "thermald", pr = 522 },
+    { name = "tuned", pr = 522 },
+    { name = "tuned-ppd", pr = 522 },
+    { name = "openvpn", pr = 522 },
+    { name = "NetworkManager-openvpn", pr = 522 },
+    { name = "NetworkManager-openvpn-gnome", pr = 522 },
 ]
 
 [wontfix]
