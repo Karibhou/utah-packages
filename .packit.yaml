@@ -2170,18 +2170,18 @@ packages:
     downstream_package_name: rust-gst-plugin-dav1d
     paths:
       - packages/rust-gst-plugin-dav1d
-  rust-libglycin-rebind:
-    specfile_path: rust-libglycin-rebind.spec
-    upstream_package_name: rust-libglycin-rebind
-    downstream_package_name: rust-libglycin-rebind
-    paths:
-      - packages/rust-libglycin-rebind
   rust-just:
     specfile_path: rust-just.spec
     upstream_package_name: rust-just
     downstream_package_name: rust-just
     paths:
       - packages/rust-just
+  rust-libglycin-rebind:
+    specfile_path: rust-libglycin-rebind.spec
+    upstream_package_name: rust-libglycin-rebind
+    downstream_package_name: rust-libglycin-rebind
+    paths:
+      - packages/rust-libglycin-rebind
   samba:
     specfile_path: samba.spec
     upstream_package_name: samba

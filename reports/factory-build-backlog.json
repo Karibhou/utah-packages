@@ -15,8 +15,7 @@
       "total": 59
     },
     "gnome-apps": {
-      "already_locked": 1,
-      "already_recipe": 7,
+      "already_recipe": 8,
       "pending": 29,
       "total": 37
     },
@@ -1363,7 +1362,7 @@
     {
       "area": "gnome-apps",
       "name": "libspelling",
-      "state": "already_locked"
+      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
@@ -2583,8 +2582,7 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_locked": 1,
-    "already_recipe": 38,
+    "already_recipe": 39,
     "manifest_wants": 1,
     "pending": 465
   },

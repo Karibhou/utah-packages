@@ -4081,6 +4081,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libspelling/libspelling-0.4.10.tar.xz/sha512/2dbeacb0ceb177804f5f9c8a4a9275fdaa24e19c2b75ecf017f3f4ded7874896a5e15a1377d3f3a98fa935697f6f3dad9c3cf91fe3a8f028cd7cb3e8068b9904/libspelling-0.4.10.tar.xz"
       ]
+    },
+    {
+      "name": "rust-libglycin-rebind",
+      "version": "0.2.0",
+      "url": "https://crates.io/api/v1/crates/libglycin-rebind/0.2.0/download#/libglycin-rebind-0.2.0.crate",
+      "filename": "libglycin-rebind-0.2.0.crate",
+      "sha512": "7e3c694f35f2c27475d2d02dbffe85225b236f19c4df4846c155f3bd45794e1bbd0bac6fd9031331edee7ab52078472c896ba3bc58be8afd164e15977caf0116"
     }
   ]
 }
