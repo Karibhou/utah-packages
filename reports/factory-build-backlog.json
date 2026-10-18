@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 143,
-      "total": 145
+      "pending": 136,
+      "total": 138
     },
     "fonts-i18n": {
       "pending": 59,
@@ -356,11 +356,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "default-editor",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "distribution-gpg-keys",
       "state": "pending"
     },
@@ -447,11 +442,6 @@
     {
       "area": "dev-tools",
       "name": "hfsplus-tools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "htop",
       "state": "pending"
     },
     {
@@ -557,16 +547,6 @@
     {
       "area": "dev-tools",
       "name": "mtr",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nano",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nano-default-editor",
       "state": "pending"
     },
     {
@@ -871,11 +851,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "rsync",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "smartmontools",
       "state": "pending"
     },
@@ -937,11 +912,6 @@
     {
       "area": "dev-tools",
       "name": "time",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "tmux",
       "state": "pending"
     },
     {
@@ -1012,11 +982,6 @@
     {
       "area": "dev-tools",
       "name": "whois-nls",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "xdg-utils",
       "state": "pending"
     },
     {
@@ -2729,11 +2694,11 @@
   "states": {
     "already_recipe": 29,
     "manifest_wants": 1,
-    "pending": 504
+    "pending": 497
   },
   "totals": {
-    "backlog": 534,
-    "resolved": 17,
+    "backlog": 527,
+    "resolved": 24,
     "wontfix": 0
   }
 }
