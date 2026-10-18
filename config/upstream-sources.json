@@ -3939,6 +3939,42 @@
       "url": "https://download.gnome.org/sources/NetworkManager-openvpn/1.12/NetworkManager-openvpn-1.12.5.tar.xz",
       "filename": "NetworkManager-openvpn-1.12.5.tar.xz",
       "sha512": "8a58732b7152b9ce551f484b8ed5d98c329108728234d895471323bd19251507af9dc47521273c3238a52fe6f2541ede9e1c13f0fbed50632e0890aea4dbc7ba"
+    },
+    {
+      "name": "cifs-utils",
+      "version": "7.9",
+      "url": "https://download.samba.org/pub/linux-cifs/cifs-utils/cifs-utils-7.9.tar.bz2",
+      "filename": "cifs-utils-7.9.tar.bz2",
+      "sha512": "42034f9e50173eec859e3b65da5dd6f0aa905b881b8f145139e73fbca187dac8be350bc0944efc2cb0f0a0f16059abcbcae2a08d15908522d2eccf3dcad0d5ba",
+      "stage": 3
+    },
+    {
+      "name": "nfs-utils",
+      "version": "2.9.2",
+      "url": "https://www.kernel.org/pub/linux/utils/nfs-utils/2.9.2/nfs-utils-2.9.2.tar.xz",
+      "filename": "nfs-utils-2.9.2.tar.xz",
+      "sha512": "3752a2841d45ba7bd9360328d00731c1c0f7d1a011c76ed3751cf03d5da757369c6e57ec26f695147deff8aa670cafdaf18abd8fe66b323513005942683d020c"
+    },
+    {
+      "name": "rpcbind",
+      "version": "1.3.1",
+      "url": "https://downloads.sourceforge.net/rpcbind/rpcbind-1.3.1.tar.bz2",
+      "filename": "rpcbind-1.3.1.tar.bz2",
+      "sha512": "364e841749cd00cf526b2d4a145be9c11fa9531637c8450cbb06f26502434ee890ccd5926ad3adad7b13fa9552a3a821801d24470b95108b9cafcfa023f562c8"
+    },
+    {
+      "name": "autofs",
+      "version": "5.1.9",
+      "url": "https://www.kernel.org/pub/linux/daemons/autofs/v5/autofs-5.1.9.tar.gz",
+      "filename": "autofs-5.1.9.tar.gz",
+      "sha512": "f176eecda2e3d25707cdb6abaa595508369cd0c064ed9b865b0a5249e7bdb01ed9cf021615cdedd27afcdb59f40a9af05cfc924622f5df7ea4b580566e5b6eda"
+    },
+    {
+      "name": "pinentry",
+      "version": "1.3.3",
+      "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.3.tar.bz2",
+      "filename": "pinentry-1.3.3.tar.bz2",
+      "sha512": "3562d6a83af01ab9c12fb3e4710e3233078296c1275a69c6ac5ebe7461e95404d6504c4fde82f501f861b3ae960b7d13052bcb359a62dfc078ade29e08b86735"
     }
   ]
 }
