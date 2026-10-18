@@ -212,6 +212,28 @@ class CacheVerdictTests(unittest.TestCase):
         self.assertEqual(len(problems), 1)
         self.assertIn("pass2: vulkan-headers was compiled", problems[0])
 
+    def test_a_pure_buildroot_removal_names_the_removed_nevra(self) -> None:
+        jobs = healthy_jobs()
+        for entry in jobs:
+            if entry["name"].startswith("pass2") and entry["name"].endswith("(vulkan-headers)"):
+                entry["steps"][1]["conclusion"] = "success"
+        gettext = {"name": "gettext", "version": "0.22", "release": "4.hum1", "arch": "x86_64"}
+        bash = {"name": "bash", "version": "5.2", "release": "1.fc44", "arch": "x86_64"}
+        locks = {
+            "pass1": {"vulkan-headers": {"buildroot": {"rpms": [gettext, bash]}}},
+            "pass2": {"vulkan-headers": {"buildroot": {"rpms": [gettext]}}},
+        }
+        tolerated: list[str] = []
+        problems = canary.cache_problems(
+            canary.build_outcomes(jobs), SET, "python-typing-inspection",
+            locks=locks, tolerated=tolerated,
+        )
+        self.assertEqual(problems, [])
+        self.assertEqual(tolerated, [
+            "pass2: vulkan-headers recompiled due to buildroot NEVRA changes"
+            " (-bash-5.2-1.fc44.x86_64)"
+        ])
+
     def test_a_compile_in_pass2_without_a_pass2_lock_still_fails(self) -> None:
         """The lock download is continue-on-error: no pass2 lock means no tolerance."""
         jobs = healthy_jobs()

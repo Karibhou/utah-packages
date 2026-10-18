@@ -232,8 +232,9 @@ def cache_problems(
                     p1_nevras = lock_nevras(locks["pass1"][package])
                     pn_nevras = lock_nevras(locks[name][package])
                     if p1_nevras != pn_nevras:
-                        diff = [n for n in pn_nevras if n not in p1_nevras]
-                        diff_str = ", ".join(diff[:5])
+                        added = [f"+{n}" for n in pn_nevras if n not in p1_nevras]
+                        removed = [f"-{n}" for n in p1_nevras if n not in pn_nevras]
+                        diff_str = ", ".join((added + removed)[:5])
                         note = f"{name}: {package} recompiled due to buildroot NEVRA changes ({diff_str})"
                         if tolerated is None:
                             print(f"info: {note}", file=sys.stderr)
