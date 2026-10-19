@@ -4061,6 +4061,27 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libspelling/libspelling-0.4.10.tar.xz/sha512/2dbeacb0ceb177804f5f9c8a4a9275fdaa24e19c2b75ecf017f3f4ded7874896a5e15a1377d3f3a98fa935697f6f3dad9c3cf91fe3a8f028cd7cb3e8068b9904/libspelling-0.4.10.tar.xz"
       ]
+    },
+    {
+      "name": "system-config-printer",
+      "version": "1.5.18",
+      "url": "https://github.com/OpenPrinting/system-config-printer/releases/download/v1.5.18/system-config-printer-1.5.18.tar.xz",
+      "filename": "system-config-printer-1.5.18.tar.xz",
+      "sha512": "33dc9c52d92f4234e055fb10a99cadd58424dcdb62554797b44bdd5319f1c3662bd2fa33417ac3a3f5ec51216d64e81e1897f3e671eb49f6be34057d7c38f3f4",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/system-config-printer/system-config-printer-1.5.18.tar.xz/sha512/33dc9c52d92f4234e055fb10a99cadd58424dcdb62554797b44bdd5319f1c3662bd2fa33417ac3a3f5ec51216d64e81e1897f3e671eb49f6be34057d7c38f3f4/system-config-printer-1.5.18.tar.xz"
+      ]
+    },
+    {
+      "name": "hplip",
+      "version": "3.26.6",
+      "filename": "hplip-3.26.6-repack.tar.gz",
+      "sha512": "8e972b0e05a310aab02a86a5fd1651fb1ab833277361ff85fbcb4f54e100e91da6463eb5ce0b1e28f5bb2a29e2010aab4bdf17fc5e2901a6268961a548527e61",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://downloads.sourceforge.net/project/hplip/hplip/3.26.6/hplip-3.26.6.tar.gz (sha512-pinned)",
+        "method": "remove locatedriver (license-related, per hplip.spec/hplip-repack.sh) from the upstream release and repack deterministically as hplip-3.26.6-repack.tar.gz"
+      }
     }
   ]
 }

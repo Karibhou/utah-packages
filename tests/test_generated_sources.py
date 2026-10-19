@@ -231,6 +231,62 @@ class OpenALSoftTransformTests(unittest.TestCase):
         self.assertIn("1.24.2", generated_sources.OPENAL_SOFT_INPUT_SHA512)
 
 
+def build_hplip_archive(version: str) -> bytes:
+    """A synthetic upstream hplip .tar.gz carrying `locatedriver`."""
+    top = f"hplip-{version}"
+    members = {
+        f"{top}/Makefile.am": b"kept",
+        f"{top}/locatedriver": b"license-encumbered helper",
+        f"{top}/prnt/hpcups/hpcups.cpp": b"kept",
+    }
+    directories = {top, f"{top}/prnt", f"{top}/prnt/hpcups"}
+    buffer = io.BytesIO()
+    with gzip.GzipFile(filename="", mode="wb", fileobj=buffer, mtime=0) as gz:
+        with tarfile.open(fileobj=gz, mode="w", format=tarfile.PAX_FORMAT) as tar:
+            for name in sorted(directories, reverse=True):
+                info = tarfile.TarInfo(name)
+                info.type = tarfile.DIRTYPE
+                info.mtime, info.uid, info.gid, info.uname, info.gname = 1748479065, 1000, 1000, "pbuilder", "pbuilder"
+                tar.addfile(info)
+            for name in sorted(members, reverse=True):
+                info = tarfile.TarInfo(name)
+                info.size = len(members[name])
+                info.mtime, info.uid, info.gid, info.uname, info.gname = 1748479065, 1000, 1000, "pbuilder", "pbuilder"
+                tar.addfile(info, io.BytesIO(members[name]))
+    return buffer.getvalue()
+
+
+class HplipTransformTests(unittest.TestCase):
+    VERSION = "3.26.6"
+
+    def members(self, payload: bytes) -> list[tarfile.TarInfo]:
+        with tarfile.open(fileobj=io.BytesIO(payload), mode="r:gz") as tar:
+            return tar.getmembers()
+
+    def test_removes_exactly_locatedriver(self):
+        result = generated_sources._hplip_transform(build_hplip_archive(self.VERSION), self.VERSION)
+        names = {member.name for member in self.members(result)}
+        self.assertNotIn("hplip-3.26.6/locatedriver", names)
+        self.assertIn("hplip-3.26.6/Makefile.am", names)
+        self.assertIn("hplip-3.26.6/prnt/hpcups/hpcups.cpp", names)
+
+    def test_transform_is_byte_reproducible_sorted_and_ownerless(self):
+        archive = build_hplip_archive(self.VERSION)
+        first = generated_sources._hplip_transform(archive, self.VERSION)
+        self.assertEqual(first, generated_sources._hplip_transform(archive, self.VERSION))
+        members = self.members(first)
+        self.assertEqual([m.name for m in members], sorted(m.name for m in members))
+        for member in members:
+            self.assertEqual((member.uid, member.gid, member.uname, member.gname), (0, 0, "", ""))
+            self.assertEqual(member.mtime, 1748479065)
+
+    def test_metadata_names_the_recipe_source_and_pinned_input(self):
+        metadata = generated_sources.metadata_for("hplip", ROOT / "packages" / "hplip")
+        self.assertEqual(metadata["filename"], "hplip-3.26.6-repack.tar.gz")
+        self.assertIn("hplip-3.26.6.tar.gz", metadata["generate"]["input"])
+        self.assertIn("3.26.6", generated_sources.HPLIP_INPUT_SHA512)
+
+
 class GeneratedMetadataTests(unittest.TestCase):
     def test_intel_media_metadata_uses_spec_version(self):
         metadata = generated_sources.metadata_for(

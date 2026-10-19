@@ -30,8 +30,8 @@
       "total": 3
     },
     "printing-scanning": {
-      "pending": 26,
-      "total": 26
+      "pending": 20,
+      "total": 20
     },
     "ujust-deps": {
       "pending": 2,
@@ -2321,21 +2321,6 @@
     },
     {
       "area": "printing-scanning",
-      "name": "hplip",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "hplip-common",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "hplip-libs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
       "name": "ipp-usb",
       "state": "pending"
     },
@@ -2352,11 +2337,6 @@
     {
       "area": "printing-scanning",
       "name": "libsane-airscan",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "libsane-hpaio",
       "state": "pending"
     },
     {
@@ -2402,16 +2382,6 @@
     {
       "area": "printing-scanning",
       "name": "splix",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "system-config-printer-libs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "system-config-printer-udev",
       "state": "pending"
     },
     {
@@ -2569,11 +2539,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 470
+    "pending": 464
   },
   "totals": {
-    "backlog": 502,
-    "resolved": 49,
+    "backlog": 496,
+    "resolved": 55,
     "wontfix": 0
   }
 }
