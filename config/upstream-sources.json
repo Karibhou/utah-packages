@@ -4099,6 +4099,20 @@
       "url": "https://gitlab.gnome.org/World/gedit/libgedit-gtksourceview/-/archive/299.8.0/libgedit-gtksourceview-299.8.0.tar.bz2",
       "filename": "libgedit-gtksourceview-299.8.0.tar.bz2",
       "sha512": "2ed96056c246adc2a027845493116969b6a44f1da4dcd8f646dcce7a1d1174f4decedced6d86097ef3d723bfdc3277c71b2aabb80b0558aa3341e16a87fb3701"
+    },
+    {
+      "name": "libgedit-amtk",
+      "version": "5.11.0",
+      "url": "https://gitlab.gnome.org/World/gedit/libgedit-amtk/-/archive/5.11.0/libgedit-amtk-5.11.0.tar.bz2",
+      "filename": "libgedit-amtk-5.11.0.tar.bz2",
+      "sha512": "2af6e8470fb87443ca5b85c481c744cf12b991ec47cbc7f4e0c8dc2a6aeb50d9939d79b011e9500a7a7143fed6e1b7d78cc34c52b31fbf4b0c4378094d78328c"
+    },
+    {
+      "name": "libgedit-gfls",
+      "version": "0.5.0",
+      "url": "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.5.0/libgedit-gfls-0.5.0.tar.bz2",
+      "filename": "libgedit-gfls-0.5.0.tar.bz2",
+      "sha512": "63c1b390903b2c2cf05b4770da9e84a8343935fa0e67263adabff26cdeaa7ef0e798782b4fcd21b59fc38b1c6d15a8115608fefce6251d0d2fcbee97d7826be5"
     }
   ]
 }
