@@ -147,7 +147,7 @@ packages = [
 ]
 
 [areas.gnome-apps]
-# projectbluefin/utah#391 - 38 names
+# projectbluefin/utah#391 - 35 names
 consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
