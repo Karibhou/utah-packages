@@ -669,7 +669,7 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
-    { name = "glibmm2.68" },
+    { name = "glibmm2.68", pr = 543 },
 ]
 
 [wontfix]
