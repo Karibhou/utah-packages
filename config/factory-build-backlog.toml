@@ -159,7 +159,6 @@ packages = [
     "gnome-classic-session",
     "gnome-color-manager",
     "gnome-menus",
-    "gnome-remote-desktop",
     "gnome-rounded-blur",
     "gnome-shell-extension-apps-menu",
     "gnome-shell-extension-blur-my-shell",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME remote desktop import (PR #555).
+    { name = "gnome-remote-desktop", pr = 555 },
 ]
 
 [wontfix]
