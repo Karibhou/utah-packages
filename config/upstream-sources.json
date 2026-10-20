@@ -4092,6 +4092,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/papers/papers-51.1.tar.xz/sha512/835f28d9c01a59a720c2dba4cd8fdb5b7c97a4cfbdad97023eccb5069ba0e04a573f4a742a3ae019a19d3459cbca6d36fa43fe68a1ca52efb100001c5cb70895/papers-51.1.tar.xz"
       ]
+    },
+    {
+      "name": "yelp",
+      "version": "49.2",
+      "url": "https://download.gnome.org/sources/yelp/49/yelp-49.2.tar.xz",
+      "filename": "yelp-49.2.tar.xz",
+      "sha512": "8cca0fbc0b8bdf8d1881c408ef1b4d4f008fc05631b7a50b97288fdb11d1e06fe8ffc268354a23e6f59b76dd3d390759e25e5aa93cac6a487d09c2eb7665564c"
     }
   ]
 }

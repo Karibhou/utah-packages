@@ -2674,6 +2674,12 @@ packages:
     downstream_package_name: xvidcore
     paths:
       - packages/xvidcore
+  yelp:
+    specfile_path: yelp.spec
+    upstream_package_name: yelp
+    downstream_package_name: yelp
+    paths:
+      - packages/yelp
   yyjson:
     specfile_path: yyjson.spec
     upstream_package_name: yyjson
