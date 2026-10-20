@@ -1216,6 +1216,18 @@ packages:
     downstream_package_name: libgda
     paths:
       - packages/libgda
+  libgedit-amtk:
+    specfile_path: libgedit-amtk.spec
+    upstream_package_name: libgedit-amtk
+    downstream_package_name: libgedit-amtk
+    paths:
+      - packages/libgedit-amtk
+  libgedit-gfls:
+    specfile_path: libgedit-gfls.spec
+    upstream_package_name: libgedit-gfls
+    downstream_package_name: libgedit-gfls
+    paths:
+      - packages/libgedit-gfls
   libgedit-gtksourceview:
     specfile_path: libgedit-gtksourceview.spec
     upstream_package_name: libgedit-gtksourceview
