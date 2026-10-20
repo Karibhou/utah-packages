@@ -1,7 +1,7 @@
 %global apiver 2.68
 
 %global libsigc_version 3.0.0
-%global glib2_version 2.81.0
+%global glib2_version 2.89.4
 
 Name:           glibmm2.68
 Version:        2.90.0
