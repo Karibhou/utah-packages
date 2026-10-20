@@ -280,6 +280,18 @@ Do not infer a version from what Rawhide ships or from a package name.
   releases, not imported from Fedora dist-git. Do not triage them as Rawhide
   import gaps or declare them unavailable in the runtime contract.
 
+### C++ GNOME wrapper conflicts after GLib type changes
+
+If a consumer fails to compile with conflicting declarations of GLib `*Class`
+types (for example `GDBusActionGroupClass`, `GEmblemClass`, or
+`GdkCursorClass`), inspect the exact GLib, glibmm, GTK, and gtkmm versions in
+the buildroot and the wrapper release's own Meson minimums. New GLib releases
+can mark previously derivable GObject types final; old C++ wrappers then
+declare incompatible class types. This is a dependency-stack mismatch, not a
+consumer source bug. Upgrade the affected wrapper recipes together, and verify
+each minimum against its upstream release metadata. A successful unrelated
+pipeline canary does not prove the failing package builds.
+
 ## Never
 
 - Skip, disable or quarantine a test to make a build pass.

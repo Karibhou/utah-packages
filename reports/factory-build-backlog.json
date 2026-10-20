@@ -15,8 +15,8 @@
       "total": 59
     },
     "gnome-apps": {
-      "already_recipe": 5,
-      "pending": 29,
+      "already_recipe": 8,
+      "pending": 26,
       "total": 34
     },
     "long-tail": {
@@ -1197,7 +1197,7 @@
     {
       "area": "gnome-apps",
       "name": "cairomm1.16",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
@@ -1302,7 +1302,7 @@
     {
       "area": "gnome-apps",
       "name": "gtkmm4.0",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
@@ -1337,7 +1337,7 @@
     {
       "area": "gnome-apps",
       "name": "pangomm2.48",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
@@ -2517,9 +2517,9 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 31,
+    "already_recipe": 34,
     "manifest_wants": 1,
-    "pending": 460
+    "pending": 457
   },
   "totals": {
     "backlog": 492,
