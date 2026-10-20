@@ -11,6 +11,18 @@
 # common macro packages are installed first; a spec that still fails to
 # parse is reported by name and simply has no edges.
 set -u
+
+# Reads a parsed spec on stdin and prints pkgconfig(X) for every .pc path
+# listed inside a %files section. tests/test_extract_buildrequires.py pins it.
+pc_provides() {
+  awk '/^%files/ { f = 1; next } /^%[a-z_]+/ && !/^%(attr|config|dir|doc|license|lang|verify|defattr|exclude|ghost|caps)/ { f = 0 } f' \
+    | sed -n 's|^.*/pkgconfig/\([^/*?[:space:]]*\)\.pc$|pkgconfig(\1)|p'
+}
+if [ "${1:-}" = "--pc-provides" ]; then
+  pc_provides
+  exit
+fi
+
 dnf -y -q install --skip-unavailable \
   rpm-build redhat-rpm-config python3-rpm-macros pyproject-rpm-macros \
   cargo-rpm-macros golang-rpm-macros meson cmake-rpm-macros fonts-rpm-macros \
@@ -35,10 +47,9 @@ extract() {
   # yet published had no edge to its consumers and built in the same wave.
   # Read it from the .pc paths the %files sections ship.
   rpmspec --parse --define "_sourcedir $dir" "$spec" 2>/dev/null \
-    | awk '/^%files/ { f = 1; next } /^%[a-z_]+/ && !/^%(attr|config|dir|doc|license|lang|verify|defattr|exclude|ghost|caps)/ { f = 0 } f' \
-    | sed -n 's|^.*/pkgconfig/\([^/*?[:space:]]*\)\.pc$|pkgconfig(\1)|p' >> "$row/provides"
+    | pc_provides >> "$row/provides"
 }
-export -f extract
+export -f extract pc_provides
 find /packages -mindepth 1 -maxdepth 1 -type d -print0 \
   | xargs -0 -r -n 1 -P "$(nproc)" bash -c 'extract "$1"' _
 echo "extracted $(find /out -mindepth 1 -maxdepth 1 -type d | wc -l) recipes"
