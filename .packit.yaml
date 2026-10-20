@@ -1210,6 +1210,12 @@ packages:
     downstream_package_name: libgda
     paths:
       - packages/libgda
+  libgedit-gtksourceview:
+    specfile_path: libgedit-gtksourceview.spec
+    upstream_package_name: libgedit-gtksourceview
+    downstream_package_name: libgedit-gtksourceview
+    paths:
+      - packages/libgedit-gtksourceview
   libgexiv2:
     specfile_path: libgexiv2.spec
     upstream_package_name: libgexiv2
