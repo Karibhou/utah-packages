@@ -1,4 +1,6 @@
-%global gtk4_version 4.17.5
+%global gtk4_version 4.23.4
+%global glibmm_version 2.90.0
+%global gtkmm_version 4.24.0
 %global libadwaita_version 1.8~beta
 %global libgtop2_version 2.41.2
 
@@ -15,9 +17,9 @@ BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  meson
 BuildRequires:  pkgconfig(catch2-with-main)
-BuildRequires:  pkgconfig(giomm-2.68)
+BuildRequires:  pkgconfig(giomm-2.68) >= %{glibmm_version}
 BuildRequires:  pkgconfig(gtk4) >= %{gtk4_version}
-BuildRequires:  pkgconfig(gtkmm-4.0)
+BuildRequires:  pkgconfig(gtkmm-4.0) >= %{gtkmm_version}
 BuildRequires:  pkgconfig(libadwaita-1) >= %{libadwaita_version}
 BuildRequires:  pkgconfig(libgtop-2.0) >= %{libgtop2_version}
 BuildRequires:  pkgconfig(libsystemd)
@@ -29,6 +31,8 @@ BuildRequires:  itstool
 
 Requires:       hicolor-icon-theme
 Requires:       gtk4%{?_isa} >= %{gtk4_version}
+Requires:       glibmm2.68%{?_isa} >= %{glibmm_version}
+Requires:       gtkmm4.0%{?_isa} >= %{gtkmm_version}
 Requires:       libadwaita%{?_isa} >= %{libadwaita_version}
 Requires:       libgtop2%{?_isa} >= %{libgtop2_version}
 
