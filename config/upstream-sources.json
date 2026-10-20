@@ -839,6 +839,16 @@
       ]
     },
     {
+      "name": "gnome-system-monitor",
+      "version": "51.1",
+      "url": "https://download.gnome.org/sources/gnome-system-monitor/51/gnome-system-monitor-51.1.tar.xz",
+      "filename": "gnome-system-monitor-51.1.tar.xz",
+      "sha512": "052f751a9dd8f533bf0c003310757a99d954810fa5d0770454ff0a617d4d97d221c68c98325c4c5db0e778561051f20da89dd56632ef7b42b39b16fed53c867e",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/gnome-system-monitor/gnome-system-monitor-51.1.tar.xz/sha512/052f751a9dd8f533bf0c003310757a99d954810fa5d0770454ff0a617d4d97d221c68c98325c4c5db0e778561051f20da89dd56632ef7b42b39b16fed53c867e/gnome-system-monitor-51.1.tar.xz"
+      ]
+    },
+    {
       "name": "gnome-tweaks",
       "version": "49.0",
       "url": "https://download.gnome.org/sources/gnome-tweaks/49/gnome-tweaks-49.0.tar.xz",
