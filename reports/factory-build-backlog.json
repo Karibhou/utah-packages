@@ -15,9 +15,9 @@
       "total": 59
     },
     "gnome-apps": {
-      "already_recipe": 8,
+      "already_recipe": 5,
       "pending": 26,
-      "total": 34
+      "total": 31
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1196,11 +1196,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "cairomm1.16",
-      "state": "already_recipe"
-    },
-    {
-      "area": "gnome-apps",
       "name": "epiphany-runtime",
       "state": "pending"
     },
@@ -1301,11 +1296,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gtkmm4.0",
-      "state": "already_recipe"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gtksourceview5",
       "state": "pending"
     },
@@ -1333,11 +1323,6 @@
       "area": "gnome-apps",
       "name": "libwnck3",
       "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "pangomm2.48",
-      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
@@ -2517,13 +2502,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 34,
+    "already_recipe": 31,
     "manifest_wants": 1,
     "pending": 457
   },
   "totals": {
-    "backlog": 492,
-    "resolved": 59,
+    "backlog": 489,
+    "resolved": 62,
     "wontfix": 0
   }
 }

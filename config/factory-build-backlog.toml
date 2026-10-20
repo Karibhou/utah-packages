@@ -150,7 +150,6 @@ packages = [
 # projectbluefin/utah#391 - 38 names
 consumer_issue = "projectbluefin/utah#391"
 packages = [
-    "cairomm1.16",
     "epiphany-runtime",
     "glibmm2.68",
     "gnome-app-list",
@@ -171,14 +170,12 @@ packages = [
     "gnome-tour",
     "gnome-user-docs",
     "gnome-user-share",
-    "gtkmm4.0",
     "gtksourceview5",
     "imath",
     "libgee",
     "libhandy",
     "libmediaart",
     "libwnck3",
-    "pangomm2.48",
     "ptyxis",
     "rygel",
     "vte-profile",
@@ -670,6 +667,11 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME C++ binding recipes (PR #544).
+    { name = "cairomm1.16", pr = 544 },
+    { name = "gtkmm4.0", pr = 544 },
+    { name = "pangomm2.48", pr = 544 },
+
 ]
 
 [wontfix]
