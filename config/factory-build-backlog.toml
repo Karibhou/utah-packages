@@ -158,7 +158,6 @@ packages = [
     "gnome-browser-connector",
     "gnome-classic-session",
     "gnome-color-manager",
-    "gnome-menus",
     "gnome-remote-desktop",
     "gnome-rounded-blur",
     "gnome-shell-extension-apps-menu",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME menus import (PR #548).
+    { name = "gnome-menus", pr = 548 },
 ]
 
 [wontfix]
