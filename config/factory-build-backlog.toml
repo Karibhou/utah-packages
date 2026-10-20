@@ -169,7 +169,6 @@ packages = [
     "gnome-shell-extension-window-list",
     "gnome-system-monitor",
     "gnome-tour",
-    "gnome-user-docs",
     "gnome-user-share",
     "gtkmm4.0",
     "gtksourceview5",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME user documentation import (PR #551).
+    { name = "gnome-user-docs", pr = 551 },
 ]
 
 [wontfix]
