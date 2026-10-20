@@ -155,7 +155,6 @@ packages = [
     "glibmm2.68",
     "gnome-app-list",
     "gnome-backgrounds",
-    "gnome-browser-connector",
     "gnome-classic-session",
     "gnome-color-manager",
     "gnome-menus",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME browser connector import (PR #547).
+    { name = "gnome-browser-connector", pr = 547 },
 ]
 
 [wontfix]
