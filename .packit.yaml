@@ -466,6 +466,12 @@ packages:
     downstream_package_name: gnome-bluetooth
     paths:
       - packages/gnome-bluetooth
+  gnome-color-manager:
+    specfile_path: gnome-color-manager.spec
+    upstream_package_name: gnome-color-manager
+    downstream_package_name: gnome-color-manager
+    paths:
+      - packages/gnome-color-manager
   gnome-control-center:
     specfile_path: gnome-control-center.spec
     upstream_package_name: gnome-control-center
@@ -550,6 +556,12 @@ packages:
     downstream_package_name: gnome-tweaks
     paths:
       - packages/gnome-tweaks
+  gnome-user-share:
+    specfile_path: gnome-user-share.spec
+    upstream_package_name: gnome-user-share
+    downstream_package_name: gnome-user-share
+    paths:
+      - packages/gnome-user-share
   gobject-introspection:
     specfile_path: gobject-introspection.spec
     upstream_package_name: gobject-introspection

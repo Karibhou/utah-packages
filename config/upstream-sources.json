@@ -4092,6 +4092,20 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/papers/papers-51.1.tar.xz/sha512/835f28d9c01a59a720c2dba4cd8fdb5b7c97a4cfbdad97023eccb5069ba0e04a573f4a742a3ae019a19d3459cbca6d36fa43fe68a1ca52efb100001c5cb70895/papers-51.1.tar.xz"
       ]
+    },
+    {
+      "name": "gnome-color-manager",
+      "version": "3.36.2",
+      "url": "https://download.gnome.org/sources/gnome-color-manager/3.36/gnome-color-manager-3.36.2.tar.xz",
+      "filename": "gnome-color-manager-3.36.2.tar.xz",
+      "sha512": "333f0ee7dcef19ceb960af2dfcf3ff50dd4a0b2f7eace04dea8f258a28df433b397caeafd47667565f0ade11b4de384886234f54ebc50d5284774fb40aca78de"
+    },
+    {
+      "name": "gnome-user-share",
+      "version": "48.3",
+      "url": "https://download.gnome.org/sources/gnome-user-share/48/gnome-user-share-48.3.tar.xz",
+      "filename": "gnome-user-share-48.3.tar.xz",
+      "sha512": "21fcac0d49d1a1ec0d30c68e3cc0ba6bc88cefef7114adacaf65cf4fb3b52c89e4f71ea2d7a7685b44bd7a0573f56e44c0a4516389245969f472f71097a6bf00"
     }
   ]
 }
