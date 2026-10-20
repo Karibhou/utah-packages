@@ -4103,6 +4103,16 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/papers/papers-51.1.tar.xz/sha512/835f28d9c01a59a720c2dba4cd8fdb5b7c97a4cfbdad97023eccb5069ba0e04a573f4a742a3ae019a19d3459cbca6d36fa43fe68a1ca52efb100001c5cb70895/papers-51.1.tar.xz"
       ]
+    },
+    {
+      "name": "libsigc++30",
+      "version": "3.8.1",
+      "url": "https://github.com/libsigcplusplus/libsigcplusplus/releases/download/3.8.1/libsigc++-3.8.1.tar.xz",
+      "filename": "libsigc++-3.8.1.tar.xz",
+      "sha512": "252175fdfece46a78e2d53a9622068ca3028d53eada671b64574a03ae1b7f5fcbefdd894b9e7f30256b661a21c05d78dbb3cb33395340279f3db4cb6f40cbc0d",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libsigc++30/libsigc++-3.8.1.tar.xz/sha512/252175fdfece46a78e2d53a9622068ca3028d53eada671b64574a03ae1b7f5fcbefdd894b9e7f30256b661a21c05d78dbb3cb33395340279f3db4cb6f40cbc0d/libsigc++-3.8.1.tar.xz"
+      ]
     }
   ]
 }
