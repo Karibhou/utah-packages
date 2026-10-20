@@ -580,7 +580,6 @@ packages = [
     "xrandr",
     "xset",
     "yelp-libs",
-    "yelp-xsl",
     "zinnia",
     "zinnia-tomoe-ja",
     "zix",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # Yelp XSL import (PR #552).
+    { name = "yelp-xsl", pr = 552 },
 ]
 
 [wontfix]
