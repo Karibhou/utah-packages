@@ -466,6 +466,12 @@ packages:
     downstream_package_name: gnome-bluetooth
     paths:
       - packages/gnome-bluetooth
+  gnome-browser-connector:
+    specfile_path: gnome-browser-connector.spec
+    upstream_package_name: gnome-browser-connector
+    downstream_package_name: gnome-browser-connector
+    paths:
+      - packages/gnome-browser-connector
   gnome-control-center:
     specfile_path: gnome-control-center.spec
     upstream_package_name: gnome-control-center
