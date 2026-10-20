@@ -460,6 +460,12 @@ packages:
     downstream_package_name: gnome-autoar
     paths:
       - packages/gnome-autoar
+  gnome-backgrounds:
+    specfile_path: gnome-backgrounds.spec
+    upstream_package_name: gnome-backgrounds
+    downstream_package_name: gnome-backgrounds
+    paths:
+      - packages/gnome-backgrounds
   gnome-bluetooth:
     specfile_path: gnome-bluetooth.spec
     upstream_package_name: gnome-bluetooth

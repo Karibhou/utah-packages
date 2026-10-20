@@ -4092,6 +4092,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/papers/papers-51.1.tar.xz/sha512/835f28d9c01a59a720c2dba4cd8fdb5b7c97a4cfbdad97023eccb5069ba0e04a573f4a742a3ae019a19d3459cbca6d36fa43fe68a1ca52efb100001c5cb70895/papers-51.1.tar.xz"
       ]
+    },
+    {
+      "name": "gnome-backgrounds",
+      "version": "51.0.1",
+      "url": "https://download.gnome.org/sources/gnome-backgrounds/51/gnome-backgrounds-51.0.1.tar.xz",
+      "filename": "gnome-backgrounds-51.0.1.tar.xz",
+      "sha512": "7274b1f02f479d3f062d1c80b8692b7f93706ad5c0c4f89c6e392deb408f0d78bc9ce91d57889c7a0647bf5da6b809dc8ca2fdd56e52c34929afd86a9ba881cf"
     }
   ]
 }
