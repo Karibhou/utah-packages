@@ -15,9 +15,9 @@
       "total": 59
     },
     "gnome-apps": {
-      "already_recipe": 7,
-      "pending": 27,
-      "total": 34
+      "already_recipe": 5,
+      "pending": 21,
+      "total": 26
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1231,11 +1231,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-color-manager",
-      "state": "already_recipe"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-menus",
       "state": "pending"
     },
@@ -1251,36 +1246,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-shell-extension-apps-menu",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-blur-my-shell",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-common",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-launch-new-instance",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-places-menu",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-window-list",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-system-monitor",
       "state": "pending"
     },
@@ -1293,11 +1258,6 @@
       "area": "gnome-apps",
       "name": "gnome-user-docs",
       "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-user-share",
-      "state": "already_recipe"
     },
     {
       "area": "gnome-apps",
@@ -2517,13 +2477,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 33,
+    "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 458
+    "pending": 452
   },
   "totals": {
-    "backlog": 492,
-    "resolved": 59,
-    "wontfix": 0
+    "backlog": 484,
+    "resolved": 61,
+    "wontfix": 6
   }
 }
