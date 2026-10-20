@@ -154,7 +154,6 @@ packages = [
     "epiphany-runtime",
     "glibmm2.68",
     "gnome-app-list",
-    "gnome-backgrounds",
     "gnome-browser-connector",
     "gnome-classic-session",
     "gnome-color-manager",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME wallpaper package import (PR #546).
+    { name = "gnome-backgrounds", pr = 546 },
 ]
 
 [wontfix]

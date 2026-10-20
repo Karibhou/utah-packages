@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 29,
-      "total": 34
+      "pending": 28,
+      "total": 33
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1212,11 +1212,6 @@
     {
       "area": "gnome-apps",
       "name": "gnome-app-list",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-backgrounds",
       "state": "pending"
     },
     {
@@ -2519,11 +2514,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 460
+    "pending": 459
   },
   "totals": {
-    "backlog": 492,
-    "resolved": 59,
+    "backlog": 491,
+    "resolved": 60,
     "wontfix": 0
   }
 }
