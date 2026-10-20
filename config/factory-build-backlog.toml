@@ -153,7 +153,6 @@ packages = [
     "cairomm1.16",
     "epiphany-runtime",
     "glibmm2.68",
-    "gnome-app-list",
     "gnome-backgrounds",
     "gnome-browser-connector",
     "gnome-classic-session",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME app list import (PR #550).
+    { name = "gnome-app-list", pr = 550 },
 ]
 
 [wontfix]
