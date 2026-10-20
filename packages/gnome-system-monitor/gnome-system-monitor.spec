@@ -3,6 +3,10 @@
 %global gtkmm_version 4.24.0
 %global libadwaita_version 1.8~beta
 %global libgtop2_version 2.41.2
+# These floors intentionally exceed Fedora's imported recipe: glibmm 2.90
+# fixes Gio wrappers for GLib final types, and gtkmm 4.24 fixes GdkCursor
+# wrappers. Preserve them on re-import; the buildroot's older wrappers fail
+# against those final types.
 
 Name:           gnome-system-monitor
 Version:        51.1
