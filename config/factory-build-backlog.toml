@@ -168,7 +168,6 @@ packages = [
     "gnome-shell-extension-places-menu",
     "gnome-shell-extension-window-list",
     "gnome-system-monitor",
-    "gnome-tour",
     "gnome-user-docs",
     "gnome-user-share",
     "gtkmm4.0",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME Tour import (PR #549).
+    { name = "gnome-tour", pr = 549 },
 ]
 
 [wontfix]
