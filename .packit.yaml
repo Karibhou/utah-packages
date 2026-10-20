@@ -448,6 +448,12 @@ packages:
     downstream_package_name: glib-networking
     paths:
       - packages/glib-networking
+  glibmm2.68:
+    specfile_path: glibmm2.68.spec
+    upstream_package_name: glibmm2.68
+    downstream_package_name: glibmm2.68
+    paths:
+      - packages/glibmm2.68
   glycin:
     specfile_path: glycin.spec
     upstream_package_name: glycin

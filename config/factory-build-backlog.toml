@@ -152,7 +152,6 @@ consumer_issue = "projectbluefin/utah#391"
 packages = [
     "cairomm1.16",
     "epiphany-runtime",
-    "glibmm2.68",
     "gnome-app-list",
     "gnome-backgrounds",
     "gnome-browser-connector",
@@ -670,6 +669,7 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    { name = "glibmm2.68" },
 ]
 
 [wontfix]
