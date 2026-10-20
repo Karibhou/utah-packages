@@ -55,7 +55,11 @@ up in the Network location in GNOME.
 %cargo_generate_buildrequires -a
 
 %build
-%meson
+# Hummingbird's systemd-devel ships no systemd.pc, so meson's
+# dependency('systemd') lookup fails and it falls back to
+# prefix/libdir/systemd/user (/usr/lib64). Pin the Fedora path explicitly
+# (same as dconf.spec). This is a Utah-local edit: reimports skip it.
+%meson -Dsystemduserunitdir=%{_userunitdir}
 %meson_build
 %{cargo_license_summary -a}
 %{cargo_license -a} > LICENSE.dependencies
