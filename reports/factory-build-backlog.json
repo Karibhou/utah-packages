@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 126,
-      "total": 128
+      "pending": 124,
+      "total": 126
     },
     "fonts-i18n": {
       "pending": 59,
@@ -361,11 +361,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "freerdp-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "fuse-encfs",
       "state": "pending"
     },
@@ -472,11 +467,6 @@
     {
       "area": "dev-tools",
       "name": "libsss_sudo",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "libwinpr",
       "state": "pending"
     },
     {
@@ -2514,11 +2504,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 459
+    "pending": 457
   },
   "totals": {
-    "backlog": 491,
-    "resolved": 60,
+    "backlog": 489,
+    "resolved": 62,
     "wontfix": 0
   }
 }
