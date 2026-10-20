@@ -202,7 +202,6 @@ packages = [
     "fedora-release-ostree-desktop",
     "fedora-release-silverblue",
     "flex",
-    "freerdp-libs",
     "fuse-encfs",
     "gamemode",
     "generic-logos",
@@ -225,7 +224,6 @@ packages = [
     "libsss_idmap",
     "libsss_nss_idmap",
     "libsss_sudo",
-    "libwinpr",
     "lsb_release",
     "lsof",
     "man-pages",
@@ -665,6 +663,9 @@ packages = [
     # GNOME display and sharing apps: importer source URLs normalized to HTTPS (PR #556).
     { name = "gnome-color-manager", pr = 556 },
     { name = "gnome-user-share", pr = 556 },
+    # freerdp-libs and libwinpr are %package subpackages of freerdp.spec (PR #559).
+    { name = "freerdp-libs", pr = 559 },
+    { name = "libwinpr", pr = 559 },
 ]
 
 [wontfix]
