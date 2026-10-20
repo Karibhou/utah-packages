@@ -543,6 +543,17 @@
       "stage": 2
     },
     {
+      "name": "freerdp",
+      "version": "3.32.2",
+      "filename": "FreeRDP-3.32.2-repack.tar.gz",
+      "sha512": "ea37402ef427f156ad8f8168d3eb2cb0ccf0fcf352883fd8e31292ef2641274c27724b2e5bb53c10dda9276f8b56cf79c82e01504784d9ffb8b873d440f43dfc",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://github.com/FreeRDP/FreeRDP/archive/3.32.2/FreeRDP-3.32.2.tar.gz (sha512-pinned)",
+        "method": "remove winpr/libwinpr/crt/unicode_builtin.c (license not allowed, per freerdp.spec/freerdp_download_and_repack.sh) from the upstream release and repack deterministically as FreeRDP-3.32.2-repack.tar.gz"
+      }
+    },
+    {
       "name": "fribidi",
       "version": "1.0.16",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/fribidi/fribidi-1.0.16.tar.xz/sha512/e3a56f36155f6813e3609473639fc533de742309f561c463012dc90b412a1ac7694b765d92669b2cbfaee973ca0e92fa5e926e68a1a078921f26ef17d82ab651/fribidi-1.0.16.tar.xz",
