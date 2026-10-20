@@ -4092,6 +4092,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/papers/papers-51.1.tar.xz/sha512/835f28d9c01a59a720c2dba4cd8fdb5b7c97a4cfbdad97023eccb5069ba0e04a573f4a742a3ae019a19d3459cbca6d36fa43fe68a1ca52efb100001c5cb70895/papers-51.1.tar.xz"
       ]
+    },
+    {
+      "name": "gnome-user-docs",
+      "version": "51.0",
+      "url": "https://download.gnome.org/sources/gnome-user-docs/51/gnome-user-docs-51.0.tar.xz",
+      "filename": "gnome-user-docs-51.0.tar.xz",
+      "sha512": "bddcc78dfb96af899e684eb64064a6841a77a9adab3dba5ca67b7ce263edd0a5a54e78d84ba68e4e073a50b368a4107bdf0c48955be0daee5539e1e7d2d91eeb"
     }
   ]
 }

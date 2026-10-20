@@ -550,6 +550,12 @@ packages:
     downstream_package_name: gnome-tweaks
     paths:
       - packages/gnome-tweaks
+  gnome-user-docs:
+    specfile_path: gnome-user-docs.spec
+    upstream_package_name: gnome-user-docs
+    downstream_package_name: gnome-user-docs
+    paths:
+      - packages/gnome-user-docs
   gobject-introspection:
     specfile_path: gobject-introspection.spec
     upstream_package_name: gobject-introspection
