@@ -579,7 +579,6 @@ packages = [
     "xfsprogs",
     "xrandr",
     "xset",
-    "yelp-libs",
     "yelp-xsl",
     "zinnia",
     "zinnia-tomoe-ja",
@@ -670,6 +669,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # Yelp runtime libraries are built by the yelp source package (PR #553).
+    { name = "yelp-libs", pr = 553 },
 ]
 
 [wontfix]
