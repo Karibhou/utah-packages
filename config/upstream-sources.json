@@ -4092,6 +4092,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/papers/papers-51.1.tar.xz/sha512/835f28d9c01a59a720c2dba4cd8fdb5b7c97a4cfbdad97023eccb5069ba0e04a573f4a742a3ae019a19d3459cbca6d36fa43fe68a1ca52efb100001c5cb70895/papers-51.1.tar.xz"
       ]
+    },
+    {
+      "name": "libgedit-amtk",
+      "version": "5.11.0",
+      "url": "https://gitlab.gnome.org/World/gedit/libgedit-amtk/-/archive/5.11.0/libgedit-amtk-5.11.0.tar.bz2",
+      "filename": "libgedit-amtk-5.11.0.tar.bz2",
+      "sha512": "2af6e8470fb87443ca5b85c481c744cf12b991ec47cbc7f4e0c8dc2a6aeb50d9939d79b011e9500a7a7143fed6e1b7d78cc34c52b31fbf4b0c4378094d78328c"
     }
   ]
 }
