@@ -1210,6 +1210,12 @@ packages:
     downstream_package_name: libgda
     paths:
       - packages/libgda
+  libgedit-gfls:
+    specfile_path: libgedit-gfls.spec
+    upstream_package_name: libgedit-gfls
+    downstream_package_name: libgedit-gfls
+    paths:
+      - packages/libgedit-gfls
   libgexiv2:
     specfile_path: libgexiv2.spec
     upstream_package_name: libgexiv2

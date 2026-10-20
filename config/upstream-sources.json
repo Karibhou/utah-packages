@@ -4092,6 +4092,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/papers/papers-51.1.tar.xz/sha512/835f28d9c01a59a720c2dba4cd8fdb5b7c97a4cfbdad97023eccb5069ba0e04a573f4a742a3ae019a19d3459cbca6d36fa43fe68a1ca52efb100001c5cb70895/papers-51.1.tar.xz"
       ]
+    },
+    {
+      "name": "libgedit-gfls",
+      "version": "0.5.0",
+      "url": "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.5.0/libgedit-gfls-0.5.0.tar.bz2",
+      "filename": "libgedit-gfls-0.5.0.tar.bz2",
+      "sha512": "63c1b390903b2c2cf05b4770da9e84a8343935fa0e67263adabff26cdeaa7ef0e798782b4fcd21b59fc38b1c6d15a8115608fefce6251d0d2fcbee97d7826be5"
     }
   ]
 }
