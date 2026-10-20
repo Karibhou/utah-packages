@@ -482,7 +482,6 @@ packages = [
     "libref_array",
     "libreport-filesystem",
     "librtmp",
-    "libsigc++30",
     "libslirp",
     "libsrtp",
     "libtraceevent",
@@ -671,6 +670,8 @@ packages = [
     # freerdp-libs and libwinpr are %package subpackages of freerdp.spec (PR #559).
     { name = "freerdp-libs", pr = 559 },
     { name = "libwinpr", pr = 559 },
+    # libsigc++30 is built by its own source package (PR #560).
+    { name = "libsigc++30", pr = 560 },
 ]
 
 [wontfix]

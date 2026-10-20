@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 165,
-      "total": 177
+      "pending": 164,
+      "total": 176
     },
     "power": {
       "pending": 3,
@@ -1741,11 +1741,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libsigc++30",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libslirp",
       "state": "pending"
     },
@@ -2509,11 +2504,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 458
+    "pending": 457
   },
   "totals": {
-    "backlog": 490,
-    "resolved": 61,
+    "backlog": 489,
+    "resolved": 62,
     "wontfix": 0
   }
 }
