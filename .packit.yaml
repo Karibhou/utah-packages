@@ -604,6 +604,12 @@ packages:
     downstream_package_name: gnome-system-monitor
     paths:
       - packages/gnome-system-monitor
+  gnome-tour:
+    specfile_path: gnome-tour.spec
+    upstream_package_name: gnome-tour
+    downstream_package_name: gnome-tour
+    paths:
+      - packages/gnome-tour
   gnome-tweaks:
     specfile_path: gnome-tweaks.spec
     upstream_package_name: gnome-tweaks

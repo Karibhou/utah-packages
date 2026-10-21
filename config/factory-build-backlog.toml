@@ -156,7 +156,7 @@ packages = [
 
     "gnome-rounded-blur",
 
-    "gnome-tour",
+
 
     "gtksourceview5",
     "imath",
@@ -652,6 +652,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME Tour import (PR #549).
+    { name = "gnome-tour", pr = 549 },
     # GNOME display and sharing apps: importer source URLs normalized to HTTPS (PR #556).
     { name = "gnome-color-manager", pr = 556 },
     { name = "gnome-user-share", pr = 556 },

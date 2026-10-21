@@ -4241,6 +4241,13 @@
       "url": "https://download.gnome.org/sources/gnome-browser-connector/42/gnome-browser-connector-42.1.tar.xz",
       "filename": "gnome-browser-connector-42.1.tar.xz",
       "sha512": "f8f7c0e7f3fb6bd50eddc674c48f521d07aa03b5b36674e8dfcb6b6d8203bbdf4fc4de1f7cbbcc805a3da3cf098a27bda281b7a0ac5b98d7144dffe85698b7d7"
+    },
+    {
+      "name": "gnome-tour",
+      "version": "50.0",
+      "url": "https://download.gnome.org/sources/gnome-tour/50/gnome-tour-50.0.tar.xz",
+      "filename": "gnome-tour-50.0.tar.xz",
+      "sha512": "c02bdb4adc777f829a75b1c73ff964d6291209f303653a15b6c74177f9aaf5aa3cf06fe6c3bfc3f8b459279c9333fdc43a09f55892d0b3f87b6ac82bcffd6470"
     }
   ]
 }
