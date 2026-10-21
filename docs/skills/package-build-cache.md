@@ -181,4 +181,3 @@ compile. `verify-cache` inspects the downloaded pass lockfiles (`buildroot_lock.
 across passes: if an unexpected compile occurred because the resolved root NEVRAs
 diverged from pass 1, the assertion accepts the compile as a legitimate cache
 invalidation rather than a caching defect.
-

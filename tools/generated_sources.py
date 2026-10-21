@@ -13,6 +13,10 @@ that no upstream publishes verbatim:
 - hplip: the upstream release with `locatedriver` removed (a license-related
   removal the recipe's `hplip-repack.sh` performs by hand, documented by the
   comment above the spec's Source0 line)
+- freerdp: the upstream release without
+  `winpr/libwinpr/crt/unicode_builtin.c` (a file whose license Fedora does
+  not allow; the recipe's `freerdp_download_and_repack.sh` deletes it by hand,
+  documented by the comment above the spec's Source0 line)
 - openal-soft: the upstream release with the bundled fmt tree and the
   non-free utils HRTF datasets removed (packages/openal-soft/make_tarball.sh)
 
@@ -509,6 +513,132 @@ def _hplip_generate(package_dir: Path, out_dir: Path) -> Path:
     target.write_bytes(_hplip_transform(payload, version))
     return target
 
+# --- freerdp ---------------------------------------------------------------------
+
+FREERDP_UPSTREAM_URL = "https://github.com/FreeRDP/FreeRDP/archive/{version}/FreeRDP-{version}.tar.gz"
+
+FREERDP_INPUT_SHA512 = {
+    "3.32.2": "2f036908fc96650fcec0810c05cf7fbad08f7c47a27aa7951b25e4bc1f390eb47223eaeaf622715bf2df6bd056e7f245502a3af57e606fd53d214c121a862a7e",
+}
+
+FREERDP_DOOMED = "winpr/libwinpr/crt/unicode_builtin.c"
+
+
+def _freerdp_record_size(header: bytes) -> int:
+    raw = header[124:136].split(b"\0")[0].strip()
+    return int(raw or b"0", 8)
+
+
+def _freerdp_pax_path(data: bytes) -> str | None:
+    for line in data.split(b"\n"):
+        if b"=" not in line:
+            continue
+        key, _, value = line.partition(b"=")
+        if key.split(b" ", 1)[-1] == b"path":
+            return value.decode()
+    return None
+
+
+def _freerdp_transform(archive: bytes, version: str) -> bytes:
+    """Repack the upstream .tar.gz without unicode_builtin.c, as Fedora's recipe does.
+
+    packages/freerdp/freerdp.spec documents the transformation above its
+    Source0 line: download the upstream release, delete
+    `*/winpr/libwinpr/crt/unicode_builtin.c` (a file whose license is not
+    allowed), and recompress with `gzip -9 -n`. GNU tar's `--delete` also
+    drops the leading `pax_global_header` records, so Fedora's lookaside copy
+    starts at the top directory. This drops the same records by raw 512-byte
+    slicing and leaves every other member byte-identical, which reproduces
+    Fedora's archive exactly (the generated 3.32.2 output hashes identically
+    to the lookaside copy). Exactly one matching member is required; anything
+    else fails closed.
+    """
+    top = f"FreeRDP-{version}"
+    doomed = f"{top}/{FREERDP_DOOMED}"
+    payload = gzip.decompress(archive)
+    records = [payload[i:i + 512] for i in range(0, len(payload), 512)]
+    drops: set[int] = set()
+    pending: list[tuple[int, int, bytes]] = []
+    found = 0
+    seen_member = False
+    i = 0
+    while i < len(records):
+        header = records[i]
+        if header == b"\0" * 512:
+            break
+        kind = header[156:157]
+        span = 1 + (_freerdp_record_size(header) + 511) // 512
+        if kind == b"g":
+            if not seen_member:
+                drops.update(range(i, i + span))
+            pending = []
+        elif kind in (b"x", b"L", b"K"):
+            pending.append((i, span, kind))
+        else:
+            seen_member = True
+            name = header[:100].split(b"\0")[0].decode()
+            prefix = header[345:500].split(b"\0")[0].decode()
+            full = f"{prefix}/{name}" if prefix else name
+            for (at, length, ext) in pending:
+                data = b"".join(records[at + 1:at + length])
+                if ext == b"x":
+                    override = _freerdp_pax_path(data)
+                    if override is not None:
+                        full = override
+                elif ext == b"L":
+                    full = data.split(b"\0")[0].decode()
+            if full == doomed:
+                found += 1
+                for (at, length, _) in pending:
+                    drops.update(range(at, at + length))
+                drops.update(range(i, i + span))
+            pending = []
+        i += span
+    if found != 1:
+        raise RuntimeError(f"expected exactly one {doomed} member, found {found}")
+    out = b"".join(record for index, record in enumerate(records) if index not in drops)
+    proc = subprocess.Popen(
+        ["gzip", "-n", "-9"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+    )
+    compressed, _ = proc.communicate(out)
+    if proc.returncode != 0:
+        raise RuntimeError("gzip failed")
+    return compressed
+
+
+def _freerdp_metadata(package_dir: Path) -> dict:
+    version = spec_version(package_dir, "freerdp.spec")
+    return {
+        "name": "freerdp",
+        "version": version,
+        "filename": f"FreeRDP-{version}-repack.tar.gz",
+        "generate": {
+            "script": SCRIPT_PATH,
+            "input": f"{FREERDP_UPSTREAM_URL.format(version=version)} (sha512-pinned)",
+            "method": f"remove {FREERDP_DOOMED} (license not allowed, per freerdp.spec/freerdp_download_and_repack.sh) from the upstream release and repack deterministically as FreeRDP-{version}-repack.tar.gz",
+        },
+    }
+
+
+def _freerdp_generate(package_dir: Path, out_dir: Path) -> Path:
+    version = spec_version(package_dir, "freerdp.spec")
+    pin = FREERDP_INPUT_SHA512.get(version)
+    if pin is None:
+        raise RuntimeError(f"no pinned input SHA-512 for freerdp {version}")
+    url = FREERDP_UPSTREAM_URL.format(version=version)
+    request = urllib.request.Request(url, headers={"User-Agent": "utah-packages-generated-source/1"})
+    with urllib.request.urlopen(request, timeout=300) as response:
+        payload = response.read()
+    actual = hashlib.sha512(payload).hexdigest()
+    if actual != pin:
+        raise RuntimeError(f"input archive mismatch for {url}: expected {pin}, got {actual}")
+    target = out_dir / f"FreeRDP-{version}-repack.tar.gz"
+    target.write_bytes(_freerdp_transform(payload, version))
+    return target
+
+
 # --- python-pydantic-core ------------------------------------------------------
 
 CRATES_IO_INDEX = "registry+https://github.com/rust-lang/crates.io-index"
@@ -672,6 +802,7 @@ METADATA = {
     "gpm": _gpm_metadata,
     "hplip": _hplip_metadata,
     "openal-soft": _openal_soft_metadata,
+    "freerdp": _freerdp_metadata,
 }
 
 GENERATORS = {
@@ -681,6 +812,7 @@ GENERATORS = {
     "hplip": _hplip_generate,
     "gpm": _gpm_generate,
     "openal-soft": _openal_soft_generate,
+    "freerdp": _freerdp_generate,
 }
 
 
