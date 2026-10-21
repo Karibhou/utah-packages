@@ -472,6 +472,12 @@ packages:
     downstream_package_name: glycin
     paths:
       - packages/glycin
+  gnome-app-list:
+    specfile_path: gnome-app-list.spec
+    upstream_package_name: gnome-app-list
+    downstream_package_name: gnome-app-list
+    paths:
+      - packages/gnome-app-list
   gnome-autoar:
     specfile_path: gnome-autoar.spec
     upstream_package_name: gnome-autoar
@@ -538,6 +544,12 @@ packages:
     downstream_package_name: gnome-keyring
     paths:
       - packages/gnome-keyring
+  gnome-menus:
+    specfile_path: gnome-menus.spec
+    upstream_package_name: gnome-menus
+    downstream_package_name: gnome-menus
+    paths:
+      - packages/gnome-menus
   gnome-online-accounts:
     specfile_path: gnome-online-accounts.spec
     upstream_package_name: gnome-online-accounts
