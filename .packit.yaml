@@ -538,6 +538,12 @@ packages:
     downstream_package_name: gnome-keyring
     paths:
       - packages/gnome-keyring
+  gnome-menus:
+    specfile_path: gnome-menus.spec
+    upstream_package_name: gnome-menus
+    downstream_package_name: gnome-menus
+    paths:
+      - packages/gnome-menus
   gnome-online-accounts:
     specfile_path: gnome-online-accounts.spec
     upstream_package_name: gnome-online-accounts
