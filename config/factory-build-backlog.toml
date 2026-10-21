@@ -153,7 +153,6 @@ packages = [
     "cairomm1.16",
     "epiphany-runtime",
     "gnome-app-list",
-    "gnome-backgrounds",
     "gnome-browser-connector",
     "gnome-classic-session",
     "gnome-color-manager",
@@ -666,6 +665,8 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME wallpaper package import (PR #546).
+    { name = "gnome-backgrounds", pr = 546 },
     { name = "glibmm2.68", pr = 543 },
     # freerdp-libs and libwinpr are %package subpackages of freerdp.spec (PR #559).
     { name = "freerdp-libs", pr = 559 },

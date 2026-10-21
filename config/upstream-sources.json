@@ -4116,6 +4116,13 @@
       ]
     },
     {
+      "name": "gnome-backgrounds",
+      "version": "51.0.1",
+      "url": "https://download.gnome.org/sources/gnome-backgrounds/51/gnome-backgrounds-51.0.1.tar.xz",
+      "filename": "gnome-backgrounds-51.0.1.tar.xz",
+      "sha512": "7274b1f02f479d3f062d1c80b8692b7f93706ad5c0c4f89c6e392deb408f0d78bc9ce91d57889c7a0647bf5da6b809dc8ca2fdd56e52c34929afd86a9ba881cf"
+    },
+    {
       "name": "libsigc++30",
       "version": "3.8.1",
       "url": "https://github.com/libsigcplusplus/libsigcplusplus/releases/download/3.8.1/libsigc++-3.8.1.tar.xz",
