@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 12,
-      "total": 17
+      "pending": 11,
+      "total": 16
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1187,11 +1187,6 @@
     {
       "area": "gnome-apps",
       "name": "epiphany-runtime",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-browser-connector",
       "state": "pending"
     },
     {
@@ -2414,11 +2409,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 439
+    "pending": 438
   },
   "totals": {
-    "backlog": 471,
-    "resolved": 74,
+    "backlog": 470,
+    "resolved": 75,
     "wontfix": 6
   }
 }
