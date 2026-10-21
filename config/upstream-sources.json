@@ -4094,11 +4094,18 @@
       ]
     },
     {
-      "name": "gnome-remote-desktop",
-      "version": "51.0",
-      "url": "https://download.gnome.org/sources/gnome-remote-desktop/51/gnome-remote-desktop-51.0.tar.xz",
-      "filename": "gnome-remote-desktop-51.0.tar.xz",
-      "sha512": "c1eb12180dc52d15456ea3b59a5fd7b3a862d0ed03434197b825debeed474dfa046a5ed5dca25fc0a0c15cca11d5a1febee9b0d227465103971ddc7753f485e5"
+      "name": "gnome-app-list",
+      "version": "2026.08",
+      "url": "https://download.gnome.org/sources/gnome-app-list/2026/gnome-app-list-2026.08.tar.xz",
+      "filename": "gnome-app-list-2026.08.tar.xz",
+      "sha512": "b8f6a60724eec38441b606ed82a644d6107b28469afeb5ce44d09c1e8a996ee4977e2741802c80a450f38a7b8cf6aa41138d8d15e3f532dbc29f783230784a5d"
+    },
+    {
+      "name": "gnome-menus",
+      "version": "3.38.1",
+      "url": "https://download.gnome.org/sources/gnome-menus/3.38/gnome-menus-3.38.1.tar.xz",
+      "filename": "gnome-menus-3.38.1.tar.xz",
+      "sha512": "88ae9f91f9e6f3886f79e5d0f3f41e76b71ae26f85ccc6ca8e802113591454b5aae89289a6653d753c987a1affaf9841028a26f757f0c922e260c7a6acd2570f"
     },
     {
       "name": "cairomm1.16",
@@ -4213,6 +4220,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libsigc++30/libsigc++-3.8.1.tar.xz/sha512/252175fdfece46a78e2d53a9622068ca3028d53eada671b64574a03ae1b7f5fcbefdd894b9e7f30256b661a21c05d78dbb3cb33395340279f3db4cb6f40cbc0d/libsigc++-3.8.1.tar.xz"
       ]
+    },
+    {
+      "name": "gnome-remote-desktop",
+      "version": "51.0",
+      "url": "https://download.gnome.org/sources/gnome-remote-desktop/51/gnome-remote-desktop-51.0.tar.xz",
+      "filename": "gnome-remote-desktop-51.0.tar.xz",
+      "sha512": "c1eb12180dc52d15456ea3b59a5fd7b3a862d0ed03434197b825debeed474dfa046a5ed5dca25fc0a0c15cca11d5a1febee9b0d227465103971ddc7753f485e5"
     }
   ]
 }
