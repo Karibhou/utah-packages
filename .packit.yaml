@@ -124,6 +124,12 @@ packages:
     downstream_package_name: cairo
     paths:
       - packages/cairo
+  cairomm1.16:
+    specfile_path: cairomm1.16.spec
+    upstream_package_name: cairomm1.16
+    downstream_package_name: cairomm1.16
+    paths:
+      - packages/cairomm1.16
   cdparanoia:
     specfile_path: cdparanoia.spec
     upstream_package_name: cdparanoia
@@ -346,6 +352,12 @@ packages:
     downstream_package_name: fprintd
     paths:
       - packages/fprintd
+  freerdp:
+    specfile_path: freerdp.spec
+    upstream_package_name: freerdp
+    downstream_package_name: freerdp
+    paths:
+      - packages/freerdp
   fribidi:
     specfile_path: fribidi.spec
     upstream_package_name: fribidi
@@ -448,6 +460,12 @@ packages:
     downstream_package_name: glib-networking
     paths:
       - packages/glib-networking
+  glibmm2.68:
+    specfile_path: glibmm2.68.spec
+    upstream_package_name: glibmm2.68
+    downstream_package_name: glibmm2.68
+    paths:
+      - packages/glibmm2.68
   glycin:
     specfile_path: glycin.spec
     upstream_package_name: glycin
@@ -460,6 +478,12 @@ packages:
     downstream_package_name: gnome-autoar
     paths:
       - packages/gnome-autoar
+  gnome-backgrounds:
+    specfile_path: gnome-backgrounds.spec
+    upstream_package_name: gnome-backgrounds
+    downstream_package_name: gnome-backgrounds
+    paths:
+      - packages/gnome-backgrounds
   gnome-bluetooth:
     specfile_path: gnome-bluetooth.spec
     upstream_package_name: gnome-bluetooth
@@ -670,6 +694,12 @@ packages:
     downstream_package_name: gtk4
     paths:
       - packages/gtk4
+  gtkmm4.0:
+    specfile_path: gtkmm4.0.spec
+    upstream_package_name: gtkmm4.0
+    downstream_package_name: gtkmm4.0
+    paths:
+      - packages/gtkmm4.0
   gtksourceview4:
     specfile_path: gtksourceview4.spec
     upstream_package_name: gtksourceview4
@@ -1522,6 +1552,12 @@ packages:
     downstream_package_name: libshout
     paths:
       - packages/libshout
+  libsigc++30:
+    specfile_path: libsigc++30.spec
+    upstream_package_name: libsigc++30
+    downstream_package_name: libsigc++30
+    paths:
+      - packages/libsigc++30
   libsndfile:
     specfile_path: libsndfile.spec
     upstream_package_name: libsndfile
@@ -1930,6 +1966,12 @@ packages:
     downstream_package_name: pango
     paths:
       - packages/pango
+  pangomm2.48:
+    specfile_path: pangomm2.48.spec
+    upstream_package_name: pangomm2.48
+    downstream_package_name: pangomm2.48
+    paths:
+      - packages/pangomm2.48
   papers:
     specfile_path: papers.spec
     upstream_package_name: papers

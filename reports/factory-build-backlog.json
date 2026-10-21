@@ -7,23 +7,23 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 126,
-      "total": 128
+      "pending": 124,
+      "total": 126
     },
     "fonts-i18n": {
       "pending": 59,
       "total": 59
     },
     "gnome-apps": {
-      "already_recipe": 6,
-      "pending": 28,
-      "total": 34
+      "already_recipe": 5,
+      "pending": 23,
+      "total": 28
     },
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 165,
-      "total": 177
+      "pending": 164,
+      "total": 176
     },
     "power": {
       "pending": 3,
@@ -361,11 +361,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "freerdp-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "fuse-encfs",
       "state": "pending"
     },
@@ -472,11 +467,6 @@
     {
       "area": "dev-tools",
       "name": "libsss_sudo",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "libwinpr",
       "state": "pending"
     },
     {
@@ -1196,27 +1186,12 @@
     },
     {
       "area": "gnome-apps",
-      "name": "cairomm1.16",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "epiphany-runtime",
       "state": "pending"
     },
     {
       "area": "gnome-apps",
-      "name": "glibmm2.68",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-app-list",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-backgrounds",
       "state": "pending"
     },
     {
@@ -1281,11 +1256,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-system-monitor",
-      "state": "already_recipe"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-tour",
       "state": "pending"
     },
@@ -1297,11 +1267,6 @@
     {
       "area": "gnome-apps",
       "name": "gnome-user-share",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gtkmm4.0",
       "state": "pending"
     },
     {
@@ -1332,11 +1297,6 @@
     {
       "area": "gnome-apps",
       "name": "libwnck3",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "pangomm2.48",
       "state": "pending"
     },
     {
@@ -1747,11 +1707,6 @@
     {
       "area": "long-tail",
       "name": "librtmp",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libsigc++30",
       "state": "pending"
     },
     {
@@ -2517,13 +2472,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 32,
+    "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 459
+    "pending": 451
   },
   "totals": {
-    "backlog": 492,
-    "resolved": 59,
+    "backlog": 483,
+    "resolved": 68,
     "wontfix": 0
   }
 }
