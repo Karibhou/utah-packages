@@ -154,20 +154,13 @@ packages = [
     "gnome-app-list",
     "gnome-browser-connector",
     "gnome-classic-session",
-    "gnome-color-manager",
     "gnome-menus",
     "gnome-remote-desktop",
     "gnome-rounded-blur",
-    "gnome-shell-extension-apps-menu",
-    "gnome-shell-extension-blur-my-shell",
-    "gnome-shell-extension-common",
-    "gnome-shell-extension-launch-new-instance",
-    "gnome-shell-extension-places-menu",
-    "gnome-shell-extension-window-list",
     "gnome-system-monitor",
     "gnome-tour",
     "gnome-user-docs",
-    "gnome-user-share",
+
     "gtksourceview5",
     "imath",
     "libgee",
@@ -662,6 +655,9 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME display and sharing apps: importer source URLs normalized to HTTPS (PR #556).
+    { name = "gnome-color-manager", pr = 556 },
+    { name = "gnome-user-share", pr = 556 },
     # GNOME C++ binding recipes (PR #544).
     { name = "cairomm1.16", pr = 544 },
     { name = "gtkmm4.0", pr = 544 },
@@ -682,4 +678,11 @@ packages = [
 # maintainer records a decision. Wontfixed names are NOT in ``states``;
 # they are surfaced as ``totals.wontfix`` so the count partition
 # (areas + resolved + wontfix) still equals the audit's 551.
-packages = []
+packages = [
+    { name = "gnome-shell-extension-apps-menu", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
+    { name = "gnome-shell-extension-blur-my-shell", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
+    { name = "gnome-shell-extension-common", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
+    { name = "gnome-shell-extension-launch-new-instance", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
+    { name = "gnome-shell-extension-places-menu", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
+    { name = "gnome-shell-extension-window-list", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
+]
