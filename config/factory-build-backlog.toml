@@ -151,10 +151,9 @@ packages = [
 consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
-    "gnome-app-list",
     "gnome-browser-connector",
     "gnome-classic-session",
-    "gnome-menus",
+
     "gnome-remote-desktop",
     "gnome-rounded-blur",
 
@@ -671,6 +670,10 @@ packages = [
     { name = "libsigc++30", pr = 560 },
     # GNOME System Monitor import (PR #542).
     { name = "gnome-system-monitor", pr = 542 },
+    # GNOME menus import (PR #548).
+    { name = "gnome-menus", pr = 548 },
+    # GNOME app list import (PR #550).
+    { name = "gnome-app-list", pr = 550 },
     # Yelp XSL import (PR #552).
     { name = "yelp-xsl", pr = 552 },
 ]
