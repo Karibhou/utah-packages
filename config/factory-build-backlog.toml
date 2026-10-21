@@ -561,7 +561,7 @@ packages = [
     "xfsprogs",
     "xrandr",
     "xset",
-    "yelp-libs",
+
     "zinnia",
     "zinnia-tomoe-ja",
     "zix",
@@ -682,6 +682,8 @@ packages = [
     { name = "gnome-user-docs", pr = 551 },
     # Yelp XSL import (PR #552).
     { name = "yelp-xsl", pr = 552 },
+    # Yelp runtime libraries are built by the yelp source package (PR #553).
+    { name = "yelp-libs", pr = 553 },
 ]
 
 [wontfix]
