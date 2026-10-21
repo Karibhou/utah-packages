@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 13,
-      "total": 18
+      "pending": 12,
+      "total": 17
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1197,11 +1197,6 @@
     {
       "area": "gnome-apps",
       "name": "gnome-classic-session",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-remote-desktop",
       "state": "pending"
     },
     {
@@ -2419,11 +2414,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 440
+    "pending": 439
   },
   "totals": {
-    "backlog": 472,
-    "resolved": 73,
+    "backlog": 471,
+    "resolved": 74,
     "wontfix": 6
   }
 }
