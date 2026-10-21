@@ -352,6 +352,12 @@ packages:
     downstream_package_name: fprintd
     paths:
       - packages/fprintd
+  freerdp:
+    specfile_path: freerdp.spec
+    upstream_package_name: freerdp
+    downstream_package_name: freerdp
+    paths:
+      - packages/freerdp
   fribidi:
     specfile_path: fribidi.spec
     upstream_package_name: fribidi
@@ -454,6 +460,12 @@ packages:
     downstream_package_name: glib-networking
     paths:
       - packages/glib-networking
+  glibmm2.68:
+    specfile_path: glibmm2.68.spec
+    upstream_package_name: glibmm2.68
+    downstream_package_name: glibmm2.68
+    paths:
+      - packages/glibmm2.68
   glycin:
     specfile_path: glycin.spec
     upstream_package_name: glycin
@@ -466,6 +478,12 @@ packages:
     downstream_package_name: gnome-autoar
     paths:
       - packages/gnome-autoar
+  gnome-backgrounds:
+    specfile_path: gnome-backgrounds.spec
+    upstream_package_name: gnome-backgrounds
+    downstream_package_name: gnome-backgrounds
+    paths:
+      - packages/gnome-backgrounds
   gnome-bluetooth:
     specfile_path: gnome-bluetooth.spec
     upstream_package_name: gnome-bluetooth
@@ -1528,6 +1546,12 @@ packages:
     downstream_package_name: libshout
     paths:
       - packages/libshout
+  libsigc++30:
+    specfile_path: libsigc++30.spec
+    upstream_package_name: libsigc++30
+    downstream_package_name: libsigc++30
+    paths:
+      - packages/libsigc++30
   libsndfile:
     specfile_path: libsndfile.spec
     upstream_package_name: libsndfile

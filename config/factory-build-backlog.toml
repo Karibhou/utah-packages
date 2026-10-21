@@ -151,9 +151,7 @@ packages = [
 consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
-    "glibmm2.68",
     "gnome-app-list",
-    "gnome-backgrounds",
     "gnome-browser-connector",
     "gnome-classic-session",
     "gnome-color-manager",
@@ -207,7 +205,6 @@ packages = [
     "fedora-release-ostree-desktop",
     "fedora-release-silverblue",
     "flex",
-    "freerdp-libs",
     "fuse-encfs",
     "gamemode",
     "generic-logos",
@@ -230,7 +227,6 @@ packages = [
     "libsss_idmap",
     "libsss_nss_idmap",
     "libsss_sudo",
-    "libwinpr",
     "lsb_release",
     "lsof",
     "man-pages",
@@ -481,7 +477,6 @@ packages = [
     "libref_array",
     "libreport-filesystem",
     "librtmp",
-    "libsigc++30",
     "libslirp",
     "libsrtp",
     "libtraceevent",
@@ -671,7 +666,14 @@ packages = [
     { name = "cairomm1.16", pr = 544 },
     { name = "gtkmm4.0", pr = 544 },
     { name = "pangomm2.48", pr = 544 },
-
+    # GNOME wallpaper package import (PR #546).
+    { name = "gnome-backgrounds", pr = 546 },
+    { name = "glibmm2.68", pr = 543 },
+    # freerdp-libs and libwinpr are %package subpackages of freerdp.spec (PR #559).
+    { name = "freerdp-libs", pr = 559 },
+    { name = "libwinpr", pr = 559 },
+    # libsigc++30 is built by its own source package (PR #560).
+    { name = "libsigc++30", pr = 560 },
 ]
 
 [wontfix]

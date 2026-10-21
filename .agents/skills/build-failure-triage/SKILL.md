@@ -107,8 +107,19 @@ the workflow, not mock's documentation.
 ## Rule 2: check the commit is current
 
 Check-run events arrive for superseded commits. Compare the event's
-`head_sha` against the PR's current head before spending time on it. A run
-whose conclusion is `cancelled` was superseded by a later push, not broken.
+`head_sha` against the PR's current head before spending time on it. A run whose conclusion is `cancelled` was superseded by a later push, not broken.
+
+### A branch's own published image shadows `latest`
+
+`rebuild-rpms.yml` resolves the factory image per ref: a branch reads its
+own published image first and only falls back to `latest` when no branch
+image exists. Once a branch has published anything, its later builds never
+see packages that merged to `main` afterwards. The symptom is `No match for
+argument` on a factory package you just watched publish from `main`
+(gtkmm4.0 vs glibmm2.68, October 2026). The branch image digest is printed
+in the run log (`<branch> -> ghcr.io/...@sha256:...`); a digest older than
+the `main` publish you depend on confirms it. Fix by merging the recipe to
+`main`, whose builds read `latest` only — not by rebuilding the branch.
 
 ## Rule 3: on a showstopper, kill the runs that cannot pass
 
@@ -280,17 +291,21 @@ Do not infer a version from what Rawhide ships or from a package name.
   releases, not imported from Fedora dist-git. Do not triage them as Rawhide
   import gaps or declare them unavailable in the runtime contract.
 
-### C++ GNOME wrapper conflicts after GLib type changes
+### A C++ binding header collision can be a stale generated-wrapper stack
 
-If a consumer fails to compile with conflicting declarations of GLib `*Class`
-types (for example `GDBusActionGroupClass`, `GEmblemClass`, or
-`GdkCursorClass`), inspect the exact GLib, glibmm, GTK, and gtkmm versions in
-the buildroot and the wrapper release's own Meson minimums. New GLib releases
-can mark previously derivable GObject types final; old C++ wrappers then
-declare incompatible class types. This is a dependency-stack mismatch, not a
-consumer source bug. Upgrade the affected wrapper recipes together, and verify
-each minimum against its upstream release metadata. A successful unrelated
-pipeline canary does not prove the failing package builds.
+When a C++ binding fails against newer C-library headers with conflicting
+`G*Class` declarations, compare the binding release with the exact C-library
+version in the build root before patching the consumer. GLib 2.89.2 made
+`GEmblem` and `GDBusActionGroup` final; glibmm 2.89.0 then stopped deriving
+its `Emblem` and `DBus::ActionGroup` wrappers from the generated `gtkmm__Gxxx`
+types, and glibmm's own release configuration requires GLib >= 2.89.4.
+Thus glibmm 2.88.1 with GLib 2.90.1 is a dependency-stack mismatch; importing
+the current Fedora `glibmm2.68` recipe (2.90.0) is the source-backed fix to
+test, not a speculative patch to the consumer. Fedora's Rawhide spec currently
+declares a lower 2.81.0 minimum, so follow the upstream release's `meson.build`
+for the real dependency minimum. Require the hosted build against the actual
+build root before claiming resolution. A successful unrelated pipeline canary
+does not prove the failing package builds.
 
 ## Never
 
