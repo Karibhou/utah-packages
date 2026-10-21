@@ -692,6 +692,17 @@
       ]
     },
     {
+      "name": "glibmm2.68",
+      "version": "2.90.0",
+      "url": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
+      "filename": "glibmm-2.90.0.tar.xz",
+      "feed": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
+      "sha512": "ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/glibmm2.68/glibmm-2.90.0.tar.xz/sha512/ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9/glibmm-2.90.0.tar.xz"
+      ]
+    },
+    {
       "name": "glycin",
       "version": "2.2~beta",
       "url": "https://download.gnome.org/sources/glycin/2.2/glycin-2.2.beta.tar.xz",

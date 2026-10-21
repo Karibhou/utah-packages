@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 29,
-      "total": 34
+      "pending": 28,
+      "total": 33
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1192,11 +1192,6 @@
     {
       "area": "gnome-apps",
       "name": "epiphany-runtime",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "glibmm2.68",
       "state": "pending"
     },
     {
