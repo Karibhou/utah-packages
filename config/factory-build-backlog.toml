@@ -151,7 +151,6 @@ packages = [
 consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
-    "gnome-app-list",
     "gnome-browser-connector",
     "gnome-classic-session",
 
@@ -674,6 +673,8 @@ packages = [
     { name = "gnome-system-monitor", pr = 542 },
     # GNOME menus import (PR #548).
     { name = "gnome-menus", pr = 548 },
+    # GNOME app list import (PR #550).
+    { name = "gnome-app-list", pr = 550 },
 ]
 
 [wontfix]

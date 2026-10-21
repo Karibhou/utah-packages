@@ -4094,6 +4094,13 @@
       ]
     },
     {
+      "name": "gnome-app-list",
+      "version": "2026.08",
+      "url": "https://download.gnome.org/sources/gnome-app-list/2026/gnome-app-list-2026.08.tar.xz",
+      "filename": "gnome-app-list-2026.08.tar.xz",
+      "sha512": "b8f6a60724eec38441b606ed82a644d6107b28469afeb5ce44d09c1e8a996ee4977e2741802c80a450f38a7b8cf6aa41138d8d15e3f532dbc29f783230784a5d"
+    },
+    {
       "name": "gnome-menus",
       "version": "3.38.1",
       "url": "https://download.gnome.org/sources/gnome-menus/3.38/gnome-menus-3.38.1.tar.xz",
