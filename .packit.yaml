@@ -124,6 +124,12 @@ packages:
     downstream_package_name: cairo
     paths:
       - packages/cairo
+  cairomm1.16:
+    specfile_path: cairomm1.16.spec
+    upstream_package_name: cairomm1.16
+    downstream_package_name: cairomm1.16
+    paths:
+      - packages/cairomm1.16
   cdparanoia:
     specfile_path: cdparanoia.spec
     upstream_package_name: cdparanoia
@@ -682,6 +688,12 @@ packages:
     downstream_package_name: gtk4
     paths:
       - packages/gtk4
+  gtkmm4.0:
+    specfile_path: gtkmm4.0.spec
+    upstream_package_name: gtkmm4.0
+    downstream_package_name: gtkmm4.0
+    paths:
+      - packages/gtkmm4.0
   gtksourceview4:
     specfile_path: gtksourceview4.spec
     upstream_package_name: gtksourceview4
@@ -1948,6 +1960,12 @@ packages:
     downstream_package_name: pango
     paths:
       - packages/pango
+  pangomm2.48:
+    specfile_path: pangomm2.48.spec
+    upstream_package_name: pangomm2.48
+    downstream_package_name: pangomm2.48
+    paths:
+      - packages/pangomm2.48
   papers:
     specfile_path: papers.spec
     upstream_package_name: papers

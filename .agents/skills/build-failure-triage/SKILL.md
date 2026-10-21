@@ -107,8 +107,19 @@ the workflow, not mock's documentation.
 ## Rule 2: check the commit is current
 
 Check-run events arrive for superseded commits. Compare the event's
-`head_sha` against the PR's current head before spending time on it. A run
-whose conclusion is `cancelled` was superseded by a later push, not broken.
+`head_sha` against the PR's current head before spending time on it. A run whose conclusion is `cancelled` was superseded by a later push, not broken.
+
+### A branch's own published image shadows `latest`
+
+`rebuild-rpms.yml` resolves the factory image per ref: a branch reads its
+own published image first and only falls back to `latest` when no branch
+image exists. Once a branch has published anything, its later builds never
+see packages that merged to `main` afterwards. The symptom is `No match for
+argument` on a factory package you just watched publish from `main`
+(gtkmm4.0 vs glibmm2.68, October 2026). The branch image digest is printed
+in the run log (`<branch> -> ghcr.io/...@sha256:...`); a digest older than
+the `main` publish you depend on confirms it. Fix by merging the recipe to
+`main`, whose builds read `latest` only — not by rebuilding the branch.
 
 ## Rule 3: on a showstopper, kill the runs that cannot pass
 
@@ -293,7 +304,8 @@ the current Fedora `glibmm2.68` recipe (2.90.0) is the source-backed fix to
 test, not a speculative patch to the consumer. Fedora's Rawhide spec currently
 declares a lower 2.81.0 minimum, so follow the upstream release's `meson.build`
 for the real dependency minimum. Require the hosted build against the actual
-build root before claiming resolution.
+build root before claiming resolution. A successful unrelated pipeline canary
+does not prove the failing package builds.
 
 ## Never
 

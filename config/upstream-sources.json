@@ -291,6 +291,16 @@
       "sha512": "863679f817ed67dc2c916c035d740916e27e7e69c04fca63936e37d274e7f4c79848d16c8f7c481798864602e8847c489f698df89b785cbc576c925dbd513316"
     },
     {
+      "name": "cairomm1.16",
+      "version": "1.18.1",
+      "url": "https://www.cairographics.org/releases/cairomm-1.18.1.tar.xz",
+      "filename": "cairomm-1.18.1.tar.xz",
+      "sha512": "ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/cairomm1.16/cairomm-1.18.1.tar.xz/sha512/ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874/cairomm-1.18.1.tar.xz"
+      ]
+    },
+    {
       "name": "cdparanoia",
       "version": "10.2",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/cdparanoia/cdparanoia-III-10.2.src.tgz/md5/b304bbe8ab63373924a744eac9ebc652/cdparanoia-III-10.2.src.tgz",
@@ -1040,6 +1050,16 @@
       "stage": 4,
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/gtk4/gtk-4.23.4.tar.xz/sha512/da1cf7977ab020b16e7d38a5e259a1b33140f0147d6b96c938041a2a6c2586bddb45d4b97bc9c429880340aa52727f11a61d2f6fb15d7dfc3dffef73a2464c70/gtk-4.23.4.tar.xz"
+      ]
+    },
+    {
+      "name": "gtkmm4.0",
+      "version": "4.24.0",
+      "url": "https://download.gnome.org/sources/gtkmm/4.24/gtkmm-4.24.0.tar.xz",
+      "filename": "gtkmm-4.24.0.tar.xz",
+      "sha512": "a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/gtkmm4.0/gtkmm-4.24.0.tar.xz/sha512/a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9/gtkmm-4.24.0.tar.xz"
       ]
     },
     {
@@ -2586,6 +2606,16 @@
       "sha512": "19c88d07c547312bde647cb5d43c300d1750c5b21904c4c066c0ddba30fcfddc9cad463c40bddbe1df228eb33475ff5396ce9921df5347e8187fe3ede8d075a8",
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/pango/pango-1.58.2.tar.xz/sha512/19c88d07c547312bde647cb5d43c300d1750c5b21904c4c066c0ddba30fcfddc9cad463c40bddbe1df228eb33475ff5396ce9921df5347e8187fe3ede8d075a8/pango-1.58.2.tar.xz"
+      ]
+    },
+    {
+      "name": "pangomm2.48",
+      "version": "2.58.0",
+      "url": "https://download.gnome.org/sources/pangomm/2.58/pangomm-2.58.0.tar.xz",
+      "filename": "pangomm-2.58.0.tar.xz",
+      "sha512": "54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/pangomm2.48/pangomm-2.58.0.tar.xz/sha512/54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2/pangomm-2.58.0.tar.xz"
       ]
     },
     {

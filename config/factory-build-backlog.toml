@@ -147,10 +147,9 @@ packages = [
 ]
 
 [areas.gnome-apps]
-# projectbluefin/utah#391 - 38 names
+# projectbluefin/utah#391 - 35 names
 consumer_issue = "projectbluefin/utah#391"
 packages = [
-    "cairomm1.16",
     "epiphany-runtime",
     "gnome-app-list",
     "gnome-browser-connector",
@@ -169,14 +168,12 @@ packages = [
     "gnome-tour",
     "gnome-user-docs",
     "gnome-user-share",
-    "gtkmm4.0",
     "gtksourceview5",
     "imath",
     "libgee",
     "libhandy",
     "libmediaart",
     "libwnck3",
-    "pangomm2.48",
     "ptyxis",
     "rygel",
     "vte-profile",
@@ -665,6 +662,10 @@ packages = [
     { name = "papers-nautilus", pr = 532 },
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
+    # GNOME C++ binding recipes (PR #544).
+    { name = "cairomm1.16", pr = 544 },
+    { name = "gtkmm4.0", pr = 544 },
+    { name = "pangomm2.48", pr = 544 },
     # GNOME wallpaper package import (PR #546).
     { name = "gnome-backgrounds", pr = 546 },
     { name = "glibmm2.68", pr = 543 },
