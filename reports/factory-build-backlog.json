@@ -16,14 +16,14 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 28,
-      "total": 33
+      "pending": 27,
+      "total": 32
     },
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 165,
-      "total": 177
+      "pending": 164,
+      "total": 176
     },
     "power": {
       "pending": 3,
@@ -1196,11 +1196,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "glibmm2.68",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-app-list",
       "state": "pending"
     },
@@ -1732,11 +1727,6 @@
     {
       "area": "long-tail",
       "name": "librtmp",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libsigc++30",
       "state": "pending"
     },
     {
@@ -2504,11 +2494,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 457
+    "pending": 455
   },
   "totals": {
-    "backlog": 489,
-    "resolved": 62,
+    "backlog": 487,
+    "resolved": 64,
     "wontfix": 0
   }
 }

@@ -280,6 +280,21 @@ Do not infer a version from what Rawhide ships or from a package name.
   releases, not imported from Fedora dist-git. Do not triage them as Rawhide
   import gaps or declare them unavailable in the runtime contract.
 
+### A C++ binding header collision can be a stale generated-wrapper stack
+
+When a C++ binding fails against newer C-library headers with conflicting
+`G*Class` declarations, compare the binding release with the exact C-library
+version in the build root before patching the consumer. GLib 2.89.2 made
+`GEmblem` and `GDBusActionGroup` final; glibmm 2.89.0 then stopped deriving
+its `Emblem` and `DBus::ActionGroup` wrappers from the generated `gtkmm__Gxxx`
+types, and glibmm's own release configuration requires GLib >= 2.89.4.
+Thus glibmm 2.88.1 with GLib 2.90.1 is a dependency-stack mismatch; importing
+the current Fedora `glibmm2.68` recipe (2.90.0) is the source-backed fix to
+test, not a speculative patch to the consumer. Fedora's Rawhide spec currently
+declares a lower 2.81.0 minimum, so follow the upstream release's `meson.build`
+for the real dependency minimum. Require the hosted build against the actual
+build root before claiming resolution.
+
 ## Never
 
 - Skip, disable or quarantine a test to make a build pass.
