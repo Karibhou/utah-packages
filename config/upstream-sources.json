@@ -4227,6 +4227,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libsigc++30/libsigc++-3.8.1.tar.xz/sha512/252175fdfece46a78e2d53a9622068ca3028d53eada671b64574a03ae1b7f5fcbefdd894b9e7f30256b661a21c05d78dbb3cb33395340279f3db4cb6f40cbc0d/libsigc++-3.8.1.tar.xz"
       ]
+    },
+    {
+      "name": "gnome-remote-desktop",
+      "version": "51.0",
+      "url": "https://download.gnome.org/sources/gnome-remote-desktop/51/gnome-remote-desktop-51.0.tar.xz",
+      "filename": "gnome-remote-desktop-51.0.tar.xz",
+      "sha512": "c1eb12180dc52d15456ea3b59a5fd7b3a862d0ed03434197b825debeed474dfa046a5ed5dca25fc0a0c15cca11d5a1febee9b0d227465103971ddc7753f485e5"
     }
   ]
 }
