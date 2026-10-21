@@ -4234,6 +4234,13 @@
       "url": "https://download.gnome.org/sources/gnome-remote-desktop/51/gnome-remote-desktop-51.0.tar.xz",
       "filename": "gnome-remote-desktop-51.0.tar.xz",
       "sha512": "c1eb12180dc52d15456ea3b59a5fd7b3a862d0ed03434197b825debeed474dfa046a5ed5dca25fc0a0c15cca11d5a1febee9b0d227465103971ddc7753f485e5"
+    },
+    {
+      "name": "gnome-browser-connector",
+      "version": "42.1",
+      "url": "https://download.gnome.org/sources/gnome-browser-connector/42/gnome-browser-connector-42.1.tar.xz",
+      "filename": "gnome-browser-connector-42.1.tar.xz",
+      "sha512": "f8f7c0e7f3fb6bd50eddc674c48f521d07aa03b5b36674e8dfcb6b6d8203bbdf4fc4de1f7cbbcc805a3da3cf098a27bda281b7a0ac5b98d7144dffe85698b7d7"
     }
   ]
 }
