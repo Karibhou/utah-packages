@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 163,
-      "total": 175
+      "pending": 162,
+      "total": 174
     },
     "power": {
       "pending": 3,
@@ -2111,11 +2111,6 @@
     },
     {
       "area": "long-tail",
-      "name": "yelp-xsl",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "zinnia",
       "state": "pending"
     },
@@ -2399,11 +2394,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 436
+    "pending": 435
   },
   "totals": {
-    "backlog": 468,
-    "resolved": 77,
+    "backlog": 467,
+    "resolved": 78,
     "wontfix": 6
   }
 }
