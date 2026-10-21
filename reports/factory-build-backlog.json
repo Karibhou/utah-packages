@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 23,
-      "total": 28
+      "pending": 15,
+      "total": 20
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1206,11 +1206,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-color-manager",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-menus",
       "state": "pending"
     },
@@ -1226,47 +1221,12 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-shell-extension-apps-menu",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-blur-my-shell",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-common",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-launch-new-instance",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-places-menu",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-shell-extension-window-list",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-tour",
       "state": "pending"
     },
     {
       "area": "gnome-apps",
       "name": "gnome-user-docs",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-user-share",
       "state": "pending"
     },
     {
@@ -2474,11 +2434,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 451
+    "pending": 443
   },
   "totals": {
-    "backlog": 483,
-    "resolved": 68,
-    "wontfix": 0
+    "backlog": 475,
+    "resolved": 70,
+    "wontfix": 6
   }
 }
