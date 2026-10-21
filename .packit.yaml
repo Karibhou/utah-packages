@@ -490,6 +490,12 @@ packages:
     downstream_package_name: gnome-bluetooth
     paths:
       - packages/gnome-bluetooth
+  gnome-browser-connector:
+    specfile_path: gnome-browser-connector.spec
+    upstream_package_name: gnome-browser-connector
+    downstream_package_name: gnome-browser-connector
+    paths:
+      - packages/gnome-browser-connector
   gnome-color-manager:
     specfile_path: gnome-color-manager.spec
     upstream_package_name: gnome-color-manager
