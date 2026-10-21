@@ -154,7 +154,6 @@ packages = [
     "gnome-browser-connector",
     "gnome-classic-session",
 
-    "gnome-remote-desktop",
     "gnome-rounded-blur",
 
     "gnome-tour",
@@ -675,6 +674,8 @@ packages = [
     { name = "gnome-menus", pr = 548 },
     # GNOME app list import (PR #550).
     { name = "gnome-app-list", pr = 550 },
+    # GNOME remote desktop import (PR #555).
+    { name = "gnome-remote-desktop", pr = 555 },
 ]
 
 [wontfix]
