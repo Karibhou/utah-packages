@@ -4227,6 +4227,13 @@
       "url": "https://download.gnome.org/sources/gnome-menus/3.38/gnome-menus-3.38.1.tar.xz",
       "filename": "gnome-menus-3.38.1.tar.xz",
       "sha512": "88ae9f91f9e6f3886f79e5d0f3f41e76b71ae26f85ccc6ca8e802113591454b5aae89289a6653d753c987a1affaf9841028a26f757f0c922e260c7a6acd2570f"
+    },
+    {
+      "name": "gnome-remote-desktop",
+      "version": "51.0",
+      "url": "https://download.gnome.org/sources/gnome-remote-desktop/51/gnome-remote-desktop-51.0.tar.xz",
+      "filename": "gnome-remote-desktop-51.0.tar.xz",
+      "sha512": "c1eb12180dc52d15456ea3b59a5fd7b3a862d0ed03434197b825debeed474dfa046a5ed5dca25fc0a0c15cca11d5a1febee9b0d227465103971ddc7753f485e5"
     }
   ]
 }
