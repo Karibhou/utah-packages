@@ -147,14 +147,11 @@ packages = [
 ]
 
 [areas.gnome-apps]
-# projectbluefin/utah#391 - 38 names
+# projectbluefin/utah#391 - 35 names
 consumer_issue = "projectbluefin/utah#391"
 packages = [
-    "cairomm1.16",
     "epiphany-runtime",
-    "glibmm2.68",
     "gnome-app-list",
-    "gnome-backgrounds",
     "gnome-browser-connector",
     "gnome-classic-session",
     "gnome-menus",
@@ -163,14 +160,13 @@ packages = [
     "gnome-system-monitor",
     "gnome-tour",
     "gnome-user-docs",
-    "gtkmm4.0",
+
     "gtksourceview5",
     "imath",
     "libgee",
     "libhandy",
     "libmediaart",
     "libwnck3",
-    "pangomm2.48",
     "ptyxis",
     "rygel",
     "vte-profile",
@@ -474,7 +470,6 @@ packages = [
     "libref_array",
     "libreport-filesystem",
     "librtmp",
-    "libsigc++30",
     "libslirp",
     "libsrtp",
     "libtraceevent",
@@ -663,9 +658,18 @@ packages = [
     # GNOME display and sharing apps: importer source URLs normalized to HTTPS (PR #556).
     { name = "gnome-color-manager", pr = 556 },
     { name = "gnome-user-share", pr = 556 },
+    # GNOME C++ binding recipes (PR #544).
+    { name = "cairomm1.16", pr = 544 },
+    { name = "gtkmm4.0", pr = 544 },
+    { name = "pangomm2.48", pr = 544 },
+    # GNOME wallpaper package import (PR #546).
+    { name = "gnome-backgrounds", pr = 546 },
+    { name = "glibmm2.68", pr = 543 },
     # freerdp-libs and libwinpr are %package subpackages of freerdp.spec (PR #559).
     { name = "freerdp-libs", pr = 559 },
     { name = "libwinpr", pr = 559 },
+    # libsigc++30 is built by its own source package (PR #560).
+    { name = "libsigc++30", pr = 560 },
 ]
 
 [wontfix]

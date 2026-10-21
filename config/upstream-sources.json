@@ -291,6 +291,16 @@
       "sha512": "863679f817ed67dc2c916c035d740916e27e7e69c04fca63936e37d274e7f4c79848d16c8f7c481798864602e8847c489f698df89b785cbc576c925dbd513316"
     },
     {
+      "name": "cairomm1.16",
+      "version": "1.18.1",
+      "url": "https://www.cairographics.org/releases/cairomm-1.18.1.tar.xz",
+      "filename": "cairomm-1.18.1.tar.xz",
+      "sha512": "ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/cairomm1.16/cairomm-1.18.1.tar.xz/sha512/ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874/cairomm-1.18.1.tar.xz"
+      ]
+    },
+    {
       "name": "cdparanoia",
       "version": "10.2",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/cdparanoia/cdparanoia-III-10.2.src.tgz/md5/b304bbe8ab63373924a744eac9ebc652/cdparanoia-III-10.2.src.tgz",
@@ -692,6 +702,17 @@
       ]
     },
     {
+      "name": "glibmm2.68",
+      "version": "2.90.0",
+      "url": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
+      "filename": "glibmm-2.90.0.tar.xz",
+      "feed": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
+      "sha512": "ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/glibmm2.68/glibmm-2.90.0.tar.xz/sha512/ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9/glibmm-2.90.0.tar.xz"
+      ]
+    },
+    {
       "name": "glycin",
       "version": "2.2~beta",
       "url": "https://download.gnome.org/sources/glycin/2.2/glycin-2.2.beta.tar.xz",
@@ -1029,6 +1050,16 @@
       "stage": 4,
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/gtk4/gtk-4.23.4.tar.xz/sha512/da1cf7977ab020b16e7d38a5e259a1b33140f0147d6b96c938041a2a6c2586bddb45d4b97bc9c429880340aa52727f11a61d2f6fb15d7dfc3dffef73a2464c70/gtk-4.23.4.tar.xz"
+      ]
+    },
+    {
+      "name": "gtkmm4.0",
+      "version": "4.24.0",
+      "url": "https://download.gnome.org/sources/gtkmm/4.24/gtkmm-4.24.0.tar.xz",
+      "filename": "gtkmm-4.24.0.tar.xz",
+      "sha512": "a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/gtkmm4.0/gtkmm-4.24.0.tar.xz/sha512/a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9/gtkmm-4.24.0.tar.xz"
       ]
     },
     {
@@ -2578,6 +2609,16 @@
       ]
     },
     {
+      "name": "pangomm2.48",
+      "version": "2.58.0",
+      "url": "https://download.gnome.org/sources/pangomm/2.58/pangomm-2.58.0.tar.xz",
+      "filename": "pangomm-2.58.0.tar.xz",
+      "sha512": "54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/pangomm2.48/pangomm-2.58.0.tar.xz/sha512/54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2/pangomm-2.58.0.tar.xz"
+      ]
+    },
+    {
       "name": "parted",
       "version": "3.7",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/parted/parted-3.7.tar.xz/sha512/941afeb68edb45c33fb797f4c320ed1aa1de2e8b35defa5d742aa6894618e6729a1440e3ee0824e8710bc58eb42b85d77f28ba083d92d4ea3f3f65f37c8307b0/parted-3.7.tar.xz",
@@ -4117,6 +4158,23 @@
       "url": "https://download.gnome.org/sources/gnome-user-share/48/gnome-user-share-48.3.tar.xz",
       "filename": "gnome-user-share-48.3.tar.xz",
       "sha512": "21fcac0d49d1a1ec0d30c68e3cc0ba6bc88cefef7114adacaf65cf4fb3b52c89e4f71ea2d7a7685b44bd7a0573f56e44c0a4516389245969f472f71097a6bf00"
+    },
+    {
+      "name": "gnome-backgrounds",
+      "version": "51.0.1",
+      "url": "https://download.gnome.org/sources/gnome-backgrounds/51/gnome-backgrounds-51.0.1.tar.xz",
+      "filename": "gnome-backgrounds-51.0.1.tar.xz",
+      "sha512": "7274b1f02f479d3f062d1c80b8692b7f93706ad5c0c4f89c6e392deb408f0d78bc9ce91d57889c7a0647bf5da6b809dc8ca2fdd56e52c34929afd86a9ba881cf"
+    },
+    {
+      "name": "libsigc++30",
+      "version": "3.8.1",
+      "url": "https://github.com/libsigcplusplus/libsigcplusplus/releases/download/3.8.1/libsigc++-3.8.1.tar.xz",
+      "filename": "libsigc++-3.8.1.tar.xz",
+      "sha512": "252175fdfece46a78e2d53a9622068ca3028d53eada671b64574a03ae1b7f5fcbefdd894b9e7f30256b661a21c05d78dbb3cb33395340279f3db4cb6f40cbc0d",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libsigc++30/libsigc++-3.8.1.tar.xz/sha512/252175fdfece46a78e2d53a9622068ca3028d53eada671b64574a03ae1b7f5fcbefdd894b9e7f30256b661a21c05d78dbb3cb33395340279f3db4cb6f40cbc0d/libsigc++-3.8.1.tar.xz"
+      ]
     }
   ]
 }
