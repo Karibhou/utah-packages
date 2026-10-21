@@ -151,7 +151,6 @@ packages = [
 consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
-
     "gnome-browser-connector",
     "gnome-classic-session",
 
