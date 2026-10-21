@@ -16,14 +16,14 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 29,
-      "total": 34
+      "pending": 24,
+      "total": 29
     },
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 165,
-      "total": 177
+      "pending": 164,
+      "total": 176
     },
     "power": {
       "pending": 3,
@@ -1186,27 +1186,12 @@
     },
     {
       "area": "gnome-apps",
-      "name": "cairomm1.16",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "epiphany-runtime",
       "state": "pending"
     },
     {
       "area": "gnome-apps",
-      "name": "glibmm2.68",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-app-list",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-backgrounds",
       "state": "pending"
     },
     {
@@ -1291,11 +1276,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gtkmm4.0",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gtksourceview5",
       "state": "pending"
     },
@@ -1322,11 +1302,6 @@
     {
       "area": "gnome-apps",
       "name": "libwnck3",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "pangomm2.48",
       "state": "pending"
     },
     {
@@ -1737,11 +1712,6 @@
     {
       "area": "long-tail",
       "name": "librtmp",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libsigc++30",
       "state": "pending"
     },
     {
@@ -2509,11 +2479,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 458
+    "pending": 452
   },
   "totals": {
-    "backlog": 490,
-    "resolved": 61,
+    "backlog": 484,
+    "resolved": 67,
     "wontfix": 0
   }
 }
