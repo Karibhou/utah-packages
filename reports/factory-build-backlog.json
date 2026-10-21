@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 10,
-      "total": 15
+      "pending": 9,
+      "total": 14
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1198,11 +1198,6 @@
       "area": "gnome-apps",
       "name": "gnome-rounded-blur",
       "state": "already_recipe"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-user-docs",
-      "state": "pending"
     },
     {
       "area": "gnome-apps",
@@ -2409,11 +2404,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 438
+    "pending": 437
   },
   "totals": {
-    "backlog": 470,
-    "resolved": 75,
+    "backlog": 469,
+    "resolved": 76,
     "wontfix": 6
   }
 }

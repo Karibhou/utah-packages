@@ -156,7 +156,7 @@ packages = [
 
     "gnome-rounded-blur",
 
-    "gnome-user-docs",
+
 
     "gtksourceview5",
     "imath",
@@ -679,6 +679,8 @@ packages = [
     { name = "gnome-remote-desktop", pr = 555 },
     # GNOME browser connector import (PR #547).
     { name = "gnome-browser-connector", pr = 547 },
+    # GNOME user documentation import (PR #551).
+    { name = "gnome-user-docs", pr = 551 },
 ]
 
 [wontfix]
