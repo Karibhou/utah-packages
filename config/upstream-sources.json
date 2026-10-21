@@ -291,6 +291,16 @@
       "sha512": "863679f817ed67dc2c916c035d740916e27e7e69c04fca63936e37d274e7f4c79848d16c8f7c481798864602e8847c489f698df89b785cbc576c925dbd513316"
     },
     {
+      "name": "cairomm1.16",
+      "version": "1.18.1",
+      "url": "https://www.cairographics.org/releases/cairomm-1.18.1.tar.xz",
+      "filename": "cairomm-1.18.1.tar.xz",
+      "sha512": "ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/cairomm1.16/cairomm-1.18.1.tar.xz/sha512/ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874/cairomm-1.18.1.tar.xz"
+      ]
+    },
+    {
       "name": "cdparanoia",
       "version": "10.2",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/cdparanoia/cdparanoia-III-10.2.src.tgz/md5/b304bbe8ab63373924a744eac9ebc652/cdparanoia-III-10.2.src.tgz",
@@ -543,6 +553,17 @@
       "stage": 2
     },
     {
+      "name": "freerdp",
+      "version": "3.32.2",
+      "filename": "FreeRDP-3.32.2-repack.tar.gz",
+      "sha512": "ea37402ef427f156ad8f8168d3eb2cb0ccf0fcf352883fd8e31292ef2641274c27724b2e5bb53c10dda9276f8b56cf79c82e01504784d9ffb8b873d440f43dfc",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://github.com/FreeRDP/FreeRDP/archive/3.32.2/FreeRDP-3.32.2.tar.gz (sha512-pinned)",
+        "method": "remove winpr/libwinpr/crt/unicode_builtin.c (license not allowed, per freerdp.spec/freerdp_download_and_repack.sh) from the upstream release and repack deterministically as FreeRDP-3.32.2-repack.tar.gz"
+      }
+    },
+    {
       "name": "fribidi",
       "version": "1.0.16",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/fribidi/fribidi-1.0.16.tar.xz/sha512/e3a56f36155f6813e3609473639fc533de742309f561c463012dc90b412a1ac7694b765d92669b2cbfaee973ca0e92fa5e926e68a1a078921f26ef17d82ab651/fribidi-1.0.16.tar.xz",
@@ -678,6 +699,17 @@
       "sha512": "843c550febcebf272a04cc780ab251c9e6bfd5f9cb6aa3b2b447ad049b31a7330102a9d4ec55995b20eb7e28085d957afb5ea293369ac4b82cc6835d24c1cb2e",
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/glib-networking/glib-networking-2.90.alpha.tar.xz/sha512/843c550febcebf272a04cc780ab251c9e6bfd5f9cb6aa3b2b447ad049b31a7330102a9d4ec55995b20eb7e28085d957afb5ea293369ac4b82cc6835d24c1cb2e/glib-networking-2.90.alpha.tar.xz"
+      ]
+    },
+    {
+      "name": "glibmm2.68",
+      "version": "2.90.0",
+      "url": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
+      "filename": "glibmm-2.90.0.tar.xz",
+      "feed": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
+      "sha512": "ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/glibmm2.68/glibmm-2.90.0.tar.xz/sha512/ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9/glibmm-2.90.0.tar.xz"
       ]
     },
     {
@@ -836,6 +868,16 @@
       "sha512": "d2d6931d945ac28884048c60107aa9daa9494d4863e37278830047acaa2706b84815952a1df9c9a2b3e63599b56ae7bc89cafb76980a66878ab44b4700bcf260",
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/gnome-shell-extension-gsconnect/gnome-shell-extension-gsconnect-72.tar.gz/sha512/d2d6931d945ac28884048c60107aa9daa9494d4863e37278830047acaa2706b84815952a1df9c9a2b3e63599b56ae7bc89cafb76980a66878ab44b4700bcf260/gnome-shell-extension-gsconnect-72.tar.gz"
+      ]
+    },
+    {
+      "name": "gnome-system-monitor",
+      "version": "51.1",
+      "url": "https://download.gnome.org/sources/gnome-system-monitor/51/gnome-system-monitor-51.1.tar.xz",
+      "filename": "gnome-system-monitor-51.1.tar.xz",
+      "sha512": "052f751a9dd8f533bf0c003310757a99d954810fa5d0770454ff0a617d4d97d221c68c98325c4c5db0e778561051f20da89dd56632ef7b42b39b16fed53c867e",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/gnome-system-monitor/gnome-system-monitor-51.1.tar.xz/sha512/052f751a9dd8f533bf0c003310757a99d954810fa5d0770454ff0a617d4d97d221c68c98325c4c5db0e778561051f20da89dd56632ef7b42b39b16fed53c867e/gnome-system-monitor-51.1.tar.xz"
       ]
     },
     {
@@ -1018,6 +1060,16 @@
       "stage": 4,
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/gtk4/gtk-4.23.4.tar.xz/sha512/da1cf7977ab020b16e7d38a5e259a1b33140f0147d6b96c938041a2a6c2586bddb45d4b97bc9c429880340aa52727f11a61d2f6fb15d7dfc3dffef73a2464c70/gtk-4.23.4.tar.xz"
+      ]
+    },
+    {
+      "name": "gtkmm4.0",
+      "version": "4.24.0",
+      "url": "https://download.gnome.org/sources/gtkmm/4.24/gtkmm-4.24.0.tar.xz",
+      "filename": "gtkmm-4.24.0.tar.xz",
+      "sha512": "a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/gtkmm4.0/gtkmm-4.24.0.tar.xz/sha512/a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9/gtkmm-4.24.0.tar.xz"
       ]
     },
     {
@@ -2567,6 +2619,16 @@
       ]
     },
     {
+      "name": "pangomm2.48",
+      "version": "2.58.0",
+      "url": "https://download.gnome.org/sources/pangomm/2.58/pangomm-2.58.0.tar.xz",
+      "filename": "pangomm-2.58.0.tar.xz",
+      "sha512": "54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/pangomm2.48/pangomm-2.58.0.tar.xz/sha512/54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2/pangomm-2.58.0.tar.xz"
+      ]
+    },
+    {
       "name": "parted",
       "version": "3.7",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/parted/parted-3.7.tar.xz/sha512/941afeb68edb45c33fb797f4c320ed1aa1de2e8b35defa5d742aa6894618e6729a1440e3ee0824e8710bc58eb42b85d77f28ba083d92d4ea3f3f65f37c8307b0/parted-3.7.tar.xz",
@@ -4094,75 +4156,6 @@
       ]
     },
     {
-      "name": "gnome-browser-connector",
-      "version": "42.1",
-      "url": "https://download.gnome.org/sources/gnome-browser-connector/42/gnome-browser-connector-42.1.tar.xz",
-      "filename": "gnome-browser-connector-42.1.tar.xz",
-      "sha512": "f8f7c0e7f3fb6bd50eddc674c48f521d07aa03b5b36674e8dfcb6b6d8203bbdf4fc4de1f7cbbcc805a3da3cf098a27bda281b7a0ac5b98d7144dffe85698b7d7"
-    },
-    {
-      "name": "cairomm1.16",
-      "version": "1.18.1",
-      "url": "https://www.cairographics.org/releases/cairomm-1.18.1.tar.xz",
-      "filename": "cairomm-1.18.1.tar.xz",
-      "sha512": "ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874",
-      "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/cairomm1.16/cairomm-1.18.1.tar.xz/sha512/ff23565dba657b45658613971429b5f06a60c585b467e9a302bda8ded7cf33dc3d4290b1699bd2bde907f5cbd3c8b4219d4e7f8442d65f61712767db6cb21874/cairomm-1.18.1.tar.xz"
-      ]
-    },
-    {
-      "name": "freerdp",
-      "version": "3.32.2",
-      "filename": "FreeRDP-3.32.2-repack.tar.gz",
-      "sha512": "ea37402ef427f156ad8f8168d3eb2cb0ccf0fcf352883fd8e31292ef2641274c27724b2e5bb53c10dda9276f8b56cf79c82e01504784d9ffb8b873d440f43dfc",
-      "generate": {
-        "script": "tools/generated_sources.py",
-        "input": "https://github.com/FreeRDP/FreeRDP/archive/3.32.2/FreeRDP-3.32.2.tar.gz (sha512-pinned)",
-        "method": "remove winpr/libwinpr/crt/unicode_builtin.c (license not allowed, per freerdp.spec/freerdp_download_and_repack.sh) from the upstream release and repack deterministically as FreeRDP-3.32.2-repack.tar.gz"
-      }
-    },
-    {
-      "name": "glibmm2.68",
-      "version": "2.90.0",
-      "url": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
-      "filename": "glibmm-2.90.0.tar.xz",
-      "feed": "https://download.gnome.org/sources/glibmm/2.90/glibmm-2.90.0.tar.xz",
-      "sha512": "ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9",
-      "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/glibmm2.68/glibmm-2.90.0.tar.xz/sha512/ac5972b9f42972aac36064a2aa2d9fd085b25836d91b3c8b06bc0fb6f6d600366d0e2d24be7d8e88fd7984c6d51b5ae4546463b502d0b73676de50931ad065f9/glibmm-2.90.0.tar.xz"
-      ]
-    },
-    {
-      "name": "gnome-system-monitor",
-      "version": "51.1",
-      "url": "https://download.gnome.org/sources/gnome-system-monitor/51/gnome-system-monitor-51.1.tar.xz",
-      "filename": "gnome-system-monitor-51.1.tar.xz",
-      "sha512": "052f751a9dd8f533bf0c003310757a99d954810fa5d0770454ff0a617d4d97d221c68c98325c4c5db0e778561051f20da89dd56632ef7b42b39b16fed53c867e",
-      "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/gnome-system-monitor/gnome-system-monitor-51.1.tar.xz/sha512/052f751a9dd8f533bf0c003310757a99d954810fa5d0770454ff0a617d4d97d221c68c98325c4c5db0e778561051f20da89dd56632ef7b42b39b16fed53c867e/gnome-system-monitor-51.1.tar.xz"
-      ]
-    },
-    {
-      "name": "gtkmm4.0",
-      "version": "4.24.0",
-      "url": "https://download.gnome.org/sources/gtkmm/4.24/gtkmm-4.24.0.tar.xz",
-      "filename": "gtkmm-4.24.0.tar.xz",
-      "sha512": "a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9",
-      "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/gtkmm4.0/gtkmm-4.24.0.tar.xz/sha512/a8ce7ba774e9d0f729cfc094df02b3f3ea76b77653f989126befa7a62130f25e56f349758f646604fc502636ca27fe247301e74690d49a8b844cee6b515b4db9/gtkmm-4.24.0.tar.xz"
-      ]
-    },
-    {
-      "name": "pangomm2.48",
-      "version": "2.58.0",
-      "url": "https://download.gnome.org/sources/pangomm/2.58/pangomm-2.58.0.tar.xz",
-      "filename": "pangomm-2.58.0.tar.xz",
-      "sha512": "54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2",
-      "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/pangomm2.48/pangomm-2.58.0.tar.xz/sha512/54dc329bde2000aa70e2c18f56fbf3ceddb8b40aa4cf9ff278e28ad1030279c536a58faff2cc871ad1ea6030206c59c9babf79f27339b5f0d149f9e8da4cfda2/pangomm-2.58.0.tar.xz"
-      ]
-    },
-    {
       "name": "libgedit-gtksourceview",
       "version": "299.8.0",
       "url": "https://gitlab.gnome.org/World/gedit/libgedit-gtksourceview/-/archive/299.8.0/libgedit-gtksourceview-299.8.0.tar.bz2",
@@ -4213,6 +4206,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libsigc++30/libsigc++-3.8.1.tar.xz/sha512/252175fdfece46a78e2d53a9622068ca3028d53eada671b64574a03ae1b7f5fcbefdd894b9e7f30256b661a21c05d78dbb3cb33395340279f3db4cb6f40cbc0d/libsigc++-3.8.1.tar.xz"
       ]
+    },
+    {
+      "name": "gnome-browser-connector",
+      "version": "42.1",
+      "url": "https://download.gnome.org/sources/gnome-browser-connector/42/gnome-browser-connector-42.1.tar.xz",
+      "filename": "gnome-browser-connector-42.1.tar.xz",
+      "sha512": "f8f7c0e7f3fb6bd50eddc674c48f521d07aa03b5b36674e8dfcb6b6d8203bbdf4fc4de1f7cbbcc805a3da3cf098a27bda281b7a0ac5b98d7144dffe85698b7d7"
     }
   ]
 }
