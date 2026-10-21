@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 15,
-      "total": 20
+      "pending": 14,
+      "total": 19
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1202,11 +1202,6 @@
     {
       "area": "gnome-apps",
       "name": "gnome-classic-session",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-menus",
       "state": "pending"
     },
     {
@@ -2434,11 +2429,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 443
+    "pending": 442
   },
   "totals": {
-    "backlog": 475,
-    "resolved": 70,
+    "backlog": 474,
+    "resolved": 71,
     "wontfix": 6
   }
 }
