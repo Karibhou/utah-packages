@@ -151,7 +151,7 @@ packages = [
 consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
-    "gnome-browser-connector",
+
     "gnome-classic-session",
 
     "gnome-rounded-blur",
@@ -677,6 +677,8 @@ packages = [
     { name = "gnome-app-list", pr = 550 },
     # GNOME remote desktop import (PR #555).
     { name = "gnome-remote-desktop", pr = 555 },
+    # GNOME browser connector import (PR #547).
+    { name = "gnome-browser-connector", pr = 547 },
 ]
 
 [wontfix]

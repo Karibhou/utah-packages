@@ -1191,11 +1191,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-browser-connector",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "gnome-classic-session",
       "state": "pending"
     },
