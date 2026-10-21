@@ -287,6 +287,59 @@ class HplipTransformTests(unittest.TestCase):
         self.assertIn("3.26.6", generated_sources.HPLIP_INPUT_SHA512)
 
 
+def build_freerdp_archive(version: str) -> bytes:
+    """A synthetic upstream FreeRDP .tar.gz carrying unicode_builtin.c."""
+    top = f"FreeRDP-{version}"
+    members = {
+        f"{top}/CMakeLists.txt": b"kept",
+        f"{top}/winpr/libwinpr/crt/unicode.c": b"kept: basename differs",
+        f"{top}/winpr/libwinpr/crt/unicode_builtin.c": b"license-encumbered",
+    }
+    buffer = io.BytesIO()
+    with gzip.GzipFile(filename="", mode="wb", fileobj=buffer, mtime=0) as gz:
+        with tarfile.open(fileobj=gz, mode="w", format=tarfile.PAX_FORMAT,
+                           pax_headers={"comment": "synthetic global header"}) as tar:
+            for name in sorted(members):
+                info = tarfile.TarInfo(name)
+                info.size = len(members[name])
+                info.mtime = 1760900000
+                tar.addfile(info, io.BytesIO(members[name]))
+    return buffer.getvalue()
+
+
+class FreerdpTransformTests(unittest.TestCase):
+    VERSION = "3.32.2"
+
+    def test_removes_exactly_unicode_builtin_c_and_the_global_header(self):
+        result = generated_sources._freerdp_transform(build_freerdp_archive(self.VERSION), self.VERSION)
+        names = set(read_archive(result))
+        self.assertNotIn("FreeRDP-3.32.2/winpr/libwinpr/crt/unicode_builtin.c", names)
+        self.assertIn("FreeRDP-3.32.2/CMakeLists.txt", names)
+        self.assertIn("FreeRDP-3.32.2/winpr/libwinpr/crt/unicode.c", names)
+
+    def test_transform_is_byte_reproducible(self):
+        archive = build_freerdp_archive(self.VERSION)
+        first = generated_sources._freerdp_transform(archive, self.VERSION)
+        self.assertEqual(first, generated_sources._freerdp_transform(archive, self.VERSION))
+
+    def test_a_missing_doomed_member_fails_closed(self):
+        top = f"FreeRDP-{self.VERSION}"
+        buffer = io.BytesIO()
+        with gzip.GzipFile(filename="", mode="wb", fileobj=buffer, mtime=0) as gz:
+            with tarfile.open(fileobj=gz, mode="w", format=tarfile.PAX_FORMAT) as tar:
+                info = tarfile.TarInfo(f"{top}/CMakeLists.txt")
+                info.size = 4
+                tar.addfile(info, io.BytesIO(b"kept"))
+        with self.assertRaisesRegex(RuntimeError, "expected exactly one"):
+            generated_sources._freerdp_transform(buffer.getvalue(), self.VERSION)
+
+    def test_metadata_names_the_recipe_source_and_pinned_input(self):
+        metadata = generated_sources.metadata_for("freerdp", ROOT / "packages" / "freerdp")
+        self.assertEqual(metadata["filename"], "FreeRDP-3.32.2-repack.tar.gz")
+        self.assertIn("FreeRDP-3.32.2.tar.gz", metadata["generate"]["input"])
+        self.assertIn("3.32.2", generated_sources.FREERDP_INPUT_SHA512)
+
+
 class GeneratedMetadataTests(unittest.TestCase):
     def test_intel_media_metadata_uses_spec_version(self):
         metadata = generated_sources.metadata_for(
