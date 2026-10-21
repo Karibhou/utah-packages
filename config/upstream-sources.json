@@ -4115,6 +4115,13 @@
       "sha512": "bddcc78dfb96af899e684eb64064a6841a77a9adab3dba5ca67b7ce263edd0a5a54e78d84ba68e4e073a50b368a4107bdf0c48955be0daee5539e1e7d2d91eeb"
     },
     {
+      "name": "yelp-xsl",
+      "version": "49.0",
+      "url": "https://download.gnome.org/sources/yelp-xsl/49/yelp-xsl-49.0.tar.xz",
+      "filename": "yelp-xsl-49.0.tar.xz",
+      "sha512": "0a79fa988673276f14cc9fbe9a18fbf63cd8d4864451af447d7353e8d03630525bf5905fc42bf68f7b6f4326f3fed69874b4c0d587289a4e173faf191ac071ff"
+    },
+    {
       "name": "cairomm1.16",
       "version": "1.18.1",
       "url": "https://www.cairographics.org/releases/cairomm-1.18.1.tar.xz",
