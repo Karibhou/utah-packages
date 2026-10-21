@@ -16,8 +16,8 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 16,
-      "total": 21
+      "pending": 15,
+      "total": 20
     },
     "long-tail": {
       "already_recipe": 11,
@@ -1218,11 +1218,6 @@
       "area": "gnome-apps",
       "name": "gnome-rounded-blur",
       "state": "already_recipe"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-system-monitor",
-      "state": "pending"
     },
     {
       "area": "gnome-apps",
@@ -2439,11 +2434,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 444
+    "pending": 443
   },
   "totals": {
-    "backlog": 476,
-    "resolved": 69,
+    "backlog": 475,
+    "resolved": 70,
     "wontfix": 6
   }
 }

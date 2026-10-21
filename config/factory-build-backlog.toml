@@ -157,7 +157,7 @@ packages = [
     "gnome-menus",
     "gnome-remote-desktop",
     "gnome-rounded-blur",
-    "gnome-system-monitor",
+
     "gnome-tour",
     "gnome-user-docs",
 
@@ -670,6 +670,8 @@ packages = [
     { name = "libwinpr", pr = 559 },
     # libsigc++30 is built by its own source package (PR #560).
     { name = "libsigc++30", pr = 560 },
+    # GNOME System Monitor import (PR #542).
+    { name = "gnome-system-monitor", pr = 542 },
 ]
 
 [wontfix]

@@ -574,6 +574,12 @@ packages:
     downstream_package_name: gnome-shell-extension-gsconnect
     paths:
       - packages/gnome-shell-extension-gsconnect
+  gnome-system-monitor:
+    specfile_path: gnome-system-monitor.spec
+    upstream_package_name: gnome-system-monitor
+    downstream_package_name: gnome-system-monitor
+    paths:
+      - packages/gnome-system-monitor
   gnome-tweaks:
     specfile_path: gnome-tweaks.spec
     upstream_package_name: gnome-tweaks
