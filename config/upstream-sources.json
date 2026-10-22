@@ -4262,6 +4262,13 @@
       "url": "https://download.gnome.org/sources/gnome-tour/50/gnome-tour-50.0.tar.xz",
       "filename": "gnome-tour-50.0.tar.xz",
       "sha512": "c02bdb4adc777f829a75b1c73ff964d6291209f303653a15b6c74177f9aaf5aa3cf06fe6c3bfc3f8b459279c9333fdc43a09f55892d0b3f87b6ac82bcffd6470"
+    },
+    {
+      "name": "powerstat",
+      "version": "0.04.05",
+      "url": "https://github.com/ColinIanKing/powerstat/archive/V0.04.05/powerstat-V0.04.05.tar.gz",
+      "filename": "powerstat-V0.04.05.tar.gz",
+      "sha512": "16331499cd1de639133aa36e822e8bf322b8d04575e011e6321571a924dd631fd9b0505cd51f47aed866668c4e216ed8c2a03f816000c9f98fb5a9f309d27848"
     }
   ]
 }
