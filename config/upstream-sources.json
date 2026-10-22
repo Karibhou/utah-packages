@@ -648,13 +648,13 @@
     },
     {
       "name": "git",
-      "version": "2.55.0",
-      "url": "https://www.kernel.org/pub/software/scm/git/git-2.55.0.tar.xz",
-      "filename": "git-2.55.0.tar.xz",
+      "version": "2.56.0",
+      "url": "https://www.kernel.org/pub/software/scm/git/git-2.56.0.tar.xz",
+      "filename": "git-2.56.0.tar.xz",
       "feed": "https://release-monitoring.org/project/5350",
-      "sha512": "73a53e5e79e9c357884512ad9fe5788ce48c33fd7ebb49f7c68f63c872beb5c5766f4fd1a9d9a2d8c89c192dc801ac7339422e9eec644ada56215fe9803af741",
+      "sha512": "d240240aac3ad17fce48861be91dc0cd899c59d3d6014f7e0cc4b3174ef37c4fbfd5b6c4a520a6f5d7e452e5ad97752b40774ab680dc226acc630173475c6b87",
       "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/git/git-2.55.0.tar.xz/sha512/73a53e5e79e9c357884512ad9fe5788ce48c33fd7ebb49f7c68f63c872beb5c5766f4fd1a9d9a2d8c89c192dc801ac7339422e9eec644ada56215fe9803af741/git-2.55.0.tar.xz"
+        "https://src.fedoraproject.org/repo/pkgs/rpms/git/git-2.56.0.tar.xz/sha512/d240240aac3ad17fce48861be91dc0cd899c59d3d6014f7e0cc4b3174ef37c4fbfd5b6c4a520a6f5d7e452e5ad97752b40774ab680dc226acc630173475c6b87/git-2.56.0.tar.xz"
       ]
     },
     {
