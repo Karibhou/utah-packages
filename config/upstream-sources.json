@@ -648,13 +648,13 @@
     },
     {
       "name": "git",
-      "version": "2.55.0",
-      "url": "https://www.kernel.org/pub/software/scm/git/git-2.55.0.tar.xz",
-      "filename": "git-2.55.0.tar.xz",
+      "version": "2.56.0",
+      "url": "https://www.kernel.org/pub/software/scm/git/git-2.56.0.tar.xz",
+      "filename": "git-2.56.0.tar.xz",
       "feed": "https://release-monitoring.org/project/5350",
-      "sha512": "73a53e5e79e9c357884512ad9fe5788ce48c33fd7ebb49f7c68f63c872beb5c5766f4fd1a9d9a2d8c89c192dc801ac7339422e9eec644ada56215fe9803af741",
+      "sha512": "d240240aac3ad17fce48861be91dc0cd899c59d3d6014f7e0cc4b3174ef37c4fbfd5b6c4a520a6f5d7e452e5ad97752b40774ab680dc226acc630173475c6b87",
       "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/git/git-2.55.0.tar.xz/sha512/73a53e5e79e9c357884512ad9fe5788ce48c33fd7ebb49f7c68f63c872beb5c5766f4fd1a9d9a2d8c89c192dc801ac7339422e9eec644ada56215fe9803af741/git-2.55.0.tar.xz"
+        "https://src.fedoraproject.org/repo/pkgs/rpms/git/git-2.56.0.tar.xz/sha512/d240240aac3ad17fce48861be91dc0cd899c59d3d6014f7e0cc4b3174ef37c4fbfd5b6c4a520a6f5d7e452e5ad97752b40774ab680dc226acc630173475c6b87/git-2.56.0.tar.xz"
       ]
     },
     {
@@ -1010,14 +1010,14 @@
     },
     {
       "name": "gtk4",
-      "version": "4.23.4",
-      "url": "https://download.gnome.org/sources/gtk/4.23/gtk-4.23.4.tar.xz",
-      "filename": "gtk-4.23.4.tar.xz",
-      "sha512": "da1cf7977ab020b16e7d38a5e259a1b33140f0147d6b96c938041a2a6c2586bddb45d4b97bc9c429880340aa52727f11a61d2f6fb15d7dfc3dffef73a2464c70",
-      "sha256_url": "https://download.gnome.org/sources/gtk/4.23/gtk-4.23.4.sha256sum",
+      "version": "4.24.1",
+      "url": "https://download.gnome.org/sources/gtk/4.24/gtk-4.24.1.tar.xz",
+      "filename": "gtk-4.24.1.tar.xz",
+      "sha512": "0e088442279c67a8f4c29bba979efe7e68bb1885a26da292035efc86425c462d1894476ea0e8bb4a08b5ad884f3eb3980782540a1cba89af5773852109af0ceb",
+      "sha256_url": "https://download.gnome.org/sources/gtk/4.24/gtk-4.24.1.sha256sum",
       "stage": 4,
       "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/gtk4/gtk-4.23.4.tar.xz/sha512/da1cf7977ab020b16e7d38a5e259a1b33140f0147d6b96c938041a2a6c2586bddb45d4b97bc9c429880340aa52727f11a61d2f6fb15d7dfc3dffef73a2464c70/gtk-4.23.4.tar.xz"
+        "https://src.fedoraproject.org/repo/pkgs/rpms/gtk4/gtk-4.24.1.tar.xz/sha512/0e088442279c67a8f4c29bba979efe7e68bb1885a26da292035efc86425c462d1894476ea0e8bb4a08b5ad884f3eb3980782540a1cba89af5773852109af0ceb/gtk-4.24.1.tar.xz"
       ]
     },
     {
@@ -4262,6 +4262,20 @@
       "url": "https://download.gnome.org/sources/gnome-tour/50/gnome-tour-50.0.tar.xz",
       "filename": "gnome-tour-50.0.tar.xz",
       "sha512": "c02bdb4adc777f829a75b1c73ff964d6291209f303653a15b6c74177f9aaf5aa3cf06fe6c3bfc3f8b459279c9333fdc43a09f55892d0b3f87b6ac82bcffd6470"
+    },
+    {
+      "name": "intel-lpmd",
+      "version": "0.1.0^git20260608.40d18a6",
+      "url": "https://github.com/intel/intel-lpmd/archive/40d18a6cc22c37addc3e636bc9c5cf1ab5d5fbda/intel-lpmd-40d18a6.tar.gz",
+      "filename": "intel-lpmd-40d18a6.tar.gz",
+      "sha512": "3f18a27ac5a70a6240c02b8b9157846071167e1e9aee5db06cd2755c378382f869ce2594d409092534f924cdc0ea7ae0ebed14b85cc5f25bb68cac8b67efb92c"
+    },
+    {
+      "name": "powerstat",
+      "version": "0.04.05",
+      "url": "https://github.com/ColinIanKing/powerstat/archive/V0.04.05/powerstat-V0.04.05.tar.gz",
+      "filename": "powerstat-V0.04.05.tar.gz",
+      "sha512": "16331499cd1de639133aa36e822e8bf322b8d04575e011e6321571a924dd631fd9b0505cd51f47aed866668c4e216ed8c2a03f816000c9f98fb5a9f309d27848"
     },
     {
       "name": "powertop",

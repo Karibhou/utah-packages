@@ -76,6 +76,15 @@ of an area name whose move is still owed (for example a recipe that landed
 before the name was catalogued), not an alternative way to close it, and the
 next PR that touches the name sweeps it into `[resolved]`.
 
+The `Import Rawhide package` workflow does **not** make this move: its pull
+request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
+name in its area. Before merging one, add the `[resolved]` entry (with that
+PR's number) and rerun the auditor, or `--check` reports `entries drift` on
+`main`. Two such PRs open at once also conflict on the lock's last entry and
+the `docs/architecture.md` counts: merge `main` into the second, keep both lock
+entries, and regenerate the counts (`tools/render_packit_config.py --write`,
+`tools/render_architecture_counts.py --write`).
+
 The catalog test (`tests/test_factory_build_backlog.py::CatalogConsistencyTests`)
 pins the count and sorted-name SHA-256 against the original audit. The auditor
 checks that same digest across area, resolved and wontfix entries. A one-for-one

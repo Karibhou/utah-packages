@@ -26,8 +26,7 @@
       "total": 174
     },
     "power": {
-      "pending": 2,
-      "total": 2
+      "total": 0
     },
     "printing-scanning": {
       "pending": 20,
@@ -2125,16 +2124,6 @@
       "state": "pending"
     },
     {
-      "area": "power",
-      "name": "intel-lpmd",
-      "state": "pending"
-    },
-    {
-      "area": "power",
-      "name": "powerstat",
-      "state": "pending"
-    },
-    {
       "area": "printing-scanning",
       "name": "c2esp",
       "state": "pending"
@@ -2384,11 +2373,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 433
+    "pending": 431
   },
   "totals": {
-    "backlog": 465,
-    "resolved": 80,
+    "backlog": 463,
+    "resolved": 82,
     "wontfix": 6
   }
 }
