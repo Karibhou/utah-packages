@@ -26,8 +26,8 @@
       "total": 174
     },
     "power": {
-      "pending": 3,
-      "total": 3
+      "pending": 1,
+      "total": 1
     },
     "printing-scanning": {
       "pending": 20,
@@ -2126,16 +2126,6 @@
     },
     {
       "area": "power",
-      "name": "intel-lpmd",
-      "state": "pending"
-    },
-    {
-      "area": "power",
-      "name": "powerstat",
-      "state": "pending"
-    },
-    {
-      "area": "power",
       "name": "powertop",
       "state": "pending"
     },
@@ -2394,11 +2384,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 435
+    "pending": 433
   },
   "totals": {
-    "backlog": 467,
-    "resolved": 78,
+    "backlog": 465,
+    "resolved": 80,
     "wontfix": 6
   }
 }

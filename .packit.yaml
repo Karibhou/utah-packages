@@ -2128,6 +2128,12 @@ packages:
     downstream_package_name: poppler-data
     paths:
       - packages/poppler-data
+  powerstat:
+    specfile_path: powerstat.spec
+    upstream_package_name: powerstat
+    downstream_package_name: powerstat
+    paths:
+      - packages/powerstat
   ppp:
     specfile_path: ppp.spec
     upstream_package_name: ppp

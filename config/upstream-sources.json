@@ -4269,6 +4269,13 @@
       "url": "https://github.com/intel/intel-lpmd/archive/40d18a6cc22c37addc3e636bc9c5cf1ab5d5fbda/intel-lpmd-40d18a6.tar.gz",
       "filename": "intel-lpmd-40d18a6.tar.gz",
       "sha512": "3f18a27ac5a70a6240c02b8b9157846071167e1e9aee5db06cd2755c378382f869ce2594d409092534f924cdc0ea7ae0ebed14b85cc5f25bb68cac8b67efb92c"
+    },
+    {
+      "name": "powerstat",
+      "version": "0.04.05",
+      "url": "https://github.com/ColinIanKing/powerstat/archive/V0.04.05/powerstat-V0.04.05.tar.gz",
+      "filename": "powerstat-V0.04.05.tar.gz",
+      "sha512": "16331499cd1de639133aa36e822e8bf322b8d04575e011e6321571a924dd631fd9b0505cd51f47aed866668c4e216ed8c2a03f816000c9f98fb5a9f309d27848"
     }
   ]
 }
