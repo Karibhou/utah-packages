@@ -4262,6 +4262,27 @@
       "url": "https://download.gnome.org/sources/gnome-tour/50/gnome-tour-50.0.tar.xz",
       "filename": "gnome-tour-50.0.tar.xz",
       "sha512": "c02bdb4adc777f829a75b1c73ff964d6291209f303653a15b6c74177f9aaf5aa3cf06fe6c3bfc3f8b459279c9333fdc43a09f55892d0b3f87b6ac82bcffd6470"
+    },
+    {
+      "name": "powertop",
+      "version": "2.16.1",
+      "url": "https://github.com/fenrus75/powertop/archive/v2.16.1/powertop-2.16.1.tar.gz",
+      "filename": "powertop-2.16.1.tar.gz",
+      "sha512": "a249a2ee9b5d81e0bacad60782bc6c1c58f5cddc636e596b997bf1975f6ff336eb551d40e63741191afb07dde6d4b154efeb8ba51cddf9faa43552f0d206f858",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/powertop/powertop-2.16.1.tar.gz/sha512/a249a2ee9b5d81e0bacad60782bc6c1c58f5cddc636e596b997bf1975f6ff336eb551d40e63741191afb07dde6d4b154efeb8ba51cddf9faa43552f0d206f858/powertop-2.16.1.tar.gz"
+      ]
+    },
+    {
+      "name": "fpaste",
+      "version": "0.5.0.0",
+      "filename": "fpaste-0.5.0.0.tar.gz",
+      "sha512": "5263bfcdffd81ba7dcdf1495bcf6cf8eb419e686354f8aef55be977f9c6cad23db27e3cdf24b1f461cb441cdcf752cb29dac639693680c793c52adbf2a3fd30c",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://codeberg.org/sanjay_ankur/fpaste/archive/0.5.0.0.tar.gz (sha512-pinned)",
+        "method": "move the Codeberg tag archive from fpaste/ to fpaste-0.5.0.0/ without .gitignore (the tree of Fedora's hand-made tarball; pagure.io, the recipe's Source0 host, is gone) and repack deterministically as fpaste-0.5.0.0.tar.gz"
+      }
     }
   ]
 }

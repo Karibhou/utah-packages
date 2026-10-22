@@ -87,7 +87,6 @@ consumer_issue = "projectbluefin/utah#388"
 packages = [
     "intel-lpmd",
     "powerstat",
-    "powertop",
 ]
 
 [areas.vpn]
@@ -372,7 +371,6 @@ packages = [
 # projectbluefin/utah#394 - 2 names
 consumer_issue = "projectbluefin/utah#394"
 packages = [
-    "fpaste",
     "glow",
 ]
 
@@ -684,6 +682,9 @@ packages = [
     { name = "yelp-xsl", pr = 552 },
     # Yelp runtime libraries are built by the yelp source package (PR #553).
     { name = "yelp-libs", pr = 553 },
+    # powertop (#477, power) and fpaste (#497, ujust-deps) Rawhide imports.
+    { name = "powertop" },
+    { name = "fpaste" },
 ]
 
 [wontfix]
