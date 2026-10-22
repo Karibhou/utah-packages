@@ -89,6 +89,31 @@ wayland), 81 unsafe and 2 with no Koji Rawhide build (`linux-atm`,
 `malcontent-bootstrap`). Most unsafe moves are Version moves (70) or recipes
 carrying Utah-local edits (48).
 
+## A %check failure Rawhide already patched: re-import, don't skip
+
+When a carried recipe starts failing `%check` because the build root moved
+under it, look at Rawhide's spec before touching the tests: Fedora has often
+hit the same build root first. Hummingbird's libcurl 8.23.0 strips
+credentials from the effective URL, so git 2.55.0 failed t5550.15/16/20 and
+t5541.18 deterministically (issue #565). Rawhide's 2.56.0 recipe
+(`4fe49145479f0f74c07b17e87e7c3fb12952ab80`, Koji `git-2.56.0-1.fc46`)
+carries `git-2.56.0-http-strip-creds-effective-url.patch`. The fix was a hand
+re-import, not a skip pattern:
+
+```sh
+python3 tools/rawhide_reimport.py --package git   # reports why it is unsafe
+python3 tools/import_rawhide.py git --ref <koji-commit> --replace
+```
+
+Pick the Koji-built commit that carries the patch, diff the old recipe
+against Fedora's tree at the old pin first to find Utah-local deltas (git had
+none), and drop the `INERT_FILES` the import adds back (`.gitignore`,
+`.mailmap`). A version move still means a hand lock update: version, URL,
+filename and SHA-512 in `config/upstream-sources.json` from the upstream
+tarball (download and verify; Fedora stays in `fallback_urls`), matching
+`packages/<name>/sources`, and no `dist_bump` to carry because `Release`
+resets with the new `Version`.
+
 ## Changing the rules
 
 Loosen a rule only with a test in `tests/test_rawhide_reimport.py` that shows
