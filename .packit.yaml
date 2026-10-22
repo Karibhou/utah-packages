@@ -904,6 +904,12 @@ packages:
     downstream_package_name: intel-gmmlib
     paths:
       - packages/intel-gmmlib
+  intel-lpmd:
+    specfile_path: intel-lpmd.spec
+    upstream_package_name: intel-lpmd
+    downstream_package_name: intel-lpmd
+    paths:
+      - packages/intel-lpmd
   intel-media-driver-free:
     specfile_path: intel-media-driver-free.spec
     upstream_package_name: intel-media-driver-free

@@ -4262,6 +4262,13 @@
       "url": "https://download.gnome.org/sources/gnome-tour/50/gnome-tour-50.0.tar.xz",
       "filename": "gnome-tour-50.0.tar.xz",
       "sha512": "c02bdb4adc777f829a75b1c73ff964d6291209f303653a15b6c74177f9aaf5aa3cf06fe6c3bfc3f8b459279c9333fdc43a09f55892d0b3f87b6ac82bcffd6470"
+    },
+    {
+      "name": "intel-lpmd",
+      "version": "0.1.0^git20260608.40d18a6",
+      "url": "https://github.com/intel/intel-lpmd/archive/40d18a6cc22c37addc3e636bc9c5cf1ab5d5fbda/intel-lpmd-40d18a6.tar.gz",
+      "filename": "intel-lpmd-40d18a6.tar.gz",
+      "sha512": "3f18a27ac5a70a6240c02b8b9157846071167e1e9aee5db06cd2755c378382f869ce2594d409092534f924cdc0ea7ae0ebed14b85cc5f25bb68cac8b67efb92c"
     }
   ]
 }
