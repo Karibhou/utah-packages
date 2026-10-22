@@ -70,6 +70,28 @@ exits non-zero if it changed, and the workflow diffs `.packit.yaml` and
 `config/upstream-sources.json` after running the unit tests and
 `tools/validate.py`.
 
+## Recipes that drift behind Rawhide BuildRequires
+
+A `tools/upstream_bump.py` Version move rewrites only `Version:`, `sources`
+and the lock; it keeps the old recipe's BuildRequires. When the new release
+needs a new build tool, the bumped recipe fails and this tool cannot repair
+it, even after Fedora ships the same version with the fix. libsecret
+(issue #565) is the example: #535 moved it 0.21.7 -> 0.21.8.2 on Fedora's
+0.21.7 recipe, and 0.21.8's `meson.build` needs `dbus-run-session` (via
+`find_program`). The bump made the recipe diverge from the pin (rule 4,
+"factory edited libsecret.spec, sources"). Rule 6 also fired: compared with
+the pin, Fedora's catch-up commit changes `sources` and `Version:`. Rule 7
+fired on the added `/usr/bin/dbus-run-session`, `python3-dbus` and
+`python3-gobject`. Rule 4 alone keeps it out for good.
+
+Fix it by hand. When Koji's Rawhide build has the same Version as the lock,
+run `tools/import_rawhide.py <pkg> --ref <Koji commit> --replace`. Delete the
+`INERT_FILES` the import adds, and confirm `sources` is byte-identical
+(the lock then stays). That puts the recipe back to Fedora's tree, so later
+moves are automated again. Check the `unsafe` lines of a report run for
+`factory edited <pkg>.spec, sources` next to `adds BuildRequires`. That
+pairing is how this drift shows up.
+
 ## Running it locally
 
 ```sh
