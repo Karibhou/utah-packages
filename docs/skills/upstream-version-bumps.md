@@ -124,6 +124,41 @@ Verify a fix with `rebuild-rpms.yml` dispatched on the `fix/recipe-<name>`
 ref with `packages=["<name>"]`; a non-main ref publishes only a
 branch-named tag.
 
+## A consumer that needs the next cycle
+
+The scheduled bump never crosses a release cycle (`plan()`, `cycle_final`),
+so a library locked on a GNOME development series stays there after the
+stable series ships. gtk4 sat at 4.23.4 (cycle 4.23) while 4.24.0 and 4.24.1
+were out; every run printed `needs review gtk4: 4.23.4 -> 4.24.1 (crosses a
+release cycle or a major)` and applied nothing, until nautilus 51.1 failed
+meson configure with `gtk4 ... found 4.23.4 but need: '>= 4.24.0'` (#565).
+Nothing in RPM metadata warned: nautilus's spec still says
+`pkgconfig(gtk4) >= 4.22.0`, so the BuildRequires resolved and only meson
+knew the real floor.
+
+How to spot it: a configure failure naming a factory library's *locked*
+version below a `>=` floor, or a `needs review` line for a library whose
+locked minor is odd (GNOME's development series) once the even minor has
+a final. Compare the consumer's `meson.build` floor with the lock, not its
+spec. Move it on one package with the repo's own tool, which then does the
+download, digest, spec, `sources` and fallback in one step:
+
+```sh
+python3 tools/upstream_bump.py --package gtk4 --cycle 4.24          # report
+python3 tools/upstream_bump.py --package gtk4 --cycle 4.24 --apply
+```
+
+Then check the new tarball against GNOME's `.sha256sum`, and that the
+lookaside fallback URL actually serves the same bytes. If Rawhide's recipe at
+the new version differs only by `Version:` and `sources`, re-pin provenance
+with `tools/import_rawhide.py <pkg> --ref <Koji-built commit> --replace`
+(take the commit from Koji's `getBuild().source`) and delete the inert
+files it extracts (`.gitignore`, `.packit.yaml`, `monitoring.toml`): a version
+bump alone leaves `.hummingbird-upstream.json` on the old commit, which
+`rawhide_reimport.py` then reports as factory divergence and never
+re-imports again. gtk4's 4.23.4 bump had done exactly that (pin at the 4.23.3
+commit); after the 4.24.1 re-pin the tool reports it `current`.
+
 ## The bump gate
 
 The daily in-cycle pull request on `bump/upstream-sources` merges itself

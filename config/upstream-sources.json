@@ -1010,14 +1010,14 @@
     },
     {
       "name": "gtk4",
-      "version": "4.23.4",
-      "url": "https://download.gnome.org/sources/gtk/4.23/gtk-4.23.4.tar.xz",
-      "filename": "gtk-4.23.4.tar.xz",
-      "sha512": "da1cf7977ab020b16e7d38a5e259a1b33140f0147d6b96c938041a2a6c2586bddb45d4b97bc9c429880340aa52727f11a61d2f6fb15d7dfc3dffef73a2464c70",
-      "sha256_url": "https://download.gnome.org/sources/gtk/4.23/gtk-4.23.4.sha256sum",
+      "version": "4.24.1",
+      "url": "https://download.gnome.org/sources/gtk/4.24/gtk-4.24.1.tar.xz",
+      "filename": "gtk-4.24.1.tar.xz",
+      "sha512": "0e088442279c67a8f4c29bba979efe7e68bb1885a26da292035efc86425c462d1894476ea0e8bb4a08b5ad884f3eb3980782540a1cba89af5773852109af0ceb",
+      "sha256_url": "https://download.gnome.org/sources/gtk/4.24/gtk-4.24.1.sha256sum",
       "stage": 4,
       "fallback_urls": [
-        "https://src.fedoraproject.org/repo/pkgs/rpms/gtk4/gtk-4.23.4.tar.xz/sha512/da1cf7977ab020b16e7d38a5e259a1b33140f0147d6b96c938041a2a6c2586bddb45d4b97bc9c429880340aa52727f11a61d2f6fb15d7dfc3dffef73a2464c70/gtk-4.23.4.tar.xz"
+        "https://src.fedoraproject.org/repo/pkgs/rpms/gtk4/gtk-4.24.1.tar.xz/sha512/0e088442279c67a8f4c29bba979efe7e68bb1885a26da292035efc86425c462d1894476ea0e8bb4a08b5ad884f3eb3980782540a1cba89af5773852109af0ceb/gtk-4.24.1.tar.xz"
       ]
     },
     {
