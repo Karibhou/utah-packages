@@ -165,6 +165,7 @@ python-pam
 python-psutil
 python-pydantic
 python-typing-inspection
+redhat-menus
 rtkit
 runc
 samba
