@@ -41,3 +41,7 @@ packages/icu/zoneinfo64.txt
 
 # The Pages catalog payload; .github/workflows/pages.yml renders it at deploy.
 site/packages.json
+
+# Leftovers from patch / git apply --reject; never a tracked input.
+*.orig
+*.rej
