@@ -1420,6 +1420,12 @@ packages:
     downstream_package_name: libisofs
     paths:
       - packages/libisofs
+  libjwt:
+    specfile_path: libjwt.spec
+    upstream_package_name: libjwt
+    downstream_package_name: libjwt
+    paths:
+      - packages/libjwt
   liblc3:
     specfile_path: liblc3.spec
     upstream_package_name: liblc3
@@ -2452,6 +2458,12 @@ packages:
     downstream_package_name: srt
     paths:
       - packages/srt
+  sso-mib:
+    specfile_path: sso-mib.spec
+    upstream_package_name: sso-mib
+    downstream_package_name: sso-mib
+    paths:
+      - packages/sso-mib
   startup-notification:
     specfile_path: startup-notification.spec
     upstream_package_name: startup-notification

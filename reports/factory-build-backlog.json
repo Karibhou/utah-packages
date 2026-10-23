@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 158,
-      "total": 170
+      "pending": 157,
+      "total": 169
     },
     "power": {
       "total": 0
@@ -1980,11 +1980,6 @@
     },
     {
       "area": "long-tail",
-      "name": "sso-mib-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "tesseract-common",
       "state": "pending"
     },
@@ -2353,11 +2348,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 427
+    "pending": 426
   },
   "totals": {
-    "backlog": 459,
-    "resolved": 86,
+    "backlog": 458,
+    "resolved": 87,
     "wontfix": 6
   }
 }

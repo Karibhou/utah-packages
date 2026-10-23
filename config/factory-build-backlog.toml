@@ -531,7 +531,6 @@ packages = [
     "sord",
     "sos",
     "sratom",
-    "sso-mib-libs",
     "tesseract-common",
     "tesseract-langpack-eng",
     "tesseract-libs",
@@ -687,6 +686,8 @@ packages = [
     { name = "mod_dnssd", pr = 573 },
     { name = "mozilla-filesystem", pr = 573 },
     { name = "redhat-menus", pr = 573 },
+    # sso-mib-libs is a %package subpackage of sso-mib.spec (PR #574).
+    { name = "sso-mib-libs", pr = 574 },
 ]
 
 [wontfix]

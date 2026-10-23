@@ -4326,6 +4326,20 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/redhat-menus/redhat-menus-12.0.2.tar.gz/md5/494af105a03e3679505ceb44c3cb6a77/redhat-menus-12.0.2.tar.gz",
       "filename": "redhat-menus-12.0.2.tar.gz",
       "sha512": "836ec920ac9ab118d8b7838e1aa6e145108e26e3a65c9d65df52853e8fa68e0714d389488505e0458e1f192fcacacab2ac86ca4cffa5f8e9c2391c189b5c24b5"
+    },
+    {
+      "name": "sso-mib",
+      "version": "0.9.0",
+      "url": "https://github.com/siemens/sso-mib/archive/v0.9.0/sso-mib-0.9.0.tar.gz",
+      "filename": "sso-mib-0.9.0.tar.gz",
+      "sha512": "90ad72c473769effa250efedaaf7b9a520ab29cc0e29170dacc082fa215803d213370351b694274665ee4e2329f343d6a096321ef09e8955110c2f209a61d782"
+    },
+    {
+      "name": "libjwt",
+      "version": "1.12.1",
+      "url": "https://github.com/benmcollins/libjwt/archive/v1.12.1.tar.gz",
+      "filename": "v1.12.1.tar.gz",
+      "sha512": "facbd82607363f7fc8767b3299b6f8b4e0aeb1e7a65d956bedf5ef1719304aac2f420f763ac2c08167f2176475f04b6c6c30fd448b7991a6fc6756793b8ad92c"
     }
   ]
 }
