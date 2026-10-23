@@ -441,9 +441,11 @@ planted RPM's scriptlets ran as root in CI long before the seed check could
 refuse the image at publish time. The action therefore runs the same
 `cosign verify` (same two signer files, same OIDC issuer) on the digest it
 pulled before `docker create`. Its `signer_ref` input pins the ref the way
-the seed check does; a caller that leaves it empty still requires this
-repository's own publish signature, on any ref of this repository (the
-canary's images are signed under `refs/pull/N/merge`). `tests/test_factory_witness.py` holds the order and the identity.
+the seed check does. A caller that leaves it empty gets `refs/heads/main`
+when the run itself is on `main` (prepare resolves only `latest` there, so
+the build roots are no looser than the seed check); off `main` it still
+requires this repository's own publish signature, on any ref of this
+repository (the canary's images are signed under `refs/pull/N/merge`). `tests/test_factory_witness.py` holds the order and the identity.
 
 ## 20. Bypassing the source-lock contract with direct JSON parsing
 
