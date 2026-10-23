@@ -32,9 +32,11 @@ inputs:
     description: >
       The git ref the publishing workflow must have run on when it signed the
       image (refs/heads/main for latest, the branch's own ref for a branch
-      tag). Empty admits any ref of this repository -- the canary signs
-      under refs/pull/N/merge -- which still requires the image to carry
-      this repository's own publish signature.
+      tag). When empty, a run on refs/heads/main requires refs/heads/main --
+      prepare resolves only latest there, and only publish on main writes
+      latest -- and any other run admits any ref of this repository (the
+      canary signs under refs/pull/N/merge), which still requires the image
+      to carry this repository's own publish signature.
     required: false
     default: ''
 
@@ -91,11 +93,22 @@ runs:
         echo "8b24b946dd5809c6bd93de08033bcf6bc0ed7d336b7785787c080f574b89249b  $cosign" | sha256sum -c - >/dev/null
         chmod 0755 "$cosign"
         escaped_repository=$(printf '%s' "$REPOSITORY" | sed 's/[.]/[.]/g')
+        # On main the only image prepare ever resolves is latest, and the
+        # publish seed check for that same tag pins its signer to
+        # refs/heads/main; the build roots must not be looser than the seed,
+        # or an image signed from a pull request's own copy of the publish
+        # workflow (canary runs with id-token and packages write) is accepted
+        # here while the seed check later refuses it -- after every planted
+        # RPM has already run as root in the privileged build containers.
+        if [ -z "$SIGNER_REF" ] && [ "$GITHUB_REF" = "refs/heads/main" ]; then
+          SIGNER_REF=refs/heads/main
+        fi
         if [ -n "$SIGNER_REF" ]; then
           ref_pattern=$(printf '%s' "$SIGNER_REF" | sed 's/[.]/[.]/g')
         else
           ref_pattern='refs/[^@]+'
         fi
+        echo "factory image signer ref: ${SIGNER_REF:-<any ref of this repository>}"
         "$cosign" verify "$IMAGE" \
           --certificate-oidc-issuer https://token.actions.githubusercontent.com \
           --certificate-identity-regexp "^https://github[.]com/${escaped_repository}/[.]github/workflows/(rebuild-rpms|publish-repository)[.]yml@${ref_pattern}\$" \

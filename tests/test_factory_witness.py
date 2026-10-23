@@ -204,6 +204,29 @@ class FactoryWitnessTests(unittest.TestCase):
         self.assertIn("8b24b946dd5809c6bd93de08033bcf6bc0ed7d336b7785787c080f574b89249b", script)
         self.assertIn("signer_ref", action["inputs"])
 
+    def test_the_load_action_pins_the_signer_to_main_on_main(self) -> None:
+        """A build root on main takes only an image publish signed from main.
+
+        prepare resolves only latest on main, and the publish seed check for
+        that tag pins its signer to refs/heads/main. Left to the any-ref
+        default, the load action admitted a latest signed from a pull
+        request's own copy of the publish workflow -- the canary runs with
+        id-token and packages write -- into every main build root, where its
+        RPMs run as root before the seed check ever refuses the image. The
+        action closes that itself when no caller passes signer_ref, so no
+        workflow has to remember to.
+        """
+        action = yaml.safe_load(LOAD_ACTION.read_text())
+        script = next(step["run"] for step in action["runs"]["steps"] if "run" in step)
+        pin = '[ -z "$SIGNER_REF" ] && [ "$GITHUB_REF" = "refs/heads/main" ]'
+        self.assertIn(pin, script)
+        self.assertIn("SIGNER_REF=refs/heads/main", script)
+        self.assertLess(script.index(pin), script.index("SIGNER_REF=refs/heads/main"))
+        self.assertLess(script.index("SIGNER_REF=refs/heads/main"), script.index("ref_pattern="))
+        self.assertLess(script.index("ref_pattern="), script.index('verify "$IMAGE"'))
+        # An explicit signer_ref from a caller still wins over the default.
+        self.assertIn('if [ -n "$SIGNER_REF" ]; then', script)
+
     def test_debuginfo_is_not_built_only_to_be_discarded(self) -> None:
         # Both lanes: the mock lane inline, the container lane in its script.
         text = uncommented(BUILD_STAGE) + uncommented(ROOT / "tools" / "build_container.sh")
