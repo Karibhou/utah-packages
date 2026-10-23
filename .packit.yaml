@@ -1732,6 +1732,12 @@ packages:
     downstream_package_name: libvisual
     paths:
       - packages/libvisual
+  libvncserver:
+    specfile_path: libvncserver.spec
+    upstream_package_name: libvncserver
+    downstream_package_name: libvncserver
+    paths:
+      - packages/libvncserver
   libvorbis:
     specfile_path: libvorbis.spec
     upstream_package_name: libvorbis
@@ -1882,12 +1888,24 @@ packages:
     downstream_package_name: mobile-broadband-provider-info
     paths:
       - packages/mobile-broadband-provider-info
+  mod_dnssd:
+    specfile_path: mod_dnssd.spec
+    upstream_package_name: mod_dnssd
+    downstream_package_name: mod_dnssd
+    paths:
+      - packages/mod_dnssd
   mozc:
     specfile_path: mozc.spec
     upstream_package_name: mozc
     downstream_package_name: mozc
     paths:
       - packages/mozc
+  mozilla-filesystem:
+    specfile_path: mozilla-filesystem.spec
+    upstream_package_name: mozilla-filesystem
+    downstream_package_name: mozilla-filesystem
+    paths:
+      - packages/mozilla-filesystem
   mozjs140:
     specfile_path: mozjs140.spec
     upstream_package_name: mozjs140
@@ -2266,6 +2284,12 @@ packages:
     downstream_package_name: re2
     paths:
       - packages/re2
+  redhat-menus:
+    specfile_path: redhat-menus.spec
+    upstream_package_name: redhat-menus
+    downstream_package_name: redhat-menus
+    paths:
+      - packages/redhat-menus
   rest:
     specfile_path: rest.spec
     upstream_package_name: rest

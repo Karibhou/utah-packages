@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 162,
-      "total": 174
+      "pending": 158,
+      "total": 170
     },
     "power": {
       "total": 0
@@ -1675,11 +1675,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libvncserver",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libwmf-lite",
       "state": "pending"
     },
@@ -1720,17 +1715,7 @@
     },
     {
       "area": "long-tail",
-      "name": "mod_dnssd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "mod_http2",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "mozilla-filesystem",
       "state": "pending"
     },
     {
@@ -1946,11 +1931,6 @@
     {
       "area": "long-tail",
       "name": "quota-nls",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "redhat-menus",
       "state": "pending"
     },
     {
@@ -2373,11 +2353,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 431
+    "pending": 427
   },
   "totals": {
-    "backlog": 463,
-    "resolved": 82,
+    "backlog": 459,
+    "resolved": 86,
     "wontfix": 6
   }
 }

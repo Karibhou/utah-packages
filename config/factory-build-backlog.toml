@@ -470,7 +470,6 @@ packages = [
     "libuser",
     "libutempter",
     "libvarlink",
-    "libvncserver",
     "libwmf-lite",
     "lilv-libs",
     "lockdev",
@@ -479,9 +478,7 @@ packages = [
     "mcelog",
     "memstrack",
     "mkpasswd",
-    "mod_dnssd",
     "mod_http2",
-    "mozilla-filesystem",
     "mtools",
     "neon",
     "net-snmp-libs",
@@ -525,7 +522,6 @@ packages = [
     "qt5-qtxmlpatterns",
     "quota",
     "quota-nls",
-    "redhat-menus",
     "serd",
     "shim-ia32",
     "simdutf",
@@ -686,6 +682,11 @@ packages = [
     # powertop (#477, power) and fpaste (#497, ujust-deps) Rawhide imports.
     { name = "powertop", pr = 572 },
     { name = "fpaste", pr = 572 },
+    # Runtime dependencies of the GNOME apps imported for Utah (PR #573).
+    { name = "libvncserver", pr = 573 },
+    { name = "mod_dnssd", pr = 573 },
+    { name = "mozilla-filesystem", pr = 573 },
+    { name = "redhat-menus", pr = 573 },
 ]
 
 [wontfix]

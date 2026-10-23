@@ -4297,6 +4297,35 @@
         "input": "https://codeberg.org/sanjay_ankur/fpaste/archive/0.5.0.0.tar.gz (sha512-pinned)",
         "method": "move the Codeberg tag archive from fpaste/ to fpaste-0.5.0.0/ without .gitignore (the tree of Fedora's hand-made tarball; pagure.io, the recipe's Source0 host, is gone) and repack deterministically as fpaste-0.5.0.0.tar.gz"
       }
+    },
+    {
+      "name": "libvncserver",
+      "version": "0.9.15",
+      "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.15.tar.gz",
+      "filename": "LibVNCServer-0.9.15.tar.gz",
+      "sha512": "3ad7e14eef3b591574714e320257ac465778e05bd157ddff09e48b990f35890bfa6883ce4ac027fcb08dccd96f721117d56aaee681482f7643cfee9adc59804b"
+    },
+    {
+      "name": "mod_dnssd",
+      "version": "0.6",
+      "url": "https://0pointer.de/lennart/projects/mod_dnssd/mod_dnssd-0.6.tar.gz",
+      "filename": "mod_dnssd-0.6.tar.gz",
+      "sha512": "c3eacd2065f996ace76496b828a5be4b735225782c88ed0fba00c37ffed91af7c81cef755556968880e11e05fbaf65a4326728cb82abcad03ccaf925be1f29d3",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/mod_dnssd/mod_dnssd-0.6.tar.gz/md5/bed3d95a98168bf0515922d1c05020c5/mod_dnssd-0.6.tar.gz"
+      ]
+    },
+    {
+      "name": "mozilla-filesystem",
+      "version": "1.9",
+      "no_upstream_source": true
+    },
+    {
+      "name": "redhat-menus",
+      "version": "12.0.2",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/redhat-menus/redhat-menus-12.0.2.tar.gz/md5/494af105a03e3679505ceb44c3cb6a77/redhat-menus-12.0.2.tar.gz",
+      "filename": "redhat-menus-12.0.2.tar.gz",
+      "sha512": "836ec920ac9ab118d8b7838e1aa6e145108e26e3a65c9d65df52853e8fa68e0714d389488505e0458e1f192fcacacab2ac86ca4cffa5f8e9c2391c189b5c24b5"
     }
   ]
 }
