@@ -26,16 +26,15 @@
       "total": 174
     },
     "power": {
-      "pending": 1,
-      "total": 1
+      "total": 0
     },
     "printing-scanning": {
       "pending": 20,
       "total": 20
     },
     "ujust-deps": {
-      "pending": 2,
-      "total": 2
+      "pending": 1,
+      "total": 1
     },
     "unblockers": {
       "pending": 4,
@@ -2125,11 +2124,6 @@
       "state": "pending"
     },
     {
-      "area": "power",
-      "name": "powertop",
-      "state": "pending"
-    },
-    {
       "area": "printing-scanning",
       "name": "c2esp",
       "state": "pending"
@@ -2227,11 +2221,6 @@
     {
       "area": "printing-scanning",
       "name": "splix",
-      "state": "pending"
-    },
-    {
-      "area": "ujust-deps",
-      "name": "fpaste",
       "state": "pending"
     },
     {
@@ -2384,11 +2373,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 433
+    "pending": 431
   },
   "totals": {
-    "backlog": 465,
-    "resolved": 80,
+    "backlog": 463,
+    "resolved": 82,
     "wontfix": 6
   }
 }

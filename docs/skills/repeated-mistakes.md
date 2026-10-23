@@ -581,6 +581,28 @@ the upstream URL with Fedora in `fallback_urls`. Old lookaside uploads exist
 only under the `/md5/<md5>/` path (the `/sha512/` path 404s), so the fallback
 uses that form; verify it serves the same bytes.
 
+Two more ways the bot import fails, both seen on 2026-10-22:
+
+- **Plain-http `Source0`** (powertop, brltty before it). The lock step
+  accepts it and copies the URL verbatim, then the propose job's
+  `tools/validate.py` rejects the lock ("source lock fetches over plain
+  http://"). The bootstrap download already proved the bytes match Fedora's
+  `sources`, so lock the same URL as `https://` with the Fedora
+  `/sha512/` lookaside in `fallback_urls`, and leave the spec's `Source0`
+  alone: the build stages from the lock.
+- **"needs explicit mapping: 1"** (fpaste). The workflow does not upload the
+  report, so rerun the bootstrap locally to read the `rejected` reason; for
+  fpaste the `Source0` URL 404s because pagure.io, its host, was sunset in
+  2026. Find where the project went (fpaste: Codeberg) and compare
+  bytes. A forge tag archive is not Fedora's tarball: fpaste's lookaside copy
+  is a hand-made `fpaste-<v>/` tarball, while Codeberg's archive has the
+  `fpaste/` prefix, a pax commit comment and a `.gitignore`. When no upstream
+  serves Fedora's bytes, unpack both, and if the trees agree, add a generator
+  to `tools/generated_sources.py` (with tests), repin `sources` to the
+  generated digest, and lock it as a `generate` entry
+  ([`contributing.md`](../contributing.md)). Do not add a Fedora fallback to
+  that entry: it would serve different bytes.
+
 The daily re-import of carried recipes (`tools/rawhide_reimport.py`, the
 `bump` job in `detect-rawhide-updates.yml`) cannot repeat this: it only
 replaces recipes already in every inventory, refuses any move that would

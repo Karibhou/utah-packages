@@ -346,6 +346,12 @@ packages:
     downstream_package_name: flite
     paths:
       - packages/flite
+  fpaste:
+    specfile_path: fpaste.spec
+    upstream_package_name: fpaste
+    downstream_package_name: fpaste
+    paths:
+      - packages/fpaste
   fprintd:
     specfile_path: fprintd.spec
     upstream_package_name: fprintd
@@ -2134,6 +2140,12 @@ packages:
     downstream_package_name: powerstat
     paths:
       - packages/powerstat
+  powertop:
+    specfile_path: powertop.spec
+    upstream_package_name: powertop
+    downstream_package_name: powertop
+    paths:
+      - packages/powertop
   ppp:
     specfile_path: ppp.spec
     upstream_package_name: ppp

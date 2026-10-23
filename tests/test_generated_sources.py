@@ -287,6 +287,78 @@ class HplipTransformTests(unittest.TestCase):
         self.assertIn("3.26.6", generated_sources.HPLIP_INPUT_SHA512)
 
 
+def build_fpaste_archive(prefix: str = "fpaste") -> bytes:
+    """A synthetic Codeberg tag archive: `fpaste/` prefix, pax global comment, .gitignore."""
+    members = {
+        f"{prefix}/.gitignore": b"*.swp\n",
+        f"{prefix}/Makefile": b"kept",
+        f"{prefix}/fpaste": b"#!/usr/bin/python3\n",
+        f"{prefix}/completions/bash/fpaste.bash": b"kept",
+    }
+    directories = {prefix, f"{prefix}/completions", f"{prefix}/completions/bash"}
+    buffer = io.BytesIO()
+    with gzip.GzipFile(filename="", mode="wb", fileobj=buffer, mtime=0) as gz:
+        with tarfile.open(fileobj=gz, mode="w", format=tarfile.PAX_FORMAT,
+                          pax_headers={"comment": "84a795a0abd225edb9eaf3d84f1dc80e5418c361"}) as tar:
+            for name in sorted(directories, reverse=True):
+                info = tarfile.TarInfo(name)
+                info.type = tarfile.DIRTYPE
+                info.mode, info.mtime, info.uname, info.gname = 0o775, 1723405207, "root", "root"
+                tar.addfile(info)
+            for name in sorted(members, reverse=True):
+                info = tarfile.TarInfo(name)
+                info.size = len(members[name])
+                info.mode = 0o775 if name.endswith("/fpaste") else 0o664
+                info.mtime, info.uname, info.gname = 1723405207, "root", "root"
+                tar.addfile(info, io.BytesIO(members[name]))
+    return buffer.getvalue()
+
+
+class FpasteTransformTests(unittest.TestCase):
+    VERSION = "0.5.0.0"
+
+    def members(self, payload: bytes) -> list[tarfile.TarInfo]:
+        with tarfile.open(fileobj=io.BytesIO(payload), mode="r:gz") as tar:
+            return tar.getmembers()
+
+    def test_moves_the_prefix_and_drops_only_gitignore(self):
+        result = generated_sources._fpaste_transform(build_fpaste_archive(), self.VERSION)
+        names = {member.name for member in self.members(result)}
+        self.assertEqual(names, {
+            "fpaste-0.5.0.0",
+            "fpaste-0.5.0.0/Makefile",
+            "fpaste-0.5.0.0/fpaste",
+            "fpaste-0.5.0.0/completions",
+            "fpaste-0.5.0.0/completions/bash",
+            "fpaste-0.5.0.0/completions/bash/fpaste.bash",
+        })
+
+    def test_transform_is_byte_reproducible_sorted_ownerless_and_commentless(self):
+        archive = build_fpaste_archive()
+        first = generated_sources._fpaste_transform(archive, self.VERSION)
+        self.assertEqual(first, generated_sources._fpaste_transform(archive, self.VERSION))
+        self.assertEqual(first[4:8], b"\0\0\0\0")
+        with tarfile.open(fileobj=io.BytesIO(first), mode="r:gz") as tar:
+            members = tar.getmembers()
+            self.assertEqual(tar.pax_headers, {})
+        self.assertEqual([m.name for m in members], sorted(m.name for m in members))
+        for member in members:
+            self.assertEqual((member.uid, member.gid, member.uname, member.gname), (0, 0, "", ""))
+            self.assertEqual(member.mtime, 1723405207)
+            self.assertNotIn("comment", member.pax_headers)
+        self.assertEqual({m.name: m.mode for m in members}["fpaste-0.5.0.0/fpaste"], 0o775)
+
+    def test_a_member_outside_the_tag_prefix_fails_closed(self):
+        with self.assertRaisesRegex(RuntimeError, "outside fpaste/"):
+            generated_sources._fpaste_transform(build_fpaste_archive("fpaste-0.5.0.0"), self.VERSION)
+
+    def test_metadata_names_the_recipe_source_and_pinned_input(self):
+        metadata = generated_sources.metadata_for("fpaste", ROOT / "packages" / "fpaste")
+        self.assertEqual(metadata["filename"], "fpaste-0.5.0.0.tar.gz")
+        self.assertIn("codeberg.org/sanjay_ankur/fpaste/archive/0.5.0.0.tar.gz", metadata["generate"]["input"])
+        self.assertIn("0.5.0.0", generated_sources.FPASTE_INPUT_SHA512)
+
+
 def build_freerdp_archive(version: str) -> bytes:
     """A synthetic upstream FreeRDP .tar.gz carrying unicode_builtin.c."""
     top = f"FreeRDP-{version}"

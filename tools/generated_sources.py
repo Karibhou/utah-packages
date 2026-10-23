@@ -19,6 +19,10 @@ that no upstream publishes verbatim:
   documented by the comment above the spec's Source0 line)
 - openal-soft: the upstream release with the bundled fmt tree and the
   non-free utils HRTF datasets removed (packages/openal-soft/make_tarball.sh)
+- fpaste: the upstream Codeberg tag archive under the `fpaste-<version>/`
+  prefix the recipe's `%autosetup` expects. The recipe's Source0 host
+  (pagure.io) was sunset in 2026 and the project publishes no release
+  tarball; Fedora's lookaside copy is a hand-made tarball of the same tree
 
 For these, the source lock names this script and records the SHA-512 of the
 bytes the transformation produces. Verification re-runs the transformation
@@ -75,6 +79,10 @@ OPENAL_SOFT_INPUT_SHA512 = {
 
 PYDANTIC_CORE_INPUT_SHA512 = {
     "2.46.5": "7af13f280d74ab0ded8e9299820930b0257502017f6a688d7d598e72351e127e178db11aeab987decaf95ca8619e151f244392ad9638ea184625728dcbb7cfff",
+}
+
+FPASTE_INPUT_SHA512 = {
+    "0.5.0.0": "0337bca5141d8ec99d2b7ea4710c6852f7abd1c8d6481c5051d572e7fdfe7a99f5741ea69fa802a2d514fa0c23eb215357ef6599a27226880e4e272ed0b8b46f",
 }
 
 HPLIP_INPUT_SHA512 = {
@@ -795,6 +803,79 @@ def _pydantic_core_generate(package_dir: Path, out_dir: Path) -> Path:
     return target
 
 
+# --- fpaste ----------------------------------------------------------------------
+
+FPASTE_UPSTREAM_URL = "https://codeberg.org/sanjay_ankur/fpaste/archive/{version}.tar.gz"
+
+
+def _fpaste_transform(archive: bytes, version: str) -> bytes:
+    """Move the Codeberg tag archive from `fpaste/` to `fpaste-<version>/`.
+
+    packages/fpaste/fpaste.spec takes Source0 from pagure.io, which was sunset
+    in 2026; the project moved to Codeberg and publishes no release tarball.
+    Fedora's lookaside copy is a hand-made `fpaste-<version>/` tarball whose
+    tree equals the tag archive's minus `.gitignore` (unpacked and diffed for
+    0.5.0.0), so its bytes cannot be reproduced; this makes the same tree
+    deterministically. The pax global header carrying the commit id goes with
+    the old prefix; members keep the archive's own modes and mtimes, are
+    sorted by name with ownership zeroed, and are compressed with
+    `gzip -n -9` so no name or timestamp enters the header.
+    """
+    old, new = "fpaste", f"fpaste-{version}"
+    tar_buf = io.BytesIO()
+    with tarfile.open(fileobj=io.BytesIO(archive), mode="r:gz") as source:
+        members = sorted(source.getmembers(), key=lambda m: m.name.rstrip("/"))
+        with tarfile.open(fileobj=tar_buf, mode="w", format=tarfile.PAX_FORMAT) as result:
+            for member in members:
+                name = member.name.rstrip("/")
+                if name != old and not name.startswith(old + "/"):
+                    raise RuntimeError(f"fpaste archive member outside {old}/: {member.name}")
+                if name == f"{old}/.gitignore":
+                    continue
+                data = source.extractfile(member) if member.isreg() else None
+                member.name = new + name[len(old):]
+                member.pax_headers = {}
+                member.uid = member.gid = 0
+                member.uname = member.gname = ""
+                result.addfile(member, data)
+    proc = subprocess.Popen(["gzip", "-n", "-9"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    out, _ = proc.communicate(tar_buf.getvalue())
+    if proc.returncode != 0:
+        raise RuntimeError("gzip failed")
+    return out
+
+
+def _fpaste_metadata(package_dir: Path) -> dict:
+    version = spec_version(package_dir, "fpaste.spec")
+    return {
+        "name": "fpaste",
+        "version": version,
+        "filename": f"fpaste-{version}.tar.gz",
+        "generate": {
+            "script": SCRIPT_PATH,
+            "input": f"{FPASTE_UPSTREAM_URL.format(version=version)} (sha512-pinned)",
+            "method": f"move the Codeberg tag archive from fpaste/ to fpaste-{version}/ without .gitignore (the tree of Fedora's hand-made tarball; pagure.io, the recipe's Source0 host, is gone) and repack deterministically as fpaste-{version}.tar.gz",
+        },
+    }
+
+
+def _fpaste_generate(package_dir: Path, out_dir: Path) -> Path:
+    version = spec_version(package_dir, "fpaste.spec")
+    pin = FPASTE_INPUT_SHA512.get(version)
+    if pin is None:
+        raise RuntimeError(f"no pinned input SHA-512 for fpaste {version}")
+    url = FPASTE_UPSTREAM_URL.format(version=version)
+    request = urllib.request.Request(url, headers={"User-Agent": "utah-packages-generated-source/1"})
+    with urllib.request.urlopen(request, timeout=300) as response:
+        payload = response.read()
+    actual = hashlib.sha512(payload).hexdigest()
+    if actual != pin:
+        raise RuntimeError(f"input archive mismatch for {url}: expected {pin}, got {actual}")
+    target = out_dir / f"fpaste-{version}.tar.gz"
+    target.write_bytes(_fpaste_transform(payload, version))
+    return target
+
+
 METADATA = {
     "intel-media-driver-free": _imd_metadata,
     "tailscale": _tailscale_metadata,
@@ -803,6 +884,7 @@ METADATA = {
     "hplip": _hplip_metadata,
     "openal-soft": _openal_soft_metadata,
     "freerdp": _freerdp_metadata,
+    "fpaste": _fpaste_metadata,
 }
 
 GENERATORS = {
@@ -813,6 +895,7 @@ GENERATORS = {
     "gpm": _gpm_generate,
     "openal-soft": _openal_soft_generate,
     "freerdp": _freerdp_generate,
+    "fpaste": _fpaste_generate,
 }
 
 

@@ -85,7 +85,6 @@ packages = [
 # projectbluefin/utah#388 - 6 names
 consumer_issue = "projectbluefin/utah#388"
 packages = [
-    "powertop",
 ]
 
 [areas.vpn]
@@ -370,7 +369,6 @@ packages = [
 # projectbluefin/utah#394 - 2 names
 consumer_issue = "projectbluefin/utah#394"
 packages = [
-    "fpaste",
     "glow",
 ]
 
@@ -685,6 +683,9 @@ packages = [
     # Power tooling (projectbluefin/utah-packages#477).
     { name = "intel-lpmd", pr = 567 },
     { name = "powerstat", pr = 568 },
+    # powertop (#477, power) and fpaste (#497, ujust-deps) Rawhide imports.
+    { name = "powertop", pr = 572 },
+    { name = "fpaste", pr = 572 },
 ]
 
 [wontfix]

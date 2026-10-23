@@ -4276,6 +4276,27 @@
       "url": "https://github.com/ColinIanKing/powerstat/archive/V0.04.05/powerstat-V0.04.05.tar.gz",
       "filename": "powerstat-V0.04.05.tar.gz",
       "sha512": "16331499cd1de639133aa36e822e8bf322b8d04575e011e6321571a924dd631fd9b0505cd51f47aed866668c4e216ed8c2a03f816000c9f98fb5a9f309d27848"
+    },
+    {
+      "name": "powertop",
+      "version": "2.16.1",
+      "url": "https://github.com/fenrus75/powertop/archive/v2.16.1/powertop-2.16.1.tar.gz",
+      "filename": "powertop-2.16.1.tar.gz",
+      "sha512": "a249a2ee9b5d81e0bacad60782bc6c1c58f5cddc636e596b997bf1975f6ff336eb551d40e63741191afb07dde6d4b154efeb8ba51cddf9faa43552f0d206f858",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/powertop/powertop-2.16.1.tar.gz/sha512/a249a2ee9b5d81e0bacad60782bc6c1c58f5cddc636e596b997bf1975f6ff336eb551d40e63741191afb07dde6d4b154efeb8ba51cddf9faa43552f0d206f858/powertop-2.16.1.tar.gz"
+      ]
+    },
+    {
+      "name": "fpaste",
+      "version": "0.5.0.0",
+      "filename": "fpaste-0.5.0.0.tar.gz",
+      "sha512": "5263bfcdffd81ba7dcdf1495bcf6cf8eb419e686354f8aef55be977f9c6cad23db27e3cdf24b1f461cb441cdcf752cb29dac639693680c793c52adbf2a3fd30c",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://codeberg.org/sanjay_ankur/fpaste/archive/0.5.0.0.tar.gz (sha512-pinned)",
+        "method": "move the Codeberg tag archive from fpaste/ to fpaste-0.5.0.0/ without .gitignore (the tree of Fedora's hand-made tarball; pagure.io, the recipe's Source0 host, is gone) and repack deterministically as fpaste-0.5.0.0.tar.gz"
+      }
     }
   ]
 }
