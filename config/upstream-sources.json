@@ -3985,10 +3985,10 @@
     },
     {
       "name": "openh264",
-      "version": "2.6.0",
-      "url": "https://github.com/cisco/openh264/archive/v2.6.0/openh264-2.6.0.tar.gz",
-      "filename": "openh264-2.6.0.tar.gz",
-      "sha512": "26a03acde7153a6b40b99f00641772433a244c72a3cc4bca6d903cf3b770174d028369a2fb73b2f0774e1124db0e269758eed6d88975347a815e0366c820d247"
+      "version": "2.7.0",
+      "url": "https://github.com/cisco/openh264/archive/v2.7.0/openh264-2.7.0.tar.gz",
+      "filename": "openh264-2.7.0.tar.gz",
+      "sha512": "caa52cbc73e9b6096c5ba4066d85d34ea63e81573c36d06ccd3f54ba34d95b133b5c507fc6e1ba81552673de01bed50c35de4b90428b4da9942ade442bd47a13"
     },
     {
       "name": "rust-gst-plugin-dav1d",

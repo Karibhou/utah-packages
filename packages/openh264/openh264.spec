@@ -16,16 +16,14 @@
 #    fedpkg build --target=f*-openh264
 #
 Name:           openh264
-Version:        2.6.0
-Release:        4%{?dist}
+Version:        2.7.0
+Release:        1%{?dist}
 Summary:        H.264 codec library
 
 License:        BSD-2-Clause
 URL:            https://www.openh264.org/
 Source0:        https://github.com/cisco/openh264/archive/v%{version}/openh264-%{version}.tar.gz
 Source1:        https://github.com/mozilla/gmp-api/archive/%{commit1}/gmp-api-%{shortcommit1}.tar.gz
-
-Patch0:         0001-Update-shared-lib-version-for-meson-3860.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  make
@@ -63,7 +61,6 @@ browsers.
 
 %prep
 %setup -q
-%patch -P 0 -p1
 
 # Extract gmp-api archive
 tar -xf %{S:1}
