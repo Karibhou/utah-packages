@@ -27,6 +27,7 @@ packages/*/*.asc
 !packages/*/[0-9A-F][0-9A-F]*.asc
 !packages/*/*key*.asc
 !packages/*/*keyring*.asc
+!packages/bc/kevin_pizzini.asc
 packages/*/*.sha256sum
 packages/*/*.upstream
 
