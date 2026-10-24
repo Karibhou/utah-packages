@@ -121,26 +121,9 @@ packages = [
 # projectbluefin/utah#390 - 32 names
 consumer_issue = "projectbluefin/utah#390"
 packages = [
-    "c2esp",
-    "dymo-cups-drivers",
     "foo2zjs",
-    "foomatic-db-filesystem",
-    "gutenprint",
-    "gutenprint-cups",
-    "gutenprint-libs",
-    "ipp-usb",
     "liblouisutdml",
     "liblouisutdml-utils",
-    "libsane-airscan",
-    "mpage",
-    "printer-driver-brlaser",
-    "ptouch-driver",
-    "sane-airscan",
-    "sane-backends",
-    "sane-backends-drivers-cameras",
-    "sane-backends-drivers-scanners",
-    "sane-backends-libs",
-    "splix",
 ]
 
 [areas.gnome-apps]
@@ -444,7 +427,6 @@ packages = [
     "libdhash",
     "libell",
     "libev",
-    "libieee1284",
     "libijs",
     "libini_config",
     "liblqr-1",
@@ -688,6 +670,26 @@ packages = [
     { name = "redhat-menus", pr = 573 },
     # sso-mib-libs is a %package subpackage of sso-mib.spec (PR #574).
     { name = "sso-mib-libs", pr = 574 },
+    # Printing/scanning SANE + drivers wave. libieee1284 is a runtime dependency of
+    # sane-backends (libieee1284.so.3). Subpackages share their source recipe's PR.
+    { name = "c2esp", pr = 586 },
+    { name = "dymo-cups-drivers", pr = 586 },
+    { name = "foomatic-db-filesystem", pr = 586 },
+    { name = "gutenprint", pr = 586 },
+    { name = "gutenprint-cups", pr = 586 },
+    { name = "gutenprint-libs", pr = 586 },
+    { name = "ipp-usb", pr = 586 },
+    { name = "libieee1284", pr = 586 },
+    { name = "libsane-airscan", pr = 586 },
+    { name = "mpage", pr = 586 },
+    { name = "printer-driver-brlaser", pr = 586 },
+    { name = "ptouch-driver", pr = 586 },
+    { name = "sane-airscan", pr = 586 },
+    { name = "sane-backends", pr = 586 },
+    { name = "sane-backends-drivers-cameras", pr = 586 },
+    { name = "sane-backends-drivers-scanners", pr = 586 },
+    { name = "sane-backends-libs", pr = 586 },
+    { name = "splix", pr = 586 },
 ]
 
 [wontfix]
