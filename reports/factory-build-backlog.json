@@ -2,13 +2,13 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 31,
-      "total": 41
+      "pending": 30,
+      "total": 40
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 124,
-      "total": 126
+      "pending": 104,
+      "total": 106
     },
     "fonts-i18n": {
       "pending": 59,
@@ -22,15 +22,15 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 152,
-      "total": 164
+      "pending": 145,
+      "total": 157
     },
     "power": {
       "total": 0
     },
     "printing-scanning": {
-      "pending": 19,
-      "total": 19
+      "pending": 2,
+      "total": 2
     },
     "ujust-deps": {
       "pending": 1,
@@ -42,8 +42,8 @@
     },
     "vpn": {
       "already_recipe": 3,
-      "pending": 21,
-      "total": 24
+      "pending": 14,
+      "total": 17
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -97,11 +97,6 @@
       "area": "codecs-media",
       "name": "ffmpegthumbnailer-libs",
       "state": "already_recipe"
-    },
-    {
-      "area": "codecs-media",
-      "name": "gstreamer1-plugin-libav",
-      "state": "pending"
     },
     {
       "area": "codecs-media",
@@ -270,27 +265,12 @@
     },
     {
       "area": "dev-tools",
-      "name": "bc",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "bcache-tools",
       "state": "pending"
     },
     {
       "area": "dev-tools",
       "name": "bison",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "bolt",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "borgbackup",
       "state": "pending"
     },
     {
@@ -311,26 +291,6 @@
     {
       "area": "dev-tools",
       "name": "djvulibre-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "dnsmasq",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "ethtool",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "exfatprogs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "f2fs-tools",
       "state": "pending"
     },
     {
@@ -365,22 +325,12 @@
     },
     {
       "area": "dev-tools",
-      "name": "gamemode",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "generic-logos",
       "state": "pending"
     },
     {
       "area": "dev-tools",
       "name": "gssproxy",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "hdparm",
       "state": "pending"
     },
     {
@@ -475,32 +425,12 @@
     },
     {
       "area": "dev-tools",
-      "name": "lsof",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "man-pages",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "mtr",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "nilfs-utils",
       "state": "pending"
     },
     {
       "area": "dev-tools",
       "name": "ntfs-3g-system-compression",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nvme-cli",
       "state": "pending"
     },
     {
@@ -635,17 +565,7 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-llfuse",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-more-itertools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-msgpack",
       "state": "pending"
     },
     {
@@ -755,16 +675,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "smartmontools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "smartmontools-selinux",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "spice-vdagent",
       "state": "pending"
     },
@@ -810,11 +720,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "tcpdump",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "time",
       "state": "pending"
     },
@@ -827,16 +732,6 @@
       "area": "dev-tools",
       "name": "tpm2-tools",
       "state": "already_recipe"
-    },
-    {
-      "area": "dev-tools",
-      "name": "traceroute",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "tree",
-      "state": "pending"
     },
     {
       "area": "dev-tools",
@@ -1520,11 +1415,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libieee1284",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libijs",
       "state": "pending"
     },
@@ -1585,11 +1475,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libpskc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "librabbitmq",
       "state": "pending"
     },
@@ -1635,11 +1520,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libuser",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libutempter",
       "state": "pending"
     },
@@ -1666,11 +1546,6 @@
     {
       "area": "long-tail",
       "name": "lrzsz",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "lshw",
       "state": "pending"
     },
     {
@@ -1766,11 +1641,6 @@
     {
       "area": "long-tail",
       "name": "perl-Unicode-Normalize",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "pinfo",
       "state": "pending"
     },
     {
@@ -2005,11 +1875,6 @@
     },
     {
       "area": "long-tail",
-      "name": "usermode",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "uupd",
       "state": "pending"
     },
@@ -2026,11 +1891,6 @@
     {
       "area": "long-tail",
       "name": "virtualbox-guest-additions",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "words",
       "state": "pending"
     },
     {
@@ -2075,97 +1935,12 @@
     },
     {
       "area": "printing-scanning",
-      "name": "c2esp",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "dymo-cups-drivers",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "foomatic-db-filesystem",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "gutenprint",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "gutenprint-cups",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "gutenprint-libs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "ipp-usb",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
       "name": "liblouisutdml",
       "state": "pending"
     },
     {
       "area": "printing-scanning",
       "name": "liblouisutdml-utils",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "libsane-airscan",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "mpage",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "printer-driver-brlaser",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "ptouch-driver",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-airscan",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends-drivers-cameras",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends-drivers-scanners",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends-libs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "splix",
       "state": "pending"
     },
     {
@@ -2195,16 +1970,6 @@
     },
     {
       "area": "vpn",
-      "name": "NetworkManager-openconnect",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "NetworkManager-openconnect-gnome",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "NetworkManager-vpnc",
       "state": "pending"
     },
@@ -2216,11 +1981,6 @@
     {
       "area": "vpn",
       "name": "libyubikey",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "openconnect",
       "state": "pending"
     },
     {
@@ -2270,32 +2030,12 @@
     },
     {
       "area": "vpn",
-      "name": "pkcs11-helper",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "pkcs11-provider",
       "state": "pending"
     },
     {
       "area": "vpn",
       "name": "python3-yubikey-manager",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "stoken-libs",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "vpnc",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "vpnc-script",
       "state": "pending"
     },
     {
@@ -2318,11 +2058,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 420
+    "pending": 368
   },
   "totals": {
-    "backlog": 452,
-    "resolved": 93,
+    "backlog": 400,
+    "resolved": 145,
     "wontfix": 6
   }
 }

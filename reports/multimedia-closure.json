@@ -13,12 +13,12 @@
   },
   "counts": {
     "requirements": 38,
-    "built": 29,
+    "built": 30,
     "equivalent": 3,
-    "exception": 6,
-    "sources": 18,
+    "exception": 5,
+    "sources": 19,
     "upstream_parity": 0,
-    "fedora_restricted": 16,
+    "fedora_restricted": 17,
     "divergent": 0
   },
   "requirements": [
@@ -452,18 +452,17 @@
     {
       "requirement": "gstreamer1-plugin-libav",
       "origin": "comps-group:@multimedia",
-      "status": "exception",
-      "factory_source": null,
-      "factory_binary": null,
+      "status": "built",
+      "factory_source": "gstreamer1-plugin-libav",
+      "factory_binary": "gstreamer1-plugin-libav",
       "upstream_spec_source": "https://github.com/rpmfusion/gstreamer1-libav",
-      "codec_parity": null,
-      "parity_note": null,
-      "recipe": null,
-      "stage": null,
-      "version": null,
+      "codec_parity": "fedora-restricted",
+      "parity_note": "Imported from src.fedoraproject.org/rpms/gstreamer1-plugin-libav (singular `plugin`) at the gstreamer1 family version pinned here (1.28.6, Rawhide commit 73e9b14), not at Rawhide head, so its `gstreamer1-devel >= %{version}` resolves against this factory's gstreamer1. It is built against this factory's `ffmpeg-free-devel`, so the bridge exposes only the codecs Fedora's `-free` ffmpeg carries: its spec passes `--disable-decoder=\"h264,hevc,vc1,vvc\"`, so the bridge has no native `avdec_h264`/`avdec_h265`. `[upstream_spec_sources]` names RPM Fusion's `gstreamer1-libav`, built against the full-codec ffmpeg, which is the parity #230 tracks and which needs the factory's ffmpeg moved to the RPM Fusion spec first.",
+      "recipe": "packages/gstreamer1-plugin-libav",
+      "stage": 0,
+      "version": "1.28.6",
       "nevra": null,
-      "recipe_provenance": null,
-      "note": "The GStreamer-to-FFmpeg bridge. Two specs carry that bridge and `[upstream_spec_sources]` names the one Bluefin installs today: RPM Fusion's `gstreamer1-libav`, built against RPM Fusion's full-codec ffmpeg. The closing path planned here is the *other* one, Fedora's dist-git `gstreamer1-plugin-libav` (singular `plugin`), built against this factory's ffmpeg, which is Fedora's `-free` flavour -- so the import closes the requirement by name and lands at `fedora-restricted` parity, not at the named upstream. Declare that in `[parity]` when the recipe arrives; closing the codec gap too means moving this factory's ffmpeg to the RPM Fusion spec first. Fedora's recipe is at 1.28.8 and carries `BuildRequires: gstreamer1-devel >= %{version}`, while this factory's gstreamer1 family is pinned at 1.28.6, so importing it today would add a BuildRequires nothing in the build root satisfies -- `docs/skills/repeated-mistakes.md` #2, a package and the family it is released with pinned separately. Bump gstreamer1, gstreamer1-plugins-base, gstreamer1-plugins-good and gstreamer1-plugins-bad-free to 1.28.8 in one change, then import this at a stage above ffmpeg's."
+      "recipe_provenance": "https://src.fedoraproject.org/rpms/gstreamer1-plugin-libav.git"
     },
     {
       "requirement": "gstreamer1-plugin-openh264",

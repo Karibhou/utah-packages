@@ -31,6 +31,7 @@ flac
 flatpak
 flite
 foo2zjs
+foomatic-db
 fribidi
 fuse
 fwupd
@@ -118,6 +119,7 @@ libtdb
 libthai
 libtheora
 libusbmuxd
+libuser
 libvdpau
 libvisual
 libvorbis
@@ -133,12 +135,14 @@ linux-firmware
 livesys-scripts
 lm_sensors
 lpcnetfreedv
+lsof
 lttng-ust
 mdadm
 mesa
 mesa-demos
 mozc
 mozjs140
+mpage
 mpg123
 mtdev
 noopenh264
@@ -154,6 +158,7 @@ pipewire
 pixman
 protobuf
 protobuf3
+ptouch-driver
 pulseaudio
 pycairo
 python-annotated-types
@@ -185,6 +190,7 @@ taglib
 twolame
 udisks2
 upower
+usermode
 v4l-utils
 vo-amrwbenc
 volume_key
@@ -195,6 +201,7 @@ wayland
 webkitgtk
 wireguard-tools
 wireplumber
+words
 wsdd
 xcb-util
 xcb-util-image
