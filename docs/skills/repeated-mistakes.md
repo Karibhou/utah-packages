@@ -441,11 +441,20 @@ planted RPM's scriptlets ran as root in CI long before the seed check could
 refuse the image at publish time. The action therefore runs the same
 `cosign verify` (same two signer files, same OIDC issuer) on the digest it
 pulled before `docker create`. Its `signer_ref` input pins the ref the way
-the seed check does. A caller that leaves it empty gets `refs/heads/main`
-when the run itself is on `main` (prepare resolves only `latest` there, so
-the build roots are no looser than the seed check); off `main` it still
-requires this repository's own publish signature, on any ref of this
-repository (the canary's images are signed under `refs/pull/N/merge`). `tests/test_factory_witness.py` holds the order and the identity.
+the seed check does, and every caller passes it (#540): prepare's
+`factory_image` step records which candidate tag matched and derives the
+signer exactly as the seed check derives `current_ref` -- `latest` gives
+`refs/heads/main` (also on a `bump/*` run of the bump gate, which reads
+`latest`), anything else (the run's branch tag, or a tag or digest named by
+`factory_tag`, such as the canary's pass1 digest under `refs/pull/N/merge`)
+gives the run's own `github.ref`. It leaves prepare as the `factory_signer_ref`
+output, which preflight's loader and every `build-stage.yml` wave forward.
+Derive the signer from the tag that resolved, never from the run's ref
+alone: a branch run that fell back to `latest` holds an image signed on
+`main`, not on the branch. The action's own empty default (`refs/heads/main`
+on `main`, any ref of this repository elsewhere) is only a backstop for a
+caller added without it. `tests/test_factory_witness.py` holds the order, the
+identity, every call site, and runs the derivation for each tag shape.
 
 ## 20. Bypassing the source-lock contract with direct JSON parsing
 
