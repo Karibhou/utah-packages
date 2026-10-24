@@ -499,12 +499,12 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
-    # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#0, utah#390).
-    { name = "python3-olefile", pr = 0 },
-    { name = "python3-pillow", pr = 0 },
-    { name = "usbutils", pr = 0 },
-    { name = "net-snmp-libs", pr = 0 },
-    { name = "python3-cups", pr = 0 },
+    # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
+    { name = "python3-olefile", pr = 596 },
+    { name = "python3-pillow", pr = 596 },
+    { name = "usbutils", pr = 596 },
+    { name = "net-snmp-libs", pr = 596 },
+    { name = "python3-cups", pr = 596 },
     # VPN stack + oath-toolkit/libuser/usermode closure (projectbluefin/utah-packages#585).
     { name = "NetworkManager-openconnect", pr = 585 },
     { name = "NetworkManager-openconnect-gnome", pr = 585 },
