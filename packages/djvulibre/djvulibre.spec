@@ -1,10 +1,10 @@
 %define         _hardened_build 1
 
-%if 0%{?el10}
+# Utah-local: inkscape is never a BuildRequires. The hermetic Fedora 44 root
+# cannot resolve it (inkscape-libs -> libvisio -> libicuuc.so.77, absent from
+# Hummingbird). Upstream already builds without it on EL10 and installs the
+# prebuilt-hi*-djvu.png icons shipped in the tarball.
 %bcond_with inkscape
-%else
-%bcond_without inkscape
-%endif
 
 Summary: DjVu viewers, encoders, and utilities
 Name: djvulibre
