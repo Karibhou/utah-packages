@@ -30,6 +30,7 @@ ffmpeg
 flac
 flatpak
 flite
+foomatic-db
 fribidi
 fuse
 fwupd
@@ -140,6 +141,7 @@ mesa
 mesa-demos
 mozc
 mozjs140
+mpage
 mpg123
 mtdev
 noopenh264
@@ -155,6 +157,7 @@ pipewire
 pixman
 protobuf
 protobuf3
+ptouch-driver
 pulseaudio
 pycairo
 python-annotated-types

@@ -142,6 +142,12 @@ packages:
     downstream_package_name: brltty
     paths:
       - packages/brltty
+  c2esp:
+    specfile_path: c2esp.spec
+    upstream_package_name: c2esp
+    downstream_package_name: c2esp
+    paths:
+      - packages/c2esp
   cairo:
     specfile_path: cairo.spec
     upstream_package_name: cairo
@@ -274,6 +280,12 @@ packages:
     downstream_package_name: double-conversion
     paths:
       - packages/double-conversion
+  dymo-cups-drivers:
+    specfile_path: dymo-cups-drivers.spec
+    upstream_package_name: dymo-cups-drivers
+    downstream_package_name: dymo-cups-drivers
+    paths:
+      - packages/dymo-cups-drivers
   enca:
     specfile_path: enca.spec
     upstream_package_name: enca
@@ -394,6 +406,12 @@ packages:
     downstream_package_name: flite
     paths:
       - packages/flite
+  foomatic-db:
+    specfile_path: foomatic-db.spec
+    upstream_package_name: foomatic-db
+    downstream_package_name: foomatic-db
+    paths:
+      - packages/foomatic-db
   fpaste:
     specfile_path: fpaste.spec
     upstream_package_name: fpaste
@@ -838,6 +856,12 @@ packages:
     downstream_package_name: gupnp-igd
     paths:
       - packages/gupnp-igd
+  gutenprint:
+    specfile_path: gutenprint.spec
+    upstream_package_name: gutenprint
+    downstream_package_name: gutenprint
+    paths:
+      - packages/gutenprint
   gvfs:
     specfile_path: gvfs.spec
     upstream_package_name: gvfs
@@ -1000,6 +1024,12 @@ packages:
     downstream_package_name: intel-vpl-gpu-rt
     paths:
       - packages/intel-vpl-gpu-rt
+  ipp-usb:
+    specfile_path: ipp-usb.spec
+    upstream_package_name: ipp-usb
+    downstream_package_name: ipp-usb
+    paths:
+      - packages/ipp-usb
   iputils:
     specfile_path: iputils.spec
     upstream_package_name: iputils
@@ -1456,6 +1486,12 @@ packages:
     downstream_package_name: libical
     paths:
       - packages/libical
+  libieee1284:
+    specfile_path: libieee1284.spec
+    upstream_package_name: libieee1284
+    downstream_package_name: libieee1284
+    paths:
+      - packages/libieee1284
   libimobiledevice:
     specfile_path: libimobiledevice.spec
     upstream_package_name: libimobiledevice
@@ -2008,6 +2044,12 @@ packages:
     downstream_package_name: mozjs140
     paths:
       - packages/mozjs140
+  mpage:
+    specfile_path: mpage.spec
+    upstream_package_name: mpage
+    downstream_package_name: mpage
+    paths:
+      - packages/mpage
   mpg123:
     specfile_path: mpg123.spec
     upstream_package_name: mpg123
@@ -2302,6 +2344,12 @@ packages:
     downstream_package_name: ppp
     paths:
       - packages/ppp
+  printer-driver-brlaser:
+    specfile_path: printer-driver-brlaser.spec
+    upstream_package_name: printer-driver-brlaser
+    downstream_package_name: printer-driver-brlaser
+    paths:
+      - packages/printer-driver-brlaser
   protobuf:
     specfile_path: protobuf.spec
     upstream_package_name: protobuf
@@ -2314,6 +2362,12 @@ packages:
     downstream_package_name: protobuf3
     paths:
       - packages/protobuf3
+  ptouch-driver:
+    specfile_path: ptouch-driver.spec
+    upstream_package_name: ptouch-driver
+    downstream_package_name: ptouch-driver
+    paths:
+      - packages/ptouch-driver
   ptyxis:
     specfile_path: ptyxis.spec
     upstream_package_name: ptyxis
@@ -2488,6 +2542,18 @@ packages:
     downstream_package_name: samba
     paths:
       - packages/samba
+  sane-airscan:
+    specfile_path: sane-airscan.spec
+    upstream_package_name: sane-airscan
+    downstream_package_name: sane-airscan
+    paths:
+      - packages/sane-airscan
+  sane-backends:
+    specfile_path: sane-backends.spec
+    upstream_package_name: sane-backends
+    downstream_package_name: sane-backends
+    paths:
+      - packages/sane-backends
   sassc:
     specfile_path: sassc.spec
     upstream_package_name: sassc
@@ -2590,6 +2656,12 @@ packages:
     downstream_package_name: spirv-tools
     paths:
       - packages/spirv-tools
+  splix:
+    specfile_path: splix.spec
+    upstream_package_name: splix
+    downstream_package_name: splix
+    paths:
+      - packages/splix
   squashfs-tools:
     specfile_path: squashfs-tools.spec
     upstream_package_name: squashfs-tools

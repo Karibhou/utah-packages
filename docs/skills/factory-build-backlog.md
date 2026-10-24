@@ -93,6 +93,23 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+### Locking sources for a hand import
+
+`bootstrap_upstream_sources.py` accepts `http://` `Source0` URLs that
+`tools/validate.py` then rejects; before committing, swap `http://` for
+`https://` (SourceForge, `download.dymo.com`) and confirm the digest still
+matches. Rewrite a dist-git `sources` file that still carries MD5 lines as
+`SHA512 (<file>) = <hex>`, the format the lock reads. A GitHub URL such as
+`archive/v6.2.8/<name>.tar.gz` can answer "the given path has multiple
+possibilities" when a branch and a tag share the name: lock
+`archive/refs/tags/v<version>.tar.gz` and set `filename` to the name the spec
+expects. When upstream no longer serves the bytes (a GitHub release with no
+assets, a rolling `openprinting.org` snapshot, a dead FTP host), lock Fedora's
+lookaside URL and list the package in `config/fedora-primary-sources.txt`.
+A runtime `Requires` that resolves only in Fedora (for example
+`libieee1284.so.3` for `sane-backends`) must be imported in the same PR, since
+the published repository is installed from the factory plus Hummingbird alone.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —

@@ -4574,6 +4574,90 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/usermode/usermode-1.114.tar.xz/sha512/703eb218704c7a11cdce25a71f4fc91bf4f042a8b185f79f3954699081c0db8a6234ad6f11738d8b2fe6a492a03d029cbe01762a47869edc473e4fbaa6e0ee32/usermode-1.114.tar.xz",
       "filename": "usermode-1.114.tar.xz",
       "sha512": "703eb218704c7a11cdce25a71f4fc91bf4f042a8b185f79f3954699081c0db8a6234ad6f11738d8b2fe6a492a03d029cbe01762a47869edc473e4fbaa6e0ee32"
+    },
+    {
+      "name": "sane-backends",
+      "version": "1.4.0",
+      "url": "https://gitlab.com/-/project/429008/uploads/843c156420e211859e974f78f64c3ea3/sane-backends-1.4.0.tar.gz",
+      "filename": "sane-backends-1.4.0.tar.gz",
+      "sha512": "a5ec0cb9e12075be3c4d5eb445a290216c5699645bb6885845868a8323848cef3aafec30f0c380638195a0a8085a8cff4e190741e79ae8f2f70b4d71abeee572"
+    },
+    {
+      "name": "sane-airscan",
+      "version": "0.99.38",
+      "url": "https://github.com/alexpevzner/sane-airscan/archive/0.99.38/sane-airscan-0.99.38.tar.gz",
+      "filename": "sane-airscan-0.99.38.tar.gz",
+      "sha512": "4d8336d56d5493e694c4c17b0805c00e53d69939266e9278af7341d9dd4a205043876d0c88db58df62ee6ff07e1cf50d361b4a99f1b4c73eda5a74da0f95ecd1"
+    },
+    {
+      "name": "gutenprint",
+      "version": "5.3.5",
+      "url": "https://downloads.sourceforge.net/gimp-print/gutenprint-5.3.5.tar.xz",
+      "filename": "gutenprint-5.3.5.tar.xz",
+      "sha512": "18ac06e77fef012650515db0fa551f68c93941250e5f254d71381f20822d7682eae148142ad1bb650440c6b790f90daf9801b742f20dd081a05076d81275ba7c"
+    },
+    {
+      "name": "c2esp",
+      "version": "2.7",
+      "url": "https://downloads.sourceforge.net/cupsdriverkodak/c2esp-27.tar.gz",
+      "filename": "c2esp-27.tar.gz",
+      "sha512": "d3ff9dc6de7cf692e4be4f4b316f862d271bff06181f0000daf1ce2fb6921f1b24efe88ec24f7b811d78cb9dca18fcba3f17dd5273ac84ceb9f6bfcecedeecce"
+    },
+    {
+      "name": "dymo-cups-drivers",
+      "version": "1.4.0.5",
+      "url": "https://download.dymo.com/dymo/Software/Download%20Drivers/Linux/Download/dymo-cups-drivers-1.4.0.tar.gz",
+      "filename": "dymo-cups-drivers-1.4.0.5.tar.gz",
+      "sha512": "e8c375fa0bc87fa96b18db6213e308a1f32050004c0c8c7d516b548f9d369162431f5f56ebcbb1231be60f5d7a946dcca184c6ff4302952bf3744ba42521cd5c"
+    },
+    {
+      "name": "splix",
+      "version": "2.0.1",
+      "url": "https://github.com/OpenPrinting/splix/releases/download/2.0.1/splix-2.0.1.tar.xz",
+      "filename": "splix-2.0.1.tar.xz",
+      "sha512": "45708d65576e87c9f0c9cc7d4919ea19b1418bb932854b14a80bbcf890e28f7ee11ac64a5b9ccca1b8f4aec803822392ab738329d3e9894ad60b5393bffeef74"
+    },
+    {
+      "name": "ipp-usb",
+      "version": "0.9.34",
+      "url": "https://github.com/OpenPrinting/ipp-usb/archive/0.9.34/ipp-usb-0.9.34.tar.gz",
+      "filename": "ipp-usb-0.9.34.tar.gz",
+      "sha512": "19258a1f3571dffa068b3cbaa62459e50cdc37e5c778a889114f93f14c2e3ba08b78d0b7a2a72e34aa27780b131c8ccf302ccb3fb1de4c1dbfa7bdc2e9c9e7ac"
+    },
+    {
+      "name": "printer-driver-brlaser",
+      "version": "6.2.8",
+      "url": "https://github.com/Owl-Maintain/brlaser/archive/refs/tags/v6.2.8.tar.gz",
+      "filename": "brlaser-6.2.8.tar.gz",
+      "sha512": "6cbfb2376dbbc06f55a605a160b946ca810191d9a88c1380adb5fcbac10e37c36ec77604ab0ee0fb2595d86306f87d322b0cea314166a8a2d3999bd43b9365ce"
+    },
+    {
+      "name": "ptouch-driver",
+      "version": "1.7.1",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/ptouch-driver/printer-driver-ptouch-1.7.1.tar.gz/sha512/ec6ffd0028ea8a7cd5503cb39fbcff39ef1d4661ba206437d6f6aa5e728655e212980b4b82352b9ed5f74a0066f0ef1659794b2c39a3e2f8ac5b0f0d530fc94d/printer-driver-ptouch-1.7.1.tar.gz",
+      "filename": "printer-driver-ptouch-1.7.1.tar.gz",
+      "sha512": "ec6ffd0028ea8a7cd5503cb39fbcff39ef1d4661ba206437d6f6aa5e728655e212980b4b82352b9ed5f74a0066f0ef1659794b2c39a3e2f8ac5b0f0d530fc94d"
+    },
+    {
+      "name": "foomatic-db",
+      "version": "4.0",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/foomatic-db/foomatic-db-4.0-20260511.tar.gz/sha512/c7134c450392d410c580699cdc258ddf79232d212f4f20ddaf1c9ce6a0468840c2b0c51850b088038ead57d91a4379ebd958e18d1300fb1adca8f12dd123a288/foomatic-db-4.0-20260511.tar.gz",
+      "filename": "foomatic-db-4.0-20260511.tar.gz",
+      "sha512": "c7134c450392d410c580699cdc258ddf79232d212f4f20ddaf1c9ce6a0468840c2b0c51850b088038ead57d91a4379ebd958e18d1300fb1adca8f12dd123a288"
+    },
+    {
+      "name": "mpage",
+      "version": "2.5.7",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/mpage/mpage-2.5.7.tgz/sha512/e456e5daae7f6f395b34e5833baaeff74f5e00a0e61b780fcd600cdbe6455a9be8e0c9811ba21db167bea135de8e268fe4ede553e0a19630d5b854ec5620726b/mpage-2.5.7.tgz",
+      "filename": "mpage-2.5.7.tgz",
+      "sha512": "e456e5daae7f6f395b34e5833baaeff74f5e00a0e61b780fcd600cdbe6455a9be8e0c9811ba21db167bea135de8e268fe4ede553e0a19630d5b854ec5620726b"
+    },
+    {
+      "name": "libieee1284",
+      "version": "0.2.11",
+      "url": "https://downloads.sourceforge.net/libieee1284/libieee1284-0.2.11.tar.bz2",
+      "filename": "libieee1284-0.2.11.tar.bz2",
+      "sha512": "06cc3049ce15613d34e39dc71bc572843c61ab64077c29ef9a6257edb0849c98565ff612a4cf787bc9642a39f1c89b7c47a20fb27f2318105be82aad8d472bb9"
     }
   ]
 }

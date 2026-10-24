@@ -22,15 +22,15 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 151,
-      "total": 163
+      "pending": 150,
+      "total": 162
     },
     "power": {
       "total": 0
     },
     "printing-scanning": {
-      "pending": 20,
-      "total": 20
+      "pending": 3,
+      "total": 3
     },
     "ujust-deps": {
       "pending": 1,
@@ -1440,11 +1440,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libieee1284",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libijs",
       "state": "pending"
     },
@@ -1965,42 +1960,7 @@
     },
     {
       "area": "printing-scanning",
-      "name": "c2esp",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "dymo-cups-drivers",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
       "name": "foo2zjs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "foomatic-db-filesystem",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "gutenprint",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "gutenprint-cups",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "gutenprint-libs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "ipp-usb",
       "state": "pending"
     },
     {
@@ -2011,56 +1971,6 @@
     {
       "area": "printing-scanning",
       "name": "liblouisutdml-utils",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "libsane-airscan",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "mpage",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "printer-driver-brlaser",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "ptouch-driver",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-airscan",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends-drivers-cameras",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends-drivers-scanners",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "sane-backends-libs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "splix",
       "state": "pending"
     },
     {
@@ -2178,11 +2088,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 392
+    "pending": 374
   },
   "totals": {
-    "backlog": 424,
-    "resolved": 121,
+    "backlog": 406,
+    "resolved": 139,
     "wontfix": 6
   }
 }
