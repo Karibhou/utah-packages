@@ -4340,6 +4340,13 @@
       "url": "https://github.com/benmcollins/libjwt/archive/v1.12.1.tar.gz",
       "filename": "v1.12.1.tar.gz",
       "sha512": "facbd82607363f7fc8767b3299b6f8b4e0aeb1e7a65d956bedf5ef1719304aac2f420f763ac2c08167f2176475f04b6c6c30fd448b7991a6fc6756793b8ad92c"
+    },
+    {
+      "name": "gstreamer1-plugin-libav",
+      "version": "1.28.6",
+      "url": "https://gstreamer.freedesktop.org//src/gst-libav/gst-libav-1.28.6.tar.xz",
+      "filename": "gst-libav-1.28.6.tar.xz",
+      "sha512": "6c11b4149945a5cf557a7ddfe2fef6a70ce504b49e126f2a19ccd9ec601d5867da31527a669c77aa3e22fe20015503f4190ab11e20554999b02ba652690785b6"
     }
   ]
 }
