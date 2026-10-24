@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 104,
-      "total": 106
+      "pending": 102,
+      "total": 104
     },
     "fonts-i18n": {
       "pending": 59,
@@ -16,14 +16,14 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 9,
-      "total": 14
+      "pending": 8,
+      "total": 13
     },
     "long-tail": {
-      "already_recipe": 11,
+      "already_recipe": 12,
       "manifest_wants": 1,
-      "pending": 145,
-      "total": 157
+      "pending": 137,
+      "total": 150
     },
     "power": {
       "total": 0
@@ -330,11 +330,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "gssproxy",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "hfsplus-tools",
       "state": "pending"
     },
@@ -386,11 +381,6 @@
     {
       "area": "dev-tools",
       "name": "libchromaprint",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "libcollection",
       "state": "pending"
     },
     {
@@ -1110,11 +1100,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "libhandy",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "libmediaart",
       "state": "pending"
     },
@@ -1390,18 +1375,13 @@
     },
     {
       "area": "long-tail",
-      "name": "libbasicobjects",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libdeflate",
       "state": "pending"
     },
     {
       "area": "long-tail",
       "name": "libdhash",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1416,11 +1396,6 @@
     {
       "area": "long-tail",
       "name": "libijs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libini_config",
       "state": "pending"
     },
     {
@@ -1465,11 +1440,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libpath_utils",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libpfm",
       "state": "pending"
     },
@@ -1481,11 +1451,6 @@
     {
       "area": "long-tail",
       "name": "libraqm",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libref_array",
       "state": "pending"
     },
     {
@@ -1516,11 +1481,6 @@
     {
       "area": "long-tail",
       "name": "liburing",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libutempter",
       "state": "pending"
     },
     {
@@ -1766,16 +1726,6 @@
     {
       "area": "long-tail",
       "name": "qt5-qtxmlpatterns",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "quota",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "quota-nls",
       "state": "pending"
     },
     {
@@ -2056,13 +2006,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 31,
+    "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 368
+    "pending": 357
   },
   "totals": {
-    "backlog": 400,
-    "resolved": 145,
+    "backlog": 390,
+    "resolved": 155,
     "wontfix": 6
   }
 }
