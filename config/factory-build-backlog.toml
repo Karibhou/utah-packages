@@ -47,7 +47,6 @@ packages = [
     "ffmpeg-libs",
     "ffmpegthumbnailer",
     "ffmpegthumbnailer-libs",
-    "gstreamer1-plugin-libav",
     "gstreamer1-plugins-good-qt6",
     "liba52",
     "libavc1394",
@@ -665,6 +664,8 @@ packages = [
     { name = "redhat-menus", pr = 573 },
     # sso-mib-libs is a %package subpackage of sso-mib.spec (PR #574).
     { name = "sso-mib-libs", pr = 574 },
+    # GStreamer-to-FFmpeg bridge, imported at the 1.28.6 gstreamer1 pin (PR #584).
+    { name = "gstreamer1-plugin-libav", pr = 584 },
     # Dev-tools wave (landing PR #587): user-facing CLI tools from projectbluefin/utah#392.
     { name = "bc", pr = 587 },
     { name = "bolt", pr = 587 },

@@ -4506,6 +4506,13 @@
       "url": "https://github.com/msgpack/msgpack-python/archive/v1.1.2/msgpack-1.1.2.tar.gz",
       "filename": "msgpack-1.1.2.tar.gz",
       "sha512": "bd5bc3498875fd17fcfaeb1a79c49e61313976341950c385cacbe3c6cf85bf1acfc9ccf06046ddeb1848f52929f1d71aac6b67bac41479c1333e42bd1d461542"
+    },
+    {
+      "name": "gstreamer1-plugin-libav",
+      "version": "1.28.6",
+      "url": "https://gstreamer.freedesktop.org//src/gst-libav/gst-libav-1.28.6.tar.xz",
+      "filename": "gst-libav-1.28.6.tar.xz",
+      "sha512": "6c11b4149945a5cf557a7ddfe2fef6a70ce504b49e126f2a19ccd9ec601d5867da31527a669c77aa3e22fe20015503f4190ab11e20554999b02ba652690785b6"
     }
   ]
 }

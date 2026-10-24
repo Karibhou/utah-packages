@@ -754,6 +754,12 @@ packages:
     downstream_package_name: gstreamer1
     paths:
       - packages/gstreamer1
+  gstreamer1-plugin-libav:
+    specfile_path: gstreamer1-plugin-libav.spec
+    upstream_package_name: gstreamer1-plugin-libav
+    downstream_package_name: gstreamer1-plugin-libav
+    paths:
+      - packages/gstreamer1-plugin-libav
   gstreamer1-plugins-bad-free:
     specfile_path: gstreamer1-plugins-bad-free.spec
     upstream_package_name: gstreamer1-plugins-bad-free
