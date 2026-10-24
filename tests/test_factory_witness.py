@@ -12,6 +12,7 @@ half may read. These tests hold that shape.
 
 from pathlib import Path
 import re
+import subprocess
 import unittest
 
 import yaml
@@ -227,6 +228,87 @@ class FactoryWitnessTests(unittest.TestCase):
         # An explicit signer_ref from a caller still wins over the default.
         self.assertIn('if [ -n "$SIGNER_REF" ]; then', script)
 
+    def test_every_factory_load_pins_the_signer_of_the_tag_it_resolved(self) -> None:
+        """No load-factory-repo call may admit an image signed from any ref.
+
+        The action's main-only default left every non-main run -- a branch
+        dispatch, the bump gate on bump/*, the canary -- accepting a factory
+        image signed from any ref of this repository (#540). prepare knows
+        which tag it resolved, so it derives the signer the way the publish
+        seed check does and every call site passes it.
+        """
+        workflow = yaml.safe_load(REBUILD.read_text())
+        stage = yaml.safe_load(BUILD_STAGE.read_text())
+        prepare = workflow["jobs"]["prepare"]
+        self.assertEqual(
+            prepare["outputs"]["factory_signer_ref"],
+            "${{ steps.factory_image.outputs.signer_ref }}",
+        )
+        expected = {
+            "prepare": "${{ steps.factory_image.outputs.signer_ref }}",
+            "preflight": "${{ needs.prepare.outputs.factory_signer_ref }}",
+        }
+        loads = 0
+        for name, job in list(workflow["jobs"].items()) + [("build", stage["jobs"]["build"])]:
+            for step in job.get("steps", []):
+                if step.get("uses") != "./.github/actions/load-factory-repo":
+                    continue
+                loads += 1
+                with self.subTest(job=name):
+                    want = expected.get(name, "${{ inputs.factory_signer_ref }}")
+                    self.assertEqual(step["with"].get("signer_ref"), want)
+        self.assertEqual(loads, 3)
+        inputs = stage.get("on", stage.get(True))["workflow_call"]["inputs"]
+        self.assertIn("factory_signer_ref", inputs)
+        for name, job in workflow["jobs"].items():
+            if job.get("uses") == "./.github/workflows/build-stage.yml":
+                with self.subTest(wave=name):
+                    self.assertEqual(
+                        job["with"]["factory_signer_ref"],
+                        "${{ needs.prepare.outputs.factory_signer_ref }}",
+                    )
+
+    def test_the_signer_ref_follows_the_tag_that_matched(self) -> None:
+        """latest -> main, a branch tag or a factory_tag digest -> this run's ref.
+
+        Run the step's own parsing and derivation with resolve() stubbed, for
+        each shape prepare can resolve: main, a branch dispatch, the bump gate
+        reading latest from a bump/* branch (latest is still signed from
+        main), the canary's pass1 digest on a pull request, and nothing.
+        """
+        step = next(
+            s for s in yaml.safe_load(REBUILD.read_text())["jobs"]["prepare"]["steps"]
+            if s.get("id") == "factory_image"
+        )
+        script = step["run"]
+        start = script.index('read -r resolved matched_tag <<<"$(resolve $candidates)"')
+        end = script.index("esac", start) + len("esac")
+        derive = script[start:end]
+        img = "ghcr.io/projectbluefin/utah-packages@sha256:" + "a" * 64
+        cases = [
+            ("latest", "refs/heads/main", "refs/heads/main"),
+            ("latest", "refs/heads/bump/glib2", "refs/heads/main"),
+            ("fix-mesa", "refs/heads/fix/mesa", "refs/heads/fix/mesa"),
+            ("sha256:" + "b" * 64, "refs/pull/7/merge", "refs/pull/7/merge"),
+            ("", "refs/heads/fix/mesa", ""),
+        ]
+        for tag, ref, want in cases:
+            with self.subTest(tag=tag, ref=ref):
+                output = f"{img} {tag}" if tag else ""
+                program = (
+                    "set -euo pipefail\n"
+                    f"resolve() {{ [ -n \"$OUT\" ] && echo \"$OUT\"; return 0; }}\n"
+                    "candidates=x\n"
+                    f"{derive}\n"
+                    'printf "%s|%s" "$resolved" "$signer_ref"\n'
+                )
+                result = subprocess.run(
+                    ["bash", "-c", program],
+                    env={"OUT": output, "REF": ref, "PATH": "/usr/bin:/bin"},
+                    capture_output=True, text=True, check=True,
+                )
+                self.assertEqual(result.stdout, f"{img if tag else ''}|{want}")
+
     def test_debuginfo_is_not_built_only_to_be_discarded(self) -> None:
         # Both lanes: the mock lane inline, the container lane in its script.
         text = uncommented(BUILD_STAGE) + uncommented(ROOT / "tools" / "build_container.sh")
@@ -250,7 +332,7 @@ class FactoryWitnessTests(unittest.TestCase):
         # Outside the canary the seed is exactly the factory image prepare
         # read; the canary may only ever seed from its own tag.
         self.assertIn('seed="$resolved"', text)
-        self.assertIn('seed=$(resolve "$PUBLISH_TAG")', text)
+        self.assertIn('read -r seed _ <<<"$(resolve "$PUBLISH_TAG")" || true', text)
         self.assertIn('elif [ "$current" != "$EXPECTED_IMAGE" ]; then', text)
         # The one exception is this run's own earlier attempt, recognised by
         # the run id label publish writes.
