@@ -3903,7 +3903,11 @@
       "version": "12.8.0",
       "url": "https://github.com/sysstat/sysstat/archive/v12.8.0.tar.gz",
       "filename": "v12.8.0.tar.gz",
-      "sha512": "42ddf7131b690be8927ceacdc35c23d6f1295f52446db68ecc2ea619e0e7ec955157b146216474e271bd0db242b3348e8ba4c8ebc03e518ac69b2564eec71857"
+      "sha512": "42ddf7131b690be8927ceacdc35c23d6f1295f52446db68ecc2ea619e0e7ec955157b146216474e271bd0db242b3348e8ba4c8ebc03e518ac69b2564eec71857",
+      "dist_bump": {
+        "count": 1,
+        "baseline": "1"
+      }
     },
     {
       "name": "pv",
@@ -4686,6 +4690,83 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/foo2zjs/foo2zjs-20201003.tar.gz/sha512/786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c/foo2zjs-20201003.tar.gz",
       "filename": "foo2zjs-20201003.tar.gz",
       "sha512": "786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c"
+    },
+    {
+      "name": "libutempter",
+      "version": "1.2.1",
+      "url": "https://ftp.altlinux.org/pub/people/ldv/utempter/libutempter-1.2.1.tar.gz",
+      "filename": "libutempter-1.2.1.tar.gz",
+      "sha512": "d3a3bab7d2c2a68534c5ad41dd02bde849eb08df5dbb895a79b50b74d269c48c4cfcd12c4654941ccb7cdd43f486cfdc19148fa470870562f5cd324ce9782429"
+    },
+    {
+      "name": "gssproxy",
+      "version": "0.9.2",
+      "url": "https://github.com/gssapi/gssproxy/releases/download/v0.9.2/gssproxy-0.9.2.tar.gz",
+      "filename": "gssproxy-0.9.2.tar.gz",
+      "sha512": "6de484c9c1715e8b845106e1b16e1c29805e4104db296eb44ea15e6b6973fd1df0b043d2cdc2798f04c7a0ce66279e356a285684bc3573ef847532ab2b87aca3"
+    },
+    {
+      "name": "quota",
+      "version": "4.11",
+      "url": "https://downloads.sourceforge.net/linuxquota/quota-4.11.tar.gz",
+      "filename": "quota-4.11.tar.gz",
+      "sha512": "84c6b520e9c06fd069ee4ead2683cc1f89ff8b888f30d8d610a3577af2ceb9ce3982a22a4b314151767dea600d76b368146adce7bdb9a180e12f054bdaaaeb3b"
+    },
+    {
+      "name": "libhandy",
+      "version": "1.8.3",
+      "url": "https://download.gnome.org/sources/libhandy/1.8/libhandy-1.8.3.tar.xz",
+      "filename": "libhandy-1.8.3.tar.xz",
+      "sha512": "1e0ae363d2a4993c9667243715256b27cb0ecb898fa8f4ea1a914fbeb36c0a9c26447f8f13f92f5a855e45ada49f732adeb30b88d81f3ee5f984bca48db3ae65"
+    },
+    {
+      "name": "ding-libs",
+      "version": "0.7.0",
+      "url": "https://github.com/SSSD/ding-libs/releases/download/0.7.0/ding-libs-0.7.0.tar.gz",
+      "filename": "ding-libs-0.7.0.tar.gz",
+      "sha512": "1eae405b475c5863bffa759b7a1ed999f488eb8ca960608010b4d6b0bd15d6290d8f56fbf4e558db9eb571635088474f65a347fb9c67979a20a250b21a516624"
+    },
+    {
+      "name": "python-pillow",
+      "version": "13.0.0",
+      "url": "https://github.com/python-pillow/Pillow/archive/13.0.0/Pillow-13.0.0.tar.gz",
+      "filename": "Pillow-13.0.0.tar.gz",
+      "sha512": "eb031278da12ae0a19a974d6efbf3b87b2104585bee2fcfef5e94b434be2782253d03711317a816e66936a3fe22773d92a624d1b7274460ec11002f3a2941ab5"
+    },
+    {
+      "name": "usbutils",
+      "version": "019",
+      "url": "https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-019.tar.xz",
+      "filename": "usbutils-019.tar.xz",
+      "sha512": "fb4acc570c2b71f90c51c2717dc80e844727c8fcfebb5d92c57145eb9d09cbd1f63cf405e07db76c3afaaf3fac87b90f3f512d0a7c4d50cb9e6f26438eca9390"
+    },
+    {
+      "name": "net-snmp",
+      "version": "5.9.5.2",
+      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.5.2/net-snmp-5.9.5.2.tar.gz",
+      "filename": "net-snmp-5.9.5.2.tar.gz",
+      "sha512": "c320c90e01377651fdff3aa9c373b9013f142fab23810d821174e546716ef2fa6499a805728710c67ca7fe238679111df392754c24ea4e01768faa5535ac7db2"
+    },
+    {
+      "name": "python-cups",
+      "version": "2.0.4",
+      "url": "https://github.com/OpenPrinting/pycups/releases/download/v2.0.4/pycups-2.0.4.tar.gz",
+      "filename": "pycups-2.0.4.tar.gz",
+      "sha512": "d22148856c8cff4f30e6b7ab0d32d184e8b48358158f28735f0efe4c6e80fd0ea2a5ece87db3eada152f05435fb64c05f1c066bc7bda0649fbddcf5221d66161"
+    },
+    {
+      "name": "python-olefile",
+      "version": "0.47",
+      "url": "https://files.pythonhosted.org/packages/source/o/olefile/olefile-0.47.zip",
+      "filename": "olefile-0.47.zip",
+      "sha512": "b797c0e419132fbd469b121b6d6a9f69a83d156b3b14be0ea227776ecbd6a912be5c38e74ec5fbced79eacbb4a19c7c6365b6fde2167e02bd92031c5f8b3f928"
+    },
+    {
+      "name": "libraqm",
+      "version": "0.10.1",
+      "url": "https://github.com/HOST-Oman/libraqm/releases/download/v0.10.1/raqm-0.10.1.tar.xz",
+      "filename": "raqm-0.10.1.tar.xz",
+      "sha512": "7110bb293bd3daa637826b951207de5f9375213cc81caabb834423d7c7267f302d227140ef27084fb02768b16830b0be5107da8f213d6cd5f93fad343e1dff5e"
     },
     {
       "name": "python-pyudev",
