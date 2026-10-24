@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 124,
-      "total": 126
+      "pending": 105,
+      "total": 107
     },
     "fonts-i18n": {
       "pending": 59,
@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 157,
-      "total": 169
+      "pending": 154,
+      "total": 166
     },
     "power": {
       "total": 0
@@ -270,27 +270,12 @@
     },
     {
       "area": "dev-tools",
-      "name": "bc",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "bcache-tools",
       "state": "pending"
     },
     {
       "area": "dev-tools",
       "name": "bison",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "bolt",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "borgbackup",
       "state": "pending"
     },
     {
@@ -311,26 +296,6 @@
     {
       "area": "dev-tools",
       "name": "djvulibre-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "dnsmasq",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "ethtool",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "exfatprogs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "f2fs-tools",
       "state": "pending"
     },
     {
@@ -365,22 +330,12 @@
     },
     {
       "area": "dev-tools",
-      "name": "gamemode",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "generic-logos",
       "state": "pending"
     },
     {
       "area": "dev-tools",
       "name": "gssproxy",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "hdparm",
       "state": "pending"
     },
     {
@@ -475,32 +430,12 @@
     },
     {
       "area": "dev-tools",
-      "name": "lsof",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "man-pages",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "mtr",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "nilfs-utils",
       "state": "pending"
     },
     {
       "area": "dev-tools",
       "name": "ntfs-3g-system-compression",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nvme-cli",
       "state": "pending"
     },
     {
@@ -635,11 +570,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-llfuse",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-more-itertools",
       "state": "pending"
     },
@@ -755,16 +685,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "smartmontools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "smartmontools-selinux",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "spice-vdagent",
       "state": "pending"
     },
@@ -810,11 +730,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "tcpdump",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "time",
       "state": "pending"
     },
@@ -827,16 +742,6 @@
       "area": "dev-tools",
       "name": "tpm2-tools",
       "state": "already_recipe"
-    },
-    {
-      "area": "dev-tools",
-      "name": "traceroute",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "tree",
-      "state": "pending"
     },
     {
       "area": "dev-tools",
@@ -1695,11 +1600,6 @@
     },
     {
       "area": "long-tail",
-      "name": "lshw",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "mcelog",
       "state": "pending"
     },
@@ -1791,11 +1691,6 @@
     {
       "area": "long-tail",
       "name": "perl-Unicode-Normalize",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "pinfo",
       "state": "pending"
     },
     {
@@ -2051,11 +1946,6 @@
     {
       "area": "long-tail",
       "name": "virtualbox-guest-additions",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "words",
       "state": "pending"
     },
     {
@@ -2348,11 +2238,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 426
+    "pending": 404
   },
   "totals": {
-    "backlog": 458,
-    "resolved": 87,
+    "backlog": 436,
+    "resolved": 109,
     "wontfix": 6
   }
 }
