@@ -110,6 +110,31 @@ A runtime `Requires` that resolves only in Fedora (for example
 `libieee1284.so.3` for `sane-backends`) must be imported in the same PR, since
 the published repository is installed from the factory plus Hummingbird alone.
 
+A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
+links `libraqm.so.0` (hence `libraqm`, imported with it) and its
+`python3-pillow-qt` subpackage needs `python3-qt5`, which neither Hummingbird
+nor the factory carries, so the recipe builds with `%bcond_with qt` and
+`%bcond_with mingw` (Utah-local). Always run `rpm -qp --requires` over the
+built RPMs against factory plus Hummingbird before closing the import.
+`net-snmp` fails to link `libnetsnmptrapd.la` under Hummingbird's libtool 2.6
+because `libnetsnmpmibs.la` no longer passes `libnetsnmpagent` on; the recipe
+names it next to `MIBLIB` in `apps/Makefile`.
+
+An `ftp://` `Source0` (`libutempter`) is rejected by the lock step as "not a
+direct HTTP(S) URL"; check whether the same host serves the file over `https://`
+(`ftp.altlinux.org` does) and lock that after comparing the SHA-512 with
+`sources`. Before importing a package for one missing soname, walk the
+providing recipe's own runtime `Requires` against factory plus Hummingbird: `pcp`
+(sysstat's `libpcp.so.4`) is a 118-subpackage monolith whose runtime closure
+reaches roughly 84 more Fedora source packages (libvirt, mysql8.4, libarrow,
+the perl stack, bpftrace), and even every `disable_*` switch the spec offers
+leaves about 62. Drop the optional consumer feature instead -- `sysstat` builds
+with `--disable-pcp`, which only removes `sadf`'s PCP output format. When
+upstream merges libraries into one source (`ding-libs` 0.7.0 folds
+libcollection, libbasicobjects, libpath_utils and libref_array into
+`libini_config` through `Obsoletes:`), the retired binary names still leave the
+backlog with the import.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —

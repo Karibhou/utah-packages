@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 103,
-      "total": 105
+      "pending": 95,
+      "total": 97
     },
     "fonts-i18n": {
       "pending": 59,
@@ -16,14 +16,14 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 8,
-      "total": 13
+      "pending": 7,
+      "total": 12
     },
     "long-tail": {
-      "already_recipe": 11,
+      "already_recipe": 12,
       "manifest_wants": 1,
-      "pending": 144,
-      "total": 156
+      "pending": 131,
+      "total": 144
     },
     "power": {
       "total": 0
@@ -315,11 +315,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "gssproxy",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "hfsplus-tools",
       "state": "pending"
     },
@@ -371,11 +366,6 @@
     {
       "area": "dev-tools",
       "name": "libchromaprint",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "libcollection",
       "state": "pending"
     },
     {
@@ -510,11 +500,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-inotify",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-jaraco-classes",
       "state": "pending"
     },
@@ -555,17 +540,7 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-olefile",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-pexpect",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-pillow",
       "state": "pending"
     },
     {
@@ -581,11 +556,6 @@
     {
       "area": "dev-tools",
       "name": "python3-pysocks",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-pyudev",
       "state": "pending"
     },
     {
@@ -731,16 +701,6 @@
     {
       "area": "dev-tools",
       "name": "usbip",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "usbutils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "virt-what",
       "state": "pending"
     },
     {
@@ -1090,11 +1050,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "libhandy",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "libmediaart",
       "state": "pending"
     },
@@ -1370,18 +1325,13 @@
     },
     {
       "area": "long-tail",
-      "name": "libbasicobjects",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libdeflate",
       "state": "pending"
     },
     {
       "area": "long-tail",
       "name": "libdhash",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1396,11 +1346,6 @@
     {
       "area": "long-tail",
       "name": "libijs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libini_config",
       "state": "pending"
     },
     {
@@ -1445,27 +1390,12 @@
     },
     {
       "area": "long-tail",
-      "name": "libpath_utils",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libpfm",
       "state": "pending"
     },
     {
       "area": "long-tail",
       "name": "librabbitmq",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libraqm",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libref_array",
       "state": "pending"
     },
     {
@@ -1485,17 +1415,7 @@
     },
     {
       "area": "long-tail",
-      "name": "libtraceevent",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "liburing",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libutempter",
       "state": "pending"
     },
     {
@@ -1551,11 +1471,6 @@
     {
       "area": "long-tail",
       "name": "neon",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "net-snmp-libs",
       "state": "pending"
     },
     {
@@ -1670,16 +1585,6 @@
     },
     {
       "area": "long-tail",
-      "name": "python3-cups",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "python3-linux-procfs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "python3-perf",
       "state": "pending"
     },
@@ -1741,16 +1646,6 @@
     {
       "area": "long-tail",
       "name": "qt5-qtxmlpatterns",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "quota",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "quota-nls",
       "state": "pending"
     },
     {
@@ -2031,13 +1926,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 31,
+    "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 363
+    "pending": 341
   },
   "totals": {
-    "backlog": 395,
-    "resolved": 150,
+    "backlog": 374,
+    "resolved": 171,
     "wontfix": 6
   }
 }
