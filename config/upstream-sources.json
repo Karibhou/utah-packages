@@ -4721,6 +4721,13 @@
       "url": "https://files.pythonhosted.org/packages/source/o/olefile/olefile-0.47.zip",
       "filename": "olefile-0.47.zip",
       "sha512": "b797c0e419132fbd469b121b6d6a9f69a83d156b3b14be0ea227776ecbd6a912be5c38e74ec5fbced79eacbb4a19c7c6365b6fde2167e02bd92031c5f8b3f928"
+    },
+    {
+      "name": "libraqm",
+      "version": "0.10.1",
+      "url": "https://github.com/HOST-Oman/libraqm/releases/download/v0.10.1/raqm-0.10.1.tar.xz",
+      "filename": "raqm-0.10.1.tar.xz",
+      "sha512": "7110bb293bd3daa637826b951207de5f9375213cc81caabb834423d7c7267f302d227140ef27084fb02768b16830b0be5107da8f213d6cd5f93fad343e1dff5e"
     }
   ]
 }

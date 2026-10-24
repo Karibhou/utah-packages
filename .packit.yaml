@@ -1720,6 +1720,12 @@ packages:
     downstream_package_name: libqrtr-glib
     paths:
       - packages/libqrtr-glib
+  libraqm:
+    specfile_path: libraqm.spec
+    upstream_package_name: libraqm
+    downstream_package_name: libraqm
+    paths:
+      - packages/libraqm
   libratbag:
     specfile_path: libratbag.spec
     upstream_package_name: libratbag

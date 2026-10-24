@@ -403,7 +403,6 @@ packages = [
     "libpath_utils",
     "libpfm",
     "librabbitmq",
-    "libraqm",
     "libref_array",
     "libreport-filesystem",
     "librtmp",
@@ -505,6 +504,7 @@ packages = [
     { name = "usbutils", pr = 596 },
     { name = "net-snmp-libs", pr = 596 },
     { name = "python3-cups", pr = 596 },
+    { name = "libraqm", pr = 596 },
     # VPN stack + oath-toolkit/libuser/usermode closure (projectbluefin/utah-packages#585).
     { name = "NetworkManager-openconnect", pr = 585 },
     { name = "NetworkManager-openconnect-gnome", pr = 585 },

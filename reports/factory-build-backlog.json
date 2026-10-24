@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 143,
-      "total": 155
+      "pending": 142,
+      "total": 154
     },
     "power": {
       "total": 0
@@ -1465,11 +1465,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libraqm",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libref_array",
       "state": "pending"
     },
@@ -2033,11 +2028,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 363
+    "pending": 362
   },
   "totals": {
-    "backlog": 395,
-    "resolved": 150,
+    "backlog": 394,
+    "resolved": 151,
     "wontfix": 6
   }
 }

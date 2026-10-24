@@ -110,6 +110,16 @@ A runtime `Requires` that resolves only in Fedora (for example
 `libieee1284.so.3` for `sane-backends`) must be imported in the same PR, since
 the published repository is installed from the factory plus Hummingbird alone.
 
+A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
+links `libraqm.so.0` (hence `libraqm`, imported with it) and its
+`python3-pillow-qt` subpackage needs `python3-qt5`, which neither Hummingbird
+nor the factory carries, so the recipe builds with `%bcond_with qt` and
+`%bcond_with mingw` (Utah-local). Always run `rpm -qp --requires` over the
+built RPMs against factory plus Hummingbird before closing the import.
+`net-snmp` fails to link `libnetsnmptrapd.la` under Hummingbird's libtool 2.6
+because `libnetsnmpmibs.la` no longer passes `libnetsnmpagent` on; the recipe
+names it next to `MIBLIB` in `apps/Makefile`.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —
