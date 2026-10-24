@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 102,
-      "total": 104
+      "pending": 99,
+      "total": 101
     },
     "fonts-i18n": {
       "pending": 59,
@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 12,
       "manifest_wants": 1,
-      "pending": 137,
-      "total": 150
+      "pending": 134,
+      "total": 147
     },
     "power": {
       "total": 0
@@ -560,17 +560,7 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-olefile",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-pexpect",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-pillow",
       "state": "pending"
     },
     {
@@ -736,11 +726,6 @@
     {
       "area": "dev-tools",
       "name": "usbip",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "usbutils",
       "state": "pending"
     },
     {
@@ -1450,11 +1435,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libraqm",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libreport-filesystem",
       "state": "pending"
     },
@@ -1536,11 +1516,6 @@
     {
       "area": "long-tail",
       "name": "neon",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "net-snmp-libs",
       "state": "pending"
     },
     {
@@ -1651,11 +1626,6 @@
     {
       "area": "long-tail",
       "name": "prefixdevname",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "python3-cups",
       "state": "pending"
     },
     {
@@ -2008,11 +1978,11 @@
   "states": {
     "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 357
+    "pending": 351
   },
   "totals": {
-    "backlog": 390,
-    "resolved": 155,
+    "backlog": 384,
+    "resolved": 161,
     "wontfix": 6
   }
 }

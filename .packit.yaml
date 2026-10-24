@@ -1738,6 +1738,12 @@ packages:
     downstream_package_name: libqrtr-glib
     paths:
       - packages/libqrtr-glib
+  libraqm:
+    specfile_path: libraqm.spec
+    upstream_package_name: libraqm
+    downstream_package_name: libraqm
+    paths:
+      - packages/libraqm
   libratbag:
     specfile_path: libratbag.spec
     upstream_package_name: libratbag
@@ -2146,6 +2152,12 @@ packages:
     downstream_package_name: nautilus-python
     paths:
       - packages/nautilus-python
+  net-snmp:
+    specfile_path: net-snmp.spec
+    upstream_package_name: net-snmp
+    downstream_package_name: net-snmp
+    paths:
+      - packages/net-snmp
   nfs-utils:
     specfile_path: nfs-utils.spec
     upstream_package_name: nfs-utils
@@ -2458,6 +2470,12 @@ packages:
     downstream_package_name: python-argcomplete
     paths:
       - packages/python-argcomplete
+  python-cups:
+    specfile_path: python-cups.spec
+    upstream_package_name: python-cups
+    downstream_package_name: python-cups
+    paths:
+      - packages/python-cups
   python-dasbus:
     specfile_path: python-dasbus.spec
     upstream_package_name: python-dasbus
@@ -2494,12 +2512,24 @@ packages:
     downstream_package_name: python-msgpack
     paths:
       - packages/python-msgpack
+  python-olefile:
+    specfile_path: python-olefile.spec
+    upstream_package_name: python-olefile
+    downstream_package_name: python-olefile
+    paths:
+      - packages/python-olefile
   python-pam:
     specfile_path: python-pam.spec
     upstream_package_name: python-pam
     downstream_package_name: python-pam
     paths:
       - packages/python-pam
+  python-pillow:
+    specfile_path: python-pillow.spec
+    upstream_package_name: python-pillow
+    downstream_package_name: python-pillow
+    paths:
+      - packages/python-pillow
   python-psutil:
     specfile_path: python-psutil.spec
     upstream_package_name: python-psutil
@@ -2872,6 +2902,12 @@ packages:
     downstream_package_name: usbmuxd
     paths:
       - packages/usbmuxd
+  usbutils:
+    specfile_path: usbutils.spec
+    upstream_package_name: usbutils
+    downstream_package_name: usbutils
+    paths:
+      - packages/usbutils
   usermode:
     specfile_path: usermode.spec
     upstream_package_name: usermode

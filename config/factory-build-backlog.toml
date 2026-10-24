@@ -206,9 +206,7 @@ packages = [
     "python3-keyring",
     "python3-keyring+completion",
     "python3-more-itertools",
-    "python3-olefile",
     "python3-pexpect",
-    "python3-pillow",
     "python3-ptyprocess",
     "python3-pygit2",
     "python3-pysocks",
@@ -242,7 +240,6 @@ packages = [
     "usb_modeswitch",
     "usb_modeswitch-data",
     "usbip",
-    "usbutils",
     "virt-what",
     "wget2",
     "wget2-libs",
@@ -400,7 +397,6 @@ packages = [
     "libpasswdqc",
     "libpfm",
     "librabbitmq",
-    "libraqm",
     "libreport-filesystem",
     "librtmp",
     "libslirp",
@@ -418,7 +414,6 @@ packages = [
     "mod_http2",
     "mtools",
     "neon",
-    "net-snmp-libs",
     "net-tools",
     "nm-connection-editor",
     "nss-altfiles",
@@ -441,7 +436,6 @@ packages = [
     "plymouth-theme-spinner",
     "portaudio",
     "prefixdevname",
-    "python3-cups",
     "python3-linux-procfs",
     "python3-perf",
     "python3-pskc",
@@ -494,6 +488,13 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
+    { name = "python3-olefile", pr = 596 },
+    { name = "python3-pillow", pr = 596 },
+    { name = "usbutils", pr = 596 },
+    { name = "net-snmp-libs", pr = 596 },
+    { name = "python3-cups", pr = 596 },
+    { name = "libraqm", pr = 596 },
     # VPN stack + oath-toolkit/libuser/usermode closure (projectbluefin/utah-packages#585).
     { name = "NetworkManager-openconnect", pr = 585 },
     { name = "NetworkManager-openconnect-gnome", pr = 585 },
