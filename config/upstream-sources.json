@@ -4340,6 +4340,67 @@
       "url": "https://github.com/benmcollins/libjwt/archive/v1.12.1.tar.gz",
       "filename": "v1.12.1.tar.gz",
       "sha512": "facbd82607363f7fc8767b3299b6f8b4e0aeb1e7a65d956bedf5ef1719304aac2f420f763ac2c08167f2176475f04b6c6c30fd448b7991a6fc6756793b8ad92c"
+    },
+    {
+      "name": "openconnect",
+      "version": "9.21",
+      "url": "https://www.infradead.org/openconnect//download/openconnect-9.21.tar.gz",
+      "filename": "openconnect-9.21.tar.gz",
+      "sha512": "1442139e8a15be604cab7be552a3e7fe9ed68a678c9253f5cb335cd8ae28493ae1296b5481e93db4873d7d45135f8345276c81295961c73c5865cc481cb7d1e4"
+    },
+    {
+      "name": "NetworkManager-openconnect",
+      "version": "1.2.10",
+      "url": "https://download.gnome.org/sources/NetworkManager-openconnect/1.2/NetworkManager-openconnect-1.2.10.tar.xz",
+      "filename": "NetworkManager-openconnect-1.2.10.tar.xz",
+      "sha512": "c61f5edee04475b013afbb91ba11e102cf4c925a0b2e16477473e0de9528d793121c1324f2c4d5ae03e0c8fb00dd9de444130c22e681f7a3408bc9a179ad7509"
+    },
+    {
+      "name": "vpnc",
+      "version": "0.5.3^20241114.git11e15a1",
+      "url": "https://github.com/streambinder/vpnc/archive/11e15a143d6a00fb4e532cad271c70b401a6b9ef/vpnc-11e15a1.tar.gz",
+      "filename": "vpnc-11e15a1.tar.gz",
+      "sha512": "80524bfa3224f56a002892b43c633db729663eff09d5252cc997b0c5a26d0b92a471f1b268b6b422bb3f7cfabbecc93f634216b14fdbdfaef81c88d6823a1755"
+    },
+    {
+      "name": "stoken",
+      "version": "0.93",
+      "url": "https://github.com/stoken-dev/stoken/archive/v0.93.tar.gz#/stoken-0.93.tar.gz",
+      "filename": "stoken-0.93.tar.gz",
+      "sha512": "57e67786ec2a0c715e0bb256d359aae147beff72e1922452ed866859b551a6cc6bdce477f5b39c10ee00f5a2620f819660eb2eb706c4d0d3874c9871f29c5cb6"
+    },
+    {
+      "name": "pkcs11-helper",
+      "version": "1.30.0",
+      "url": "https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.30.0/pkcs11-helper-1.30.0.tar.bz2",
+      "filename": "pkcs11-helper-1.30.0.tar.bz2",
+      "sha512": "19fba76e41210cc17f9efa4501d0214d4a5c777ab7b2671888fd280b150bae4a6b190c7f47fb783015f9aa40d409fd6087264e531d6f28d0bed4293dcbf8bdd5"
+    },
+    {
+      "name": "vpnc-script",
+      "version": "20230907",
+      "no_upstream_source": true
+    },
+    {
+      "name": "oath-toolkit",
+      "version": "2.6.15",
+      "url": "https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.15.tar.gz",
+      "filename": "oath-toolkit-2.6.15.tar.gz",
+      "sha512": "9e202840215610629d32453b0b9dcedf12e36fa04b6ad84ad3c71f6fca23c34c96c4688c40e34fa7f30f985adef94208e074ff793a946a4fe28496649e5776f5"
+    },
+    {
+      "name": "libuser",
+      "version": "0.64",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/libuser/libuser-0.64.tar.gz/sha512/8a2536f8f37538e60a4d0eb072c69d56d6d27d39a34078576b33b6eff55e60534b3fdee6432fe591a1bfbd521a6a447746e42756e34f77e369d057d79562f74b/libuser-0.64.tar.gz",
+      "filename": "libuser-0.64.tar.gz",
+      "sha512": "8a2536f8f37538e60a4d0eb072c69d56d6d27d39a34078576b33b6eff55e60534b3fdee6432fe591a1bfbd521a6a447746e42756e34f77e369d057d79562f74b"
+    },
+    {
+      "name": "usermode",
+      "version": "1.114",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/usermode/usermode-1.114.tar.xz/sha512/703eb218704c7a11cdce25a71f4fc91bf4f042a8b185f79f3954699081c0db8a6234ad6f11738d8b2fe6a492a03d029cbe01762a47869edc473e4fbaa6e0ee32/usermode-1.114.tar.xz",
+      "filename": "usermode-1.114.tar.xz",
+      "sha512": "703eb218704c7a11cdce25a71f4fc91bf4f042a8b185f79f3954699081c0db8a6234ad6f11738d8b2fe6a492a03d029cbe01762a47869edc473e4fbaa6e0ee32"
     }
   ]
 }
