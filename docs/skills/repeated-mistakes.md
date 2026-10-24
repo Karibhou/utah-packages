@@ -614,6 +614,25 @@ Two more ways the bot import fails, both seen on 2026-10-22:
   ([`contributing.md`](../contributing.md)). Do not add a Fedora fallback to
   that entry: it would serve different bytes.
 
+Three more import findings from the tuned/powertop runtime-provider wave
+(2026-10-24, utah#388):
+
+- **A retired Rawhide recipe is not the provider.** `python-inotify` is a
+  `dead.package` ("Obsoleted by python3-pyinotify"); the import succeeds and
+  leaves only that file. Read the replacement recipe: `python-pyinotify`
+  carries `Provides: python3-inotify`, so import it and close the
+  `python3-inotify` backlog name with it.
+- **Same tarball, different compression.** kernel.org's
+  `python-linux-procfs-0.7.4.tar.xz` differs from Fedora's lookaside copy,
+  but the decompressed tars are byte-identical (compare `xz -dc | sha256sum`).
+  Lock the upstream xz and repin `sources` to its digest instead of locking
+  the lookaside as primary and growing `config/fedora-primary-sources.txt`.
+- **Find the missing runtime Requires from repodata, not from the spec.**
+  Resolve each published RPM's `rpm:requires` against the provides of the
+  factory primary plus Hummingbird primary
+  ([`repo-inspection.md`](repo-inspection.md)); a spec's conditionals hide the
+  answer. Rich `(x if y)` deps are not missing providers.
+
 The daily re-import of carried recipes (`tools/rawhide_reimport.py`, the
 `bump` job in `detect-rawhide-updates.yml`) cannot repeat this: it only
 replaces recipes already in every inventory, refuses any move that would

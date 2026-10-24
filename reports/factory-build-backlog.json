@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 104,
-      "total": 106
+      "pending": 101,
+      "total": 103
     },
     "fonts-i18n": {
       "pending": 59,
@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 145,
-      "total": 157
+      "pending": 143,
+      "total": 155
     },
     "power": {
       "total": 0
@@ -525,11 +525,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-inotify",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-jaraco-classes",
       "state": "pending"
     },
@@ -596,11 +591,6 @@
     {
       "area": "dev-tools",
       "name": "python3-pysocks",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-pyudev",
       "state": "pending"
     },
     {
@@ -751,11 +741,6 @@
     {
       "area": "dev-tools",
       "name": "usbutils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "virt-what",
       "state": "pending"
     },
     {
@@ -1510,11 +1495,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libtraceevent",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "liburing",
       "state": "pending"
     },
@@ -1696,11 +1676,6 @@
     {
       "area": "long-tail",
       "name": "python3-cups",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "python3-linux-procfs",
       "state": "pending"
     },
     {
@@ -2058,11 +2033,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 368
+    "pending": 363
   },
   "totals": {
-    "backlog": 400,
-    "resolved": 145,
+    "backlog": 395,
+    "resolved": 150,
     "wontfix": 6
   }
 }
