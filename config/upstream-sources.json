@@ -4815,6 +4815,44 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/virt-what/virt-what-1.27.tar.gz/sha512/8d10111e38a87504daccf36e9386863aa92308c96be65164412d92c56c12d42f38e6e251fabe7945ce74e1419fc82c0ac3cdbd0f25b19cd72feda2e199307d6f/virt-what-1.27.tar.gz"
       ]
+    },
+    {
+      "name": "libsrtp",
+      "version": "2.8.1",
+      "url": "https://github.com/cisco/libsrtp/archive/v2.8.1.tar.gz",
+      "filename": "v2.8.1.tar.gz",
+      "sha512": "78fc02a2341fedf84e5d539745cbae5410ce799ca9522dfe0be9133d13cd4373d79d6fc83d422e5f92e7f8db96e55feddd2cb8f03d9a9ac8c4ea7ac4697ec741"
+    },
+    {
+      "name": "djvulibre",
+      "version": "3.5.30",
+      "url": "https://downloads.sourceforge.net/djvu/djvulibre-3.5.30.tar.gz",
+      "filename": "djvulibre-3.5.30.tar.gz",
+      "sha512": "b68291cd844d9f3b92acae39014a7f3c1b3e8f024053a79f527fa322683ac3d09d170cae8d4dc409249cc9d9feb3ec692cfeea22c9795a64c9418a92d22dc95c",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/djvulibre/djvulibre-3.5.30.tar.gz/sha512/b68291cd844d9f3b92acae39014a7f3c1b3e8f024053a79f527fa322683ac3d09d170cae8d4dc409249cc9d9feb3ec692cfeea22c9795a64c9418a92d22dc95c/djvulibre-3.5.30.tar.gz"
+      ]
+    },
+    {
+      "name": "gtksourceview5",
+      "version": "5.22.0",
+      "url": "https://download.gnome.org/sources/gtksourceview/5.22/gtksourceview-5.22.0.tar.xz",
+      "filename": "gtksourceview-5.22.0.tar.xz",
+      "sha512": "e5e2401a891f6174eb06b5b2fe9bb2db08afaeb3aea99c2c3f27787ee47f2afdde1ef06350034993a9281bc1f2a38e9a6f18801077c746f652bbd11d8415b24d"
+    },
+    {
+      "name": "a52dec",
+      "version": "0.7.4",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/a52dec/a52dec-0.7.4.tar.gz/sha512/4b26fe9492f218b775fb190b76ecf06edaeb656adfe6dcbd24d0a0f86871c3ba917edb88a398eb12dccedaa1605b6f0a0be06b09f9fddd9a46e457b7dd244848/a52dec-0.7.4.tar.gz",
+      "filename": "a52dec-0.7.4.tar.gz",
+      "sha512": "4b26fe9492f218b775fb190b76ecf06edaeb656adfe6dcbd24d0a0f86871c3ba917edb88a398eb12dccedaa1605b6f0a0be06b09f9fddd9a46e457b7dd244848"
+    },
+    {
+      "name": "libmpeg2",
+      "version": "0.5.1",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/libmpeg2/libmpeg2-0.5.1.tar.gz/sha512/3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc/libmpeg2-0.5.1.tar.gz",
+      "filename": "libmpeg2-0.5.1.tar.gz",
+      "sha512": "3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc"
     }
   ]
 }

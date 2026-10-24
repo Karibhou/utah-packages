@@ -48,7 +48,6 @@ packages = [
     "ffmpegthumbnailer",
     "ffmpegthumbnailer-libs",
     "gstreamer1-plugins-good-qt6",
-    "liba52",
     "libavc1394",
     "libavcodec",
     "libavdevice",
@@ -62,7 +61,6 @@ packages = [
     "libfdk-aac",
     "libiec61883",
     "libklvanc",
-    "libmpeg2",
     "libopenjph",
     "libplacebo",
     "libraw1394",
@@ -129,7 +127,6 @@ packages = [
 
 
 
-    "gtksourceview5",
     "imath",
     "libgee",
     "libmediaart",
@@ -152,7 +149,6 @@ packages = [
     "cryfs",
     "davfs2",
     "distribution-gpg-keys",
-    "djvulibre-libs",
     "fedora-release-common",
     "fedora-release-identity-silverblue",
     "fedora-release-ostree-desktop",
@@ -397,7 +393,6 @@ packages = [
     "libreport-filesystem",
     "librtmp",
     "libslirp",
-    "libsrtp",
     "liburing",
     "libvarlink",
     "libwmf-lite",
@@ -687,6 +682,13 @@ packages = [
     { name = "traceroute", pr = 587 },
     { name = "tree", pr = 587 },
     { name = "words", pr = 587 },
+    # Media runtime providers (landing PR #594): libsrtp2.so.1, liba52/libmpeg2, gtksourceview-5, libdjvulibre.
+    # liba52 is a52dec.spec's %package -n liba52; djvulibre-libs is djvulibre.spec's %package libs.
+    { name = "djvulibre-libs", pr = 594 },
+    { name = "gtksourceview5", pr = 594 },
+    { name = "liba52", pr = 594 },
+    { name = "libmpeg2", pr = 594 },
+    { name = "libsrtp", pr = 594 },
     # tmux/nfs-utils/gnome-disk-utility runtime providers: libutempter, gssproxy, quota, libhandy, ding-libs (projectbluefin/utah#392).
     { name = "libutempter", pr = 597 },
     { name = "libhandy", pr = 597 },

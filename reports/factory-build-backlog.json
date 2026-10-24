@@ -2,13 +2,13 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 30,
-      "total": 40
+      "pending": 28,
+      "total": 38
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 96,
-      "total": 98
+      "pending": 95,
+      "total": 97
     },
     "fonts-i18n": {
       "pending": 59,
@@ -16,14 +16,14 @@
     },
     "gnome-apps": {
       "already_recipe": 5,
-      "pending": 8,
-      "total": 13
+      "pending": 7,
+      "total": 12
     },
     "long-tail": {
       "already_recipe": 12,
       "manifest_wants": 1,
-      "pending": 132,
-      "total": 145
+      "pending": 131,
+      "total": 144
     },
     "power": {
       "total": 0
@@ -105,11 +105,6 @@
     },
     {
       "area": "codecs-media",
-      "name": "liba52",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
       "name": "libavc1394",
       "state": "pending"
     },
@@ -171,11 +166,6 @@
     {
       "area": "codecs-media",
       "name": "libklvanc",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libmpeg2",
       "state": "pending"
     },
     {
@@ -286,11 +276,6 @@
     {
       "area": "dev-tools",
       "name": "distribution-gpg-keys",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "djvulibre-libs",
       "state": "pending"
     },
     {
@@ -1055,11 +1040,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gtksourceview5",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
       "name": "imath",
       "state": "pending"
     },
@@ -1431,11 +1411,6 @@
     {
       "area": "long-tail",
       "name": "libslirp",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libsrtp",
       "state": "pending"
     },
     {
@@ -1953,11 +1928,11 @@
   "states": {
     "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 346
+    "pending": 341
   },
   "totals": {
-    "backlog": 379,
-    "resolved": 166,
+    "backlog": 374,
+    "resolved": 171,
     "wontfix": 6
   }
 }

@@ -28,6 +28,12 @@ packages:
     downstream_package_name: SDL3
     paths:
       - packages/SDL3
+  a52dec:
+    specfile_path: a52dec.spec
+    upstream_package_name: a52dec
+    downstream_package_name: a52dec
+    paths:
+      - packages/a52dec
   abseil-cpp:
     specfile_path: abseil-cpp.spec
     upstream_package_name: abseil-cpp
@@ -268,6 +274,12 @@ packages:
     downstream_package_name: distrobox
     paths:
       - packages/distrobox
+  djvulibre:
+    specfile_path: djvulibre.spec
+    upstream_package_name: djvulibre
+    downstream_package_name: djvulibre
+    paths:
+      - packages/djvulibre
   dmidecode:
     specfile_path: dmidecode.spec
     upstream_package_name: dmidecode
@@ -862,6 +874,12 @@ packages:
     downstream_package_name: gtksourceview4
     paths:
       - packages/gtksourceview4
+  gtksourceview5:
+    specfile_path: gtksourceview5.spec
+    upstream_package_name: gtksourceview5
+    downstream_package_name: gtksourceview5
+    paths:
+      - packages/gtksourceview5
   gum:
     specfile_path: gum.spec
     upstream_package_name: gum
@@ -1618,6 +1636,12 @@ packages:
     downstream_package_name: libmodplug
     paths:
       - packages/libmodplug
+  libmpeg2:
+    specfile_path: libmpeg2.spec
+    upstream_package_name: libmpeg2
+    downstream_package_name: libmpeg2
+    paths:
+      - packages/libmpeg2
   libmtp:
     specfile_path: libmtp.spec
     upstream_package_name: libmtp
@@ -1810,6 +1834,12 @@ packages:
     downstream_package_name: libspelling
     paths:
       - packages/libspelling
+  libsrtp:
+    specfile_path: libsrtp.spec
+    upstream_package_name: libsrtp
+    downstream_package_name: libsrtp
+    paths:
+      - packages/libsrtp
   libtalloc:
     specfile_path: libtalloc.spec
     upstream_package_name: libtalloc
