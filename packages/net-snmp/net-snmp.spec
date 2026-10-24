@@ -297,6 +297,13 @@ MIBS="host agentx smux \
     --without-pcre <<EOF
 EOF
 
+# Utah-local: with the Hummingbird libtool (2.6.2) libnetsnmptrapd.la no longer
+# inherits libnetsnmpagent.la from libnetsnmpmibs.la, so the link fails on
+# send_v2trap, vacm_check_view_contents and friends (libnetsnmpagent). Name the
+# agent library next to MIBLIB explicitly. Reimports reset this.
+sed -i 's|^\(MIBLIB[[:space:]]*=.*\)$|\1 ../agent/libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)|' apps/Makefile
+grep -n '^MIBLIB' apps/Makefile
+
 # store original libtool file, we will need it later
 cp libtool libtool.orig
 # remove rpath from libtool
