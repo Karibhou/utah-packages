@@ -106,12 +106,30 @@ packages:
     downstream_package_name: autofs
     paths:
       - packages/autofs
+  bc:
+    specfile_path: bc.spec
+    upstream_package_name: bc
+    downstream_package_name: bc
+    paths:
+      - packages/bc
   bluez:
     specfile_path: bluez.spec
     upstream_package_name: bluez
     downstream_package_name: bluez
     paths:
       - packages/bluez
+  bolt:
+    specfile_path: bolt.spec
+    upstream_package_name: bolt
+    downstream_package_name: bolt
+    paths:
+      - packages/bolt
+  borgbackup:
+    specfile_path: borgbackup.spec
+    upstream_package_name: borgbackup
+    downstream_package_name: borgbackup
+    paths:
+      - packages/borgbackup
   brltty:
     specfile_path: brltty.spec
     upstream_package_name: brltty
@@ -232,6 +250,12 @@ packages:
     downstream_package_name: dmidecode
     paths:
       - packages/dmidecode
+  dnsmasq:
+    specfile_path: dnsmasq.spec
+    upstream_package_name: dnsmasq
+    downstream_package_name: dnsmasq
+    paths:
+      - packages/dnsmasq
   dotconf:
     specfile_path: dotconf.spec
     upstream_package_name: dotconf
@@ -262,6 +286,12 @@ packages:
     downstream_package_name: espeak-ng
     paths:
       - packages/espeak-ng
+  ethtool:
+    specfile_path: ethtool.spec
+    upstream_package_name: ethtool
+    downstream_package_name: ethtool
+    paths:
+      - packages/ethtool
   evolution-data-server:
     specfile_path: evolution-data-server.spec
     upstream_package_name: evolution-data-server
@@ -280,12 +310,24 @@ packages:
     downstream_package_name: exempi
     paths:
       - packages/exempi
+  exfatprogs:
+    specfile_path: exfatprogs.spec
+    upstream_package_name: exfatprogs
+    downstream_package_name: exfatprogs
+    paths:
+      - packages/exfatprogs
   exiv2:
     specfile_path: exiv2.spec
     upstream_package_name: exiv2
     downstream_package_name: exiv2
     paths:
       - packages/exiv2
+  f2fs-tools:
+    specfile_path: f2fs-tools.spec
+    upstream_package_name: f2fs-tools
+    downstream_package_name: f2fs-tools
+    paths:
+      - packages/f2fs-tools
   faad2:
     specfile_path: faad2.spec
     upstream_package_name: faad2
@@ -400,6 +442,12 @@ packages:
     downstream_package_name: game-music-emu
     paths:
       - packages/game-music-emu
+  gamemode:
+    specfile_path: gamemode.spec
+    upstream_package_name: gamemode
+    downstream_package_name: gamemode
+    paths:
+      - packages/gamemode
   gcr:
     specfile_path: gcr.spec
     upstream_package_name: gcr
@@ -790,6 +838,12 @@ packages:
     downstream_package_name: gweather-locations
     paths:
       - packages/gweather-locations
+  hdparm:
+    specfile_path: hdparm.spec
+    upstream_package_name: hdparm
+    downstream_package_name: hdparm
+    paths:
+      - packages/hdparm
   hicolor-icon-theme:
     specfile_path: hicolor-icon-theme.spec
     upstream_package_name: hicolor-icon-theme
@@ -1840,6 +1894,18 @@ packages:
     downstream_package_name: lpcnetfreedv
     paths:
       - packages/lpcnetfreedv
+  lshw:
+    specfile_path: lshw.spec
+    upstream_package_name: lshw
+    downstream_package_name: lshw
+    paths:
+      - packages/lshw
+  lsof:
+    specfile_path: lsof.spec
+    upstream_package_name: lsof
+    downstream_package_name: lsof
+    paths:
+      - packages/lsof
   lttng-ust:
     specfile_path: lttng-ust.spec
     upstream_package_name: lttng-ust
@@ -1858,6 +1924,12 @@ packages:
     downstream_package_name: malcontent
     paths:
       - packages/malcontent-bootstrap
+  man-pages:
+    specfile_path: man-pages.spec
+    upstream_package_name: man-pages
+    downstream_package_name: man-pages
+    paths:
+      - packages/man-pages
   mdadm:
     specfile_path: mdadm.spec
     upstream_package_name: mdadm
@@ -1936,6 +2008,12 @@ packages:
     downstream_package_name: mtdev
     paths:
       - packages/mtdev
+  mtr:
+    specfile_path: mtr.spec
+    upstream_package_name: mtr
+    downstream_package_name: mtr
+    paths:
+      - packages/mtr
   mutter:
     specfile_path: mutter.spec
     upstream_package_name: mutter
@@ -1978,6 +2056,12 @@ packages:
     downstream_package_name: ntfs-3g
     paths:
       - packages/ntfs-3g
+  nvme-cli:
+    specfile_path: nvme-cli.spec
+    upstream_package_name: nvme-cli
+    downstream_package_name: nvme-cli
+    paths:
+      - packages/nvme-cli
   nvtop:
     specfile_path: nvtop.spec
     upstream_package_name: nvtop
@@ -2128,6 +2212,12 @@ packages:
     downstream_package_name: pinentry
     paths:
       - packages/pinentry
+  pinfo:
+    specfile_path: pinfo.spec
+    upstream_package_name: pinfo
+    downstream_package_name: pinfo
+    paths:
+      - packages/pinfo
   pipewire:
     specfile_path: pipewire.spec
     upstream_package_name: pipewire
@@ -2254,6 +2344,18 @@ packages:
     downstream_package_name: python-evdev
     paths:
       - packages/python-evdev
+  python-llfuse:
+    specfile_path: python-llfuse.spec
+    upstream_package_name: python-llfuse
+    downstream_package_name: python-llfuse
+    paths:
+      - packages/python-llfuse
+  python-msgpack:
+    specfile_path: python-msgpack.spec
+    upstream_package_name: python-msgpack
+    downstream_package_name: python-msgpack
+    paths:
+      - packages/python-msgpack
   python-pam:
     specfile_path: python-pam.spec
     upstream_package_name: python-pam
@@ -2392,6 +2494,12 @@ packages:
     downstream_package_name: simdutf
     paths:
       - packages/simdutf
+  smartmontools:
+    specfile_path: smartmontools.spec
+    upstream_package_name: smartmontools
+    downstream_package_name: smartmontools
+    paths:
+      - packages/smartmontools
   snowball:
     specfile_path: snowball.spec
     upstream_package_name: snowball
@@ -2506,6 +2614,12 @@ packages:
     downstream_package_name: tailscale
     paths:
       - packages/tailscale
+  tcpdump:
+    specfile_path: tcpdump.spec
+    upstream_package_name: tcpdump
+    downstream_package_name: tcpdump
+    paths:
+      - packages/tcpdump
   tecla:
     specfile_path: tecla.spec
     upstream_package_name: tecla
@@ -2548,6 +2662,18 @@ packages:
     downstream_package_name: tpm2-tools
     paths:
       - packages/tpm2-tools
+  traceroute:
+    specfile_path: traceroute.spec
+    upstream_package_name: traceroute
+    downstream_package_name: traceroute
+    paths:
+      - packages/traceroute
+  tree-pkg:
+    specfile_path: tree-pkg.spec
+    upstream_package_name: tree-pkg
+    downstream_package_name: tree-pkg
+    paths:
+      - packages/tree-pkg
   tuned:
     specfile_path: tuned.spec
     upstream_package_name: tuned
@@ -2680,6 +2806,12 @@ packages:
     downstream_package_name: wl-clipboard
     paths:
       - packages/wl-clipboard
+  words:
+    specfile_path: words.spec
+    upstream_package_name: words
+    downstream_package_name: words
+    paths:
+      - packages/words
   wpa_supplicant:
     specfile_path: wpa_supplicant.spec
     upstream_package_name: wpa_supplicant

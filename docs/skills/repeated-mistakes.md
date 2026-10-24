@@ -670,6 +670,31 @@ and verify both failing and passing candidates. Requiring the existing
 bot-only job globally strands ordinary PRs. See the operator procedure in
 [`architecture.md`](../architecture.md#checks-versus-merge-requirements).
 
+## Only runtime dependencies have to exist in Hummingbird or the factory
+
+The build root is Fedora 44 plus `public-hummingbird`
+([`targeting-hummingbird.md`](../targeting-hummingbird.md)), so a recipe's
+`BuildRequires` on `bison`, `flex`, `texinfo`, `asciidoc`, `libappstream-glib`
+or `sequoia-sqv` resolve from Fedora at build time and need no import. Checking
+BuildRequires against the Hummingbird primary metadata alone wrongly marks
+those recipes as blocked, and answering by editing the spec (dropping man
+pages or signature checks) trades shipped behavior for a problem that does not
+exist. Check the *binary* `Requires` of the built RPMs against Hummingbird and
+the published factory image instead.
+
+Two import quirks from the dev-tools wave (utah#392):
+
+- Fedora renamed the `tree` source package to `tree-pkg` (`packages/tree/` only
+  holds `dead.package`). Import `tree-pkg`; the binary package is still `tree`,
+  so the backlog entry is `tree`.
+- `lsof`'s Source0 is the Linux-only `-rh` repack (`upstream2downstream.sh`) and
+  `words`' only copy is a 2006 Wayback tarball. Neither has a verbatim upstream
+  URL, so they lock Fedora's lookaside (sha512 path for lsof, md5 path for
+  words) and sit in `config/fedora-primary-sources.txt`. Never run
+  `bootstrap_upstream_sources.py` without `--merge` on a populated lock: the
+  default output path is `config/upstream-sources.json` itself and the run
+  replaces the whole lock with the one candidate.
+
 ## Quick checks before pushing a fix
 
 - [ ] Does `git log --oneline -- <file>` show this file being fixed for the
