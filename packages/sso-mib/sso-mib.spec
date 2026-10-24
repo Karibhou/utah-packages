@@ -6,7 +6,7 @@
 %define soversion 0
 
 Name:           sso-mib
-Version:        0.9.0
+Version:        0.10.2
 Release:        %autorelease
 Summary:        Tools and library for Single-Sign-On with CA for Entra via Himmelblau
 
@@ -17,6 +17,9 @@ Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 # at build time. The hermetic factory build is offline and locks only
 # upstream Source0, so the completion file is dropped (no runtime effect).
 
+# Utah-local: 0.10's client-app test runs a private bus through GTestDBus,
+# which spawns dbus-daemon; without it %check aborts (gate run 40032133559).
+BuildRequires:  dbus-daemon
 BuildRequires:  gcc
 BuildRequires:  meson >= 0.53
 BuildRequires:  pkgconfig(dbus-1)
@@ -104,10 +107,12 @@ on O365.
 %files tool
 %license LICENSES/GPL-2.0-only.txt
 %{_bindir}/sso-mib-tool
+%{_mandir}/man1/sso-mib-tool.1*
 
 %files gch-smtp-o365
 %license LICENSES/MIT.txt
 %{_bindir}/sso-mib-gch-smtp-o365
+%{_mandir}/man1/sso-mib-gch-smtp-o365.1*
 
 %changelog
 %autochangelog

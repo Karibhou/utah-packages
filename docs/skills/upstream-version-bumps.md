@@ -120,6 +120,11 @@ the reference when Fedora has one. Seen so far:
   patch (libayatana-appindicator 0.6.0 needed Rawhide's gapi metadata patch
   for its mono bindings).
 
+- A new test can need a new build tool too. sso-mib 0.10.2's `client-app`
+  test runs a private bus with GTestDBus, which spawns `dbus-daemon`, so
+  `%check` aborted with `Error spawning dbus-daemon` (gate run 40032133559).
+  BuildRequire `dbus-daemon`, as ModemManager already does.
+
 Verify a fix with `rebuild-rpms.yml` dispatched on the `fix/recipe-<name>`
 ref with `packages=["<name>"]`; a non-main ref publishes only a
 branch-named tag.
@@ -158,6 +163,31 @@ bump alone leaves `.hummingbird-upstream.json` on the old commit, which
 `rawhide_reimport.py` then reports as factory divergence and never
 re-imports again. gtk4's 4.23.4 bump had done exactly that (pin at the 4.23.3
 commit); after the 4.24.1 re-pin the tool reports it `current`.
+
+## Soname-coupled bumps
+
+The gate builds each bumped recipe on its own, against the published
+factory, so it cannot move a library and its consumer together. When a
+library release changes its soname, both have to move in one hand pull
+request, and the build graph orders the consumer after the library (a
+`pkgconfig()` BuildRequires is an edge through the published provides).
+Version arithmetic does not catch this (#576): libjwt 1.12.1 -> 1.18.3 is
+not a major bump, but it moves the soname to `libjwt.so.2`, and the recipe
+packages `*.so.1*`.
+
+Before you couple two bumps, read the consumer's `build.log` from the gate's
+`gate-check-s0-<name>` artifact. The sso-mib 0.10.2 hold in #575 looked like
+a libjwt problem. Its log shows `libjwt found: YES 1.12.1` and a clean link.
+The real failure was the `%check` `dbus-daemon` failure listed above, so
+sso-mib moved on its own. Then check Koji's Rawhide build of the library
+(`getLatestBuilds` on the `rawhide` target's tag). On 2026-10-24 Fedora
+still shipped libjwt 1.12.1, and there was no compat package.
+
+A `bump-holds.json` entry blocks only one exact version, and the trim can
+lose it. The libjwt hold that #575's commit message names never reached
+`main`. A soname move needs a consumer rebuild for every newer release, so
+the library goes on `config/bump-review-only.txt` with the reason, the same
+way as libcdio.
 
 ## The bump gate
 
