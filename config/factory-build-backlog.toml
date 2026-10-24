@@ -113,7 +113,6 @@ packages = [
 # projectbluefin/utah#390 - 32 names
 consumer_issue = "projectbluefin/utah#390"
 packages = [
-    "foo2zjs",
     "liblouisutdml",
     "liblouisutdml-utils",
 ]
@@ -349,8 +348,6 @@ packages = [
     "PackageKit-glib",
     "antiword",
     "appstream-data",
-    "argyllcms",
-    "argyllcms-data",
     "b43-fwcutter",
     "b43-openfwwf",
     "bash-color-prompt",
@@ -390,9 +387,6 @@ packages = [
     "kpartx",
     "kvazaar-libs",
     "kyotocabinet-libs",
-    "lcms",
-    "lcms-libs",
-    "libXScrnSaver",
     "libXres",
     "libbasicobjects",
     "libdeflate",
@@ -647,6 +641,14 @@ packages = [
     { name = "redhat-menus", pr = 573 },
     # sso-mib-libs is a %package subpackage of sso-mib.spec (PR #574).
     { name = "sso-mib-libs", pr = 574 },
+    # foo2zjs and its runtime dependencies (argyllcms, lcms 1.x, libXScrnSaver).
+    # Subpackages share their source recipe's PR.
+    { name = "argyllcms", pr = 588 },
+    { name = "argyllcms-data", pr = 588 },
+    { name = "foo2zjs", pr = 588 },
+    { name = "lcms", pr = 588 },
+    { name = "lcms-libs", pr = 588 },
+    { name = "libXScrnSaver", pr = 588 },
     # Printing/scanning SANE + drivers wave. libieee1284 is a runtime dependency of
     # sane-backends (libieee1284.so.3). Subpackages share their source recipe's PR.
     { name = "c2esp", pr = 586 },

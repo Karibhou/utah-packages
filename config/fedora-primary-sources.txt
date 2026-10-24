@@ -30,6 +30,7 @@ ffmpeg
 flac
 flatpak
 flite
+foo2zjs
 foomatic-db
 fribidi
 fuse

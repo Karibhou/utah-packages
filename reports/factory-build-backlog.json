@@ -22,15 +22,15 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 150,
-      "total": 162
+      "pending": 145,
+      "total": 157
     },
     "power": {
       "total": 0
     },
     "printing-scanning": {
-      "pending": 3,
-      "total": 3
+      "pending": 2,
+      "total": 2
     },
     "ujust-deps": {
       "pending": 1,
@@ -1190,16 +1190,6 @@
     },
     {
       "area": "long-tail",
-      "name": "argyllcms",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "argyllcms-data",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "b43-fwcutter",
       "state": "pending"
     },
@@ -1391,21 +1381,6 @@
     {
       "area": "long-tail",
       "name": "kyotocabinet-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "lcms",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "lcms-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libXScrnSaver",
       "state": "pending"
     },
     {
@@ -1960,11 +1935,6 @@
     },
     {
       "area": "printing-scanning",
-      "name": "foo2zjs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
       "name": "liblouisutdml",
       "state": "pending"
     },
@@ -2088,11 +2058,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 374
+    "pending": 368
   },
   "totals": {
-    "backlog": 406,
-    "resolved": 139,
+    "backlog": 400,
+    "resolved": 145,
     "wontfix": 6
   }
 }
