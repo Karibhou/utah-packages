@@ -8,14 +8,12 @@ URL: https://sysstat.github.io
 Source: https://github.com/sysstat/sysstat/archive/v%{version}.tar.gz
 Source1: sysstat-tmpfiles.conf
 
-# PCP is no longer available for %%{ix86} on F40
-%if 0%{?fedora} >= 40 || 0%{?rhel} >= 10
-%ifnarch %{ix86}
-BuildRequires: pcp-libs-devel
-%endif
-%else
-BuildRequires: pcp-libs-devel
-%endif
+# Utah-local (projectbluefin/utah#392): sadf's PCP output format is dropped.
+# pcp-libs (libpcp.so.4, libpcp_import.so.2) is in neither Hummingbird nor the
+# factory, and importing pcp pulls ~84 further source packages (libvirt, perl
+# stack, mysql, libarrow, bpftrace, ...) into the runtime closure of its
+# subpackages. Without pcp-libs-devel in the build root sysstat's configure
+# finds no pcp/pmapi.h; --disable-pcp below makes that explicit.
 
 BuildRequires: gcc
 BuildRequires: gettext
@@ -50,6 +48,7 @@ The cifsiostat command reports I/O statistics for CIFS file systems.
 
 %build
 %configure \
+    --disable-pcp \
     --enable-install-cron \
     --enable-copy-only \
     --disable-file-attr \
