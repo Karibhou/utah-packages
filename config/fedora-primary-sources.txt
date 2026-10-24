@@ -118,6 +118,7 @@ libtdb
 libthai
 libtheora
 libusbmuxd
+libuser
 libvdpau
 libvisual
 libvorbis
@@ -133,6 +134,7 @@ linux-firmware
 livesys-scripts
 lm_sensors
 lpcnetfreedv
+lsof
 lttng-ust
 mdadm
 mesa
@@ -187,6 +189,7 @@ taglib
 twolame
 udisks2
 upower
+usermode
 v4l-utils
 vo-amrwbenc
 volume_key
@@ -197,6 +200,7 @@ wayland
 webkitgtk
 wireguard-tools
 wireplumber
+words
 wsdd
 xcb-util
 xcb-util-image
