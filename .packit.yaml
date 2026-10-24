@@ -1822,6 +1822,18 @@ packages:
     downstream_package_name: libtheora
     paths:
       - packages/libtheora
+  libtraceevent:
+    specfile_path: libtraceevent.spec
+    upstream_package_name: libtraceevent
+    downstream_package_name: libtraceevent
+    paths:
+      - packages/libtraceevent
+  libtracefs:
+    specfile_path: libtracefs.spec
+    upstream_package_name: libtracefs
+    downstream_package_name: libtracefs
+    paths:
+      - packages/libtracefs
   libunibreak:
     specfile_path: libunibreak.spec
     upstream_package_name: libunibreak
@@ -2458,6 +2470,12 @@ packages:
     downstream_package_name: python-evdev
     paths:
       - packages/python-evdev
+  python-linux-procfs:
+    specfile_path: python-linux-procfs.spec
+    upstream_package_name: python-linux-procfs
+    downstream_package_name: python-linux-procfs
+    paths:
+      - packages/python-linux-procfs
   python-llfuse:
     specfile_path: python-llfuse.spec
     upstream_package_name: python-llfuse
@@ -2494,6 +2512,18 @@ packages:
     downstream_package_name: python-pydantic-core
     paths:
       - packages/python-pydantic-core
+  python-pyinotify:
+    specfile_path: python-pyinotify.spec
+    upstream_package_name: python-pyinotify
+    downstream_package_name: python-pyinotify
+    paths:
+      - packages/python-pyinotify
+  python-pyudev:
+    specfile_path: python-pyudev.spec
+    upstream_package_name: python-pyudev
+    downstream_package_name: python-pyudev
+    paths:
+      - packages/python-pyudev
   python-typing-inspection:
     specfile_path: python-typing-inspection.spec
     upstream_package_name: python-typing-inspection
@@ -2860,6 +2890,12 @@ packages:
     downstream_package_name: vid.stab
     paths:
       - packages/vid.stab
+  virt-what:
+    specfile_path: virt-what.spec
+    upstream_package_name: virt-what
+    downstream_package_name: virt-what
+    paths:
+      - packages/virt-what
   vo-amrwbenc:
     specfile_path: vo-amrwbenc.spec
     upstream_package_name: vo-amrwbenc

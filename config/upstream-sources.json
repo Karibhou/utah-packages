@@ -4686,6 +4686,54 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/foo2zjs/foo2zjs-20201003.tar.gz/sha512/786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c/foo2zjs-20201003.tar.gz",
       "filename": "foo2zjs-20201003.tar.gz",
       "sha512": "786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c"
+    },
+    {
+      "name": "python-pyudev",
+      "version": "0.24.5",
+      "url": "https://pypi.io/packages/source/p/pyudev/pyudev-0.24.5.tar.gz",
+      "filename": "pyudev-0.24.5.tar.gz",
+      "sha512": "823314295b95bdd38ba10d4b4e008dcb40c0436da0eda78965bc59140e7d84bd3930707fc713560daa36028ec2805b2f9dad23d772ef17b9f945d837b6f0f66c"
+    },
+    {
+      "name": "libtraceevent",
+      "version": "1.9.0",
+      "url": "https://git.kernel.org/pub/scm/libs/libtrace/libtraceevent.git/snapshot/libtraceevent-1.9.0.tar.gz",
+      "filename": "libtraceevent-1.9.0.tar.gz",
+      "sha512": "9afb3c20ec1161f38ae8ad507dd1bf5841861f76c567e0cd4a195044eddf72b790301e7f628db40597bae34822eb15ceb57de4eb5bb34758931a4a994991f6ee"
+    },
+    {
+      "name": "libtracefs",
+      "version": "1.8.3",
+      "url": "https://git.kernel.org/pub/scm/libs/libtrace/libtracefs.git/snapshot/libtracefs-1.8.3.tar.gz",
+      "filename": "libtracefs-1.8.3.tar.gz",
+      "sha512": "4b24bf2b0543c16781be798387cfe5227f150c37304971ac5bd11c2715df22ba03e5909b05c97422b69102113279b3b4a606d0babe4b97000120e458755f9b7c"
+    },
+    {
+      "name": "python-pyinotify",
+      "version": "0.9.6",
+      "url": "https://files.pythonhosted.org/packages/source/p/pyinotify/pyinotify-0.9.6.tar.gz",
+      "filename": "pyinotify-0.9.6.tar.gz",
+      "sha512": "b52de43293b06b32236e90b7c33fac061f3095cd7d4aecec89a099d56020db1a85440ab9dcc8b521238c001fc49a1f37d1b16d621bc1acab4d7273aebcaadbc5",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/python-pyinotify/pyinotify-0.9.6.tar.gz/sha512/b52de43293b06b32236e90b7c33fac061f3095cd7d4aecec89a099d56020db1a85440ab9dcc8b521238c001fc49a1f37d1b16d621bc1acab4d7273aebcaadbc5/pyinotify-0.9.6.tar.gz"
+      ]
+    },
+    {
+      "name": "python-linux-procfs",
+      "version": "0.7.4",
+      "url": "https://cdn.kernel.org/pub/software/libs/python/python-linux-procfs/python-linux-procfs-0.7.4.tar.xz",
+      "filename": "python-linux-procfs-0.7.4.tar.xz",
+      "sha512": "99254aec2f205617391ed4d8833d8f20a1eaa6ef33042acbe4e19815976dca9cc3b41e00077fd4a51d15d8a0c83ea6934aa5fbd7bb1d9470c01b1811b0a54ea1"
+    },
+    {
+      "name": "virt-what",
+      "version": "1.27",
+      "url": "https://people.redhat.com/~rjones/virt-what/files/virt-what-1.27.tar.gz",
+      "filename": "virt-what-1.27.tar.gz",
+      "sha512": "8d10111e38a87504daccf36e9386863aa92308c96be65164412d92c56c12d42f38e6e251fabe7945ce74e1419fc82c0ac3cdbd0f25b19cd72feda2e199307d6f",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/virt-what/virt-what-1.27.tar.gz/sha512/8d10111e38a87504daccf36e9386863aa92308c96be65164412d92c56c12d42f38e6e251fabe7945ce74e1419fc82c0ac3cdbd0f25b19cd72feda2e199307d6f/virt-what-1.27.tar.gz"
+      ]
     }
   ]
 }
