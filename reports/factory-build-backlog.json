@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 104,
-      "total": 106
+      "pending": 101,
+      "total": 103
     },
     "fonts-i18n": {
       "pending": 59,
@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 145,
-      "total": 157
+      "pending": 143,
+      "total": 155
     },
     "power": {
       "total": 0
@@ -570,17 +570,7 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-olefile",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-pexpect",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-pillow",
       "state": "pending"
     },
     {
@@ -746,11 +736,6 @@
     {
       "area": "dev-tools",
       "name": "usbip",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "usbutils",
       "state": "pending"
     },
     {
@@ -1580,11 +1565,6 @@
     },
     {
       "area": "long-tail",
-      "name": "net-snmp-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "net-tools",
       "state": "pending"
     },
@@ -1691,11 +1671,6 @@
     {
       "area": "long-tail",
       "name": "prefixdevname",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "python3-cups",
       "state": "pending"
     },
     {
@@ -2058,11 +2033,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 368
+    "pending": 363
   },
   "totals": {
-    "backlog": 400,
-    "resolved": 145,
+    "backlog": 395,
+    "resolved": 150,
     "wontfix": 6
   }
 }
