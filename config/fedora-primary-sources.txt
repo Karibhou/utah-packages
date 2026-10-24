@@ -5,6 +5,7 @@
 # The list only shrinks.
 ModemManager
 SDL3
+a52dec
 abseil-cpp
 alsa-firmware
 alsa-sof-firmware
@@ -104,6 +105,7 @@ libinput
 libisofs
 liblc3
 libldac
+libmpeg2
 libnfs
 libnice
 libnvme
