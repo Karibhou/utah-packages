@@ -6,6 +6,9 @@ License:        LGPL-2.1-or-later
 URL:            https://github.com/stoken-dev/stoken
 
 Source0:        %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Utah-local: Hummingbird ships Nettle 4, which dropped <nettle/sha.h> and the
+# length argument of the *_digest() functions; stoken 0.93 targets Nettle 3.
+Patch0:         stoken-0.93-nettle4.patch
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -64,7 +67,7 @@ endorsed by RSA Security.
 This package contains the graphical interface program for %{name}.
 
 %prep
-%autosetup
+%autosetup -p1
 
 %build
 autoreconf -v -f --install

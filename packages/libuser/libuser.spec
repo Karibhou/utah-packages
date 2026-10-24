@@ -11,7 +11,9 @@ Patch: 0001-tests-use-crypt_r-with-Python-3.13.patch
 Patch1:  libuser-0.64-editlocation.patch
 
 BuildRequires: glib2-devel
-BuildRequires: linuxdoc-tools
+# Utah-local: linuxdoc-tools drags texlive into the hermetic build root, where
+# it conflicts with the Hummingbird libicu; nothing in libuser's build system
+# (configure.ac, Makefile.am) invokes it.
 BuildRequires: pam-devel
 BuildRequires: popt-devel
 BuildRequires: cyrus-sasl-devel
