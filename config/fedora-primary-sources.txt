@@ -117,6 +117,7 @@ libtdb
 libthai
 libtheora
 libusbmuxd
+libuser
 libvdpau
 libvisual
 libvorbis
@@ -185,6 +186,7 @@ taglib
 twolame
 udisks2
 upower
+usermode
 v4l-utils
 vo-amrwbenc
 volume_key

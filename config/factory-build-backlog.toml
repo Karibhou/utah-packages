@@ -90,12 +90,9 @@ packages = [
 # projectbluefin/utah#389 - 27 names
 consumer_issue = "projectbluefin/utah#389"
 packages = [
-    "NetworkManager-openconnect",
-    "NetworkManager-openconnect-gnome",
     "NetworkManager-vpnc",
     "NetworkManager-vpnc-gnome",
     "libyubikey",
-    "openconnect",
     "openpace",
     "opensc",
     "opensc-libs",
@@ -105,12 +102,8 @@ packages = [
     "pcsc-lite",
     "pcsc-lite-ccid",
     "pcsc-lite-libs",
-    "pkcs11-helper",
     "pkcs11-provider",
     "python3-yubikey-manager",
-    "stoken-libs",
-    "vpnc",
-    "vpnc-script",
     "ykclient",
     "ykpers",
     "yubikey-manager",
@@ -436,7 +429,6 @@ packages = [
     "libpasswdqc",
     "libpath_utils",
     "libpfm",
-    "libpskc",
     "librabbitmq",
     "libraqm",
     "libref_array",
@@ -446,7 +438,6 @@ packages = [
     "libsrtp",
     "libtraceevent",
     "liburing",
-    "libuser",
     "libutempter",
     "libvarlink",
     "libwmf-lite",
@@ -518,7 +509,6 @@ packages = [
     "uchardet",
     "udftools",
     "uresourced",
-    "usermode",
     "uupd",
     "uvg266-libs",
     "v4l2loopback",
@@ -538,6 +528,17 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # VPN stack + oath-toolkit/libuser/usermode closure (projectbluefin/utah-packages#585).
+    { name = "NetworkManager-openconnect", pr = 585 },
+    { name = "NetworkManager-openconnect-gnome", pr = 585 },
+    { name = "openconnect", pr = 585 },
+    { name = "vpnc", pr = 585 },
+    { name = "vpnc-script", pr = 585 },
+    { name = "stoken-libs", pr = 585 },
+    { name = "pkcs11-helper", pr = 585 },
+    { name = "libpskc", pr = 585 },
+    { name = "libuser", pr = 585 },
+    { name = "usermode", pr = 585 },
     # Screen-reader stack (projectbluefin/utah-packages#447).
     { name = "brlapi", pr = 466 },
     { name = "brltty", pr = 466 },

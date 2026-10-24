@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 154,
-      "total": 166
+      "pending": 151,
+      "total": 163
     },
     "power": {
       "total": 0
@@ -42,8 +42,8 @@
     },
     "vpn": {
       "already_recipe": 3,
-      "pending": 21,
-      "total": 24
+      "pending": 14,
+      "total": 17
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -1505,11 +1505,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libpskc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "librabbitmq",
       "state": "pending"
     },
@@ -1551,11 +1546,6 @@
     {
       "area": "long-tail",
       "name": "liburing",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libuser",
       "state": "pending"
     },
     {
@@ -1915,11 +1905,6 @@
     },
     {
       "area": "long-tail",
-      "name": "usermode",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "uupd",
       "state": "pending"
     },
@@ -2105,16 +2090,6 @@
     },
     {
       "area": "vpn",
-      "name": "NetworkManager-openconnect",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "NetworkManager-openconnect-gnome",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "NetworkManager-vpnc",
       "state": "pending"
     },
@@ -2126,11 +2101,6 @@
     {
       "area": "vpn",
       "name": "libyubikey",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "openconnect",
       "state": "pending"
     },
     {
@@ -2180,32 +2150,12 @@
     },
     {
       "area": "vpn",
-      "name": "pkcs11-helper",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "pkcs11-provider",
       "state": "pending"
     },
     {
       "area": "vpn",
       "name": "python3-yubikey-manager",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "stoken-libs",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "vpnc",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "vpnc-script",
       "state": "pending"
     },
     {
@@ -2228,11 +2178,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 402
+    "pending": 392
   },
   "totals": {
-    "backlog": 434,
-    "resolved": 111,
+    "backlog": 424,
+    "resolved": 121,
     "wontfix": 6
   }
 }
