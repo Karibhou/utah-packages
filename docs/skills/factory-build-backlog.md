@@ -120,6 +120,21 @@ built RPMs against factory plus Hummingbird before closing the import.
 because `libnetsnmpmibs.la` no longer passes `libnetsnmpagent` on; the recipe
 names it next to `MIBLIB` in `apps/Makefile`.
 
+An `ftp://` `Source0` (`libutempter`) is rejected by the lock step as "not a
+direct HTTP(S) URL"; check whether the same host serves the file over `https://`
+(`ftp.altlinux.org` does) and lock that after comparing the SHA-512 with
+`sources`. Before importing a package for one missing soname, walk the
+providing recipe's own runtime `Requires` against factory plus Hummingbird: `pcp`
+(sysstat's `libpcp.so.4`) is a 118-subpackage monolith whose runtime closure
+reaches roughly 84 more Fedora source packages (libvirt, mysql8.4, libarrow,
+the perl stack, bpftrace), and even every `disable_*` switch the spec offers
+leaves about 62. Drop the optional consumer feature instead -- `sysstat` builds
+with `--disable-pcp`, which only removes `sadf`'s PCP output format. When
+upstream merges libraries into one source (`ding-libs` 0.7.0 folds
+libcollection, libbasicobjects, libpath_utils and libref_array into
+`libini_config` through `Obsoletes:`), the retired binary names still leave the
+backlog with the import.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —

@@ -256,6 +256,12 @@ packages:
     downstream_package_name: device-mapper-persistent-data
     paths:
       - packages/device-mapper-persistent-data
+  ding-libs:
+    specfile_path: ding-libs.spec
+    upstream_package_name: ding-libs
+    downstream_package_name: ding-libs
+    paths:
+      - packages/ding-libs
   distrobox:
     specfile_path: distrobox.spec
     upstream_package_name: distrobox
@@ -784,6 +790,12 @@ packages:
     downstream_package_name: gssdp
     paths:
       - packages/gssdp
+  gssproxy:
+    specfile_path: gssproxy.spec
+    upstream_package_name: gssproxy
+    downstream_package_name: gssproxy
+    paths:
+      - packages/gssproxy
   gstreamer1:
     specfile_path: gstreamer1.spec
     upstream_package_name: gstreamer1
@@ -1498,6 +1510,12 @@ packages:
     downstream_package_name: libgxps
     paths:
       - packages/libgxps
+  libhandy:
+    specfile_path: libhandy.spec
+    upstream_package_name: libhandy
+    downstream_package_name: libhandy
+    paths:
+      - packages/libhandy
   libheif:
     specfile_path: libheif.spec
     upstream_package_name: libheif
@@ -1846,6 +1864,12 @@ packages:
     downstream_package_name: libuser
     paths:
       - packages/libuser
+  libutempter:
+    specfile_path: libutempter.spec
+    upstream_package_name: libutempter
+    downstream_package_name: libutempter
+    paths:
+      - packages/libutempter
   libva:
     specfile_path: libva.spec
     upstream_package_name: libva
@@ -2530,6 +2554,12 @@ packages:
     downstream_package_name: python-typing-inspection
     paths:
       - packages/python-typing-inspection
+  quota:
+    specfile_path: quota.spec
+    upstream_package_name: quota
+    downstream_package_name: quota
+    paths:
+      - packages/quota
   re2:
     specfile_path: re2.spec
     upstream_package_name: re2
