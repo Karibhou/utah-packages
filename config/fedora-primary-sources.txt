@@ -133,6 +133,7 @@ linux-firmware
 livesys-scripts
 lm_sensors
 lpcnetfreedv
+lsof
 lttng-ust
 mdadm
 mesa
@@ -196,6 +197,7 @@ wayland
 webkitgtk
 wireguard-tools
 wireplumber
+words
 wsdd
 xcb-util
 xcb-util-image
