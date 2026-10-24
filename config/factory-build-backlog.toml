@@ -684,12 +684,12 @@ packages = [
     { name = "sso-mib-libs", pr = 574 },
     # foo2zjs and its runtime dependencies (argyllcms, lcms 1.x, libXScrnSaver).
     # Subpackages share their source recipe's PR.
-    { name = "argyllcms", pr = 587 },
-    { name = "argyllcms-data", pr = 587 },
-    { name = "foo2zjs", pr = 587 },
-    { name = "lcms", pr = 587 },
-    { name = "lcms-libs", pr = 587 },
-    { name = "libXScrnSaver", pr = 587 },
+    { name = "argyllcms", pr = 588 },
+    { name = "argyllcms-data", pr = 588 },
+    { name = "foo2zjs", pr = 588 },
+    { name = "lcms", pr = 588 },
+    { name = "lcms-libs", pr = 588 },
+    { name = "libXScrnSaver", pr = 588 },
 ]
 
 [wontfix]
