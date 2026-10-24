@@ -84,6 +84,10 @@ administering user and group accounts.
 %configure --with-selinux --with-ldap --with-audit \
            --enable-gtk-doc --with-html-dir=%{_datadir}/gtk-doc/html \
            PYTHON=%{python3}
+# Utah-local: docs/Makefile.am builds the SGML manual with sgml2txt/sgml2html
+# (linuxdoc-tools, dropped above). Those outputs are not installed (only
+# docs/*.txt are packaged), so mark them up to date instead of building them.
+touch docs/sgml/libuser.txt docs/sgml/libuser.html
 make
 
 

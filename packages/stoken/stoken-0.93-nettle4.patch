@@ -1,9 +1,13 @@
-Port stc-nettle.c to Nettle 4: <nettle/sha.h> is gone (split into sha1.h/sha2.h)
-and the *_digest() functions no longer take a length argument.
+Port stc-nettle.c to Nettle 4:
+ - <nettle/sha.h> is gone (split into sha1.h/sha2.h);
+ - the *_digest() functions no longer take a length argument;
+ - base64_decode_update() now reads *dst_length as the size of the output
+   buffer (it was output-only in Nettle 3), so initialise it, and take
+   uint8_t *dst / const char *src.
 Utah-local edit.
 
---- a/src/stc-nettle.c	2026-10-24 04:43:56.930583251 +0000
-+++ b/src/stc-nettle.c	2026-10-24 04:43:57.632927017 +0000
+--- a/src/stc-nettle.c	2026-10-24 04:57:42.700502316 +0000
++++ b/src/stc-nettle.c	2026-10-24 04:57:43.618839250 +0000
 @@ -35,7 +35,8 @@
  #include <nettle/cbc.h>
  #include <nettle/hmac.h>
@@ -32,3 +36,19 @@ Utah-local edit.
  }
  
  int stc_b64_encode(const uint8_t *in,  unsigned long len,
+@@ -135,12 +136,13 @@
+ 		   uint8_t *out, unsigned long *outlen)
+ {
+ 	struct base64_decode_ctx ctx;
+-	char tmp[BASE64_DECODE_LENGTH(len)];
++	uint8_t tmp[BASE64_DECODE_LENGTH(len)];
+ 	int ret;
+ 	size_t dst_length;
+ 
+ 	base64_decode_init(&ctx);
+-	ret = base64_decode_update(&ctx, &dst_length, tmp, len, in);
++	dst_length = sizeof(tmp);
++	ret = base64_decode_update(&ctx, &dst_length, tmp, len, (const char *)in);
+ 	if (ret == 0) {
+ 		return ERR_GENERAL;
+ 	}
