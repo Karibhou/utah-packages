@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 105,
-      "total": 107
+      "pending": 104,
+      "total": 106
     },
     "fonts-i18n": {
       "pending": 59,
@@ -571,11 +571,6 @@
     {
       "area": "dev-tools",
       "name": "python3-more-itertools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-msgpack",
       "state": "pending"
     },
     {
@@ -2238,11 +2233,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 404
+    "pending": 403
   },
   "totals": {
-    "backlog": 436,
-    "resolved": 109,
+    "backlog": 435,
+    "resolved": 110,
     "wontfix": 6
   }
 }

@@ -2350,6 +2350,12 @@ packages:
     downstream_package_name: python-llfuse
     paths:
       - packages/python-llfuse
+  python-msgpack:
+    specfile_path: python-msgpack.spec
+    upstream_package_name: python-msgpack
+    downstream_package_name: python-msgpack
+    paths:
+      - packages/python-msgpack
   python-pam:
     specfile_path: python-pam.spec
     upstream_package_name: python-pam

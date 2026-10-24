@@ -38,19 +38,15 @@ authorized as soon as they are connected.  A command line tool, called
 boltctl, can be used to control the daemon and perform all the above
 mentioned tasks.
 
-%package tests
-Summary: Test files for bolt
-Requires: %{name}%{?_isa} = %{version}-%{release}
-
-%description tests
-Test files for bolt
-
 %prep
 %autosetup -p1
 
 %build
 sed -i "s/WatchdogSec=3min/#WatchdogSec=3min/g" data/bolt.service.in
-%meson -Ddb-name=boltd -Dinstall-tests=true
+# Utah-local: bolt-tests is not shipped. Its test binaries link libumockdev,
+# which is in neither Hummingbird nor the factory, so the subpackage would be
+# uninstallable. The %check run below still exercises them at build time.
+%meson -Ddb-name=boltd -Dinstall-tests=false
 %meson_build
 
 %check
@@ -83,9 +79,6 @@ sed -i "s/WatchdogSec=3min/#WatchdogSec=3min/g" data/bolt.service.in
 %{_mandir}/man1/boltctl.1*
 %{_mandir}/man8/boltd.8*
 %ghost %dir %{_localstatedir}/lib/boltd
-
-%files tests
-%{_libexecdir}/installed-tests/bolt
 
 %changelog
 %autochangelog
