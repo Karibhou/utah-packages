@@ -4342,6 +4342,172 @@
       "sha512": "facbd82607363f7fc8767b3299b6f8b4e0aeb1e7a65d956bedf5ef1719304aac2f420f763ac2c08167f2176475f04b6c6c30fd448b7991a6fc6756793b8ad92c"
     },
     {
+      "name": "bc",
+      "version": "1.08.2",
+      "url": "https://ftp.gnu.org/gnu/bc/bc-1.08.2.tar.gz",
+      "filename": "bc-1.08.2.tar.gz",
+      "sha512": "0876a4c5bfc23da79479519c6a8e03ac9f59ae54077eb71ffdcc6ddaccb76c4b7595b088e89e6ad82d833c072eeff5b378178084276584813c00eedace4c6f8c"
+    },
+    {
+      "name": "bolt",
+      "version": "0.9.11",
+      "url": "https://gitlab.freedesktop.org/bolt/bolt/-/archive/0.9.11/bolt-0.9.11.tar.gz",
+      "filename": "bolt-0.9.11.tar.gz",
+      "sha512": "96e4cbb6a2fda4e0d22e8fcdd37678422bf1dad011ad79774a9bd7697629b82402d36a40873cb99bf290fe6e44e3f9183b05bb621e51da1ce545a4f0180a8fc7"
+    },
+    {
+      "name": "borgbackup",
+      "version": "1.4.5",
+      "url": "https://github.com/borgbackup/borg/releases/download/1.4.5/borgbackup-1.4.5.tar.gz",
+      "filename": "borgbackup-1.4.5.tar.gz",
+      "sha512": "1303e334b32dd62847918920777ca47eec072974859f612d054fc516fdab56eea588d34ae2f71e9c0757486769dd5ba057d5c6bb05294f40ff52a8b41f7e5801"
+    },
+    {
+      "name": "dnsmasq",
+      "version": "2.93",
+      "url": "https://thekelleys.org.uk/dnsmasq/dnsmasq-2.93.tar.xz",
+      "filename": "dnsmasq-2.93.tar.xz",
+      "sha512": "ee442c634c54f103e034ee5259f1802895f9e9d172891f14c644e260519da73f5dd6f28b75cb84c0b1cc5f9ec464ba8f40c87095fa96719cb0df831eae0887ee",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/dnsmasq/dnsmasq-2.93.tar.xz/sha512/ee442c634c54f103e034ee5259f1802895f9e9d172891f14c644e260519da73f5dd6f28b75cb84c0b1cc5f9ec464ba8f40c87095fa96719cb0df831eae0887ee/dnsmasq-2.93.tar.xz"
+      ]
+    },
+    {
+      "name": "ethtool",
+      "version": "7.1",
+      "url": "https://www.kernel.org/pub/software/network/ethtool/ethtool-7.1.tar.xz",
+      "filename": "ethtool-7.1.tar.xz",
+      "sha512": "08ed12f6eaa06669371e8aff5b1c285ac81c328a50d82d7d60281f48c3ffbd284d86a5ee02126bc3f00aebea09a8784f21d956e068d57debe00d64893cbbe37c"
+    },
+    {
+      "name": "exfatprogs",
+      "version": "1.4.3",
+      "url": "https://github.com/exfatprogs/exfatprogs/releases/download/1.4.3/exfatprogs-1.4.3.tar.xz",
+      "filename": "exfatprogs-1.4.3.tar.xz",
+      "sha512": "8452801873088029319abe477135a970ed6cdaccc087e620694714f1f6653e7a1875572720c9cf2af0b1c116f4bc6a71a1b0e4a903b75affff9d19b78d451d8d"
+    },
+    {
+      "name": "f2fs-tools",
+      "version": "1.16.0",
+      "url": "https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git/snapshot/f2fs-tools-1.16.0.tar.gz",
+      "filename": "f2fs-tools-1.16.0.tar.gz",
+      "sha512": "ea198cebf7c5bb0c42c9b53bc80484495c403b1ed1354eb7cb7b4f63ed9a5c81653a76eaf1bc35067171fa5fd99b1564178c5440c21b6b025f4e83b9def82680",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/f2fs-tools/f2fs-tools-1.16.0.tar.gz/sha512/ea198cebf7c5bb0c42c9b53bc80484495c403b1ed1354eb7cb7b4f63ed9a5c81653a76eaf1bc35067171fa5fd99b1564178c5440c21b6b025f4e83b9def82680/f2fs-tools-1.16.0.tar.gz"
+      ]
+    },
+    {
+      "name": "gamemode",
+      "version": "1.8.2",
+      "url": "https://github.com/FeralInteractive/gamemode/releases/download/1.8.2/gamemode-1.8.2.tar.xz",
+      "filename": "gamemode-1.8.2.tar.xz",
+      "sha512": "d35b11b7911a0ef4d19119ee68e781b1f6c90eb9baa2c365416164b4f1fcb277c43026e844bfa86727bab82c5f3d6bd5b8adee2cd481e1e067be6a0e23c06b5b"
+    },
+    {
+      "name": "hdparm",
+      "version": "9.65",
+      "url": "https://downloads.sourceforge.net/hdparm/hdparm-9.65.tar.gz",
+      "filename": "hdparm-9.65.tar.gz",
+      "sha512": "4ffc8902b90cee10d68af8ddb9f3b9454d523ecd49cdaaed254b4d7a999462a8ad5ec1bb5d7684b09fefa41b5941ab533b167dad290003b51c795a633ca88913"
+    },
+    {
+      "name": "mtr",
+      "version": "0.96",
+      "url": "https://github.com/traviscross/mtr/archive/v0.96/mtr-0.96.tar.gz",
+      "filename": "mtr-0.96.tar.gz",
+      "sha512": "893c5f4623ba437bca309633ce1911c900e33a51252fce5f68ea8e74885302f744198e5616ba0155b4e09fb34eedba7e41ac4507403dc9d657e295ccf66c7d31"
+    },
+    {
+      "name": "lshw",
+      "version": "B.02.20",
+      "url": "https://github.com/lyonel/lshw/archive/refs/tags/B.02.20.tar.gz",
+      "filename": "B.02.20.tar.gz",
+      "sha512": "ca7f07ba919f413147a0af63bb7b2775e80cfda295eac977a1f126b79cf5fd1e950e5f12464b279d3d21283d6d909944c55f8456fc130a35e85d501cdb6318a8"
+    },
+    {
+      "name": "smartmontools",
+      "version": "7.5",
+      "url": "https://downloads.sourceforge.net/smartmontools/smartmontools-7.5.tar.gz",
+      "filename": "smartmontools-7.5.tar.gz",
+      "sha512": "2e4a6d712f33f3efff34184686b893f0205728d4a267fb88a833de7159170a6072b94744c1ae8c6694c99940d9ecaec164e3bd713e49476930dc2144c04b3f8c"
+    },
+    {
+      "name": "traceroute",
+      "version": "2.1.6",
+      "url": "https://downloads.sourceforge.net/project/traceroute/traceroute/traceroute-2.1.6/traceroute-2.1.6.tar.gz",
+      "filename": "traceroute-2.1.6.tar.gz",
+      "sha512": "e0400a8f4f6ce27af064ea9755f031280d662bd3bae1b504734669371a07e8bb1f89e4af2877ce68412fe61306f5e50dc7ad8d8df5483eb30075a043cbceba62"
+    },
+    {
+      "name": "tcpdump",
+      "version": "4.99.6",
+      "url": "https://www.tcpdump.org/release/tcpdump-4.99.6.tar.xz",
+      "filename": "tcpdump-4.99.6.tar.xz",
+      "sha512": "2ab6b7e413e321d387acb3e3380cced6653d0935a557293ca21c975d120fc8de24457450ac761523855bbbbfc37d36eb4bba4cf6d0d85df813d689610fbc2a6b",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/tcpdump/tcpdump-4.99.6.tar.xz/sha512/2ab6b7e413e321d387acb3e3380cced6653d0935a557293ca21c975d120fc8de24457450ac761523855bbbbfc37d36eb4bba4cf6d0d85df813d689610fbc2a6b/tcpdump-4.99.6.tar.xz"
+      ]
+    },
+    {
+      "name": "tree-pkg",
+      "version": "2.3.2",
+      "url": "https://github.com/Old-Man-Programmer/tree/archive/refs/tags/2.3.2.tar.gz",
+      "filename": "2.3.2.tar.gz",
+      "sha512": "b39e6d6b2ed49a83ca057a3c47980318226558e69d2ac095fb852898f9acd48bb014224c3ed3c6f51d0c505b69be67535c057593fdad7052e36eed4b08a8bbe8"
+    },
+    {
+      "name": "nvme-cli",
+      "version": "2.16",
+      "url": "https://github.com/linux-nvme/nvme-cli/archive/v2.16/nvme-cli-2.16.tar.gz",
+      "filename": "nvme-cli-2.16.tar.gz",
+      "sha512": "507018ff41832574bef5b88ea6a17336b9792c54f8e5c619d041bce23124e1d6d5e5e824407f46d4f1b4d6899125885eb14289f3399e61c7e7a59a603f1635e2"
+    },
+    {
+      "name": "pinfo",
+      "version": "0.6.13",
+      "url": "https://github.com/baszoetekouw/pinfo/archive/refs/tags/v0.6.13.tar.gz",
+      "filename": "v0.6.13.tar.gz",
+      "sha512": "739e24821a363a087fb9df5651694f051286d4a15c3e51f2421a2aa60b1efe1da558b959ba22a0094e22854534ea5875498156e8ea2e198e31001aecab1a18df"
+    },
+    {
+      "name": "man-pages",
+      "version": "6.13",
+      "url": "https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.13.tar.xz",
+      "filename": "man-pages-6.13.tar.xz",
+      "sha512": "bd080e2d4de4e998998f73f2b1b8228baaf808c59431a640e56f721dba2d5d501341b3ed55cc82d3fd88c42e441f88e3afd6597be0de7cbde291dd11d778e993",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/man-pages/man-pages-6.13.tar.xz/sha512/bd080e2d4de4e998998f73f2b1b8228baaf808c59431a640e56f721dba2d5d501341b3ed55cc82d3fd88c42e441f88e3afd6597be0de7cbde291dd11d778e993/man-pages-6.13.tar.xz"
+      ]
+    },
+    {
+      "name": "lsof",
+      "version": "4.99.6",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/lsof/lsof-4.99.6-rh.tar.xz/sha512/27e141c7be5fd6d47bc9759335dff24756025172d9800dcf3fc86bd22c2dfa506b0b029427810872f4db1423be1874e7966d1a88017101f24add5e707afe029a/lsof-4.99.6-rh.tar.xz",
+      "filename": "lsof-4.99.6-rh.tar.xz",
+      "sha512": "27e141c7be5fd6d47bc9759335dff24756025172d9800dcf3fc86bd22c2dfa506b0b029427810872f4db1423be1874e7966d1a88017101f24add5e707afe029a"
+    },
+    {
+      "name": "words",
+      "version": "3.0",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/words/mwords.tar.Z/md5/d867188424b3ae6512a754d5c73f0dfe/mwords.tar.Z",
+      "filename": "mwords.tar.Z",
+      "sha512": "e611c7bfd4a86769e3bc0f83fa4cf0d6ed97e7d7cdc0c6c280b1fd1b3b1ceb410952948d388006686b20329beefc53a3a5436142681c07b0071c05bb8cf72722"
+    },
+    {
+      "name": "python-llfuse",
+      "version": "1.5.2",
+      "url": "https://files.pythonhosted.org/packages/source/l/llfuse/llfuse-1.5.2.tar.gz",
+      "filename": "llfuse-1.5.2.tar.gz",
+      "sha512": "071fe2a7415959560a85cb5734261dc34d0d8cb83ca23413a06c6118ca7efc34ad17adcbf490b8cf71d8b2c55afd17e3fc0b091bfb12af842fc5c3f5b03de845"
+    },
+    {
+      "name": "python-msgpack",
+      "version": "1.1.2",
+      "url": "https://github.com/msgpack/msgpack-python/archive/v1.1.2/msgpack-1.1.2.tar.gz",
+      "filename": "msgpack-1.1.2.tar.gz",
+      "sha512": "bd5bc3498875fd17fcfaeb1a79c49e61313976341950c385cacbe3c6cf85bf1acfc9ccf06046ddeb1848f52929f1d71aac6b67bac41479c1333e42bd1d461542"
+    },
+    {
       "name": "gstreamer1-plugin-libav",
       "version": "1.28.6",
       "url": "https://gstreamer.freedesktop.org//src/gst-libav/gst-libav-1.28.6.tar.xz",
