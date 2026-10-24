@@ -88,6 +88,12 @@ packages:
     downstream_package_name: appstream
     paths:
       - packages/appstream
+  argyllcms:
+    specfile_path: argyllcms.spec
+    upstream_package_name: argyllcms
+    downstream_package_name: argyllcms
+    paths:
+      - packages/argyllcms
   aribb24:
     specfile_path: aribb24.spec
     upstream_package_name: aribb24
@@ -346,6 +352,12 @@ packages:
     downstream_package_name: flite
     paths:
       - packages/flite
+  foo2zjs:
+    specfile_path: foo2zjs.spec
+    upstream_package_name: foo2zjs
+    downstream_package_name: foo2zjs
+    paths:
+      - packages/foo2zjs
   fpaste:
     specfile_path: fpaste.spec
     upstream_package_name: fpaste
@@ -994,6 +1006,12 @@ packages:
     downstream_package_name: lame
     paths:
       - packages/lame
+  lcms:
+    specfile_path: lcms.spec
+    upstream_package_name: lcms
+    downstream_package_name: lcms
+    paths:
+      - packages/lcms
   lcms2:
     specfile_path: lcms2.spec
     upstream_package_name: lcms2
@@ -1012,6 +1030,12 @@ packages:
     downstream_package_name: libSM
     paths:
       - packages/libSM
+  libXScrnSaver:
+    specfile_path: libXScrnSaver.spec
+    upstream_package_name: libXScrnSaver
+    downstream_package_name: libXScrnSaver
+    paths:
+      - packages/libXScrnSaver
   libXcursor:
     specfile_path: libXcursor.spec
     upstream_package_name: libXcursor

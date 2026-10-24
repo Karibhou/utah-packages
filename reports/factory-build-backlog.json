@@ -22,15 +22,15 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 157,
-      "total": 169
+      "pending": 152,
+      "total": 164
     },
     "power": {
       "total": 0
     },
     "printing-scanning": {
-      "pending": 20,
-      "total": 20
+      "pending": 19,
+      "total": 19
     },
     "ujust-deps": {
       "pending": 1,
@@ -1295,16 +1295,6 @@
     },
     {
       "area": "long-tail",
-      "name": "argyllcms",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "argyllcms-data",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "b43-fwcutter",
       "state": "pending"
     },
@@ -1496,21 +1486,6 @@
     {
       "area": "long-tail",
       "name": "kyotocabinet-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "lcms",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "lcms-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libXScrnSaver",
       "state": "pending"
     },
     {
@@ -2110,11 +2085,6 @@
     },
     {
       "area": "printing-scanning",
-      "name": "foo2zjs",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
       "name": "foomatic-db-filesystem",
       "state": "pending"
     },
@@ -2348,11 +2318,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 426
+    "pending": 420
   },
   "totals": {
-    "backlog": 458,
-    "resolved": 87,
+    "backlog": 452,
+    "resolved": 93,
     "wontfix": 6
   }
 }

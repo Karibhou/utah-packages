@@ -30,6 +30,7 @@ ffmpeg
 flac
 flatpak
 flite
+foo2zjs
 fribidi
 fuse
 fwupd

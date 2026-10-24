@@ -123,7 +123,6 @@ consumer_issue = "projectbluefin/utah#390"
 packages = [
     "c2esp",
     "dymo-cups-drivers",
-    "foo2zjs",
     "foomatic-db-filesystem",
     "gutenprint",
     "gutenprint-cups",
@@ -394,8 +393,6 @@ packages = [
     "PackageKit-glib",
     "antiword",
     "appstream-data",
-    "argyllcms",
-    "argyllcms-data",
     "b43-fwcutter",
     "b43-openfwwf",
     "bash-color-prompt",
@@ -435,9 +432,6 @@ packages = [
     "kpartx",
     "kvazaar-libs",
     "kyotocabinet-libs",
-    "lcms",
-    "lcms-libs",
-    "libXScrnSaver",
     "libXres",
     "libbasicobjects",
     "libdeflate",
@@ -688,6 +682,14 @@ packages = [
     { name = "redhat-menus", pr = 573 },
     # sso-mib-libs is a %package subpackage of sso-mib.spec (PR #574).
     { name = "sso-mib-libs", pr = 574 },
+    # foo2zjs and its runtime dependencies (argyllcms, lcms 1.x, libXScrnSaver).
+    # Subpackages share their source recipe's PR.
+    { name = "argyllcms", pr = 587 },
+    { name = "argyllcms-data", pr = 587 },
+    { name = "foo2zjs", pr = 587 },
+    { name = "lcms", pr = 587 },
+    { name = "lcms-libs", pr = 587 },
+    { name = "libXScrnSaver", pr = 587 },
 ]
 
 [wontfix]
