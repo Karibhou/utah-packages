@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 31,
-      "total": 41
+      "pending": 30,
+      "total": 40
     },
     "dev-tools": {
       "already_recipe": 2,
@@ -97,11 +97,6 @@
       "area": "codecs-media",
       "name": "ffmpegthumbnailer-libs",
       "state": "already_recipe"
-    },
-    {
-      "area": "codecs-media",
-      "name": "gstreamer1-plugin-libav",
-      "state": "pending"
     },
     {
       "area": "codecs-media",
@@ -2348,11 +2343,11 @@
   "states": {
     "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 426
+    "pending": 425
   },
   "totals": {
-    "backlog": 458,
-    "resolved": 87,
+    "backlog": 457,
+    "resolved": 88,
     "wontfix": 6
   }
 }

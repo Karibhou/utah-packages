@@ -143,10 +143,14 @@ contract is the measurement that will show it, not the work it measures.
   consumers resolve; a transaction naming the literal string does not. Record
   it under `[equivalent]` with the reason, never under `[built]`.
 - **Check the family version before importing a plugin.** Fedora's
-  `gstreamer1-plugin-libav` requires `gstreamer1-devel >= %{version}` and is a
-  release ahead of the gstreamer1 family pinned here, so importing it alone
-  adds a BuildRequires nothing satisfies — [`repeated-mistakes.md`](repeated-mistakes.md)
-  #2, a package and its family pinned separately.
+  `gstreamer1-plugin-libav` requires `gstreamer1-devel >= %{version}`, and
+  Rawhide head is a release ahead of the gstreamer1 family pinned here, so
+  importing head adds a BuildRequires nothing satisfies —
+  [`repeated-mistakes.md`](repeated-mistakes.md) #2, a package and its family
+  pinned separately. Import the dist-git commit whose `Version:` equals the
+  pin instead (`git log` the dist-git repo; libav at 1.28.6 is the "Rebuilt
+  for FFmpeg 9" commit 73e9b14, as ugly-free is at 207f329) rather than
+  bumping the whole family for one plugin.
 - **"Present in the factory repository" means published, not committed.**
   `tools/multimedia_closure.py --repodata <dir>` reads a published
   repository's `primary.xml` and fills in each requirement's NEVRA, epoch
