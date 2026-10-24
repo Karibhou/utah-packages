@@ -1,4 +1,8 @@
-%bcond glade %[!(0%{?rhel} >= 10)]
+# Utah-local (projectbluefin/utah#392): glade catalog off. libhandy-devel would
+# otherwise Require libgladeui-2.so.13, which is in neither Hummingbird nor the
+# factory (glade is not carried), leaving a published RPM with an unresolvable
+# Requires.
+%bcond glade 0
 
 Name:           libhandy
 Version:        1.8.3
