@@ -522,6 +522,7 @@ def main(argv: list[str] | None = None) -> int:
     return 2
 
 
+# Probe for #369: a no-op comment so a fork pull request touches a pipeline path.
 if __name__ == "__main__":
     sys.path.insert(0, str(ROOT))
     raise SystemExit(main())
