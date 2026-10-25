@@ -240,6 +240,41 @@ class ProofTests(unittest.TestCase):
         self.assertIn("exit 1", fork_branch)
 
 
+class CommandLineEntryPointTests(unittest.TestCase):
+    """The workflows run the tool as a program; tests that pass argv to main() miss that."""
+
+    def run_tool(self, *args):
+        import subprocess
+        import sys
+        return subprocess.run([sys.executable, str(ROOT / "tools" / "fork_canary.py"), *args],
+                              capture_output=True, text=True, cwd=ROOT)
+
+    def test_the_proof_subcommand_works_when_run_as_a_program(self):
+        # canary.yml calls `python3 tools/fork_canary.py proof ...`. With no argv
+        # passed to main() the subcommand was parsed as the default command and
+        # failed on missing --files (seen on #622).
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "runs.json"
+            path.write_text(json.dumps({"workflow_runs": [dispatch_run()]}))
+            ok = self.run_tool("proof", "--runs-json", str(path), "--pr", "622", "--head-sha", REVIEWED)
+            self.assertEqual(ok.returncode, 0, ok.stdout + ok.stderr)
+            self.assertIn("maintainer-run Canary passed", ok.stdout)
+            path.write_text(json.dumps({"workflow_runs": []}))
+            no = self.run_tool("proof", "--runs-json", str(path), "--pr", "622", "--head-sha", REVIEWED)
+            self.assertEqual(no.returncode, 1)
+            self.assertNotIn("usage:", no.stderr)
+
+    def test_the_default_command_works_when_run_as_a_program(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            (tmp / "pr.json").write_text(json.dumps(pr()))
+            (tmp / "files.txt").write_text("packages/foo/foo.spec\n")
+            done = self.run_tool("--pr-json", str(tmp / "pr.json"), "--files", str(tmp / "files.txt"),
+                                 "--repository", REPO, "--head-sha", REVIEWED)
+            self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
+            self.assertIn("action=copy", done.stdout.splitlines())
+
+
 class RefreshJobTests(unittest.TestCase):
     """The refresh job holds write permissions, so it must never run the pull request."""
 
@@ -292,6 +327,24 @@ class RefreshJobTests(unittest.TestCase):
         run = next(s for s in self.steps if s.get("name", "").startswith("Re-run"))["run"]
         self.assertLess(run.index("gh run rerun"), run.index("gh pr close"))
         self.assertLess(run.index("gh pr close"), run.index("gh pr reopen"))
+
+    def test_a_reopen_waits_for_the_merge_commit_to_catch_up_with_the_base_branch(self):
+        # A pull request's run takes its workflow file from its merge commit,
+        # which GitHub recomputes only after the reopen's own run has started
+        # (#622). Reopening on a stale one starts a run with the old canary.yml.
+        run = next(s for s in self.steps if s.get("name", "").startswith("Re-run"))["run"]
+        self.assertIn("git/ref/pull/$PR/merge", run)
+        self.assertIn(".parents[0].sha", run)
+        self.assertIn("never caught up", run)
+        self.assertLess(run.index("started_fresh=true; fi"), run.index("gh pr close"))
+        self.assertLess(run.index("gh pr reopen"), run.index("never caught up"))
+
+    def test_only_a_run_waiting_for_approval_is_approved_and_only_after_the_reopen(self):
+        run = next(s for s in self.steps if s.get("name", "").startswith("Re-run"))["run"]
+        self.assertEqual(run.count("/approve"), 1)
+        self.assertRegex(run, r'if \[ "\$conclusion" = action_required \]; then\s+gh api -X POST "repos/\$REPOSITORY/actions/runs/\$id/approve"')
+        self.assertLess(run.index("gh pr reopen"), run.index("/approve"))
+
 
 
 
