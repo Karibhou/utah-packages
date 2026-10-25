@@ -4763,10 +4763,10 @@
     },
     {
       "name": "libraqm",
-      "version": "0.10.1",
-      "url": "https://github.com/HOST-Oman/libraqm/releases/download/v0.10.1/raqm-0.10.1.tar.xz",
-      "filename": "raqm-0.10.1.tar.xz",
-      "sha512": "7110bb293bd3daa637826b951207de5f9375213cc81caabb834423d7c7267f302d227140ef27084fb02768b16830b0be5107da8f213d6cd5f93fad343e1dff5e"
+      "version": "0.11.0",
+      "url": "https://github.com/HOST-Oman/libraqm/releases/download/v0.11.0/raqm-0.11.0.tar.xz",
+      "filename": "raqm-0.11.0.tar.xz",
+      "sha512": "734afe1f9b55c5c9370a8e54eeb96610beb4fe028b2510025879e37075f478011a83be4c6efbd42622e453d551f62b4a71ffd54bae0fd5e1b5fb8953f20e4b04"
     },
     {
       "name": "python-pyudev",
