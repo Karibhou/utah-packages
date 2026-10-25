@@ -33,10 +33,10 @@ is a work-in-progress targeting performance levels applicable to both VOD
 and Live encoding/transcoding video applications.
 
 %package        libs
-Summary:        Libraries for svt-hevc
+Summary:        Libraries for svt-vp9
 
 %description    libs
-Libraries for development svt-hevc.
+Libraries for development svt-vp9.
 
 %package        devel
 Summary:        Include files and mandatory libraries for development svt-vp9
