@@ -81,5 +81,9 @@ review and a new run.
 
 The canary run builds the fork's code with `packages: write`, so the review is
 the security boundary, exactly as it was when a maintainer pushed the branch by
-hand. The fork's own red `pull_request` Canary run stays on the pull request;
-the later dispatched run on the same commit is the one to read.
+hand. The fork's own red `pull_request` Canary run stays on the pull request.
+The dispatched run is a second `Canary` check on the same commit; it is
+expected to supersede the red one for the required-check rule (the newest run
+of a check name counts), but that was not observed when this was written. If a
+pull request still shows the check as failing after a green dispatched run,
+record it on #369 rather than bypassing the check.
