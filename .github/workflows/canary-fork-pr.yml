@@ -1,0 +1,130 @@
+# Run Canary on a fork pull request a maintainer has reviewed (#369).
+#
+# Canary is a required check, and a fork pull request cannot satisfy it: its
+# token has no packages: write, so canary.yml fails it before building anything
+# ("a fork pull request cannot publish the canary image"). The fix a maintainer
+# used to do by hand is a push of the reviewed branch into this repository. This
+# is that push as a button.
+#
+#   Actions -> "Canary for a fork pull request" -> Run workflow
+#     pr        the pull request number
+#     head_sha  the full commit you reviewed (the run refuses if the head moved)
+#
+# It copies exactly that commit to canary/pr-<N> and dispatches canary.yml on
+# it. The dispatch deliberately names no pr input: canary.yml runs from the copy,
+# so it is the pull request's own (possibly older) canary.yml that decides, and
+# every version of it treats a dispatch without pr as an unconditional,
+# same-repository run. The Canary check run is created on the commit itself,
+# which is the pull request's head, so it is the check the pull request waits for. Nothing
+# from the fork is built, checked out or executed in THIS workflow: it only
+# moves a ref. The canary run that follows does build the fork's code with
+# packages: write, which is why a maintainer's review of the diff comes first and
+# why head_sha is mandatory.
+#
+# Pull requests that change .github/ are refused: a push with GITHUB_TOKEN may
+# not carry workflow changes, and those workflows hold this repository's
+# credentials, so a maintainer must push those by hand.
+name: Canary for a fork pull request
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: Fork pull request number
+        required: true
+        type: string
+      head_sha:
+        description: Full 40-character head commit you reviewed
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: canary-fork-pr-${{ inputs.pr }}
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-24.04
+    steps:
+      # Trusted code only: this workflow's own ref, which is main's tooling.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Check the pull request is the one that was reviewed
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ inputs.pr }}
+          HEAD_SHA: ${{ inputs.head_sha }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [[ "$PR" =~ ^[0-9]+$ ]] || { echo "::error::pr must be a number"; exit 1; }
+          gh api "repos/$REPOSITORY/pulls/$PR" > pr.json
+          gh api --paginate "repos/$REPOSITORY/pulls/$PR/files" \
+            --jq '.[] | .filename, (.previous_filename // empty)' > files.txt
+          python3 tools/fork_canary.py \
+            --pr-json pr.json --files files.txt \
+            --repository "$REPOSITORY" --head-sha "$HEAD_SHA" \
+            | tee decision.txt
+          action=$(sed -n 's/^action=//p' decision.txt)
+          # A change that touches no pipeline path passes Canary on its own.
+          if [ "$action" = copy ] && ! python3 tools/canary.py touches-pipeline < files.txt; then
+            echo "::notice title=fork canary::no pipeline path changed; its own Canary run already passes"
+            action=skip
+          fi
+          echo "action=$action" >> "$GITHUB_OUTPUT"
+      - name: Copy the reviewed commit into this repository
+        if: steps.check.outputs.action == 'copy'
+        env:
+          PR: ${{ inputs.pr }}
+          HEAD_SHA: ${{ inputs.head_sha }}
+        run: |
+          set -euo pipefail
+          # The pull request's head ref lives in this repository's network, so
+          # this fetches the fork's commit without adding a remote or running
+          # anything from it.
+          git fetch --no-tags --depth=1 origin "refs/pull/${PR}/head"
+          test "$(git rev-parse FETCH_HEAD)" = "$HEAD_SHA"
+          git push --force origin "${HEAD_SHA}:refs/heads/canary/pr-${PR}"
+      - name: Dispatch Canary on the copy
+        if: steps.check.outputs.action == 'copy'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ inputs.pr }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh workflow run canary.yml -R "$REPOSITORY" --ref "canary/pr-${PR}"
+      - name: Tell the pull request
+        if: steps.check.outputs.action == 'copy'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ inputs.pr }}
+          HEAD_SHA: ${{ inputs.head_sha }}
+          ACTOR: ${{ github.actor }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh pr comment "$PR" -R "$REPOSITORY" --body "Canary was run on this pull request at \`${HEAD_SHA}\` by @${ACTOR} after review, from the in-repository copy \`canary/pr-${PR}\`: https://github.com/${REPOSITORY}/actions/workflows/canary.yml?query=branch%3Acanary%2Fpr-${PR}. The result is the \`Canary\` check on this commit. A new push to the pull request needs a new review and a new run."
+      # The copies are only needed while their pull request is open.
+      - name: Delete copies of closed pull requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh api --paginate "repos/$REPOSITORY/branches?per_page=100" --jq '.[].name' > branches.txt
+          # grep exits 1 when there are no copies; anything higher is an error.
+          grep -E '^canary/pr-[0-9]+$' branches.txt > copies.txt || test $? -eq 1
+          while read -r branch; do
+            n="${branch#canary/pr-}"
+            state=$(gh api "repos/$REPOSITORY/pulls/$n" --jq .state)
+            if [ "$state" != open ]; then
+              gh api -X DELETE "repos/$REPOSITORY/git/refs/heads/$branch"
+              echo "deleted $branch ($state)"
+            fi
+          done < copies.txt

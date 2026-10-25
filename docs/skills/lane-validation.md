@@ -61,3 +61,25 @@ Fork dispatches run the same workflow but publish to the fork registry, where
 the first publish of a canary tag fails (`manifest unknown`) and the run goes
 red after otherwise successful builds. Use forks for parallel signal only;
 merge decisions cite upstream runs.
+
+## Fork pull requests and the required Canary (#369)
+
+The required `Canary` check cannot pass from a fork pull request that touches a
+pipeline path: its token has no `packages: write`, so `canary.yml` fails it with
+"a fork pull request cannot publish the canary image". The author cannot fix
+that, and neither can an agent working from a fork; do not ask them to.
+
+A maintainer who has reviewed the diff runs **Canary for a fork pull request**
+(Actions tab, `canary-fork-pr.yml`) with the pull request number and the full
+head commit they reviewed. It copies exactly that commit to `canary/pr-<N>`
+and dispatches `canary.yml` there, so the `Canary` check is created on the
+pull request's own head commit. It refuses when the head moved since review,
+when the pull request is not open against `main`, and when it changes
+`.github/` (workflow changes never run with this repository's credentials from
+a fork; push those by hand). A new push to the pull request needs a new
+review and a new run.
+
+The canary run builds the fork's code with `packages: write`, so the review is
+the security boundary, exactly as it was when a maintainer pushed the branch by
+hand. The fork's own red `pull_request` Canary run stays on the pull request;
+the later dispatched run on the same commit is the one to read.
