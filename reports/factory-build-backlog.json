@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 12,
       "manifest_wants": 1,
-      "pending": 131,
-      "total": 144
+      "pending": 128,
+      "total": 141
     },
     "power": {
       "total": 0
@@ -1789,21 +1789,6 @@
       "state": "pending"
     },
     {
-      "area": "long-tail",
-      "name": "zinnia",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "zinnia-tomoe-ja",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "zix",
-      "state": "pending"
-    },
-    {
       "area": "printing-scanning",
       "name": "liblouisutdml",
       "state": "pending"
@@ -1928,11 +1913,11 @@
   "states": {
     "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 341
+    "pending": 338
   },
   "totals": {
-    "backlog": 374,
-    "resolved": 171,
+    "backlog": 371,
+    "resolved": 174,
     "wontfix": 6
   }
 }

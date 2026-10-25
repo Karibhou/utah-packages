@@ -76,6 +76,7 @@ packages = [
     "x264-libs",
     "x265-libs",
     "xavs2-libs",
+
 ]
 
 [areas.power]
@@ -469,9 +470,6 @@ packages = [
     "xrandr",
     "xset",
 
-    "zinnia",
-    "zinnia-tomoe-ja",
-    "zix",
 ]
 
 [resolved]
@@ -700,6 +698,10 @@ packages = [
     { name = "libbasicobjects", pr = 597 },
     { name = "libpath_utils", pr = 597 },
     { name = "libref_array", pr = 597 },
+    # Handwriting recognition (zinnia also builds zinnia-tomoe-ja) and zix (#509).
+    { name = "zinnia" },
+    { name = "zinnia-tomoe-ja" },
+    { name = "zix" },
 ]
 
 [wontfix]

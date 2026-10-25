@@ -3298,6 +3298,18 @@ packages:
     downstream_package_name: zimg
     paths:
       - packages/zimg
+  zinnia:
+    specfile_path: zinnia.spec
+    upstream_package_name: zinnia
+    downstream_package_name: zinnia
+    paths:
+      - packages/zinnia
+  zix:
+    specfile_path: zix.spec
+    upstream_package_name: zix
+    downstream_package_name: zix
+    paths:
+      - packages/zix
   zram-generator:
     specfile_path: zram-generator.spec
     upstream_package_name: zram-generator

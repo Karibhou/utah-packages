@@ -4853,6 +4853,20 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/libmpeg2/libmpeg2-0.5.1.tar.gz/sha512/3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc/libmpeg2-0.5.1.tar.gz",
       "filename": "libmpeg2-0.5.1.tar.gz",
       "sha512": "3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc"
+    },
+    {
+      "name": "zinnia",
+      "version": "0.07",
+      "url": "https://github.com/silverhikari/zinnia/releases/download/0.07/zinnia-0.07.tar.gz",
+      "filename": "zinnia-0.07.tar.gz",
+      "sha512": "f214938953be093e37735a24dd5d2e899e02572202f9b316de566ddeb65451b2a13becb84f95c74f6e5ceadb83bbbcfea3434e974393cb569c65896249002280"
+    },
+    {
+      "name": "zix",
+      "version": "0.8.0",
+      "url": "https://download.drobilla.net/zix-0.8.0.tar.xz",
+      "filename": "zix-0.8.0.tar.xz",
+      "sha512": "fccb3e3b05c4d28e7fa6ed94537681167e2ee22a23dd4e1b4f3e5474da8dce3fe682cc6ccda219d140b956014c444a6f721d7272f3dba52df3a07e13b594f963"
     }
   ]
 }
