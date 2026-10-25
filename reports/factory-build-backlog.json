@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 28,
-      "total": 38
+      "pending": 26,
+      "total": 36
     },
     "dev-tools": {
       "already_recipe": 2,
@@ -205,17 +205,7 @@
     },
     {
       "area": "codecs-media",
-      "name": "libultrahdr",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
       "name": "libxavs",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "svt-vp9-libs",
       "state": "pending"
     },
     {
@@ -1928,11 +1918,11 @@
   "states": {
     "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 341
+    "pending": 339
   },
   "totals": {
-    "backlog": 374,
-    "resolved": 171,
+    "backlog": 372,
+    "resolved": 173,
     "wontfix": 6
   }
 }

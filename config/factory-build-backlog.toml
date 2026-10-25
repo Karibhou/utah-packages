@@ -68,9 +68,7 @@ packages = [
     "libswresample",
     "libswscale",
     "libudfread",
-    "libultrahdr",
     "libxavs",
-    "svt-vp9-libs",
     "vvdec-libs",
     "vvenc-libs",
     "x264-libs",
@@ -478,7 +476,12 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
-    # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
+    # Codecs-media batch (projectbluefin/utah-packages#476): the two
+    # codecs-media sources importable from this environment's dist-git.
+    # libultrahdr is AVS3-independent Ultra HDR; svt-vp9 is the VP9
+    # encoder shared with the ffmpeg -libvpx/VP9 path.
+    { name = "libultrahdr", pr = 476 },
+    { name = "svt-vp9-libs", pr = 476 },
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
     { name = "usbutils", pr = 596 },

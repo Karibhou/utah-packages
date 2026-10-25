@@ -4853,6 +4853,26 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/libmpeg2/libmpeg2-0.5.1.tar.gz/sha512/3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc/libmpeg2-0.5.1.tar.gz",
       "filename": "libmpeg2-0.5.1.tar.gz",
       "sha512": "3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc"
+    },
+    {
+      "name": "svt-vp9",
+      "version": "0.3.0",
+      "url": "https://github.com/OpenVisualCloud/SVT-VP9/archive/v0.3.0/svt-vp9-0.3.0.tar.gz",
+      "filename": "svt-vp9-0.3.0.tar.gz",
+      "sha512": "2b65d4cc731061c2a07010314f7c306664fd9cf122917f96b94ec87350c8bab1a1118527263eb39347a6f6f572088337e1c5f7ae738b52de30a28ccb54c321c1",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/svt-vp9/svt-vp9-0.3.0.tar.gz/sha512/2b65d4cc731061c2a07010314f7c306664fd9cf122917f96b94ec87350c8bab1a1118527263eb39347a6f6f572088337e1c5f7ae738b52de30a28ccb54c321c1/svt-vp9-0.3.0.tar.gz"
+      ]
+    },
+    {
+      "name": "libultrahdr",
+      "version": "1.4.0^20251202git8cbc983",
+      "url": "https://github.com/google/libultrahdr/archive/8cbc983d2f6c2171af5cbcdb8801102f83fe92ab/libultrahdr-8cbc983d2f6c2171af5cbcdb8801102f83fe92ab.tar.gz",
+      "filename": "libultrahdr-8cbc983d2f6c2171af5cbcdb8801102f83fe92ab.tar.gz",
+      "sha512": "55bc2711ebea273023afb5c9901f864004247dac6f87c9ee2f699705ee94610be3e917bdea622db17bf0749ae090cb8246f3df0a08bfe64c528ca1353f4284b5",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libultrahdr/libultrahdr-8cbc983d2f6c2171af5cbcdb8801102f83fe92ab.tar.gz/sha512/55bc2711ebea273023afb5c9901f864004247dac6f87c9ee2f699705ee94610be3e917bdea622db17bf0749ae090cb8246f3df0a08bfe64c528ca1353f4284b5/libultrahdr-8cbc983d2f6c2171af5cbcdb8801102f83fe92ab.tar.gz"
+      ]
     }
   ]
 }
