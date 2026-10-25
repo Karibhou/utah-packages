@@ -25,6 +25,7 @@ def pr(**over):
         "state": "open",
         "base": {"ref": "main"},
         "head": {"sha": REVIEWED, "repo": {"full_name": "someone/utah-packages"}},
+        "changed_files": 1,
     }
     base.update(over)
     return base
@@ -67,6 +68,15 @@ class DecideTests(unittest.TestCase):
         for name in ("docs/.github/notes.md", "x.github/y", "packages/.github-keep/x"):
             with self.subTest(name=name):
                 self.assertEqual(fork_canary.decide(pr(), [name], REPO, REVIEWED), "copy")
+
+    def test_a_pull_request_too_large_to_list_is_refused(self):
+        # pulls/N/files stops at 3000 files, so a .github/ change could hide past it.
+        for count in (3000, 5000, None):
+            with self.subTest(count=count), self.assertRaisesRegex(fork_canary.Refused, "by hand"):
+                fork_canary.decide(pr(changed_files=count), ["packages/foo/foo.spec"], REPO, REVIEWED)
+        self.assertEqual(
+            fork_canary.decide(pr(changed_files=2999), ["packages/foo/foo.spec"], REPO, REVIEWED), "copy"
+        )
 
     def test_an_in_repository_pull_request_needs_no_copy(self):
         own = pr(head={"sha": REVIEWED, "repo": {"full_name": REPO}})

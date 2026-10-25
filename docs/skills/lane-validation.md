@@ -74,7 +74,8 @@ A maintainer who has reviewed the diff runs **Canary for a fork pull request**
 head commit they reviewed. It copies exactly that commit to `canary/pr-<N>`
 and dispatches `canary.yml` there, so the `Canary` check is created on the
 pull request's own head commit. It refuses when the head moved since review,
-when the pull request is not open against `main`, and when it changes
+when the pull request is not open against `main`, when it changes 3000 or
+more files (GitHub's file list stops there), and when it changes
 `.github/` (workflow changes never run with this repository's credentials from
 a fork; push those by hand). A new push to the pull request needs a new
 review and a new run.

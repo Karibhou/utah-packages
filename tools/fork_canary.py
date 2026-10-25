@@ -25,6 +25,9 @@ FULL_SHA = re.compile(r"^[0-9a-f]{40}$")
 # fork through this path: the workflows themselves. canary.yml and the workflows
 # it calls run with packages: write, so they stay the maintainer's own.
 PROTECTED_PREFIX = ".github/"
+# The pulls/N/files API lists at most this many files, so a larger pull request
+# could hide a .github/ change from the check below.
+FILES_API_LIMIT = 3000
 
 
 class Refused(Exception):
@@ -58,6 +61,13 @@ def decide(pr: dict, files: list[str], repository: str, reviewed_sha: str) -> st
         raise Refused("the fork this pull request came from was deleted")
     if repo.get("full_name") == repository:
         return "skip"
+    changed = pr.get("changed_files")
+    if not isinstance(changed, int) or changed >= FILES_API_LIMIT:
+        raise Refused(
+            f"the pull request changes {changed} files; GitHub lists at most "
+            f"{FILES_API_LIMIT}, so its .github/ changes cannot all be "
+            "checked. A maintainer must review it and push the branch by hand"
+        )
     protected = sorted({name for name in files if name.startswith(PROTECTED_PREFIX)})
     if protected:
         raise Refused(
