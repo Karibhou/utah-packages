@@ -4863,6 +4863,26 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/urw-base35-fonts/urw-base35-fonts-20200910.tar.gz/sha512/71fb27baadf5abc4ff624cdede02038681acd5fffdc728a5b2e7808713b80cb2f2174f90a1862e69d390c4434c49d5167ab095100032fa3ba80b586eb8ae51d1/urw-base35-fonts-20200910.tar.gz"
       ]
+    },
+    {
+      "name": "libkrun",
+      "version": "1.19.7",
+      "url": "https://github.com/libkrun/libkrun/archive/refs/tags/v1.19.7.tar.gz",
+      "filename": "v1.19.7.tar.gz",
+      "sha512": "54bf0dedc30220177c6f0e7f39e5a62bd658e8d7fd1f1051f021bf60df03d79c61171bbd31711336bf0f7a6d48419aa79035d72592c0afbfacda6b3b13bc6955",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libkrun/v1.19.7.tar.gz/sha512/54bf0dedc30220177c6f0e7f39e5a62bd658e8d7fd1f1051f021bf60df03d79c61171bbd31711336bf0f7a6d48419aa79035d72592c0afbfacda6b3b13bc6955/v1.19.7.tar.gz"
+      ]
+    },
+    {
+      "name": "libkrunfw",
+      "version": "5.6.2",
+      "url": "https://github.com/containers/libkrunfw/archive/refs/tags/v5.6.2.tar.gz",
+      "filename": "v5.6.2.tar.gz",
+      "sha512": "e554eba00ee15b50eef22b138e0976a40146875f4a7d649b7570862ece2f6cba1437b9e55e905aa011351281697cc12345e722c227b14b3160b0a9f441339c4c",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libkrunfw/v5.6.2.tar.gz/sha512/e554eba00ee15b50eef22b138e0976a40146875f4a7d649b7570862ece2f6cba1437b9e55e905aa011351281697cc12345e722c227b14b3160b0a9f441339c4c/v5.6.2.tar.gz"
+      ]
     }
   ]
 }
