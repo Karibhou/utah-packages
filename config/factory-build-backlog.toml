@@ -68,14 +68,7 @@ packages = [
     "libswresample",
     "libswscale",
     "libudfread",
-    "libultrahdr",
     "libxavs",
-    "svt-vp9-libs",
-    "vvdec-libs",
-    "vvenc-libs",
-    "x264-libs",
-    "x265-libs",
-    "xavs2-libs",
 ]
 
 [areas.power]
@@ -478,6 +471,14 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Codec recipe imports for #476; publication and runtime proof remain separate.
+    { name = "libultrahdr" },
+    { name = "svt-vp9-libs" },
+    { name = "x264-libs" },
+    { name = "x265-libs" },
+    { name = "vvdec-libs" },
+    { name = "vvenc-libs" },
+    { name = "xavs2-libs" },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
