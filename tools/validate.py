@@ -90,6 +90,8 @@ def check_provenance(path: Path, data: dict) -> None:
     required = {"package", "branch", "remote", "commit", "tree", "imported_at"}
     if set(data) != required:
         raise SystemExit(f"invalid upstream provenance: {path}")
+    if data["package"] != path.parent.name:
+        raise SystemExit(f"provenance package does not match its recipe directory: {path}")
     if data["branch"] not in ("rawhide", "upstream", "master"):
         raise SystemExit(f"only rawhide, upstream or codec master imports are supported: {path}")
     if data["branch"] == "master" and data["remote"] not in (
