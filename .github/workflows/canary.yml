@@ -481,7 +481,7 @@ jobs:
             exit 0
           fi
           if [ "$FORK" = true ]; then
-            echo "::error::a fork pull request cannot publish the canary image; a maintainer must push this branch to the repository" >&2
+            echo "::error::a fork pull request cannot publish the canary image. This is expected, not something the author can fix: a maintainer reviews the change, then runs the 'Canary for a fork pull request' workflow (Actions tab) with this pull request's number and head commit; the result lands on this commit as the Canary check (#369)" >&2
             exit 1
           fi
           echo "$RESULTS" | jq -r 'to_entries[] | "\(.key): \(.value.result)"'
