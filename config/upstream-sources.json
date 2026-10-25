@@ -4506,10 +4506,10 @@
     },
     {
       "name": "python-msgpack",
-      "version": "1.2.2",
-      "url": "https://github.com/msgpack/msgpack-python/archive/v1.2.2/msgpack-1.2.2.tar.gz",
-      "filename": "msgpack-1.2.2.tar.gz",
-      "sha512": "64bfb521749f45e1283a7ff6f5bdf526f13844c000b3346c2f56d1cc8dbc54e0bc35ba19359080a7d15700e2831f4376d8172adef546345e7450c32b3b52bef2"
+      "version": "1.2.1",
+      "url": "https://github.com/msgpack/msgpack-python/archive/v1.2.1/msgpack-1.2.1.tar.gz",
+      "filename": "msgpack-1.2.1.tar.gz",
+      "sha512": "9c3733fa73df7a21334c56e14c613c4b45b15c9f980b142c041e69a15c9338679dae3f5666a6e674ab6c896b81643f38dbfe46560e85907ef0547e3f3c261bbf"
     },
     {
       "name": "gstreamer1-plugin-libav",
