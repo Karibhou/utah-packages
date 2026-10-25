@@ -478,8 +478,8 @@ packages = [
 packages = [
     # Codecs-media batch (projectbluefin/utah-packages#476, PR #609): the two
     # codecs-media sources importable from this environment's dist-git.
-    # libultrahdr is AVS3-independent Ultra HDR; svt-vp9 is the VP9
-    # encoder shared with the ffmpeg -libvpx/VP9 path.
+    # libultrahdr is the Ultra HDR image format library; svt-vp9 is Intel's
+    # standalone SVT VP9 encoder (library, CLI, GStreamer plug-in).
     { name = "libultrahdr", pr = 609 },
     { name = "svt-vp9-libs", pr = 609 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
