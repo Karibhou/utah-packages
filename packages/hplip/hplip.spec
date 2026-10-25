@@ -7,7 +7,7 @@
 Summary: HP Linux Imaging and Printing Project
 Name: hplip
 Version: 3.26.6
-Release: 2%{?dist}
+Release: 3%{?dist}
 # most files (base/*, *, ui*/...) - GPL2+
 # prnt/hpijs/ jpeg related files - IJG
 # prnt/* - BSD-3-Clause-HP - it is modified a little, asked here https://gitlab.com/fedora/legal/fedora-license-data/-/issues/267
@@ -37,6 +37,9 @@ Source4: hp-laserjet_cp_1025nw.ppd.gz
 Source5: hp-laserjet_professional_p_1102w.ppd.gz
 Source6: hplip-repack.sh
 Source7: hp-plugin.in
+# HP's plugin signing key: the key HPLIP's own hp-plugin trusts
+# (installer/pluginhandler.py -> base/validation.py)
+Source8: gpgkey-82FFA7C6AA7411D934BDE173AC69536A2CF3A243.asc
 
 Patch1: hplip-pstotiff-is-rubbish.patch
 Patch2: hplip-strstr-const.patch
@@ -291,6 +294,8 @@ BuildRequires: desktop-file-utils
 BuildRequires: gcc
 # gcc-c++ is needed for hpijs, hpcups drivers
 BuildRequires: gcc-c++
+# dearmors HP's plugin signing key into the keyring hp-plugin-download uses
+BuildRequires: %{_bindir}/gpg
 # support for JPEG file formats in hp-scan
 BuildRequires: libjpeg-devel
 # uses libtool for autorconf
@@ -336,6 +341,8 @@ Requires: curl
 # set require directly to /usr/bin/gpg, because gnupg2 and gnupg ships it,
 # but gnupg will be deprecated in the future
 Requires: %{_bindir}/gpg
+# hp-plugin-download verifies HP's plugin signature with gpgv
+Requires: %{_bindir}/gpgv
 Requires: %{name}-libs%{?_isa} = %{version}-%{release}
 Requires: python3-dbus
 %if 0%{?rhel} <= 8 || 0%{?fedora}
@@ -805,6 +812,12 @@ rm -rf %{buildroot}%{_bindir}/hp-check \
 %endif
 
 install -p -m755 hp-plugin %{buildroot}%{_bindir}/hp-plugin-download
+# gpgv reads only binary keyrings, so dearmor the shipped key
+install -d %{buildroot}%{_datadir}/hplip
+GNUPGHOME="$(mktemp -d)" gpg --batch --dearmor < %{SOURCE8} \
+    > %{buildroot}%{_datadir}/hplip/hplip-plugin-keyring.gpg
+sed -i 's|@HPLIP_PLUGIN_KEYRING@|%{_datadir}/hplip/hplip-plugin-keyring.gpg|' \
+    %{buildroot}%{_bindir}/hp-plugin-download
 
 %if 0%{?rhel} <= 8 || 0%{?fedora}
 mkdir -p %{buildroot}%{_datadir}/metainfo
@@ -884,6 +897,7 @@ find doc/images -type f -exec chmod 644 {} \;
 %{_bindir}/hp-makeuri
 %{_bindir}/hp-plugin
 %{_bindir}/hp-plugin-download
+%{_datadir}/hplip/hplip-plugin-keyring.gpg
 %{_bindir}/hp-probe
 %{_bindir}/hp-query
 %if 0%{?rhel} <= 8 || 0%{?fedora}
@@ -1012,6 +1026,10 @@ find doc/images -type f -exec chmod 644 {} \;
 %config(noreplace) %{_sysconfdir}/sane.d/dll.d/hpaio
 
 %changelog
+* Sun Oct 25 2026 Danathar <6772335+Danathar@users.noreply.github.com> - 3.26.6-3
+- hp-plugin-download: verify HP's GPG signature before running the plugin, using
+  HP's plugin signing key shipped in the package; drop the dead fallback URL
+
 * Mon Oct 12 2026 Zdenek Dohnal <zdohnal@redhat.com> - 3.26.6-2
 - scanning fails on Photosmart 5520 (USB), http_read: response exceeds buffer
   (fedora#2548961)
