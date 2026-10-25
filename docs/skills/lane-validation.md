@@ -91,9 +91,12 @@ commit while the pull request kept the fork run's red `Canary` and stayed
 `BLOCKED`). So the fork's own `Canary` job passes on proof instead: a
 `workflow_dispatch` run of `canary.yml` on `canary/pr-<N>` that completed with
 success at exactly the pull request's head (`tools/fork_canary.py proof`). When
-such a run finishes, `canary-fork-refresh.yml` (a `workflow_run` from `main`,
-which executes nothing from the pull request) re-runs the pull request's own
-`Canary`. A run that began before `canary.yml` could read the proof reuses its
-old workflow file and fails again, so the refresher then closes and reopens the
-pull request once to start a fresh run on the same commit. A push after review
+such a run finishes, the `refresh` job of the same workflow (it waits for the
+run it dispatched, executes nothing from the pull request, and holds the write
+permissions the re-run needs) re-runs the pull request's own `Canary`. A run
+that began before `canary.yml` could read the proof reuses its old workflow
+file and fails again, so the job then closes and reopens the pull request once
+to start a fresh run on the same commit. A maintainer-run Canary that does not
+pass is reported on the pull request and the check stays red. The press holds a
+runner for as long as that run takes (about half an hour). A push after review
 changes the head, so the old proof no longer applies.
