@@ -419,7 +419,6 @@ packages = [
     "python3-pyaudio",
     "python3-pyscard",
     "qadwaitadecorations-qt5",
-    "qpdf-libs",
     "qrencode-libs",
     "qt5-qtdeclarative",
     "qt5-qtsvg",
@@ -699,6 +698,7 @@ packages = [
     { name = "urw-base35-p052-fonts", pr = 631 },
     { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
     { name = "urw-base35-z003-fonts", pr = 631 },
+    { name = "qpdf-libs", pr = 637 },
 ]
 
 [wontfix]
