@@ -1,6 +1,6 @@
 Name:				libraqm
-Version:			0.10.1
-Release:			5%{?dist}
+Version:			0.11.0
+Release:			1%{?dist}
 License:			MIT
 Summary:			Complex Textlayout Library
 Summary(ar):		مكتبة رقم للنّصوص المركّبة

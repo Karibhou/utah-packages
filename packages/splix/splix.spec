@@ -1,7 +1,7 @@
 Summary: Driver for QPDL/SPL2 printers (Samsung and several Xerox printers)
 Name: splix
-Version: 2.0.1
-Release: 7%{?dist}
+Version: 2.0.2
+Release: 1%{?dist}
 License: GPL-2.0-only
 URL: https://openprinting.github.io/splix/
 Source0: https://github.com/OpenPrinting/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz

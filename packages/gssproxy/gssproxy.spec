@@ -1,6 +1,6 @@
 Name:		gssproxy
 
-Version:	0.9.2
+Version:	0.9.3
 Release:	%autorelease
 Summary:	GSSAPI Proxy
 
