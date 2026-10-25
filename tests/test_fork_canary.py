@@ -240,50 +240,58 @@ class ProofTests(unittest.TestCase):
         self.assertIn("exit 1", fork_branch)
 
 
-class RefreshWorkflowTests(unittest.TestCase):
-    """The refresher holds write permissions, so it must never run the pull request."""
+class RefreshJobTests(unittest.TestCase):
+    """The refresh job holds write permissions, so it must never run the pull request."""
 
     @classmethod
     def setUpClass(cls):
-        path = ROOT / ".github" / "workflows" / "canary-fork-refresh.yml"
-        cls.wf = yaml.safe_load(path.read_text())
+        cls.wf = yaml.safe_load(WORKFLOW.read_text())
         cls.job = cls.wf["jobs"]["refresh"]
+        cls.steps = cls.job["steps"]
 
-    def test_it_reacts_only_to_a_finished_canary_run(self):
-        on = self.wf.get("on", self.wf.get(True))
-        self.assertEqual(on["workflow_run"]["workflows"], ["Canary"])
-        self.assertEqual(on["workflow_run"]["types"], ["completed"])
+    def test_there_is_no_workflow_run_refresher_to_rely_on(self):
+        # A workflow_run refresher never fired for a run started by this
+        # workflow's GITHUB_TOKEN dispatch (#622); waiting in this job does not
+        # depend on that trigger.
+        self.assertFalse((ROOT / ".github" / "workflows" / "canary-fork-refresh.yml").exists())
 
-    def test_it_acts_only_on_a_successful_maintainer_run_of_a_copy_branch(self):
-        condition = self.job["if"]
-        for needed in ("event == 'workflow_dispatch'", "conclusion == 'success'",
-                       "startsWith(github.event.workflow_run.head_branch, 'canary/pr-')"):
-            self.assertIn(needed, condition)
+    def test_it_runs_only_after_a_copy_was_dispatched(self):
+        self.assertEqual(self.job["needs"], "dispatch")
+        self.assertEqual(self.job["if"], "needs.dispatch.outputs.action == 'copy'")
 
     def test_it_never_checks_out_or_runs_anything_from_the_pull_request(self):
-        for step in self.job["steps"]:
+        for step in self.steps:
             self.assertFalse(str(step.get("uses", "")).startswith("actions/checkout"))
-        runs = "\n".join(s.get("run", "") for s in self.job["steps"])
+        runs = "\n".join(s.get("run", "") for s in self.steps)
         self.assertNotRegex(runs, r"\b(just|make|podman|docker|python3?|pip)\b")
 
-    def test_values_from_the_triggering_run_reach_the_shell_only_through_env(self):
-        # Interpolating ${{ ... }} into a script is how a crafted name becomes code.
-        for step in self.job["steps"]:
+    def test_no_expression_is_interpolated_into_a_script(self):
+        # Interpolating ${{ ... }} into a script is how a crafted value becomes code.
+        for step in self.steps:
             self.assertNotIn("${{", step.get("run", ""))
-        env = self.job["steps"][0]["env"]
-        self.assertEqual(env["BRANCH"], "${{ github.event.workflow_run.head_branch }}")
-        run = self.job["steps"][0]["run"]
-        self.assertRegex(run, r"\[\[ \"\$BRANCH\" =~ \^canary/pr-\(\[0-9\]\+\)\$ \]\]")
-        self.assertRegex(run, r"\[\[ \"\$HEAD_SHA\" =~ \^\[0-9a-f\]\{40\}\$ \]\]")
+
+    def test_it_waits_for_the_run_it_dispatched_and_not_an_older_one(self):
+        wait = next(s for s in self.steps if s.get("id") == "wait")
+        self.assertEqual(wait["env"]["SINCE"], "${{ needs.dispatch.outputs.since }}")
+        self.assertIn("select(.created_at >= $since)", wait["run"])
+        self.assertIn("event=workflow_dispatch&branch=${branch}", wait["run"])
+
+    def test_a_failed_run_is_reported_and_stops_before_any_refresh(self):
+        names = [s.get("name") for s in self.steps]
+        failed = next(s for s in self.steps if str(s.get("name", "")).startswith("Say so"))
+        self.assertEqual(failed["if"], "steps.wait.outputs.conclusion != 'success'")
+        self.assertIn("exit 1", failed["run"])
+        self.assertLess(names.index(failed["name"]), names.index("Re-run the pull request's Canary on the proof"))
 
     def test_it_refreshes_only_the_commit_that_was_proven_on_an_open_pull_request(self):
-        run = self.job["steps"][0]["run"]
+        run = next(s for s in self.steps if s.get("name", "").startswith("Re-run"))["run"]
         self.assertIn('"$(jq -r .head.sha pr.json)" != "$HEAD_SHA"', run)
         self.assertIn('"$(jq -r .state pr.json)" != open', run)
 
-    def test_its_permissions_are_what_the_rerun_and_reopen_need(self):
-        self.assertEqual(self.wf["permissions"],
-                         {"actions": "write", "pull-requests": "write", "contents": "read"})
+    def test_the_reopen_fallback_comes_only_after_a_quiet_rerun_failed(self):
+        run = next(s for s in self.steps if s.get("name", "").startswith("Re-run"))["run"]
+        self.assertLess(run.index("gh run rerun"), run.index("gh pr close"))
+        self.assertLess(run.index("gh pr close"), run.index("gh pr reopen"))
 
 
 

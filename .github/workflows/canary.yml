@@ -472,7 +472,7 @@ jobs:
       # A fork pull request cannot publish, so it passes only on proof: a
       # maintainer-run Canary (canary-fork-pr.yml) that passed on exactly this
       # head commit. The proof is read from the API, so the fork's own run turns
-      # green by being re-run after that one finishes (canary-fork-refresh.yml);
+      # green by being re-run after that one finishes (canary-fork-pr.yml, job refresh);
       # the check run of the dispatched run itself is not counted by the pull
       # request, which only rolls up the run for its own branch.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
