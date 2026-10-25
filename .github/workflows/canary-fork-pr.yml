@@ -14,8 +14,10 @@
 # it. The dispatch deliberately names no pr input: canary.yml runs from the copy,
 # so it is the pull request's own (possibly older) canary.yml that decides, and
 # every version of it treats a dispatch without pr as an unconditional,
-# same-repository run. The Canary check run is created on the commit itself,
-# which is the pull request's head, so it is the check the pull request waits for. Nothing
+# same-repository run. That run's own Canary check is NOT the one the pull
+# request waits for (it rolls up its own branch's suite only; seen on #622), so
+# the fork's own Canary job passes on proof of this run, and canary-fork-refresh.yml
+# re-runs it when this run finishes. Nothing
 # from the fork is built, checked out or executed in THIS workflow: it only
 # moves a ref. The canary run that follows does build the fork's code with
 # packages: write, which is why a maintainer's review of the diff comes first and
@@ -109,7 +111,7 @@ jobs:
           REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
-          gh pr comment "$PR" -R "$REPOSITORY" --body "Canary was run on this pull request at \`${HEAD_SHA}\` by @${ACTOR} after review, from the in-repository copy \`canary/pr-${PR}\`: https://github.com/${REPOSITORY}/actions/workflows/canary.yml?query=branch%3Acanary%2Fpr-${PR}. The result is the \`Canary\` check on this commit. A new push to the pull request needs a new review and a new run."
+          gh pr comment "$PR" -R "$REPOSITORY" --body "Canary was run on this pull request at \`${HEAD_SHA}\` by @${ACTOR} after review, from the in-repository copy \`canary/pr-${PR}\`: https://github.com/${REPOSITORY}/actions/workflows/canary.yml?query=branch%3Acanary%2Fpr-${PR}. When that run passes, this pull request's own \`Canary\` check is re-run and turns green by itself. A new push to the pull request needs a new review and a new run."
       # The copies are only needed while their pull request is open.
       - name: Delete copies of closed pull requests
         env:

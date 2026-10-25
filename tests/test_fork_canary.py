@@ -183,6 +183,109 @@ class WorkflowTests(unittest.TestCase):
         self.assertRegex(cleanup["run"], r"grep -E .*\|\| test \$\? -eq 1")
         self.assertTrue(re.search(r'"\$state" != open', cleanup["run"]))
 
+def dispatch_run(**over):
+    run = {"event": "workflow_dispatch", "head_branch": "canary/pr-622", "head_sha": REVIEWED,
+           "status": "completed", "conclusion": "success"}
+    run.update(over)
+    return run
+
+
+class ProofTests(unittest.TestCase):
+    """A fork's own Canary passes only on a maintainer-run Canary at its exact head."""
+
+    def test_a_passed_maintainer_run_on_the_exact_head_is_proof(self):
+        self.assertTrue(fork_canary.has_proof([dispatch_run()], 622, REVIEWED))
+
+    def test_anything_short_of_that_is_not_proof(self):
+        for name, run in {
+            "a failed run": dispatch_run(conclusion="failure"),
+            "a cancelled run": dispatch_run(conclusion="cancelled"),
+            "a run still going": dispatch_run(status="in_progress", conclusion=None),
+            "an earlier commit": dispatch_run(head_sha=MOVED),
+            "another pull request's copy": dispatch_run(head_branch="canary/pr-621"),
+            "a run on main": dispatch_run(head_branch="main"),
+            # The fork's own run is a pull_request event; it must not vouch for itself.
+            "a pull_request run": dispatch_run(event="pull_request"),
+            "a lookalike branch": dispatch_run(head_branch="canary/pr-6222"),
+        }.items():
+            with self.subTest(name):
+                self.assertFalse(fork_canary.has_proof([run], 622, REVIEWED))
+
+    def test_one_good_run_among_bad_ones_is_enough_and_none_is_not(self):
+        runs = [dispatch_run(conclusion="failure"), dispatch_run(head_sha=MOVED), dispatch_run()]
+        self.assertTrue(fork_canary.has_proof(runs, 622, REVIEWED))
+        self.assertFalse(fork_canary.has_proof([], 622, REVIEWED))
+
+    def test_the_command_reads_the_api_shape_and_sets_the_exit_status(self):
+        def run_proof(payload, sha=REVIEWED):
+            with tempfile.TemporaryDirectory() as tmp:
+                path = Path(tmp) / "runs.json"
+                path.write_text(json.dumps(payload))
+                with mock.patch("builtins.print"):
+                    return fork_canary.main(["proof", "--runs-json", str(path), "--pr", "622", "--head-sha", sha])
+
+        self.assertEqual(run_proof({"workflow_runs": [dispatch_run()]}), 0)
+        self.assertEqual(run_proof({"workflow_runs": []}), 1)
+        self.assertEqual(run_proof([dispatch_run()]), 0)
+        self.assertEqual(run_proof({"workflow_runs": [dispatch_run()]}, sha="abc"), 1)
+
+    def test_the_canary_job_passes_a_fork_only_through_that_proof(self):
+        canary = yaml.safe_load((ROOT / ".github/workflows/canary.yml").read_text())
+        decide = next(s for s in canary["jobs"]["canary"]["steps"] if s.get("name") == "Decide")
+        fork_branch = decide["run"].split('if [ "$FORK" = true ]; then', 1)[1].split("\n          fi\n", 1)[0]
+        self.assertIn("tools/fork_canary.py proof", fork_branch)
+        # The only way out of the fork branch with success is the proof's exit.
+        self.assertEqual(fork_branch.count("exit 0"), 1)
+        self.assertLess(fork_branch.index("proof"), fork_branch.index("exit 0"))
+        self.assertIn("exit 1", fork_branch)
+
+
+class RefreshWorkflowTests(unittest.TestCase):
+    """The refresher holds write permissions, so it must never run the pull request."""
+
+    @classmethod
+    def setUpClass(cls):
+        path = ROOT / ".github" / "workflows" / "canary-fork-refresh.yml"
+        cls.wf = yaml.safe_load(path.read_text())
+        cls.job = cls.wf["jobs"]["refresh"]
+
+    def test_it_reacts_only_to_a_finished_canary_run(self):
+        on = self.wf.get("on", self.wf.get(True))
+        self.assertEqual(on["workflow_run"]["workflows"], ["Canary"])
+        self.assertEqual(on["workflow_run"]["types"], ["completed"])
+
+    def test_it_acts_only_on_a_successful_maintainer_run_of_a_copy_branch(self):
+        condition = self.job["if"]
+        for needed in ("event == 'workflow_dispatch'", "conclusion == 'success'",
+                       "startsWith(github.event.workflow_run.head_branch, 'canary/pr-')"):
+            self.assertIn(needed, condition)
+
+    def test_it_never_checks_out_or_runs_anything_from_the_pull_request(self):
+        for step in self.job["steps"]:
+            self.assertFalse(str(step.get("uses", "")).startswith("actions/checkout"))
+        runs = "\n".join(s.get("run", "") for s in self.job["steps"])
+        self.assertNotRegex(runs, r"\b(just|make|podman|docker|python3?|pip)\b")
+
+    def test_values_from_the_triggering_run_reach_the_shell_only_through_env(self):
+        # Interpolating ${{ ... }} into a script is how a crafted name becomes code.
+        for step in self.job["steps"]:
+            self.assertNotIn("${{", step.get("run", ""))
+        env = self.job["steps"][0]["env"]
+        self.assertEqual(env["BRANCH"], "${{ github.event.workflow_run.head_branch }}")
+        run = self.job["steps"][0]["run"]
+        self.assertRegex(run, r"\[\[ \"\$BRANCH\" =~ \^canary/pr-\(\[0-9\]\+\)\$ \]\]")
+        self.assertRegex(run, r"\[\[ \"\$HEAD_SHA\" =~ \^\[0-9a-f\]\{40\}\$ \]\]")
+
+    def test_it_refreshes_only_the_commit_that_was_proven_on_an_open_pull_request(self):
+        run = self.job["steps"][0]["run"]
+        self.assertIn('"$(jq -r .head.sha pr.json)" != "$HEAD_SHA"', run)
+        self.assertIn('"$(jq -r .state pr.json)" != open', run)
+
+    def test_its_permissions_are_what_the_rerun_and_reopen_need(self):
+        self.assertEqual(self.wf["permissions"],
+                         {"actions": "write", "pull-requests": "write", "contents": "read"})
+
+
 
 if __name__ == "__main__":
     unittest.main()

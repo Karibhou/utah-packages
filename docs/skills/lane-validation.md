@@ -82,9 +82,18 @@ review and a new run.
 
 The canary run builds the fork's code with `packages: write`, so the review is
 the security boundary, exactly as it was when a maintainer pushed the branch by
-hand. The fork's own red `pull_request` Canary run stays on the pull request.
-The dispatched run is a second `Canary` check on the same commit; it is
-expected to supersede the red one for the required-check rule (the newest run
-of a check name counts), but that was not observed when this was written. If a
-pull request still shows the check as failing after a green dispatched run,
-record it on #369 rather than bypassing the check.
+hand.
+
+The pull request does not count the dispatched run's own `Canary` check: it
+lives in the check suite of `canary/pr-<N>`, and the pull request rolls up only
+its own branch's suite (observed on #622: the dispatched run passed on the head
+commit while the pull request kept the fork run's red `Canary` and stayed
+`BLOCKED`). So the fork's own `Canary` job passes on proof instead: a
+`workflow_dispatch` run of `canary.yml` on `canary/pr-<N>` that completed with
+success at exactly the pull request's head (`tools/fork_canary.py proof`). When
+such a run finishes, `canary-fork-refresh.yml` (a `workflow_run` from `main`,
+which executes nothing from the pull request) re-runs the pull request's own
+`Canary`. A run that began before `canary.yml` could read the proof reuses its
+old workflow file and fails again, so the refresher then closes and reopens the
+pull request once to start a fresh run on the same commit. A push after review
+changes the head, so the old proof no longer applies.
