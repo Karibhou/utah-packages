@@ -239,12 +239,41 @@ jobs:
             echo "pull request Canary passes after a re-run (run $id)"; exit 0
           fi
 
-          # Closing and reopening starts a fresh pull_request run on the same
-          # head commit with the current workflow file, which can read it.
-          echo "::notice title=fork canary::run $id predates the proof lookup; reopening pull request $PR to start a fresh run on the same commit"
-          gh pr close "$PR" -R "$REPOSITORY"
-          gh pr reopen "$PR" -R "$REPOSITORY"
-          sleep 20
+          # A pull request's run takes its workflow file from the pull request's
+          # merge commit, and GitHub recomputes that commit only when the pull
+          # request is reopened -- after the run the reopen starts has already
+          # taken the old one (seen on #622: the fresh run printed the old
+          # message). So reopen until the merge commit sits on the current base
+          # tip; the run that reopen starts has the current canary.yml, which
+          # can read the proof. Closing and reopening keeps the head commit, so
+          # nothing needs a new review.
+          base_tip() { gh api "repos/$REPOSITORY/commits/$(jq -r .base.ref pr.json)" --jq .sha; }
+          fresh() {
+            local merge
+            merge=$(gh api "repos/$REPOSITORY/git/ref/pull/$PR/merge" --jq .object.sha 2>/dev/null) || return 1
+            [ "$(gh api "repos/$REPOSITORY/commits/$merge" --jq '.parents[0].sha')" = "$(base_tip)" ]
+          }
+          echo "::notice title=fork canary::run $id predates the proof lookup; reopening pull request $PR until its merge commit is current"
+          started_fresh=false
+          for _ in 1 2 3; do
+            started_fresh=false
+            if fresh; then started_fresh=true; fi
+            gh pr close "$PR" -R "$REPOSITORY"
+            gh pr reopen "$PR" -R "$REPOSITORY"
+            [ "$started_fresh" = true ] && break
+            # The reopen queued a recompute; give it time, then go again.
+            for _ in $(seq 1 12); do fresh && break; sleep 5; done
+          done
+          [ "$started_fresh" = true ] || { echo "::error::the merge commit of pull request $PR never caught up with the base branch"; exit 1; }
+          sleep 15
+          read -r id status conclusion <<<"$(pr_run)"
+          # A reopen by this workflow's bot starts a fork run that waits for a
+          # maintainer's approval. The diff was reviewed when this workflow was
+          # pressed, so approve that one run; a run that needs none says so.
+          if [ "$conclusion" = action_required ]; then
+            gh api -X POST "repos/$REPOSITORY/actions/runs/$id/approve" > /dev/null
+            sleep 20
+          fi
           read -r id conclusion <<<"$(wait_done)"
           test "$conclusion" = success || { echo "::error::pull request Canary is still $conclusion (run $id) after the proof"; exit 1; }
           echo "pull request Canary passes on a fresh run ($id)"

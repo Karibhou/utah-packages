@@ -118,6 +118,9 @@ def proof_main(argv: list[str]) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    # Called with no argument it is the command line; tests pass the list.
+    if argv is None:
+        argv = sys.argv[1:]
     if argv and argv[0] == "proof":
         return proof_main(argv[1:])
     parser = argparse.ArgumentParser()
