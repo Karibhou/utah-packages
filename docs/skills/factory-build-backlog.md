@@ -76,6 +76,14 @@ of an area name whose move is still owed (for example a recipe that landed
 before the name was catalogued), not an alternative way to close it, and the
 next PR that touches the name sweeps it into `[resolved]`.
 
+For font and language batches, apply a consumer's rejected bulk-font decision
+only to optional font faces. Keep input-method libraries, language tables, and
+Unicode data in the area until each has build and runtime evidence or a
+specific linked decision. A development font in an earlier wish list still
+needs the individual proposal required by a later maintainer decision; that
+wish list alone does not approve a recipe import. A partial waiver PR should
+reference the batch issue and name the remaining outputs so it stays open.
+
 The `Import Rawhide package` workflow does **not** make this move: its pull
 request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that

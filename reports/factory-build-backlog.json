@@ -11,8 +11,8 @@
       "total": 97
     },
     "fonts-i18n": {
-      "pending": 40,
-      "total": 40
+      "pending": 29,
+      "total": 29
     },
     "gnome-apps": {
       "already_recipe": 5,
@@ -840,21 +840,6 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "liberation-mono-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "liberation-sans-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "liberation-serif-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "libhangul",
       "state": "pending"
     },
@@ -880,47 +865,7 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "madan-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "nerd-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "open-sans-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "opendyslexic-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "paktype-naskh-basic-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "python3-langtable",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "rit-meera-new-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "rit-rachana-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "sil-padauk-fonts",
       "state": "pending"
     },
     {
@@ -1833,11 +1778,11 @@
   "states": {
     "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 322
+    "pending": 311
   },
   "totals": {
-    "backlog": 355,
+    "backlog": 344,
     "resolved": 183,
-    "wontfix": 13
+    "wontfix": 24
   }
 }
