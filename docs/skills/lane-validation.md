@@ -64,6 +64,17 @@ merge decisions cite upstream runs.
 
 ## Fork pull requests and the required Canary (#369)
 
+Most pull requests never need this: a pull request that only adds recipes and new
+inventory entries passes `Canary` at once, with nothing built, for forks and
+in-repository branches alike. `config/upstream-sources.json`,
+`config/factory-build-backlog.toml` and `config/fedora-primary-sources.txt` are
+recipe inventory, not pipeline, and count only when a change reaches an entry
+that already existed, names a canary package, or leaves them unreadable
+(`pipeline_relevant` in `tools/canary.py`; the lock is compared with the pull
+request's merge base, so a branch that is merely behind `main` is not a change).
+Everything else under `tools/`, `.github/`, `config/` and `Containerfile` still
+counts. The rest of this section is for those pull requests.
+
 The required `Canary` check cannot pass from a fork pull request that touches a
 pipeline path: its token has no `packages: write`, so `canary.yml` fails it with
 "a fork pull request cannot publish the canary image". The author cannot fix
