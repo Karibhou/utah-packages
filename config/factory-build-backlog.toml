@@ -472,13 +472,13 @@ packages = [
 # Each entry: package name and the commit that closed the gap.
 packages = [
     # Codec recipe imports for #476; publication and runtime proof remain separate.
-    { name = "libultrahdr", pr = 627 },
-    { name = "svt-vp9-libs", pr = 627 },
-    { name = "x264-libs", pr = 627 },
-    { name = "x265-libs", pr = 627 },
-    { name = "vvdec-libs", pr = 627 },
-    { name = "vvenc-libs", pr = 627 },
-    { name = "xavs2-libs", pr = 627 },
+    { name = "libultrahdr", pr = 633 },
+    { name = "svt-vp9-libs", pr = 633 },
+    { name = "x264-libs", pr = 633 },
+    { name = "x265-libs", pr = 633 },
+    { name = "vvdec-libs", pr = 633 },
+    { name = "vvenc-libs", pr = 633 },
+    { name = "xavs2-libs", pr = 633 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
