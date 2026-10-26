@@ -697,9 +697,9 @@ packages = [
     { name = "libpath_utils", pr = 597 },
     { name = "libref_array", pr = 597 },
     # Handwriting recognition (zinnia also builds zinnia-tomoe-ja) and zix (#509).
-    { name = "zinnia", pr = 623 },
-    { name = "zinnia-tomoe-ja", pr = 623 },
-    { name = "zix", pr = 623 },
+    { name = "zinnia", pr = 630 },
+    { name = "zinnia-tomoe-ja", pr = 630 },
+    { name = "zix", pr = 630 },
 ]
 
 [wontfix]
