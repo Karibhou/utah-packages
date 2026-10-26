@@ -61,3 +61,42 @@ Fork dispatches run the same workflow but publish to the fork registry, where
 the first publish of a canary tag fails (`manifest unknown`) and the run goes
 red after otherwise successful builds. Use forks for parallel signal only;
 merge decisions cite upstream runs.
+
+## Fork pull requests and the required Canary (#369)
+
+The required `Canary` check cannot pass from a fork pull request that touches a
+pipeline path: its token has no `packages: write`, so `canary.yml` fails it with
+"a fork pull request cannot publish the canary image". The author cannot fix
+that, and neither can an agent working from a fork; do not ask them to.
+
+A maintainer who has reviewed the diff runs **Canary for a fork pull request**
+(Actions tab, `canary-fork-pr.yml`) with the pull request number and the full
+head commit they reviewed. It copies exactly that commit to `canary/pr-<N>`
+and dispatches `canary.yml` there, so the `Canary` check is created on the
+pull request's own head commit. It refuses when the head moved since review,
+when the pull request is not open against `main`, when it changes 3000 or
+more files (GitHub's file list stops there), and when it changes
+`.github/` (workflow changes never run with this repository's credentials from
+a fork; push those by hand). A new push to the pull request needs a new
+review and a new run.
+
+The canary run builds the fork's code with `packages: write`, so the review is
+the security boundary, exactly as it was when a maintainer pushed the branch by
+hand.
+
+The pull request does not count the dispatched run's own `Canary` check: it
+lives in the check suite of `canary/pr-<N>`, and the pull request rolls up only
+its own branch's suite (observed on #622: the dispatched run passed on the head
+commit while the pull request kept the fork run's red `Canary` and stayed
+`BLOCKED`). So the fork's own `Canary` job passes on proof instead: a
+`workflow_dispatch` run of `canary.yml` on `canary/pr-<N>` that completed with
+success at exactly the pull request's head (`tools/fork_canary.py proof`). When
+such a run finishes, the `refresh` job of the same workflow (it waits for the
+run it dispatched, executes nothing from the pull request, and holds the write
+permissions the re-run needs) re-runs the pull request's own `Canary`. A run
+that began before `canary.yml` could read the proof reuses its old workflow
+file and fails again, so the job then closes and reopens the pull request once
+to start a fresh run on the same commit. A maintainer-run Canary that does not
+pass is reported on the pull request and the check stays red. The press holds a
+runner for as long as that run takes (about half an hour). A push after review
+changes the head, so the old proof no longer applies.
