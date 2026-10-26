@@ -47,11 +47,25 @@ Packit block, and the recipe-count tests match the inventory. Dispatch
 workflow runs the lock, the Packit-regen and the architecture-counts-refresh
 steps on `ubuntu-26.04`, and opens `import/rawhide-<name>`). The lock step fails the workflow, and no pull
 request opens, when `tools/bootstrap_upstream_sources.py --package <name>`
-rejects the recipe — for example a `Source0` hosted on Fedora
+(run without `--merge`, into an isolated candidate file) rejects the recipe — for example a `Source0` hosted on Fedora
 infrastructure, a `Source0` that is not a direct HTTP(S) URL, or upstream
-bytes that differ from the pin in `packages/<name>/sources`. Rerun that
-command locally to read the reason in `reports/import-source-bootstrap.json`
-(the workflow does not upload it). Import those recipes by hand: lock the upstream release with Fedora in `fallback_urls` (or as a
+bytes that differ from the pin in `packages/<name>/sources`. To read the
+reason locally, run:
+
+```bash
+python3 tools/bootstrap_upstream_sources.py --package <name> --merge \
+  --report work/import-source-bootstrap.json
+```
+
+The workflow does not upload that report. Keep it under the gitignored
+`work/` directory: `reports/import-source-bootstrap.json` is tracked and
+written by the import workflow, so a local diagnostic must not replace it. A rejected explicit selection
+returns nonzero and leaves the source lock untouched; read the report before
+continuing. The report and source lock must name different files, including
+when using symlinks or hard links. Keep `--merge` when adding a package: a
+successful run without it replaces the catalog with only the selected
+package. Import rejected recipes
+by hand: lock the upstream release with Fedora in `fallback_urls` (or as a
 `generate` entry, above), then regenerate `.packit.yaml` and the
 architecture counts as the workflow does. When importing by hand on a
 workstation without `rpmspec`, lock the source in the pinned
