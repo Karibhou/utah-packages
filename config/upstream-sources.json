@@ -5228,6 +5228,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/nilfs-utils/nilfs-utils-2.2.11.tar.bz2/sha512/8c238f961f429c12674695d2481202c8fac4582d04e838ce7244647b8a9997e38b4dafa280314acb57ae40137711c7678de6aaf65708c110028df97c1c76089e/nilfs-utils-2.2.11.tar.bz2"
       ]
+    },
+    {
+      "name": "pyscard",
+      "version": "2.2.2",
+      "url": "https://github.com/LudovicRousseau/pyscard/archive/2.2.2/pyscard-2.2.2.tar.gz",
+      "filename": "pyscard-2.2.2.tar.gz",
+      "sha512": "2f5f4bbbdc65c4116ea04a01241c5c714cf62335a65591eb60a400499792749dd2c3408624be374d46885636cdef573db58d72b207512375318069cad3abb187"
     }
   ]
 }

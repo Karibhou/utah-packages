@@ -124,6 +124,14 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+### Smart-card Python bindings
+
+The `pyscard` source recipe provides `python3-pyscard`; do not import a
+second recipe for the binary name. It uses `pcsc-lite-devel` at build time
+and `pcsc-lite` at runtime, and is a dependency of the YubiKey manager in
+#479. The catalog move records the recipe import, not a successful hosted
+build, publication, or runtime dependency closure.
+
 ### Font parity decisions do not waive input methods
 
 Before importing a font from the `fonts-i18n` area, check the

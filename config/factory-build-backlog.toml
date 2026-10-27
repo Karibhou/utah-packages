@@ -348,7 +348,6 @@ packages = [
     "python3-perf",
     "python3-pskc",
     "python3-pyaudio",
-    "python3-pyscard",
     "qadwaitadecorations-qt5",
     "qpdf-libs",
     "qrencode-libs",
@@ -398,6 +397,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Smart-card Python binding; hosted build and runtime proof remain in #506.
+    { name = "python3-pyscard", pr = 704 },
     # NILFS filesystem utilities imported for issue #488; publication still requires validation.
     { name = "nilfs-utils", pr = 702 },
     # Recipe imported; hosted build, publication and runtime proof remain in #501.
