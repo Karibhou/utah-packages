@@ -316,7 +316,6 @@ packages = [
     "python3-pskc",
     "python3-pyaudio",
     "qadwaitadecorations-qt5",
-    "qpdf-libs",
     "qrencode-libs",
     "qt5-qtdeclarative",
     "qt5-qtsvg",
@@ -724,6 +723,7 @@ packages = [
     { name = "libvarlink", commit = "26ebd2a8ecc9fdd617061452449c71a9fdcdf34d", pr = 519, published_nevra = "libvarlink-0:24.0.1-1.hum1.bfin.x86_64" },
     { name = "liburing", pr = 742 },
     { name = "lrzsz", pr = 742 },
+    { name = "qpdf-libs", pr = 640 },
 ]
 
 [wontfix]

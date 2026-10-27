@@ -21,8 +21,8 @@
     "long-tail": {
       "already_recipe": 3,
       "manifest_wants": 1,
-      "pending": 97,
-      "total": 101
+      "pending": 96,
+      "total": 100
     },
     "power": {
       "total": 0
@@ -1066,11 +1066,6 @@
     },
     {
       "area": "long-tail",
-      "name": "qpdf-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "qrencode-libs",
       "state": "pending"
     },
@@ -1289,11 +1284,11 @@
   "states": {
     "already_recipe": 17,
     "manifest_wants": 1,
-    "pending": 229
+    "pending": 228
   },
   "totals": {
-    "backlog": 247,
-    "resolved": 270,
+    "backlog": 246,
+    "resolved": 271,
     "wontfix": 34
   }
 }
