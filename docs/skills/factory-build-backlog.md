@@ -109,6 +109,12 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+For a partial batch PR, use `Refs #<issue>` throughout the PR description.
+Check the final rendered body, including generated footers, for closing keywords
+such as `Closes`, `Fixes` or `Resolves`: they automatically close the batch
+issue on merge even when the summary says work remains. Use a closing keyword
+only when every named output meets the issue's acceptance criteria or has an
+explicitly linked blocking decision.
 ### Reconciling recipes imported before the audit
 
 For a name still marked `already_recipe`, verify the original import PR is
@@ -218,6 +224,23 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+### Compression measurements on Btrfs
+
+The `compsize` source produces the binary of the same name. Its upstream
+snapshot uses the full commit in the archive URL and extracted directory,
+but the imported manifest uses the seven-character commit in the filename;
+keep the lock's `filename` aligned with that manifest. The carried include
+patch supports newer `btrfs-progs` headers; `btrfs-progs-devel` is a build
+dependency, not a reason to import a second Btrfs recipe.
+
+Runtime acceptance needs a Btrfs filesystem: install using only Hummingbird
+and the factory, write a compressible file with compression enabled, then run
+`compsize <file>` and check that its report includes the selected compression
+type and disk usage. Running it on the runner's ordinary non-Btrfs workspace
+only tests the unsupported-filesystem error. A recipe or successful build
+alone must not be presented as a working compression measurement; keep the
+batch open until publication, dependency solving and that payload probe are
+recorded.
 Yubico C releases (`libyubikey`, `ykclient`, `ykpers`) still declare `http://opensource.yubico.com/...` `Source0` URLs in Fedora Rawhide, and `libyubikey` and `ykclient` still carry legacy MD5 `sources` lines: repin `sources` to `SHA512 (<file>) = <hex>`, lock `https://opensource.yubico.com/...` as the primary `url`, and pair `https://developers.yubico.com/<project>/Releases/<file>` with Fedora's `/md5/<md5>/` lookaside path in `fallback_urls`. `ykpers` builds and links against `libyubikey` (`libyubikey.so.0`), so import `libyubikey` in the same PR. When a recipe carries a committed OpenPGP keyring whose filename does not match `*key*.asc`, `*keyring*.asc`, or `[0-9A-F]*.asc` (`packages/pkcs11-provider/simo_redhat.asc`, `packages/bc/kevin_pizzini.asc`), unignore it explicitly in the root `.gitignore` (`!packages/<pkg>/<name>.asc`) so `git add` tracks `SourceN` for `%{openpgpverify}`. By contrast, `yubikey-manager` (`python3-yubikey-manager`) is a `pyproject` package whose `[project].dependencies` generate runtime `python3dist(...)` `Requires` across multiple backlog areas (`python3-click`, `python3-fido2`, `python3-keyring` plus `secretstorage`/`jeepney`/`jaraco` in `dev-tools`, and `python3-pyscard`, `python3-pskc` in `long-tail`); keep `yubikey-manager` and `python3-yubikey-manager` pending until those Python runtime providers land in the factory.
 ### Python recipe names and dependency evidence
 

@@ -20,9 +20,9 @@
       "total": 12
     },
     "long-tail": {
-      "already_recipe": 13,
+      "already_recipe": 14,
       "manifest_wants": 1,
-      "pending": 115,
+      "pending": 114,
       "total": 129
     },
     "power": {
@@ -954,7 +954,7 @@
     {
       "area": "long-tail",
       "name": "compsize",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1619,9 +1619,9 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 29,
+    "already_recipe": 30,
     "manifest_wants": 1,
-    "pending": 283
+    "pending": 282
   },
   "totals": {
     "backlog": 313,

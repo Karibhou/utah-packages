@@ -232,6 +232,12 @@ packages:
     downstream_package_name: colord-gtk
     paths:
       - packages/colord-gtk
+  compsize:
+    specfile_path: compsize.spec
+    upstream_package_name: compsize
+    downstream_package_name: compsize
+    paths:
+      - packages/compsize
   containerd:
     specfile_path: containerd.spec
     upstream_package_name: containerd
