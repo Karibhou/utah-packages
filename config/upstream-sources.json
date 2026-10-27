@@ -5132,6 +5132,16 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/compsize/compsize-d79eacf.tar.gz/sha512/d6059a77feea45b9bb145cdd5edb4622e5ac261fe2e1ebdc2ad3bbfe36b663f689b6f458f1eae3e88523a9277e8cde0d8ec00bd02a1fafb6360f0d5e68dccede/compsize-d79eacf.tar.gz"
       ]
+    },
+    {
+      "name": "flex",
+      "version": "2.6.4",
+      "url": "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz",
+      "filename": "flex-2.6.4.tar.gz",
+      "sha512": "e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/flex/flex-2.6.4.tar.gz/sha512/e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e/flex-2.6.4.tar.gz"
+      ]
     }
   ]
 }

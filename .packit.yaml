@@ -454,6 +454,12 @@ packages:
     downstream_package_name: flatpak-xdg-utils
     paths:
       - packages/flatpak-xdg-utils
+  flex:
+    specfile_path: flex.spec
+    upstream_package_name: flex
+    downstream_package_name: flex
+    paths:
+      - packages/flex
   flite:
     specfile_path: flite.spec
     upstream_package_name: flite

@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 90,
-      "total": 91
+      "pending": 89,
+      "total": 90
     },
     "fonts-i18n": {
       "pending": 24,
@@ -284,11 +284,6 @@
     {
       "area": "dev-tools",
       "name": "fedora-release-silverblue",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "flex",
       "state": "pending"
     },
     {
@@ -1586,11 +1581,11 @@
   "states": {
     "already_recipe": 28,
     "manifest_wants": 1,
-    "pending": 277
+    "pending": 276
   },
   "totals": {
-    "backlog": 306,
-    "resolved": 216,
+    "backlog": 305,
+    "resolved": 217,
     "wontfix": 29
   }
 }

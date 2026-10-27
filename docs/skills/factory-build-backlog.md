@@ -257,6 +257,14 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+### Flex binary names and smoke test
+
+The `flex` source recipe builds `flex`, `libfl2`, `libfl-devel`, and
+`libfl-static`; `flex-devel` is a compatibility provide, not a second source
+recipe. The command requires `m4` at runtime. After the permitted-repository
+transaction succeeds, verify more than `flex --version`: generate a scanner
+from a minimal rule file, compile its C output, and feed it a matching token.
+The imported recipe also retains its upstream `%check` suite.
 ### Compression measurements on Btrfs
 
 The `compsize` source produces the binary of the same name. Its upstream

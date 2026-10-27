@@ -142,7 +142,6 @@ packages = [
     "fedora-release-identity-silverblue",
     "fedora-release-ostree-desktop",
     "fedora-release-silverblue",
-    "flex",
     "fuse-encfs",
     "generic-logos",
     "hfsplus-tools",
@@ -410,6 +409,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Flex source import; publication and consumer validation remain tracked in #486.
+    { name = "flex", pr = 654 },
     # Existing GPU monitor recipe; publication/runtime proof remains in #488.
     { name = "nvtop", commit = "e19a229", pr = 410 },
     # Long-tail batch (projectbluefin/utah-packages#607, part of #500).
