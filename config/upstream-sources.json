@@ -5208,6 +5208,16 @@
       "url": "https://github.com/ebiggers/libdeflate/archive/v1.26/libdeflate-1.26.tar.gz",
       "filename": "libdeflate-1.26.tar.gz",
       "sha512": "06605eabce8635b82e03863c87b515696d08b8a1fc36b746b44b660989613d2ebd6ca1bb13dd0f88244846894dbf5a15169dd443c34dcda64e960fdbd08a8d3b"
+    },
+    {
+      "name": "iptstate",
+      "version": "2.3.0",
+      "url": "https://github.com/jaymzh/iptstate/archive/refs/tags/v2.3.0.tar.gz",
+      "filename": "v2.3.0.tar.gz",
+      "sha512": "355f48f45965ed7bf79a59249c20505c96ec51a06711cf9df02b5a32dcf4bfd5e90d2aa97c08ee9b19ae738583b4d16094050a469bece295910926253eb6acc7",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/iptstate/v2.3.0.tar.gz/sha512/355f48f45965ed7bf79a59249c20505c96ec51a06711cf9df02b5a32dcf4bfd5e90d2aa97c08ee9b19ae738583b4d16094050a469bece295910926253eb6acc7/v2.3.0.tar.gz"
+      ]
     }
   ]
 }

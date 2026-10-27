@@ -293,7 +293,6 @@ packages = [
     "intel-vaapi-driver",
     "ipset",
     "ipset-libs",
-    "iptstate",
     "jbig2dec-libs",
     "kf6-filesystem",
     "kf6-karchive",
@@ -400,6 +399,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Recipe imported; hosted build, publication and runtime proof remain in #501.
+    { name = "iptstate", pr = 697 },
     # Recipe coverage; publication and runtime proof remain tracked in #502.
     { name = "libdeflate", pr = 695 },
     { name = "gnome-rounded-blur", commit = "f8589ccd95a48a1f26826c8764330c9f7811a09d", pr = 440, published_run = 40151594832, published_nevra = "gnome-rounded-blur-0:1.0.1^20260809gitf3bfcc7-1.hum1.bfin.x86_64" },
