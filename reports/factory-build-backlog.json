@@ -20,10 +20,10 @@
       "total": 10
     },
     "long-tail": {
-      "already_recipe": 12,
+      "already_recipe": 10,
       "manifest_wants": 1,
       "pending": 113,
-      "total": 126
+      "total": 124
     },
     "power": {
       "total": 0
@@ -1327,11 +1327,6 @@
     },
     {
       "area": "long-tail",
-      "name": "simdutf",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
       "name": "slang",
       "state": "pending"
     },
@@ -1379,11 +1374,6 @@
       "area": "long-tail",
       "name": "tesseract-tessdata-doc",
       "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "tslib",
-      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1543,13 +1533,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 27,
+    "already_recipe": 25,
     "manifest_wants": 1,
     "pending": 270
   },
   "totals": {
-    "backlog": 298,
-    "resolved": 223,
+    "backlog": 296,
+    "resolved": 225,
     "wontfix": 30
   }
 }

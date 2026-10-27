@@ -411,6 +411,17 @@ tool reads only `name`); set them from the publication run's repodata when
 reconciling a published batch. Record any known newer failed rebuilds by package
 name and run in the catalog comments so publication evidence does not hide
 current build health.
+
+Read both from one image: `python3 tools/package_index.py --image
+projectbluefin/utah-packages:latest --output <file>` writes the manifest
+digest, the publishing `run` and the source `revision` under `image`, and every
+binary with its source package and epoch/version/release under `packages`.
+Check that `revision` is on the target branch before citing it. The primary
+metadata checksum is in `repository/repodata/repomd.xml` inside the image's
+first layer (`fetch_image` in the same tool returns it). An import PR that
+left its name `already_recipe` pending evidence (`tslib`, #643) moves to
+`[resolved]` in a later reconciliation PR once that image carries the binary;
+cite the original import PR and merge commit rather than the reconciliation.
 ### X11 resource library imports
 
 The audited `libXres` binary is the main output of source recipe `libXres`;
