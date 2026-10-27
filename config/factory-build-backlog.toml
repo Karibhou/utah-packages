@@ -327,14 +327,6 @@ packages = [
     "pam_afs_session",
     "paps",
     "perl-Unicode-Normalize",
-    "plymouth",
-    "plymouth-core-libs",
-    "plymouth-graphics-libs",
-    "plymouth-plugin-label",
-    "plymouth-plugin-two-step",
-    "plymouth-scripts",
-    "plymouth-system-theme",
-    "plymouth-theme-spinner",
     "portaudio",
     "prefixdevname",
     "python3-perf",
@@ -384,6 +376,15 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Published boot-screen outputs; recipe #312, source lock #320; runtime proof stays on #505.
+    { name = "plymouth", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-core-libs", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-core-libs-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-graphics-libs", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-graphics-libs-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-plugin-label", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-plugin-label-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-plugin-two-step", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-plugin-two-step-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-scripts", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-scripts-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-system-theme", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-system-theme-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-theme-spinner", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-theme-spinner-0:26.134.222-1.hum1.bfin.x86_64" },
     { name = "davfs2", pr = 696 },
     { name = "neon", pr = 696 },
     { name = "libntlm", pr = 696 },

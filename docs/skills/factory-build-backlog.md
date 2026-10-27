@@ -540,6 +540,22 @@ When rebasing a recipe PR, resolve conflicts in this generated report by rerunni
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.
 
+## Boot-screen output reconciliation
+
+Plymouth's boot animation, core and graphics libraries, label and two-step
+plugins, scripts, default-theme selector and spinner theme all come from
+`packages/plymouth/plymouth.spec`. Reconcile those binary names together;
+do not import a recipe per plugin. The `plymouth-system-theme` package is a
+selector: the spinner theme supplies its versioned `plymouth(system-theme)`
+requirement. Check both binary names in published primary metadata even when
+the selector has no installed payload.
+
+A catalog closing record can cite the existing merged recipe/source-lock PR
+when reconciling a later audit. Record the observed image digest, publication
+run and all requested binary identities in the reconciliation PR. This closes
+recipe accounting only: a metadata listing does not prove the theme's dependency
+transaction or graphical boot behavior. Keep those acceptance items open in the
+batch issue and hand them to Utah's consumer tracking.
 For `pam_yubico`, the Fedora source recipe requires `ykclient-devel`,
 `libyubikey-devel`, and `ykpers-devel`; all three source families must precede
 it in the build graph. A recipe and verified source do not prove authentication
