@@ -2086,6 +2086,12 @@ packages:
     downstream_package_name: libudfread
     paths:
       - packages/libudfread
+  libultrahdr:
+    specfile_path: libultrahdr.spec
+    upstream_package_name: libultrahdr
+    downstream_package_name: libultrahdr
+    paths:
+      - packages/libultrahdr
   libunibreak:
     specfile_path: libunibreak.spec
     upstream_package_name: libunibreak
@@ -3178,6 +3184,12 @@ packages:
     downstream_package_name: stoken
     paths:
       - packages/stoken
+  svt-vp9:
+    specfile_path: svt-vp9.spec
+    upstream_package_name: svt-vp9
+    downstream_package_name: svt-vp9
+    paths:
+      - packages/svt-vp9
   switcheroo-control:
     specfile_path: switcheroo-control.spec
     upstream_package_name: switcheroo-control

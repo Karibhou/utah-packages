@@ -63,9 +63,7 @@ packages = [
 
     "libswresample",
     "libswscale",
-    "libultrahdr",
     "libxavs",
-    "svt-vp9-libs",
     "vvdec-libs",
     "vvenc-libs",
     "x264-libs",
@@ -724,6 +722,12 @@ packages = [
     { name = "zinnia", pr = 630 },
     { name = "zinnia-tomoe-ja", pr = 630 },
     { name = "zix", pr = 630 },
+    # Codecs-media batch (projectbluefin/utah-packages#476, PR #626, supersedes #609): the two
+    # codecs-media sources importable from this environment's dist-git.
+    # libultrahdr is the Ultra HDR image format library; svt-vp9 is Intel's
+    # standalone SVT VP9 encoder (library, CLI, GStreamer plug-in).
+    { name = "libultrahdr", pr = 626 },
+    { name = "svt-vp9-libs", pr = 626 },
 ]
 
 [wontfix]
