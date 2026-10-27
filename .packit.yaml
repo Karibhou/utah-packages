@@ -1474,6 +1474,12 @@ packages:
     downstream_package_name: libdecor
     paths:
       - packages/libdecor
+  libdeflate:
+    specfile_path: libdeflate.spec
+    upstream_package_name: libdeflate
+    downstream_package_name: libdeflate
+    paths:
+      - packages/libdeflate
   libdisplay-info:
     specfile_path: libdisplay-info.spec
     upstream_package_name: libdisplay-info

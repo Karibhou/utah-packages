@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 10,
       "manifest_wants": 1,
-      "pending": 113,
-      "total": 124
+      "pending": 112,
+      "total": 123
     },
     "power": {
       "total": 0
@@ -1012,11 +1012,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libdeflate",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libell",
       "state": "pending"
     },
@@ -1525,11 +1520,11 @@
   "states": {
     "already_recipe": 25,
     "manifest_wants": 1,
-    "pending": 268
+    "pending": 267
   },
   "totals": {
-    "backlog": 294,
-    "resolved": 227,
+    "backlog": 293,
+    "resolved": 228,
     "wontfix": 30
   }
 }

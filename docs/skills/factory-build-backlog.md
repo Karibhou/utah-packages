@@ -74,6 +74,8 @@ Two edits — never one, never none:
     exist yet at PR-open time, and do not let a rebase or squash-merge
     invalidate it. The `pr` field links the entry to its closing PR for
     cross-referencing.
+    Once the import PR has a number, populate `pr` before requesting review;
+    `--check` validates names and report drift, not this provenance field.
   - `[wontfix].packages` (`{ name = "<n>", reason = "..." }`) — Utah decided
     not to carry it, with a link to the decision issue. `reason` is also
     informational and not validated. Catalog comments should describe the
@@ -195,6 +197,13 @@ keywords before pushing: a trailing `Closes` still auto-closes the issue even
 when the summary describes partial progress.
 
 ### Locking sources for a hand import
+
+For Linux-only library imports, inspect optional Windows cross-build bconds
+before locking the build root. `libdeflate` enables MinGW by default in
+Rawhide; disable its `mingw` bcond locally to keep the native library, tools
+and upstream CTest suite without adding Windows cross-toolchain dependencies.
+Its `mingw_utils` bcond only controls Windows tools, so disabling that alone
+does not remove the cross-build. Keep the imported provenance unchanged.
 
 For GNU recipes such as `bison`, preserve the detached signature in `sources`,
 its dist-git keyring, and the recipe's `%{gpgverify}` invocation. Lock the
