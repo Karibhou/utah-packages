@@ -1684,6 +1684,12 @@ packages:
     downstream_package_name: libhandy
     paths:
       - packages/libhandy
+  libhangul:
+    specfile_path: libhangul.spec
+    upstream_package_name: libhangul
+    downstream_package_name: libhangul
+    paths:
+      - packages/libhangul
   libheif:
     specfile_path: libheif.spec
     upstream_package_name: libheif
@@ -2248,6 +2254,12 @@ packages:
     downstream_package_name: lttng-ust
     paths:
       - packages/lttng-ust
+  m17n-db:
+    specfile_path: m17n-db.spec
+    upstream_package_name: m17n-db
+    downstream_package_name: m17n-db
+    paths:
+      - packages/m17n-db
   malcontent:
     specfile_path: malcontent.spec
     upstream_package_name: malcontent
@@ -3274,6 +3286,12 @@ packages:
     downstream_package_name: udisks2
     paths:
       - packages/udisks2
+  unicode-ucd:
+    specfile_path: unicode-ucd.spec
+    upstream_package_name: unicode-ucd
+    downstream_package_name: unicode-ucd
+    paths:
+      - packages/unicode-ucd
   upower:
     specfile_path: upower.spec
     upstream_package_name: upower

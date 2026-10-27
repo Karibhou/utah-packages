@@ -221,12 +221,9 @@ packages = [
     "kasumi-common",
     "kasumi-unicode",
     "libchewing",
-    "libhangul",
     "libpinyin",
     "libpinyin-data",
-    "m17n-db",
     "m17n-lib",
-    "unicode-ucd",
 ]
 
 [areas.ujust-deps]
@@ -709,6 +706,11 @@ packages = [
     # observed in the image's repodata. Runtime proof for the batch remains in #507.
     { name = "simdutf", commit = "ded82d6174382a397a2d7ddc066daeabe2e31232", pr = 413, published_run = 40481255792, published_nevra = "simdutf-0:9.0.0-1.hum1.bfin.x86_64" },
     { name = "tslib", commit = "e3b500e58e5dbed8948ea41ad926acf454b5b44b", pr = 643, published_run = 40481255792, published_nevra = "tslib-0:1.24-3.hum1.bfin.x86_64" },
+    # Parity import from Fedora rawhide dist-git (projectbluefin/utah-packages#495).
+    # Source recipes only; publication and runtime proof remain on #495.
+    { name = "unicode-ucd", pr = 731 },
+    { name = "libhangul", pr = 731 },
+    { name = "m17n-db", pr = 731 },
     # Dev-tools recipes imported from PR #655; remaining USB/IP work stays open in #491.
     { name = "tpm2-tools", commit = "a09ec58", pr = 364 },
     { name = "symlinks", pr = 655 },

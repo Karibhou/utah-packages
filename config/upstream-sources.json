@@ -5907,6 +5907,27 @@
       "url": "https://github.com/mike-fabian/langtable/releases/download/0.0.71/langtable-0.0.71.tar.gz",
       "filename": "langtable-0.0.71.tar.gz",
       "sha512": "882ff885deedc1ca495494842a96494848348cc46db999612c364fd3d6dc88d59d066ed7111fb5d93462be97ac71139e649d7b2ee4f478a4e4f34b733b75774a"
+    },
+    {
+      "name": "unicode-ucd",
+      "version": "18.0.0",
+      "url": "https://www.unicode.org/Public/18.0.0/ucd/UCD.zip",
+      "filename": "UCD.zip",
+      "sha512": "f1bf22ea9dda762e5b8effdc9d98aaf0b651e6038d0f76d6d37313e7f92092dc06bc36213592ee0ac2f4b06d3550d4918684050a2d8b8480e6964b6cc3f30198"
+    },
+    {
+      "name": "libhangul",
+      "version": "0.2.0",
+      "url": "https://github.com/libhangul/libhangul/releases/download/libhangul-0.2.0/libhangul-0.2.0.tar.gz",
+      "filename": "libhangul-0.2.0.tar.gz",
+      "sha512": "a8e1e70a91d51932bedc9b9d9e3099aba18d1b696cdc2395430076bf433855d0dbe807bc901f4eee4bd7bfda1e0079f73d58c6564a03e5f7828a7fe41c357c0a"
+    },
+    {
+      "name": "m17n-db",
+      "version": "1.8.15",
+      "url": "https://download-mirror.savannah.gnu.org/releases/m17n/m17n-db-1.8.15.tar.gz",
+      "filename": "m17n-db-1.8.15.tar.gz",
+      "sha512": "1b4a2c47b7adc1332f799d8e7e89192f1c7783e55e693881f0ed372ee9ac029f994b8f5d4f51d700465ccfec9fac3c215827dd544841a2286af30287cd7d0da1"
     }
   ]
 }
