@@ -80,6 +80,9 @@ Two edits — never one, never none:
     cross-referencing.
     Once the import PR has a number, populate `pr` before requesting review;
     `--check` validates names and report drift, not this provenance field.
+    For a recipe-only record, use `{ name = "<n>", pr = <n> }` and omit
+    `commit` until a stable commit is known; do not retain an empty `commit`
+    or `pr = 0` placeholder after opening the PR.
   - `[wontfix].packages` (`{ name = "<n>", reason = "..." }`) — Utah decided
     not to carry it, with a link to the decision issue. `reason` is also
     informational and not validated. Catalog comments should describe the
@@ -440,6 +443,16 @@ BuildRequires graph order `libntlm` before `neon` before `davfs2`. Retain
 verify the signature download against its own `sources` digest as well as
 checking the main archive. Recipe-level closing records do not establish
 publication, runtime dependency resolution, or a working WebDAV mount.
+
+### Encoding detection library imports
+
+`uchardet` is both the source recipe and the runtime binary name; the same
+recipe also builds `uchardet-devel`. Keep its CTest `%check` and the imported
+CMake policy compatibility setting when registering the source. For runtime
+acceptance, exercise the installed detector with known non-ASCII input (for
+example UTF-8 text) and record its reported encoding alongside the permitted
+repository transaction. Matching an upstream archive checksum proves source
+identity, not that the installed detector works.
 
 ## Diagnosing drift
 
