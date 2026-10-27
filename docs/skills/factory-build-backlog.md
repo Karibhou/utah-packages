@@ -417,3 +417,5 @@ runtime acceptance, which stays tracked on the issue.
 When rebasing a recipe PR, resolve conflicts in this generated report by rerunning
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.
+
+For `ifuse`, reuse the existing libimobiledevice, libplist, and usbmuxd source families. An imported recipe alone does not prove that a device can be mounted; verify the published package and runtime dependencies on a suitable device.

@@ -1078,6 +1078,12 @@ packages:
     downstream_package_name: icu
     paths:
       - packages/icu
+  ifuse:
+    specfile_path: ifuse.spec
+    upstream_package_name: ifuse
+    downstream_package_name: ifuse
+    paths:
+      - packages/ifuse
   igt-gpu-tools:
     specfile_path: igt-gpu-tools.spec
     upstream_package_name: igt-gpu-tools
