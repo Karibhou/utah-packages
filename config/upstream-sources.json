@@ -5179,6 +5179,16 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libudfread/libudfread-1.2.0.tar.bz2/sha512/53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f/libudfread-1.2.0.tar.bz2"
       ]
+    },
+    {
+      "name": "nilfs-utils",
+      "version": "2.2.11",
+      "url": "https://nilfs.sourceforge.io/download/nilfs-utils-2.2.11.tar.bz2",
+      "filename": "nilfs-utils-2.2.11.tar.bz2",
+      "sha512": "8c238f961f429c12674695d2481202c8fac4582d04e838ce7244647b8a9997e38b4dafa280314acb57ae40137711c7678de6aaf65708c110028df97c1c76089e",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/nilfs-utils/nilfs-utils-2.2.11.tar.bz2/sha512/8c238f961f429c12674695d2481202c8fac4582d04e838ce7244647b8a9997e38b4dafa280314acb57ae40137711c7678de6aaf65708c110028df97c1c76089e/nilfs-utils-2.2.11.tar.bz2"
+      ]
     }
   ]
 }
