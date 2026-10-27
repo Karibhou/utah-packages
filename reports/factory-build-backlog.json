@@ -39,8 +39,8 @@
       "total": 4
     },
     "vpn": {
-      "pending": 10,
-      "total": 10
+      "pending": 9,
+      "total": 9
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -1527,11 +1527,6 @@
     },
     {
       "area": "vpn",
-      "name": "pam_yubico",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "pamu2fcfg",
       "state": "pending"
     },
@@ -1550,11 +1545,11 @@
   "states": {
     "already_recipe": 27,
     "manifest_wants": 1,
-    "pending": 271
+    "pending": 270
   },
   "totals": {
-    "backlog": 299,
-    "resolved": 222,
+    "backlog": 298,
+    "resolved": 223,
     "wontfix": 30
   }
 }

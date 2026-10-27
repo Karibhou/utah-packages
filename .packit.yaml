@@ -2434,6 +2434,12 @@ packages:
     downstream_package_name: osinfo-db-tools
     paths:
       - packages/osinfo-db-tools
+  pam_yubico:
+    specfile_path: pam_yubico.spec
+    upstream_package_name: pam_yubico
+    downstream_package_name: pam_yubico
+    paths:
+      - packages/pam_yubico
   pango:
     specfile_path: pango.spec
     upstream_package_name: pango

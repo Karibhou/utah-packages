@@ -5179,6 +5179,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libudfread/libudfread-1.2.0.tar.bz2/sha512/53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f/libudfread-1.2.0.tar.bz2"
       ]
+    },
+    {
+      "name": "pam_yubico",
+      "version": "2.27",
+      "url": "https://developers.yubico.com/yubico-pam/Releases/pam_yubico-2.27.tar.gz",
+      "filename": "pam_yubico-2.27.tar.gz",
+      "sha512": "8b6e4edc8bd6d24f0f512abfc6b43359e0ea2a5a60aeb855898f51904ddfd1978bd6845ac9a0af063814301c742b2f7dc42ff0a8ca59e4d7ead8994dfdce0ba6"
     }
   ]
 }

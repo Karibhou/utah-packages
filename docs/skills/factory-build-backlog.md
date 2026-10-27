@@ -417,3 +417,8 @@ runtime acceptance, which stays tracked on the issue.
 When rebasing a recipe PR, resolve conflicts in this generated report by rerunning
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.
+
+For `pam_yubico`, the Fedora source recipe requires `ykclient-devel`,
+`libyubikey-devel`, and `ykpers-devel`; all three source families must precede
+it in the build graph. A recipe and verified source do not prove authentication
+works: verify the hosted RPM, dependency transaction, and configured hardware.
