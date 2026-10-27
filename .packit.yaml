@@ -640,6 +640,12 @@ packages:
     downstream_package_name: glow
     paths:
       - packages/glow
+  glslang:
+    specfile_path: glslang.spec
+    upstream_package_name: glslang
+    downstream_package_name: glslang
+    paths:
+      - packages/glslang
   glycin:
     specfile_path: glycin.spec
     upstream_package_name: glycin
@@ -2950,6 +2956,12 @@ packages:
     downstream_package_name: setxkbmap
     paths:
       - packages/setxkbmap
+  shaderc:
+    specfile_path: shaderc.spec
+    upstream_package_name: shaderc
+    downstream_package_name: shaderc
+    paths:
+      - packages/shaderc
   shared-mime-info:
     specfile_path: shared-mime-info.spec
     upstream_package_name: shared-mime-info
@@ -3034,6 +3046,12 @@ packages:
     downstream_package_name: spice-vdagent
     paths:
       - packages/spice-vdagent
+  spirv-headers:
+    specfile_path: spirv-headers.spec
+    upstream_package_name: spirv-headers
+    downstream_package_name: spirv-headers
+    paths:
+      - packages/spirv-headers
   spirv-tools:
     specfile_path: spirv-tools.spec
     upstream_package_name: spirv-tools

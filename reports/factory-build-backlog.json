@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 23,
-      "total": 33
+      "pending": 22,
+      "total": 32
     },
     "dev-tools": {
       "already_recipe": 1,
@@ -158,11 +158,6 @@
     {
       "area": "codecs-media",
       "name": "libplacebo",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libshaderc",
       "state": "pending"
     },
     {
@@ -1465,11 +1460,11 @@
   "states": {
     "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 255
+    "pending": 254
   },
   "totals": {
-    "backlog": 282,
-    "resolved": 239,
+    "backlog": 281,
+    "resolved": 240,
     "wontfix": 30
   }
 }

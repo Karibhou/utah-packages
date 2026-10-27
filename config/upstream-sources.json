@@ -5320,6 +5320,27 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/ifuse/ifuse-1.2.1.tar.bz2/sha512/92e829b902839e4457f9272753a5bbecef387d87c6523d067a1b90a2446c9ae64cf42ac7293c589c6c3fb041147928693ab99d21ab63ff4ab611fa80b778fd83/ifuse-1.2.1.tar.bz2"
       ]
+    },
+    {
+      "name": "spirv-headers",
+      "version": "1.5.5",
+      "url": "https://codeload.github.com/KhronosGroup/SPIRV-Headers/tar.gz/29981f65241605e08b0ede4cfeb999fe3b723c6a",
+      "filename": "spirv-headers-29981f6.tar.gz",
+      "sha512": "3f64c33196ff72c0376311206a38100dbcedd4a414431a1429b5b5b6dcfc9d0e204629444b414b011b426d3f8263cdc2b03ed1d1eed427039b3c57bfd20aa514"
+    },
+    {
+      "name": "glslang",
+      "version": "16.4.0",
+      "url": "https://codeload.github.com/KhronosGroup/glslang/tar.gz/refs/tags/vulkan-sdk-1.4.357.0",
+      "filename": "glslang-sdk-1.4.357.0.tar.gz",
+      "sha512": "471ea08f786564fd08469f79544c1959c7ccbd62f422d2a03b464410e265914d607b97e6dbec54ecbb601270d58528f01238faa55ca5387ddf0cdecb626d0ec4"
+    },
+    {
+      "name": "shaderc",
+      "version": "2026.3",
+      "url": "https://codeload.github.com/google/shaderc/tar.gz/2c8cae778eec0283b44acbe7ed1a386865d78799",
+      "filename": "2c8cae778eec0283b44acbe7ed1a386865d78799.tar.gz",
+      "sha512": "ef112c3338df7cc9acde0526b2ada82fa4139f5df0835e7d8e0d9a54b32f1d57a9001297482b30dc96e2e2f91200c0985b649b4e10edd431ac5e85a4ce8d0adf"
     }
   ]
 }

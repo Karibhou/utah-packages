@@ -60,7 +60,7 @@ packages = [
     "libklvanc",
     "libopenjph",
     "libplacebo",
-    "libshaderc",
+
     "libswresample",
     "libswscale",
     "libultrahdr",
@@ -408,6 +408,8 @@ packages = [
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
     { name = "libudfread", pr = 658 },
     { name = "libbluray", pr = 658 },
+    # Shader compiler recipe; hosted build and runtime proof remain tracked in #475.
+    { name = "libshaderc" },
     # ifuse source import; publication and consumer validation remain tracked in #486.
     { name = "ifuse", pr = 703 },
     # Flex source import; publication and consumer validation remain tracked in #486.

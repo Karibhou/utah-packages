@@ -224,6 +224,23 @@ When another recipe lands during review, refresh Packit inventory and architectu
 
 Stack concurrent recipe imports when they edit the same generated inventory reports; regenerate against the combined recipes and retarget the dependent PR only after its prerequisite merges to main.
 
+## Shader compiler dependency order
+
+The audited `libshaderc` binary comes from the `shaderc` source recipe,
+not a separate source of that name. Its unbundled build needs `glslang-devel`,
+`spirv-headers-devel` and `spirv-tools-devel`. The existing `spirv-tools`
+recipe also needs `spirv-headers-devel`; register the missing source recipes
+and let their BuildRequires establish build order. Match glslang's Vulkan SDK
+version to the carried SPIR-V tools SDK (1.4.357.0 here), rather than
+importing a newer Rawhide head independently. The selected SPIR-V headers
+commit matches shaderc's upstream `DEPS`; Fedora temporarily changed its
+package version for that same commit and reverted it, so use its earlier
+1.5.5 recipe instead of the reverted version bump. This alignment is a
+preflight, not proof that the unbundled combination builds: the Fedora shaderc recipe
+already disables its upstream tests when unbundled. Verify the hosted build
+and compile a representative shader with `glslc`, then validate its SPIR-V
+output after installation from the permitted repositories.
+
 ## Disc-reading dependency order
 
 `libbluray` 1.4.0 uses the external `libudfread-devel >= 1.2.0` and removes
