@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 28,
-      "total": 38
+      "pending": 27,
+      "total": 37
     },
     "dev-tools": {
       "already_recipe": 2,
@@ -66,11 +66,6 @@
     {
       "area": "codecs-media",
       "name": "LCEVCdec",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "LibRaw",
       "state": "pending"
     },
     {
@@ -1758,11 +1753,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 306
+    "pending": 305
   },
   "totals": {
-    "backlog": 340,
-    "resolved": 187,
+    "backlog": 339,
+    "resolved": 188,
     "wontfix": 24
   }
 }

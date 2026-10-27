@@ -4971,6 +4971,16 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/passwdqc/passwdqc-2.0.3.tar.gz/sha512/08a1ee0e7efe0be8af8b253147836c479247a849baf598a1ad573a050ef4b8700fdb725fd887877f82f9207f3654f489f71267cc4051ce8ebf2405125b77b6b9/passwdqc-2.0.3.tar.gz"
       ]
+    },
+    {
+      "name": "LibRaw",
+      "version": "0.22.2",
+      "url": "https://www.libraw.org/data/LibRaw-0.22.2.tar.gz",
+      "filename": "LibRaw-0.22.2.tar.gz",
+      "sha512": "9333bc667c8e68a3572c336d3e2ecda82c5987e7feecb6ceb4e1df7dc7291747ffe66f6d3e01b121946ba4e2b1be95295c030d2754a5ae1cd638cffc8213141a",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/LibRaw/LibRaw-0.22.2.tar.gz/sha512/9333bc667c8e68a3572c336d3e2ecda82c5987e7feecb6ceb4e1df7dc7291747ffe66f6d3e01b121946ba4e2b1be95295c030d2754a5ae1cd638cffc8213141a/LibRaw-0.22.2.tar.gz"
+      ]
     }
   ]
 }

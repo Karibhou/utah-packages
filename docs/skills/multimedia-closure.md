@@ -151,6 +151,20 @@ contract is the measurement that will show it, not the work it measures.
   pin instead (`git log` the dist-git repo; libav at 1.28.6 is the "Rebuilt
   for FFmpeg 9" commit 73e9b14, as ugly-free is at 207f329) rather than
   bumping the whole family for one plugin.
+- **Camera RAW support is not FireWire transport.** `LibRaw` supplies
+  `libraw.so` and `libraw_r.so` for decoding camera image files; it is not
+  `libraw1394`, the FireWire library needed by the `libavc1394` family.
+  Resolve these as separate source families, even when they share a media
+  backlog batch. LibRaw's default recipe enables JPEG, LCMS, zlib and
+  OpenMP, and emits `LibRaw`, `LibRaw-devel`, `LibRaw-static` and
+  `LibRaw-samples`; its upstream release is served directly under
+  `https://www.libraw.org/data/`.
+- **Recipe reconciliation is not runtime closure.** A `[resolved]` backlog
+  record required by an import tracks recipe coverage only. Keep the batch
+  issue open until the hosted build, published binary identities,
+  factory-plus-Hummingbird dependency transaction and representative payload
+  checks exist. In particular, `already_recipe` for ffmpeg libraries does
+  not replace checking those binaries in current primary metadata.
 - **"Present in the factory repository" means published, not committed.**
   `tools/multimedia_closure.py --repodata <dir>` reads a published
   repository's `primary.xml` and fills in each requirement's NEVRA, epoch
