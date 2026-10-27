@@ -196,18 +196,9 @@ packages = [
     "sssd-kcm",
     "sssd-krb5-common",
     "sssd-nfs-idmap",
-    "symlinks",
-    "time",
-    "toolbox",
-    "tpm2-tools",
-    "usb_modeswitch",
-    "usb_modeswitch-data",
+    # usbip: requires kernel-modules-extra and kmod(usbip-core.ko) /
+    # kmod(usbip-host.ko) / kmod(vhci-hcd.ko) tracked in #487 (kernel policy).
     "usbip",
-    "wget2",
-    "wget2-libs",
-    "wget2-wget",
-    "whois",
-    "whois-nls",
 ]
 
 [areas.fonts-i18n]
@@ -718,6 +709,18 @@ packages = [
     # observed in the image's repodata. Runtime proof for the batch remains in #507.
     { name = "simdutf", commit = "ded82d6174382a397a2d7ddc066daeabe2e31232", pr = 413, published_run = 40481255792, published_nevra = "simdutf-0:9.0.0-1.hum1.bfin.x86_64" },
     { name = "tslib", commit = "e3b500e58e5dbed8948ea41ad926acf454b5b44b", pr = 643, published_run = 40481255792, published_nevra = "tslib-0:1.24-3.hum1.bfin.x86_64" },
+    # Dev-tools recipes imported from PR #655; remaining USB/IP work stays open in #491.
+    { name = "tpm2-tools", commit = "a09ec58", pr = 364 },
+    { name = "symlinks", pr = 655 },
+    { name = "time", pr = 655 },
+    { name = "toolbox", pr = 655 },
+    { name = "usb_modeswitch", pr = 655 },
+    { name = "usb_modeswitch-data", pr = 655 },
+    { name = "wget2", pr = 655 },
+    { name = "wget2-libs", pr = 655 },
+    { name = "wget2-wget", pr = 655 },
+    { name = "whois", pr = 655 },
+    { name = "whois-nls", pr = 655 }
 ]
 
 [wontfix]
