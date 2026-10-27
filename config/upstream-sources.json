@@ -4967,6 +4967,20 @@
       "sha512": "fcfa58b03877ac3ac00a4f85b5fea4fecb2a010244451aa95013637a0aa21529f3dcfe25c0a07c72da46da1fa12bc0c16b6c641c40c6ab2133e5b5cbb5a71e4b"
     },
     {
+      "name": "python-ptyprocess",
+      "version": "0.7.0",
+      "url": "https://files.pythonhosted.org/packages/source/p/ptyprocess/ptyprocess-0.7.0.tar.gz",
+      "filename": "ptyprocess-0.7.0.tar.gz",
+      "sha512": "791d8f2e79900627215ce80ce67ee9c79173dbc08297c6219d5058f9b80c5e323b93049e6836a70c4073f43548d22e3cf310f2e9948ef12f96bcaa15b0ddb2f3"
+    },
+    {
+      "name": "python-pexpect",
+      "version": "4.9.0",
+      "url": "https://github.com/pexpect/pexpect/archive/refs/tags/4.9.tar.gz",
+      "filename": "4.9.tar.gz",
+      "sha512": "222aa3a2aba174f1f9c9e5bbf71aa59fbc1c1830fce6691ecb01ec4f0613b1f2141da489a6bd7bfd226f46d98d52a16e1f5a5b7345bcf6557110bfd52cd5f31e"
+    },
+    {
       "name": "python-dateutil",
       "version": "2.9.0.post0",
       "url": "https://files.pythonhosted.org/packages/source/p/python-dateutil/python-dateutil-2.9.0.post0.tar.gz",

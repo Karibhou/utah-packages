@@ -2710,6 +2710,12 @@ packages:
     downstream_package_name: python-pam
     paths:
       - packages/python-pam
+  python-pexpect:
+    specfile_path: python-pexpect.spec
+    upstream_package_name: python-pexpect
+    downstream_package_name: python-pexpect
+    paths:
+      - packages/python-pexpect
   python-pillow:
     specfile_path: python-pillow.spec
     upstream_package_name: python-pillow
@@ -2722,6 +2728,12 @@ packages:
     downstream_package_name: python-psutil
     paths:
       - packages/python-psutil
+  python-ptyprocess:
+    specfile_path: python-ptyprocess.spec
+    upstream_package_name: python-ptyprocess
+    downstream_package_name: python-ptyprocess
+    paths:
+      - packages/python-ptyprocess
   python-pydantic:
     specfile_path: python-pydantic.spec
     upstream_package_name: python-pydantic

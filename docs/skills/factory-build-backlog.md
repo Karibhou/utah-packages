@@ -321,6 +321,16 @@ Keep their default test suites enabled. A `[resolved]` entry records recipe
 coverage, not successful publication or a working import in the consumer;
 keep those outstanding proofs on the implementation issue until a pinned
 factory build and permitted-repository runtime check establish them.
+For `python3-pexpect`, import `python-pexpect` together with its build and
+runtime dependency `python-ptyprocess`; the graph can order the recipes from
+the explicit `BuildRequires`. The Rawhide 4.9.0 recipe points at an upstream
+`4.9.0` archive that no longer exists; upstream's tag is `4.9`. The 4.9 tag
+archive and Fedora's pinned 4.9.0 archive have identical file contents but
+not identical compressed bytes. Lock the upstream tag's own SHA-512, adjust
+`Source0` and `%autosetup` to its filename and directory, and preserve the
+Rawhide patches and test configuration. A successful source-tree comparison
+is not a package build or runtime test.
+
 ### Audio fingerprinting library
 
 The `chromaprint` source recipe produces `libchromaprint` and uses
