@@ -319,6 +319,17 @@ Keep their default test suites enabled. A `[resolved]` entry records recipe
 coverage, not successful publication or a working import in the consumer;
 keep those outstanding proofs on the implementation issue until a pinned
 factory build and permitted-repository runtime check establish them.
+### Audio fingerprinting library
+
+The `chromaprint` source recipe produces `libchromaprint` and uses
+`fftw-devel`; check Hummingbird's repodata before adding an FFTW recipe.
+The default tools subpackage also BuildRequires `ffmpeg-free-devel`. The
+factory's ffmpeg disables its chromaprint integration to break the reverse
+edge; importing this recipe does not enable that integration or prove either
+package builds. Keep the existing cycle break until a separately validated
+build plan addresses it. Verify published binary dependencies and exercise
+fingerprinting before claiming runtime closure.
+
 ### BSD compatibility library closure
 
 Import `libbsd` with `libmd`: the former BuildRequires `libmd-devel`, its

@@ -149,7 +149,6 @@ packages = [
     "kernel-tools-libs",
     "leptonica",
     "libcaca",
-    "libchromaprint",
     "libsss_autofs",
     "libsss_certmap",
     "libsss_idmap",
@@ -434,6 +433,8 @@ packages = [
     # Recipe coverage only; build/publication/runtime proof stays on #489.
     { name = "python3-dateutil", pr = 613 },
     { name = "python3-six", pr = 613 },
+    # Chromaprint recipe coverage only; publication and runtime proof remain in #487.
+    { name = "libchromaprint", pr = 692 },
     # BSD compatibility library and its digest-library dependency (#487).
     # Recipe import only; build/publication and Utah consumption remain separate proof.
     { name = "libbsd", pr = 614 },
