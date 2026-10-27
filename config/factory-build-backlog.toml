@@ -691,7 +691,7 @@ packages = [
     { name = "urw-base35-z003-fonts", pr = 631 },
     { name = "libXres", pr = 646 },
     # VPN / smart-card PKCS#11 provider and Yubico C/personalization stack (projectbluefin/utah-packages#479, utah#389).
-    { name = "pam_yubico" },
+    { name = "pam_yubico", pr = 706 },
     # libyubikey is ykpers's build and runtime dependency (libyubikey.so.0).
     { name = "libyubikey", pr = 647 },
     { name = "pkcs11-provider", pr = 647 },
