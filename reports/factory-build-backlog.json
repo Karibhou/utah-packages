@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 94,
-      "total": 96
+      "pending": 93,
+      "total": 95
     },
     "fonts-i18n": {
       "pending": 29,
@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 13,
       "manifest_wants": 1,
-      "pending": 127,
-      "total": 141
+      "pending": 126,
+      "total": 140
     },
     "power": {
       "total": 0
@@ -346,11 +346,6 @@
     {
       "area": "dev-tools",
       "name": "leptonica",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "libbsd",
       "state": "pending"
     },
     {
@@ -1195,11 +1190,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libmd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libmspack",
       "state": "pending"
     },
@@ -1753,11 +1743,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 305
+    "pending": 303
   },
   "totals": {
-    "backlog": 339,
-    "resolved": 188,
+    "backlog": 337,
+    "resolved": 190,
     "wontfix": 24
   }
 }

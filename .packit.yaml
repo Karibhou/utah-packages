@@ -1306,6 +1306,12 @@ packages:
     downstream_package_name: libbs2b
     paths:
       - packages/libbs2b
+  libbsd:
+    specfile_path: libbsd.spec
+    upstream_package_name: libbsd
+    downstream_package_name: libbsd
+    paths:
+      - packages/libbsd
   libburn:
     specfile_path: libburn.spec
     upstream_package_name: libburn
@@ -1630,6 +1636,12 @@ packages:
     downstream_package_name: libmbim
     paths:
       - packages/libmbim
+  libmd:
+    specfile_path: libmd.spec
+    upstream_package_name: libmd
+    downstream_package_name: libmd
+    paths:
+      - packages/libmd
   libmediainfo:
     specfile_path: libmediainfo.spec
     upstream_package_name: libmediainfo

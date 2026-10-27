@@ -4783,6 +4783,20 @@
       "sha512": "786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c"
     },
     {
+      "name": "libmd",
+      "version": "1.3.0",
+      "url": "https://libbsd.freedesktop.org/releases/libmd-1.3.0.tar.xz",
+      "filename": "libmd-1.3.0.tar.xz",
+      "sha512": "bc09299855fe21030fd15fcbf3981105b7c2fd1bc84ad9737a54e593236509d2f5cbef97feb7ec59cd520fbb95793f78c627b120b65b48ba4967fce4a1b47d5a"
+    },
+    {
+      "name": "libbsd",
+      "version": "0.12.2",
+      "url": "https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz",
+      "filename": "libbsd-0.12.2.tar.xz",
+      "sha512": "ce43e4f0486d5f00d4a8119ee863eaaa2f968cae4aa3d622976bb31ad601dfc565afacef7ebade5eba33fff1c329b5296c6387c008d1e1805d878431038f8b21"
+    },
+    {
       "name": "libutempter",
       "version": "1.2.1",
       "url": "https://ftp.altlinux.org/pub/people/ldv/utempter/libutempter-1.2.1.tar.gz",

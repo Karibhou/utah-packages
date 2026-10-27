@@ -161,6 +161,17 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+### BSD compatibility library closure
+
+Import `libbsd` with `libmd`: the former BuildRequires `libmd-devel`, its
+shared library links to `libmd.so.0`, and `libbsd-devel` also requires
+`libmd-devel` at runtime. Treat `libmd` as a required cross-area dependency
+(the audit places it in `long-tail`), not an optional extra. The build graph
+orders these from the existing BuildRequires; no manual stage is needed.
+Both recipes carry detached signatures in `sources` and a checked-in signing
+key. Preserve their `%{gpgverify}` checks and SHA-512 signature pins when
+locking the release tarballs from `libbsd.freedesktop.org`.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —
