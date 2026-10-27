@@ -100,6 +100,12 @@ packages:
     downstream_package_name: alsa-utils
     paths:
       - packages/alsa-utils
+  antiword:
+    specfile_path: antiword.spec
+    upstream_package_name: antiword
+    downstream_package_name: antiword
+    paths:
+      - packages/antiword
   appstream:
     specfile_path: appstream.spec
     upstream_package_name: appstream
@@ -1624,6 +1630,12 @@ packages:
     downstream_package_name: liblouis
     paths:
       - packages/liblouis
+  liblouisutdml:
+    specfile_path: liblouisutdml.spec
+    upstream_package_name: liblouisutdml
+    downstream_package_name: liblouisutdml
+    paths:
+      - packages/liblouisutdml
   libmanette:
     specfile_path: libmanette.spec
     upstream_package_name: libmanette

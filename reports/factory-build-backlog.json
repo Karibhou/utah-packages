@@ -22,15 +22,14 @@
     "long-tail": {
       "already_recipe": 13,
       "manifest_wants": 1,
-      "pending": 126,
-      "total": 140
+      "pending": 125,
+      "total": 139
     },
     "power": {
       "total": 0
     },
     "printing-scanning": {
-      "pending": 2,
-      "total": 2
+      "total": 0
     },
     "ujust-deps": {
       "pending": 1,
@@ -940,11 +939,6 @@
     },
     {
       "area": "long-tail",
-      "name": "antiword",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "appstream-data",
       "state": "pending"
     },
@@ -1609,16 +1603,6 @@
       "state": "pending"
     },
     {
-      "area": "printing-scanning",
-      "name": "liblouisutdml",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "liblouisutdml-utils",
-      "state": "pending"
-    },
-    {
       "area": "ujust-deps",
       "name": "glow",
       "state": "pending"
@@ -1733,11 +1717,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 301
+    "pending": 298
   },
   "totals": {
-    "backlog": 335,
-    "resolved": 192,
+    "backlog": 332,
+    "resolved": 195,
     "wontfix": 24
   }
 }

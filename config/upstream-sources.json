@@ -5009,6 +5009,20 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/LibRaw/LibRaw-0.22.2.tar.gz/sha512/9333bc667c8e68a3572c336d3e2ecda82c5987e7feecb6ceb4e1df7dc7291747ffe66f6d3e01b121946ba4e2b1be95295c030d2754a5ae1cd638cffc8213141a/LibRaw-0.22.2.tar.gz"
       ]
+    },
+    {
+      "name": "antiword",
+      "version": "0.37",
+      "url": "https://github.com/grobian/antiword/archive/3f371a2fd2e8b7ba3c0793381e1a1df0d561f961/antiword-0.37.tar.gz",
+      "filename": "antiword-0.37.tar.gz",
+      "sha512": "83be070c3f34c77d5643eb85c5d14651780cd49c5b4c8aeb358b1b0c691215c56b4d2a6960245b18939ff985d0f5f46b395bac0ec5a2a05ddb81b27ff17038ec"
+    },
+    {
+      "name": "liblouisutdml",
+      "version": "2.12.0",
+      "url": "https://github.com/liblouis/liblouisutdml/releases/download/v2.12.0/liblouisutdml-2.12.0.tar.gz",
+      "filename": "liblouisutdml-2.12.0.tar.gz",
+      "sha512": "f4ec1b8c3e8dbb5012f63bf85bd7ba47897c60896f3329daa7a89709002c0fdfb178034ad11024c9cee447afe556542401ed4e97be991b822c46fdbfbcc8ad32"
     }
   ]
 }

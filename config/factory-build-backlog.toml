@@ -110,8 +110,6 @@ packages = [
 # projectbluefin/utah#390 - 32 names
 consumer_issue = "projectbluefin/utah#390"
 packages = [
-    "liblouisutdml",
-    "liblouisutdml-utils",
 ]
 
 [areas.gnome-apps]
@@ -298,7 +296,6 @@ packages = [
     "NetworkManager-ssh-selinux",
     "OpenCL-ICD-Loader",
     "PackageKit-glib",
-    "antiword",
     "appstream-data",
     "b43-fwcutter",
     "b43-openfwwf",
@@ -623,6 +620,10 @@ packages = [
     { name = "mpage", pr = 586 },
     { name = "printer-driver-brlaser", pr = 586 },
     { name = "ptouch-driver", pr = 586 },
+    # Braille source family and its Word conversion runtime dependency (#480).
+    { name = "liblouisutdml", pr = 616 },
+    { name = "liblouisutdml-utils", pr = 616 },
+    { name = "antiword", pr = 616 },
     { name = "sane-airscan", pr = 586 },
     { name = "sane-backends", pr = 586 },
     { name = "sane-backends-drivers-cameras", pr = 586 },

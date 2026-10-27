@@ -136,6 +136,18 @@ A runtime `Requires` that resolves only in Fedora (for example
 `libieee1284.so.3` for `sane-backends`) must be imported in the same PR, since
 the published repository is installed from the factory plus Hummingbird alone.
 
+For `liblouisutdml`, import the source family once: it also builds
+`liblouisutdml-utils`. The utilities require `antiword` and `poppler-utils`;
+check both runtime providers rather than just the library's BuildRequires.
+When an original release host disappears (`antiword`'s `winfield.demon.nl`),
+check the maintained upstream mirror's release-import commit before using a
+lookaside primary. `grobian/antiword` commit
+`3f371a2fd2e8b7ba3c0793381e1a1df0d561f961` contains the unchanged 0.37
+release tree plus only `LICENSE` and `README.md` (compare with the original
+archive). Lock that archive by SHA-512, update `sources`, and set `%setup -n`
+to its commit-based directory; do not reuse the original archive's digest.
+This source-tree comparison is not a package build or runtime closure test.
+
 A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
 links `libraqm.so.0` (hence `libraqm`, imported with it) and its
 `python3-pillow-qt` subpackage needs `python3-qt5`, which neither Hummingbird
