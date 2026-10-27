@@ -365,7 +365,6 @@ packages = [
     "qt5-qtxmlpatterns",
     "serd",
     "shim-ia32",
-    "simdutf",
     "slang",
     "slirp4netns",
     "solaar-udev",
@@ -376,7 +375,6 @@ packages = [
     "tesseract-langpack-eng",
     "tesseract-libs",
     "tesseract-tessdata-doc",
-    "tslib",
     "uavs3d-libs",
     "ublue-os-akmods-addons",
     "uchardet",
@@ -707,6 +705,10 @@ packages = [
     { name = "bison", pr = 615 },
     # Recipe coverage only; hosted build/publication/runtime proof remains in #474.
     { name = "LibRaw", pr = 618 },
+    # Recipes imported before this reconciliation (#413, #643); publication is
+    # observed in the image's repodata. Runtime proof for the batch remains in #507.
+    { name = "simdutf", commit = "ded82d6174382a397a2d7ddc066daeabe2e31232", pr = 413, published_run = 40481255792, published_nevra = "simdutf-0:9.0.0-1.hum1.bfin.x86_64" },
+    { name = "tslib", commit = "e3b500e58e5dbed8948ea41ad926acf454b5b44b", pr = 643, published_run = 40481255792, published_nevra = "tslib-0:1.24-3.hum1.bfin.x86_64" },
 ]
 
 [wontfix]
