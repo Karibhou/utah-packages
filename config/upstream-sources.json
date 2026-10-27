@@ -5159,6 +5159,26 @@
       "url": "https://github.com/charmbracelet/glow/archive/v3.0.0/glow-3.0.0.tar.gz",
       "filename": "glow-3.0.0.tar.gz",
       "sha512": "474ad34683aaf986213e85204fe9767d24c22d1ee4ea24339a4b7caca4a5ce2f2e93a0ef4b9b47add9e7dccccae21edbfb64f31b15b3eefdb131ff3e2530262a"
+    },
+    {
+      "name": "libbluray",
+      "version": "1.4.0",
+      "url": "https://download.videolan.org/pub/videolan/libbluray/1.4.0/libbluray-1.4.0.tar.xz",
+      "filename": "libbluray-1.4.0.tar.xz",
+      "sha512": "7284169b32624e5ca4fd71b260a4cc2921efafb1f63143a562568be45e373bfcbfeac63895d5659ccdcb11d7dbd0236cc46ccb15c12eff855703010e46991f27",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libbluray/libbluray-1.4.0.tar.xz/sha512/7284169b32624e5ca4fd71b260a4cc2921efafb1f63143a562568be45e373bfcbfeac63895d5659ccdcb11d7dbd0236cc46ccb15c12eff855703010e46991f27/libbluray-1.4.0.tar.xz"
+      ]
+    },
+    {
+      "name": "libudfread",
+      "version": "1.2.0",
+      "url": "https://code.videolan.org/videolan/libudfread/-/archive/1.2.0/libudfread-1.2.0.tar.bz2",
+      "filename": "libudfread-1.2.0.tar.bz2",
+      "sha512": "53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libudfread/libudfread-1.2.0.tar.bz2/sha512/53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f/libudfread-1.2.0.tar.bz2"
+      ]
     }
   ]
 }

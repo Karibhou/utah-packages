@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 27,
-      "total": 37
+      "pending": 25,
+      "total": 35
     },
     "dev-tools": {
       "already_recipe": 1,
@@ -127,11 +127,6 @@
     },
     {
       "area": "codecs-media",
-      "name": "libbluray",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
       "name": "libdc1394",
       "state": "pending"
     },
@@ -189,11 +184,6 @@
       "area": "codecs-media",
       "name": "libswscale",
       "state": "already_recipe"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libudfread",
-      "state": "pending"
     },
     {
       "area": "codecs-media",
@@ -1570,11 +1560,11 @@
   "states": {
     "already_recipe": 28,
     "manifest_wants": 1,
-    "pending": 274
+    "pending": 272
   },
   "totals": {
-    "backlog": 303,
-    "resolved": 219,
+    "backlog": 301,
+    "resolved": 221,
     "wontfix": 29
   }
 }

@@ -1372,6 +1372,12 @@ packages:
     downstream_package_name: libblockdev
     paths:
       - packages/libblockdev
+  libbluray:
+    specfile_path: libbluray.spec
+    upstream_package_name: libbluray
+    downstream_package_name: libbluray
+    paths:
+      - packages/libbluray
   libbs2b:
     specfile_path: libbs2b.spec
     upstream_package_name: libbs2b
@@ -1984,6 +1990,12 @@ packages:
     downstream_package_name: libtracefs
     paths:
       - packages/libtracefs
+  libudfread:
+    specfile_path: libudfread.spec
+    upstream_package_name: libudfread
+    downstream_package_name: libudfread
+    paths:
+      - packages/libudfread
   libunibreak:
     specfile_path: libunibreak.spec
     upstream_package_name: libunibreak

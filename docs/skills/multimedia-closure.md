@@ -217,3 +217,15 @@ When another recipe lands during review, refresh Packit inventory and architectu
 `reports/multimedia-closure.json` records locked upstream versions for codec recipes. Any automated workflow that bumps upstream version locks (`.github/workflows/bump-upstream-sources.yml`) must regenerate `reports/multimedia-closure.json` and include it in `add-paths` so validation tests pass and the refreshed report is committed alongside the lock bump.
 
 Stack concurrent recipe imports when they edit the same generated inventory reports; regenerate against the combined recipes and retarget the dependent PR only after its prerequisite merges to main.
+
+## Disc-reading dependency order
+
+`libbluray` 1.4.0 uses the external `libudfread-devel >= 1.2.0` and removes
+its bundled copy during preparation. Import and lock both source recipes;
+let the BuildRequires graph place `libudfread` first rather than assigning a
+stage. The VideoLAN `libudfread` tag archive and `libbluray` release archive
+match their Fedora `sources` SHA-512 pins. Keep the Blu-ray recipe's Java
+navigation support and utility subpackages when checking build dependencies;
+a successful library source download proves neither those builds nor runtime
+closure. A lane against the published factory needs `libudfread` published
+before it can build `libbluray`.
