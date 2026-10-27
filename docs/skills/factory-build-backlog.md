@@ -650,3 +650,15 @@ factory, then run `iptstate --single` with access to the kernel connection
 tracking table (CAP_NET_ADMIN in the tested network namespace). Record the
 namespace and result. `--help` only tests program startup; it does not exercise
 connection tracking. A permissions error is not a successful runtime probe.
+
+### Long-tail batch #503: reconcile before importing
+
+`libvarlink` (#519) was `already_recipe` and published, so it moved to
+`[resolved]` with its NEVRA and image digest rather than a second import.
+`lockdev` stays pending: no upstream serves its MD5-pinned 2011 snapshot (see
+[`repeated-mistakes.md` section 17](repeated-mistakes.md#17-cups-2x-and-cups-filters-2x-package-split)), and moving it to
+`[wontfix]` needs a linked maintainer decision. `lrzsz` is a hand import:
+Fedora pins it by MD5, so confirm the `https://www.ohse.de/` bytes match that
+pin, repin `sources` to SHA-512, and use the `/md5/<md5>/` lookaside path as
+the fallback. `liburing` locks only `Source0`; like `dnsmasq`, its `.asc`
+signature is fetched from Fedora's lookaside by its `sources` SHA-512.

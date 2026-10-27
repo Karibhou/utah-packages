@@ -293,12 +293,9 @@ packages = [
     "libreport-filesystem",
     "librtmp",
     "libslirp",
-    "liburing",
-    "libvarlink",
     "libwmf-lite",
     "lilv-libs",
     "lockdev",
-    "lrzsz",
     "mcelog",
     "memstrack",
     "mkpasswd",
@@ -722,7 +719,11 @@ packages = [
     { name = "wget2-libs", pr = 655 },
     { name = "wget2-wget", pr = 655 },
     { name = "whois", pr = 655 },
-    { name = "whois-nls", pr = 655 }
+    { name = "whois-nls", pr = 655 },
+    # libvarlink: reconciled from #519; published in ghcr.io/projectbluefin/utah-packages@sha256:96ada3a16e10d5a6bfefc265c4fbfcf0222e8ec21e3d66e631c56b9677ed0ebc
+    { name = "libvarlink", commit = "26ebd2a8ecc9fdd617061452449c71a9fdcdf34d", pr = 519, published_nevra = "libvarlink-0:24.0.1-1.hum1.bfin.x86_64" },
+    { name = "liburing", pr = 742 },
+    { name = "lrzsz", pr = 742 },
 ]
 
 [wontfix]

@@ -19,10 +19,10 @@
       "total": 10
     },
     "long-tail": {
-      "already_recipe": 4,
+      "already_recipe": 3,
       "manifest_wants": 1,
-      "pending": 99,
-      "total": 104
+      "pending": 97,
+      "total": 101
     },
     "power": {
       "total": 0
@@ -956,16 +956,6 @@
     },
     {
       "area": "long-tail",
-      "name": "liburing",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libvarlink",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
       "name": "libwmf-lite",
       "state": "pending"
     },
@@ -977,11 +967,6 @@
     {
       "area": "long-tail",
       "name": "lockdev",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "lrzsz",
       "state": "pending"
     },
     {
@@ -1302,13 +1287,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 18,
+    "already_recipe": 17,
     "manifest_wants": 1,
-    "pending": 231
+    "pending": 229
   },
   "totals": {
-    "backlog": 250,
-    "resolved": 267,
+    "backlog": 247,
+    "resolved": 270,
     "wontfix": 34
   }
 }

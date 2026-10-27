@@ -2080,6 +2080,12 @@ packages:
     downstream_package_name: libunibreak
     paths:
       - packages/libunibreak
+  liburing:
+    specfile_path: liburing.spec
+    upstream_package_name: liburing
+    downstream_package_name: liburing
+    paths:
+      - packages/liburing
   libusbmuxd:
     specfile_path: libusbmuxd.spec
     upstream_package_name: libusbmuxd
@@ -2236,6 +2242,12 @@ packages:
     downstream_package_name: lpcnetfreedv
     paths:
       - packages/lpcnetfreedv
+  lrzsz:
+    specfile_path: lrzsz.spec
+    upstream_package_name: lrzsz
+    downstream_package_name: lrzsz
+    paths:
+      - packages/lrzsz
   lshw:
     specfile_path: lshw.spec
     upstream_package_name: lshw

@@ -5928,6 +5928,23 @@
       "url": "https://download-mirror.savannah.gnu.org/releases/m17n/m17n-db-1.8.15.tar.gz",
       "filename": "m17n-db-1.8.15.tar.gz",
       "sha512": "1b4a2c47b7adc1332f799d8e7e89192f1c7783e55e693881f0ed372ee9ac029f994b8f5d4f51d700465ccfec9fac3c215827dd544841a2286af30287cd7d0da1"
+    },
+    {
+      "name": "liburing",
+      "version": "2.13",
+      "url": "https://brick.kernel.dk/snaps/liburing-2.13.tar.gz",
+      "filename": "liburing-2.13.tar.gz",
+      "sha512": "21e0d662eb0ba0183469cea38b2abc66d0544d6480b7f56136743d0e10b141e8b1a7f8279523cfe36ee9b4d40403e050b965260b858eb944d20b7e33a008e54e"
+    },
+    {
+      "name": "lrzsz",
+      "version": "0.12.20",
+      "url": "https://www.ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz",
+      "filename": "lrzsz-0.12.20.tar.gz",
+      "sha512": "9bce64036f1f1c65f5910f19802aecaf3dc5ffeab0feeca10fa8d2fe1b83e212391cce23056d22fd0eda52df89e12ede68eb5d22ffcf22f935910d2af7399f12",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/lrzsz/lrzsz-0.12.20.tar.gz/md5/b5ce6a74abc9b9eb2af94dffdfd372a4/lrzsz-0.12.20.tar.gz"
+      ]
     }
   ]
 }
