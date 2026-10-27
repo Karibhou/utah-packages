@@ -5079,6 +5079,49 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/hyperv-daemons/tools-hv-6ba59ff42279.tar.gz/sha512/215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93/tools-hv-6ba59ff42279.tar.gz",
       "filename": "tools-hv-6ba59ff42279.tar.gz",
       "sha512": "215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93"
+    },
+    {
+      "name": "libyubikey",
+      "version": "1.13",
+      "url": "https://opensource.yubico.com/yubico-c/releases/libyubikey-1.13.tar.gz",
+      "filename": "libyubikey-1.13.tar.gz",
+      "sha512": "28f45cb9817c30a70d168ae507d3f8014051058d730eed92b31d92e96784138dea291bda4275511c5f92a6427cb4249d76c802b8abb867cec50e62fb770950f2",
+      "fallback_urls": [
+        "https://developers.yubico.com/yubico-c/Releases/libyubikey-1.13.tar.gz",
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libyubikey/libyubikey-1.13.tar.gz/md5/6e84fc1914ab5b609319945c18d45835/libyubikey-1.13.tar.gz"
+      ]
+    },
+    {
+      "name": "ykclient",
+      "version": "2.15",
+      "url": "https://opensource.yubico.com/yubico-c-client/releases/ykclient-2.15.tar.gz",
+      "filename": "ykclient-2.15.tar.gz",
+      "sha512": "a6e00309330225c681702616aa9f5d7e042f33a22ebe7719c2d71276f1a660ed0dc180d7f50c24b1c65d7bba6e2f2285d03037d504e926ac75506c24e6826279",
+      "fallback_urls": [
+        "https://developers.yubico.com/yubico-c-client/Releases/ykclient-2.15.tar.gz",
+        "https://src.fedoraproject.org/repo/pkgs/rpms/ykclient/ykclient-2.15.tar.gz/md5/d7da4d4acc1461af06346e194aa4960b/ykclient-2.15.tar.gz"
+      ]
+    },
+    {
+      "name": "ykpers",
+      "version": "1.20.0",
+      "url": "https://opensource.yubico.com/yubikey-personalization/releases/ykpers-1.20.0.tar.gz",
+      "filename": "ykpers-1.20.0.tar.gz",
+      "sha512": "96edc7225bbd71ca255d3915321d4a613603c321c8502a5b97f23598f1439b231fcfc323f4f3737293da59efae2837370a0b64fdbd9465f0e2c05822d604df9f",
+      "fallback_urls": [
+        "https://developers.yubico.com/yubikey-personalization/Releases/ykpers-1.20.0.tar.gz",
+        "https://src.fedoraproject.org/repo/pkgs/rpms/ykpers/ykpers-1.20.0.tar.gz/sha512/96edc7225bbd71ca255d3915321d4a613603c321c8502a5b97f23598f1439b231fcfc323f4f3737293da59efae2837370a0b64fdbd9465f0e2c05822d604df9f/ykpers-1.20.0.tar.gz"
+      ]
+    },
+    {
+      "name": "pkcs11-provider",
+      "version": "1.3.0",
+      "url": "https://github.com/latchset/pkcs11-provider/releases/download/v1.3.0/pkcs11-provider-1.3.0.tar.xz",
+      "filename": "pkcs11-provider-1.3.0.tar.xz",
+      "sha512": "5a2af2ab09cf8088ea05b07f6feed90b9df57ec6201a64f9c06cde447d3f9faf532a07094b5f62617163374bb03f974d62b11e27b48ba2a83e4459339d32b157",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/pkcs11-provider/pkcs11-provider-1.3.0.tar.xz/sha512/5a2af2ab09cf8088ea05b07f6feed90b9df57ec6201a64f9c06cde447d3f9faf532a07094b5f62617163374bb03f974d62b11e27b48ba2a83e4459339d32b157/pkcs11-provider-1.3.0.tar.xz"
+      ]
     }
   ]
 }

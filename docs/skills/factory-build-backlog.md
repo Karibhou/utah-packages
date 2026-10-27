@@ -218,6 +218,7 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+Yubico C releases (`libyubikey`, `ykclient`, `ykpers`) still declare `http://opensource.yubico.com/...` `Source0` URLs in Fedora Rawhide, and `libyubikey` and `ykclient` still carry legacy MD5 `sources` lines: repin `sources` to `SHA512 (<file>) = <hex>`, lock `https://opensource.yubico.com/...` as the primary `url`, and pair `https://developers.yubico.com/<project>/Releases/<file>` with Fedora's `/md5/<md5>/` lookaside path in `fallback_urls`. `ykpers` builds and links against `libyubikey` (`libyubikey.so.0`), so import `libyubikey` in the same PR. When a recipe carries a committed OpenPGP keyring whose filename does not match `*key*.asc`, `*keyring*.asc`, or `[0-9A-F]*.asc` (`packages/pkcs11-provider/simo_redhat.asc`, `packages/bc/kevin_pizzini.asc`), unignore it explicitly in the root `.gitignore` (`!packages/<pkg>/<name>.asc`) so `git add` tracks `SourceN` for `%{openpgpverify}`. By contrast, `yubikey-manager` (`python3-yubikey-manager`) is a `pyproject` package whose `[project].dependencies` generate runtime `python3dist(...)` `Requires` across multiple backlog areas (`python3-click`, `python3-fido2`, `python3-keyring` plus `secretstorage`/`jeepney`/`jaraco` in `dev-tools`, and `python3-pyscard`, `python3-pskc` in `long-tail`); keep `yubikey-manager` and `python3-yubikey-manager` pending until those Python runtime providers land in the factory.
 ### Python recipe names and dependency evidence
 
 For `python3-six` and `python3-dateutil`, import the source recipes
@@ -289,6 +290,9 @@ locking the release tarballs from `libbsd.freedesktop.org`.
   %bcond_with X %endif`) the bcond is left unknown, so any `%if %{with X}`
   it guards is undecidable too.
 
+After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs. If a rebase conflicts in this generated report, resolve the catalog and recipe inputs first, then run `python3 tools/factory_build_backlog.py`; choosing either report wholesale can discard the other branch’s backlog updates.
+
+After combining recipe inventories during a rebase, also rerun `python3 tools/render_packit_config.py --write` and `python3 tools/render_architecture_counts.py --write` before `just check` to reconcile derived package lists and counts.
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
 When rebasing a recipe PR, resolve conflicts in this generated report by rerunning
 `python3 tools/factory_build_backlog.py` against the combined inventory, then

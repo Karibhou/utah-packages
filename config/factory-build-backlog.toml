@@ -89,17 +89,13 @@ consumer_issue = "projectbluefin/utah#389"
 packages = [
     "NetworkManager-vpnc",
     "NetworkManager-vpnc-gnome",
-    "libyubikey",
     "openpace",
     "opensc",
     "opensc-libs",
     "pam-u2f",
     "pam_yubico",
     "pamu2fcfg",
-    "pkcs11-provider",
     "python3-yubikey-manager",
-    "ykclient",
-    "ykpers",
     "yubikey-manager",
 ]
 
@@ -694,6 +690,12 @@ packages = [
     { name = "urw-base35-p052-fonts", pr = 631 },
     { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
     { name = "urw-base35-z003-fonts", pr = 631 },
+    # VPN / smart-card PKCS#11 provider and Yubico C/personalization stack (projectbluefin/utah-packages#479, utah#389).
+    # libyubikey is ykpers's build and runtime dependency (libyubikey.so.0).
+    { name = "libyubikey", pr = 647 },
+    { name = "pkcs11-provider", pr = 647 },
+    { name = "ykclient", pr = 647 },
+    { name = "ykpers", pr = 647 },
     # bison.spec produces bison plus bison-devel/runtime; recipe closure for #485,
     # not a claim of publication or runtime installation.
     { name = "bison", pr = 615 },

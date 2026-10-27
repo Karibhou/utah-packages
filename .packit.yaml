@@ -2074,6 +2074,12 @@ packages:
     downstream_package_name: libxshmfence
     paths:
       - packages/libxshmfence
+  libyubikey:
+    specfile_path: libyubikey.spec
+    upstream_package_name: libyubikey
+    downstream_package_name: libyubikey
+    paths:
+      - packages/libyubikey
   libzen:
     specfile_path: libzen.spec
     upstream_package_name: libzen
@@ -2494,6 +2500,12 @@ packages:
     downstream_package_name: pkcs11-helper
     paths:
       - packages/pkcs11-helper
+  pkcs11-provider:
+    specfile_path: pkcs11-provider.spec
+    upstream_package_name: pkcs11-provider
+    downstream_package_name: pkcs11-provider
+    paths:
+      - packages/pkcs11-provider
   plymouth:
     specfile_path: plymouth.spec
     upstream_package_name: plymouth
@@ -3388,6 +3400,18 @@ packages:
     downstream_package_name: yelp-xsl
     paths:
       - packages/yelp-xsl
+  ykclient:
+    specfile_path: ykclient.spec
+    upstream_package_name: ykclient
+    downstream_package_name: ykclient
+    paths:
+      - packages/ykclient
+  ykpers:
+    specfile_path: ykpers.spec
+    upstream_package_name: ykpers
+    downstream_package_name: ykpers
+    paths:
+      - packages/ykpers
   yyjson:
     specfile_path: yyjson.spec
     upstream_package_name: yyjson
