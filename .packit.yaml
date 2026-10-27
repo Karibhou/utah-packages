@@ -622,6 +622,12 @@ packages:
     downstream_package_name: glibmm2.68
     paths:
       - packages/glibmm2.68
+  glow:
+    specfile_path: glow.spec
+    upstream_package_name: glow
+    downstream_package_name: glow
+    paths:
+      - packages/glow
   glycin:
     specfile_path: glycin.spec
     upstream_package_name: glycin

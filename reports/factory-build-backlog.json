@@ -32,8 +32,7 @@
       "total": 0
     },
     "ujust-deps": {
-      "pending": 1,
-      "total": 1
+      "total": 0
     },
     "unblockers": {
       "pending": 4,
@@ -1497,11 +1496,6 @@
       "state": "pending"
     },
     {
-      "area": "ujust-deps",
-      "name": "glow",
-      "state": "pending"
-    },
-    {
       "area": "unblockers",
       "name": "qt6-qtdeclarative",
       "state": "pending"
@@ -1576,11 +1570,11 @@
   "states": {
     "already_recipe": 28,
     "manifest_wants": 1,
-    "pending": 275
+    "pending": 274
   },
   "totals": {
-    "backlog": 304,
-    "resolved": 218,
+    "backlog": 303,
+    "resolved": 219,
     "wontfix": 29
   }
 }

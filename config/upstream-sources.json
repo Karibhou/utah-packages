@@ -5152,6 +5152,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libXres/libXres-1.2.2.tar.xz/sha512/897f2d426ea6f41169a5a52c356d1a1cb2ffb9144ae41b9fedd06455c3d81042930fe55be269ce4b8545ee65fcfe168101192a599053d810e8810f627c94f810/libXres-1.2.2.tar.xz"
       ]
+    },
+    {
+      "name": "glow",
+      "version": "3.0.0",
+      "url": "https://github.com/charmbracelet/glow/archive/v3.0.0/glow-3.0.0.tar.gz",
+      "filename": "glow-3.0.0.tar.gz",
+      "sha512": "474ad34683aaf986213e85204fe9767d24c22d1ee4ea24339a4b7caca4a5ce2f2e93a0ef4b9b47add9e7dccccae21edbfb64f31b15b3eefdb131ff3e2530262a"
     }
   ]
 }

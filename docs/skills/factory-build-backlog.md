@@ -264,6 +264,17 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+### Optional changelog viewer
+
+Utah's plain-Markdown fallback for `changelogs` (projectbluefin/utah#394)
+is resilience, not a decision to exclude `glow` from the factory backlog.
+The `glow` source builds the binary of the same name; use its Fedora
+`go-vendor-tools.toml` and SHA-512-pinned supplementary vendor archive via
+`source_pipeline.bundled_sources`, as for `gum`. Source0 still comes directly
+from the upstream release. Keep a noninteractive stdin-rendering smoke check
+in `%check`, alongside the version, vendor-license and upstream test checks.
+A recipe closing record does not establish publication or runtime closure;
+record the lane result and published repository identity separately.
 ### Flex binary names and smoke test
 
 The `flex` source recipe builds `flex`, `libfl2`, `libfl-devel`, and

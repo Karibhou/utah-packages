@@ -257,9 +257,7 @@ packages = [
 [areas.ujust-deps]
 # projectbluefin/utah#394 - 2 names
 consumer_issue = "projectbluefin/utah#394"
-packages = [
-    "glow",
-]
+packages = []
 
 [areas.unblockers]
 # projectbluefin/utah#395 - 4 names
@@ -588,6 +586,8 @@ packages = [
     # powertop (#477, power) and fpaste (#497, ujust-deps) Rawhide imports.
     { name = "powertop", pr = 572 },
     { name = "fpaste", pr = 572 },
+    # Markdown viewer companion to fpaste (projectbluefin/utah-packages#497).
+    { name = "glow", pr = 650 },
     # Runtime dependencies of the GNOME apps imported for Utah (PR #573).
     { name = "libvncserver", pr = 573 },
     { name = "mod_dnssd", pr = 573 },
