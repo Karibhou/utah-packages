@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 13,
       "manifest_wants": 1,
-      "pending": 125,
-      "total": 139
+      "pending": 115,
+      "total": 129
     },
     "power": {
       "total": 0
@@ -999,26 +999,6 @@
     },
     {
       "area": "long-tail",
-      "name": "fedora-workstation-backgrounds",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "freeglut",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "fwupd-efi",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "gst-editing-services",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "gst-thumbnailers",
       "state": "pending"
     },
@@ -1029,42 +1009,12 @@
     },
     {
       "area": "long-tail",
-      "name": "gupnp-dlna",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "gvfs-afp",
       "state": "pending"
     },
     {
       "area": "long-tail",
       "name": "gvfs-archive",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hyperv-daemons",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hyperv-daemons-license",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hypervfcopyd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hypervkvpd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hypervvssd",
       "state": "pending"
     },
     {
@@ -1712,11 +1662,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 297
+    "pending": 287
   },
   "totals": {
-    "backlog": 331,
-    "resolved": 196,
+    "backlog": 321,
+    "resolved": 206,
     "wontfix": 24
   }
 }

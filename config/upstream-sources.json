@@ -5030,6 +5030,55 @@
       "url": "https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz",
       "filename": "bison-3.8.2.tar.xz",
       "sha512": "d4d23af6671406e97257892f90651b67f2ab95219831372be032190b7156c10a3435d457857e677445df8b2327aacccc15344acbbc3808a6f332a93cce23b444"
+    },
+    {
+      "name": "fwupd-efi",
+      "version": "1.8",
+      "url": "https://github.com/fwupd/fwupd-efi/archive/refs/tags/1.8.tar.gz",
+      "filename": "1.8.tar.gz",
+      "sha512": "bd361eb60397850af025228ea9f4efbf289f8e1c2612f240ae4c5ffee8caea15c31aa0748c06e57b28a7f38b8c2708147a228d8a99077798f4435436f12e092e",
+      "feed": "https://github.com/fwupd/fwupd-efi/archive/"
+    },
+    {
+      "name": "fedora-workstation-backgrounds",
+      "version": "1.6",
+      "url": "https://pagure.io/fedora-design/fedora-workstation-backgrounds/archive/v1.6/fedora-workstation-backgrounds-1.6.tar.gz",
+      "filename": "fedora-workstation-backgrounds-1.6.tar.gz",
+      "sha512": "632d8156ecb34b06211b373e40e336419dfb18c5073ac9a7fcd5552ba7143148e98141d523671f1988137caa5eab9c183562826dad977acacc206f15241bd43d",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/fedora-workstation-backgrounds/fedora-workstation-backgrounds-1.6.tar.gz/sha512/632d8156ecb34b06211b373e40e336419dfb18c5073ac9a7fcd5552ba7143148e98141d523671f1988137caa5eab9c183562826dad977acacc206f15241bd43d/fedora-workstation-backgrounds-1.6.tar.gz"
+      ]
+    },
+    {
+      "name": "gupnp-dlna",
+      "version": "0.12.0",
+      "url": "https://download.gnome.org/sources/gupnp-dlna/0.12/gupnp-dlna-0.12.0.tar.xz",
+      "filename": "gupnp-dlna-0.12.0.tar.xz",
+      "sha512": "a626fe77426b607325bb8cacb6af5c434d451c1aa550272f0cbe59f84103f7ec8d2be5ebc79a9ea4e56b755ad9cadabdcbd059c49b1c0df143ba15a52fcd0ce0",
+      "feed": "https://download.gnome.org/sources/gupnp-dlna/"
+    },
+    {
+      "name": "gst-editing-services",
+      "version": "1.28.8",
+      "url": "https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.28.8.tar.xz",
+      "filename": "gst-editing-services-1.28.8.tar.xz",
+      "sha512": "1cb33e0fd6d2f16dcc8594bc5e1198752dbb6127fa2368aaa4deb0d8abb144d8f6f4b878994e0fbd35790905b9300947c45b68d582189599adace3e132dfca72",
+      "feed": "https://release-monitoring.org/project/230920"
+    },
+    {
+      "name": "freeglut",
+      "version": "3.8.0",
+      "url": "https://downloads.sourceforge.net/freeglut/freeglut-3.8.0.tar.gz",
+      "filename": "freeglut-3.8.0.tar.gz",
+      "sha512": "2726ff978f11e17680fa01aa21c263f5154e9f0185021ec58e89ae006a5d093e062e68c66c709307a709e44823ee7b1f265ae450dd03cae616a2acefdeba7748",
+      "feed": "https://release-monitoring.org/project/846"
+    },
+    {
+      "name": "hyperv-daemons",
+      "version": "6.10",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/hyperv-daemons/tools-hv-6ba59ff42279.tar.gz/sha512/215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93/tools-hv-6ba59ff42279.tar.gz",
+      "filename": "tools-hv-6ba59ff42279.tar.gz",
+      "sha512": "215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93"
     }
   ]
 }

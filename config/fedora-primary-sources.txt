@@ -51,6 +51,7 @@ hunspell
 hunspell-en
 hwdata
 hwinfo
+hyperv-daemons
 hyphen
 i2c-tools
 ibus

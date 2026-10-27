@@ -141,8 +141,15 @@ matches. Rewrite a dist-git `sources` file that still carries MD5 lines as
 possibilities" when a branch and a tag share the name: lock
 `archive/refs/tags/v<version>.tar.gz` and set `filename` to the name the spec
 expects. When upstream no longer serves the bytes (a GitHub release with no
-assets, a rolling `openprinting.org` snapshot, a dead FTP host), lock Fedora's
-lookaside URL and list the package in `config/fedora-primary-sources.txt`.
+assets, a rolling `openprinting.org` snapshot, a dead FTP host or pagure
+archive), keep the upstream URL as the primary `url` and put Fedora's lookaside
+URL in `fallback_urls`: `tools/source_pipeline.py` tries the fallbacks after
+the primary fails, and `tools/validate.py` rejects a Fedora primary `url` for
+any name outside the shrink-only `config/fedora-primary-sources.txt` ratchet
+(`fedora-workstation-backgrounds` is locked this way). Lock the lookaside URL
+as primary and add the name to that ratchet only when no upstream URL for the
+archive ever existed, as for `hyperv-daemons`, whose `tools-hv` kernel snapshot
+is published only to Fedora's lookaside.
 A runtime `Requires` that resolves only in Fedora (for example
 `libieee1284.so.3` for `sane-backends`) must be imported in the same PR, since
 the published repository is installed from the factory plus Hummingbird alone.

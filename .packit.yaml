@@ -406,6 +406,12 @@ packages:
     downstream_package_name: fdk-aac-free
     paths:
       - packages/fdk-aac-free
+  fedora-workstation-backgrounds:
+    specfile_path: fedora-workstation-backgrounds.spec
+    upstream_package_name: fedora-workstation-backgrounds
+    downstream_package_name: fedora-workstation-backgrounds
+    paths:
+      - packages/fedora-workstation-backgrounds
   ffmpeg:
     specfile_path: ffmpeg.spec
     upstream_package_name: ffmpeg
@@ -472,6 +478,12 @@ packages:
     downstream_package_name: fprintd
     paths:
       - packages/fprintd
+  freeglut:
+    specfile_path: freeglut.spec
+    upstream_package_name: freeglut
+    downstream_package_name: freeglut
+    paths:
+      - packages/freeglut
   freerdp:
     specfile_path: freerdp.spec
     upstream_package_name: freerdp
@@ -496,6 +508,12 @@ packages:
     downstream_package_name: fwupd
     paths:
       - packages/fwupd
+  fwupd-efi:
+    specfile_path: fwupd-efi.spec
+    upstream_package_name: fwupd-efi
+    downstream_package_name: fwupd-efi
+    paths:
+      - packages/fwupd-efi
   fxload:
     specfile_path: fxload.spec
     upstream_package_name: fxload
@@ -826,6 +844,12 @@ packages:
     downstream_package_name: gssproxy
     paths:
       - packages/gssproxy
+  gst-editing-services:
+    specfile_path: gst-editing-services.spec
+    upstream_package_name: gst-editing-services
+    downstream_package_name: gst-editing-services
+    paths:
+      - packages/gst-editing-services
   gstreamer1:
     specfile_path: gstreamer1.spec
     upstream_package_name: gstreamer1
@@ -910,6 +934,12 @@ packages:
     downstream_package_name: gupnp
     paths:
       - packages/gupnp
+  gupnp-dlna:
+    specfile_path: gupnp-dlna.spec
+    upstream_package_name: gupnp-dlna
+    downstream_package_name: gupnp-dlna
+    paths:
+      - packages/gupnp-dlna
   gupnp-igd:
     specfile_path: gupnp-igd.spec
     upstream_package_name: gupnp-igd
@@ -994,6 +1024,12 @@ packages:
     downstream_package_name: hwinfo
     paths:
       - packages/hwinfo
+  hyperv-daemons:
+    specfile_path: hyperv-daemons.spec
+    upstream_package_name: hyperv-daemons
+    downstream_package_name: hyperv-daemons
+    paths:
+      - packages/hyperv-daemons
   hyphen:
     specfile_path: hyphen.spec
     upstream_package_name: hyphen

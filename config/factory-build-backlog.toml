@@ -308,20 +308,10 @@ packages = [
     "evolution-ews-langpacks",
     "f44-backgrounds-base",
     "f44-backgrounds-gnome",
-    "fedora-workstation-backgrounds",
-    "freeglut",
-    "fwupd-efi",
-    "gst-editing-services",
     "gst-thumbnailers",
     "gupnp-av",
-    "gupnp-dlna",
     "gvfs-afp",
     "gvfs-archive",
-    "hyperv-daemons",
-    "hyperv-daemons-license",
-    "hypervfcopyd",
-    "hypervkvpd",
-    "hypervvssd",
     "initscripts-service",
     "intel-vaapi-driver",
     "ipset",
@@ -435,6 +425,23 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Long-tail batch (projectbluefin/utah-packages#607, part of #500).
+    # Six source packages imported from Fedora rawhide dist-git, each now
+    # source-locked in config/upstream-sources.json.
+    { name = "fedora-workstation-backgrounds", pr = 607 },
+    { name = "freeglut", pr = 607 },
+    { name = "fwupd-efi", pr = 607 },
+    { name = "gst-editing-services", pr = 607 },
+    { name = "gupnp-dlna", pr = 607 },
+    { name = "hyperv-daemons", pr = 607 },
+    # hyperv-daemons-license, hypervfcopyd, hypervkvpd and hypervvssd are
+    # subpackages built from hyperv-daemons.spec. hypervfcopyd sits under
+    # %ifarch i686 x86_64, which the auditor treats as undecidable, so all
+    # four close here explicitly.
+    { name = "hyperv-daemons-license", pr = 607 },
+    { name = "hypervfcopyd", pr = 607 },
+    { name = "hypervkvpd", pr = 607 },
+    { name = "hypervvssd", pr = 607 },
     # Recipe coverage only; build/publication/runtime proof stays on #489.
     { name = "python3-dateutil", pr = 613 },
     { name = "python3-six", pr = 613 },
