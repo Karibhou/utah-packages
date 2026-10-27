@@ -5355,6 +5355,27 @@
       "url": "https://xcb.freedesktop.org/dist/xcb-util-cursor-0.1.6.tar.xz",
       "filename": "xcb-util-cursor-0.1.6.tar.xz",
       "sha512": "5cdf2f942e3aad9662456cf6b5c2be2ff1837d73348046f6d8b72aeabf005c481a5f00ee169d9ccd18878697cb1744f0b274d0caa85955979c8e4f92d2cc3f72"
+    },
+    {
+      "name": "bash-color-prompt",
+      "version": "0.96.2",
+      "url": "https://github.com/juhp/bash-color-prompt/archive/refs/tags/v0.96.2.tar.gz",
+      "filename": "bash-color-prompt-0.96.2.tar.gz",
+      "sha512": "764d305c3d9012f2172f012b73a62aa5551be0f9f5130a3d980e24360f3b6da107bf115c7098cf3fa26dfc79bfa9f45e8f29c9840f45a423ca22cfc9c9ab32a6"
+    },
+    {
+      "name": "bats",
+      "version": "1.14.0",
+      "url": "https://github.com/bats-core/bats-core/archive/v1.14.0.tar.gz",
+      "filename": "bats-core-1.14.0.tar.gz",
+      "sha512": "9f58932adb1988b7b3a30c2227cde3785f2398fa5a6fb0d53fb68ef9bf28594f3690fb69b45cf5f68cf0852bd423808897a196929fb0cd382009fdf2b5f190ee"
+    },
+    {
+      "name": "parallel",
+      "version": "20260922",
+      "url": "https://ftp.gnu.org/gnu/parallel/parallel-20260922.tar.bz2",
+      "filename": "parallel-20260922.tar.bz2",
+      "sha512": "ae7bcead31b3a068900c851fc48c0239cd39d7a8310ac7cbd885ab41bee4ff6e5786bcbfeafb31bb6f445ba4142a151a464f8f9fcfbd889909e503ef18b5ee56"
     }
   ]
 }

@@ -136,6 +136,18 @@ packages:
     downstream_package_name: autofs
     paths:
       - packages/autofs
+  bash-color-prompt:
+    specfile_path: bash-color-prompt.spec
+    upstream_package_name: bash-color-prompt
+    downstream_package_name: bash-color-prompt
+    paths:
+      - packages/bash-color-prompt
+  bats:
+    specfile_path: bats.spec
+    upstream_package_name: bats
+    downstream_package_name: bats
+    paths:
+      - packages/bats
   bc:
     specfile_path: bc.spec
     upstream_package_name: bc
@@ -2530,6 +2542,12 @@ packages:
     downstream_package_name: papers
     paths:
       - packages/papers
+  parallel:
+    specfile_path: parallel.spec
+    upstream_package_name: parallel
+    downstream_package_name: parallel
+    paths:
+      - packages/parallel
   parted:
     specfile_path: parted.spec
     upstream_package_name: parted

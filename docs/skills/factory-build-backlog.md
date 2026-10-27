@@ -540,6 +540,16 @@ When rebasing a recipe PR, resolve conflicts in this generated report by rerunni
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.
 
+### Shell prompt test dependencies
+
+`bash-color-prompt` enables its Bats tests by default. Import `bats` and
+GNU `parallel` together when neither supplier publishes them: Bats requires
+Parallel at build time and runtime, even though the prompt payload itself is
+shell code. Keep the tests enabled. GNU Parallel's detached signature is
+locked in `packages/parallel/sources` and fetched through the lookaside path
+with the tarball; its signing key and patch come from the pinned dist-git
+recipe. A recipe import leaves the prompt in `already_recipe` until
+hosted builds and installation evidence establish the runtime result.
 ## Boot-screen output reconciliation
 
 Plymouth's boot animation, core and graphics libraries, label and two-step
