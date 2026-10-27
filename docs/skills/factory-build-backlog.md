@@ -121,6 +121,17 @@ in the consumer image before claiming hardware parity.
 
 ### Locking sources for a hand import
 
+For GNU recipes such as `bison`, preserve the detached signature in `sources`,
+its dist-git keyring, and the recipe's `%{gpgverify}` invocation. Lock the
+upstream release archive as the primary source and compare both archive and
+signature SHA-512 values with `sources`; `source_pipeline.py` stages the
+additional manifest sources. Check ignored files before staging the import:
+losing the keyring makes `%prep` fail even when the archive lock is valid.
+Bison's runtime `m4 >= 1.4` is supplied by Hummingbird; it does not require a
+second factory recipe. A `[resolved]` move records the recipe import only;
+publication and a permitted-repository runtime transaction still need their
+own evidence.
+
 `bootstrap_upstream_sources.py` accepts `http://` `Source0` URLs that
 `tools/validate.py` then rejects; before committing, swap `http://` for
 `https://` (SourceForge, `download.dymo.com`) and confirm the digest still

@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 91,
-      "total": 93
+      "pending": 90,
+      "total": 92
     },
     "fonts-i18n": {
       "pending": 29,
@@ -250,11 +250,6 @@
     {
       "area": "dev-tools",
       "name": "bcache-tools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "bison",
       "state": "pending"
     },
     {
@@ -1717,11 +1712,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 298
+    "pending": 297
   },
   "totals": {
-    "backlog": 332,
-    "resolved": 195,
+    "backlog": 331,
+    "resolved": 196,
     "wontfix": 24
   }
 }

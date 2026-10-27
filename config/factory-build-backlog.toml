@@ -142,7 +142,6 @@ packages = [
     "adcli",
     "adcli-selinux",
     "bcache-tools",
-    "bison",
     "cryfs",
     "davfs2",
     "distribution-gpg-keys",
@@ -686,6 +685,9 @@ packages = [
     { name = "urw-base35-p052-fonts", pr = 631 },
     { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
     { name = "urw-base35-z003-fonts", pr = 631 },
+    # bison.spec produces bison plus bison-devel/runtime; recipe closure for #485,
+    # not a claim of publication or runtime installation.
+    { name = "bison", pr = 615 },
     # Recipe coverage only; hosted build/publication/runtime proof remains in #474.
     { name = "LibRaw", pr = 618 },
 ]
