@@ -553,6 +553,21 @@ When rebasing a recipe PR, resolve conflicts in this generated report by rerunni
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.
 
+### Langtable source archives and schema checks
+
+`langtable` builds both `langtable` and `python3-langtable`; import the source
+once and reconcile both audit names. Its `%check` invokes `xmllint`, so declare
+`BuildRequires: libxml2` explicitly instead of relying on the container image.
+
+The upstream 0.0.71 release asset has SHA-256
+`f9d39c06d5182ea14eb4576bf1da8875af1d44efb166e55d6865b3b59b8ac617`,
+as recorded by GitHub's release asset API. Its SHA-512 differs from Fedora's
+`sources` pin. Comparing both tarballs showed the same 39 members, file bytes,
+modes and link targets; archive metadata differs. The factory locks the upstream
+asset's SHA-512 in both `sources` and the source lock, with no Fedora fallback
+because Fedora's archive has different bytes. Do not generalize this comparison
+to later releases: investigate any future mismatch before changing a pin.
+
 ### Shell prompt test dependencies
 
 `bash-color-prompt` enables its Bats tests by default. Import `bats` and

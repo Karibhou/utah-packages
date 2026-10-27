@@ -1246,6 +1246,12 @@ packages:
     downstream_package_name: lame
     paths:
       - packages/lame
+  langtable:
+    specfile_path: langtable.spec
+    upstream_package_name: langtable
+    downstream_package_name: langtable
+    paths:
+      - packages/langtable
   lcms:
     specfile_path: lcms.spec
     upstream_package_name: lcms

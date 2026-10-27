@@ -229,14 +229,12 @@ packages = [
     "ibus-typing-booster",
     "kasumi-common",
     "kasumi-unicode",
-    "langtable",
     "libchewing",
     "libhangul",
     "libpinyin",
     "libpinyin-data",
     "m17n-db",
     "m17n-lib",
-    "python3-langtable",
     "unicode-ucd",
 ]
 
@@ -375,6 +373,9 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Language data recipe; build/publication and consumer proof remain tracked in #494.
+    { name = "langtable", pr = 700 },
+    { name = "python3-langtable", pr = 700 },
     # Recipe import only; build, publication and runtime proof remain on #508.
     { name = "uchardet", pr = 729 },
     # Published boot-screen outputs; recipe #312, source lock #320; runtime proof stays on #505.

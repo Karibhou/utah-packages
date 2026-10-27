@@ -5383,6 +5383,13 @@
       "url": "https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.8.tar.xz",
       "filename": "uchardet-0.0.8.tar.xz",
       "sha512": "4a5dcc9ff021352f3b252e103ff1475cec62c974294b264ee9243f024633c3ae44be8c7733608624066113e635f8b156ecb08c8ff87c736d04b07641eb166382"
+    },
+    {
+      "name": "langtable",
+      "version": "0.0.71",
+      "url": "https://github.com/mike-fabian/langtable/releases/download/0.0.71/langtable-0.0.71.tar.gz",
+      "filename": "langtable-0.0.71.tar.gz",
+      "sha512": "882ff885deedc1ca495494842a96494848348cc46db999612c364fd3d6dc88d59d066ed7111fb5d93462be97ac71139e649d7b2ee4f478a4e4f34b733b75774a"
     }
   ]
 }

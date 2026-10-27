@@ -11,8 +11,8 @@
       "total": 83
     },
     "fonts-i18n": {
-      "pending": 24,
-      "total": 24
+      "pending": 22,
+      "total": 22
     },
     "gnome-apps": {
       "already_recipe": 4,
@@ -702,11 +702,6 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "langtable",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "libchewing",
       "state": "pending"
     },
@@ -733,11 +728,6 @@
     {
       "area": "fonts-i18n",
       "name": "m17n-lib",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "python3-langtable",
       "state": "pending"
     },
     {
@@ -1385,11 +1375,11 @@
   "states": {
     "already_recipe": 19,
     "manifest_wants": 1,
-    "pending": 246
+    "pending": 244
   },
   "totals": {
-    "backlog": 266,
-    "resolved": 251,
+    "backlog": 264,
+    "resolved": 253,
     "wontfix": 34
   }
 }
