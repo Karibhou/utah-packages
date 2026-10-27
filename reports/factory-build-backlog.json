@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 95,
-      "total": 97
+      "pending": 94,
+      "total": 96
     },
     "fonts-i18n": {
       "pending": 29,
@@ -636,11 +636,6 @@
     {
       "area": "dev-tools",
       "name": "spice-webdavd",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "sshpass",
       "state": "pending"
     },
     {
@@ -1763,11 +1758,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 307
+    "pending": 306
   },
   "totals": {
-    "backlog": 341,
-    "resolved": 186,
+    "backlog": 340,
+    "resolved": 187,
     "wontfix": 24
   }
 }

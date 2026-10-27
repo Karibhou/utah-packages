@@ -85,6 +85,13 @@ For font and language batches, follow
 A partial waiver PR should reference the batch issue and name the remaining
 outputs so it stays open. Note any in-repo recipe that requires a waived name.
 
+For partial source-family work, distinguish this recipe-import closing record
+from the parent issue's runtime acceptance. Keep the batch issue open until
+all named outputs have publication and permitted-repository dependency
+evidence; use `Refs`, not an auto-closing keyword, in a partial PR's
+description. A `[resolved]` entry alone proves neither publication nor
+installability.
+
 The `Import Rawhide package` workflow does **not** make this move: its pull
 request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that

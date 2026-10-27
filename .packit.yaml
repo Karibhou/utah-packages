@@ -2824,6 +2824,12 @@ packages:
     downstream_package_name: srt
     paths:
       - packages/srt
+  sshpass:
+    specfile_path: sshpass.spec
+    upstream_package_name: sshpass
+    downstream_package_name: sshpass
+    paths:
+      - packages/sshpass
   sso-mib:
     specfile_path: sso-mib.spec
     upstream_package_name: sso-mib

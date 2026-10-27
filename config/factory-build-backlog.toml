@@ -221,7 +221,6 @@ packages = [
     "rpm-ostree-libs",
     "spice-vdagent",
     "spice-webdavd",
-    "sshpass",
     "sssd-client",
     "sssd-common",
     "sssd-kcm",
@@ -445,6 +444,7 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    { name = "sshpass", pr = 611 }, # Recipe import; publication/installability tracked in #490.
     # Password-quality source family: passwdqc builds all three (projectbluefin/utah-packages#644, #505).
     { name = "pam_passwdqc", pr = 644 },
     { name = "passwdqc", pr = 644 },
