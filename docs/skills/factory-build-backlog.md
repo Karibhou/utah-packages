@@ -109,6 +109,25 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+### Font parity decisions do not waive input methods
+
+Before importing a font from the `fonts-i18n` area, check the
+[Utah maintainer decision](https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)
+rejecting bulk font parity. Move a font requested only for that parity to
+`[wontfix]` with the decision URL; a deliberate individual addition needs
+its own accepted proposal. This includes all audited binary names in a font
+family, not just the source-package name (for example, JetBrains Mono's
+regular, all-fonts and non-ligature outputs).
+
+That decision explicitly distinguishes IBus input-method engines from fonts.
+Do not use it to waive engines, language data, dictionaries, or their required
+libraries merely because they share the `fonts-i18n` area. Those names are not
+accepted by that decision either: they need their own accepted proposal before
+implementation, and stay pending until that proposal plus recipe, dependency
+and publication evidence exist.
+A mixed batch can therefore be reconciled in a partial PR: name every remaining
+output and keep the tracking issue open. Use `Refs #<issue>` in the PR
+description and remove any automatic closing keywords for that batch issue.
 ### Reconcile sibling library outputs
 
 Check every binary from an imported source family when reconciling a batch.

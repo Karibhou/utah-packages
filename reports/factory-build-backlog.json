@@ -11,8 +11,8 @@
       "total": 91
     },
     "fonts-i18n": {
-      "pending": 29,
-      "total": 29
+      "pending": 24,
+      "total": 24
     },
     "gnome-apps": {
       "already_recipe": 5,
@@ -754,31 +754,6 @@
     {
       "area": "fonts-i18n",
       "name": "ibus-typing-booster",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "jetbrains-mono-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "jetbrains-mono-fonts-all",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "jetbrains-mono-nl-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "jomolhari-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "julietaula-montserrat-fonts",
       "state": "pending"
     },
     {
@@ -1611,11 +1586,11 @@
   "states": {
     "already_recipe": 28,
     "manifest_wants": 1,
-    "pending": 282
+    "pending": 277
   },
   "totals": {
-    "backlog": 311,
+    "backlog": 306,
     "resolved": 216,
-    "wontfix": 24
+    "wontfix": 29
   }
 }
