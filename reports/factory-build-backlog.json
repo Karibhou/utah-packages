@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 12,
       "manifest_wants": 1,
-      "pending": 114,
-      "total": 127
+      "pending": 113,
+      "total": 126
     },
     "power": {
       "total": 0
@@ -1048,11 +1048,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libXres",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libdeflate",
       "state": "pending"
     },
@@ -1581,11 +1576,11 @@
   "states": {
     "already_recipe": 28,
     "manifest_wants": 1,
-    "pending": 276
+    "pending": 275
   },
   "totals": {
-    "backlog": 305,
-    "resolved": 217,
+    "backlog": 304,
+    "resolved": 218,
     "wontfix": 29
   }
 }

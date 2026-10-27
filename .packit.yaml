@@ -1276,6 +1276,12 @@ packages:
     downstream_package_name: libXrandr
     paths:
       - packages/libXrandr
+  libXres:
+    specfile_path: libXres.spec
+    upstream_package_name: libXres
+    downstream_package_name: libXres
+    paths:
+      - packages/libXres
   libXt:
     specfile_path: libXt.spec
     upstream_package_name: libXt

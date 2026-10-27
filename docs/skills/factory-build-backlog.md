@@ -54,6 +54,13 @@ Order is significant: the strongest signal wins. Reordering the
 
 ## Closing a backlog gap
 
+For a partial batch PR, use `Refs #<issue>` in the PR description. Reserve
+GitHub closing keywords for a PR that satisfies the entire batch issue's
+close condition, including required build and runtime evidence or linked
+blocking decisions for every named output. Before pushing a review fix,
+check the entire PR description for closing keywords: an automatically added
+footer can contradict an earlier partial-progress statement.
+
 Two edits — never one, never none:
 
 - Remove the entry from `[areas.<area>].packages`.
@@ -358,6 +365,23 @@ After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the in
 
 After combining recipe inventories during a rebase, also rerun `python3 tools/render_packit_config.py --write` and `python3 tools/render_architecture_counts.py --write` before `just check` to reconcile derived package lists and counts.
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
+
+### X11 resource library imports
+
+The audited `libXres` binary is the main output of source recipe `libXres`;
+its SONAME uses different capitalization (`libXRes.so.1`). The same recipe
+emits `libXres-devel`, with the `xres.pc` pkg-config module. Do not import
+another recipe for the SONAME or the development output. The release archive
+comes from X.Org's `pub/individual/lib` directory; its `sources` SHA-512 must
+match the upstream download. Snapshot-only `Source1` and `Source2` entries
+are behind the disabled `gitdate` condition and are not release downloads.
+
+For runtime acceptance, install the built library using only Hummingbird
+plus the factory and exercise `XResQueryExtension` against a running X11
+server. Loading `libXRes.so.1` alone checks linkage, not server interaction.
+This import PR moves `libXres` from its area to `[resolved]`. That entry
+records the recipe import only; it does not claim the batch issue's build and
+runtime acceptance, which stays tracked on the issue.
 When rebasing a recipe PR, resolve conflicts in this generated report by rerunning
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.

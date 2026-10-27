@@ -311,7 +311,6 @@ packages = [
     "kpartx",
     "kvazaar-libs",
     "kyotocabinet-libs",
-    "libXres",
     "libdeflate",
     "libell",
     "libev",
@@ -687,6 +686,7 @@ packages = [
     { name = "urw-base35-p052-fonts", pr = 631 },
     { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
     { name = "urw-base35-z003-fonts", pr = 631 },
+    { name = "libXres", pr = 646 },
     # VPN / smart-card PKCS#11 provider and Yubico C/personalization stack (projectbluefin/utah-packages#479, utah#389).
     # libyubikey is ykpers's build and runtime dependency (libyubikey.so.0).
     { name = "libyubikey", pr = 647 },
