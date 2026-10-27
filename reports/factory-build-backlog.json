@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 25,
-      "total": 35
+      "pending": 23,
+      "total": 33
     },
     "dev-tools": {
       "already_recipe": 1,
@@ -97,11 +97,6 @@
     },
     {
       "area": "codecs-media",
-      "name": "libavc1394",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
       "name": "libavcodec",
       "state": "already_recipe"
     },
@@ -163,11 +158,6 @@
     {
       "area": "codecs-media",
       "name": "libplacebo",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libraw1394",
       "state": "pending"
     },
     {
@@ -1500,11 +1490,11 @@
   "states": {
     "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 262
+    "pending": 260
   },
   "totals": {
-    "backlog": 289,
-    "resolved": 232,
+    "backlog": 287,
+    "resolved": 234,
     "wontfix": 30
   }
 }

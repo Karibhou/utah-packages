@@ -1360,6 +1360,12 @@ packages:
     downstream_package_name: libatasmart
     paths:
       - packages/libatasmart
+  libavc1394:
+    specfile_path: libavc1394.spec
+    upstream_package_name: libavc1394
+    downstream_package_name: libavc1394
+    paths:
+      - packages/libavc1394
   libayatana-appindicator:
     specfile_path: libayatana-appindicator.spec
     upstream_package_name: libayatana-appindicator
@@ -1894,6 +1900,12 @@ packages:
     downstream_package_name: libratbag
     paths:
       - packages/libratbag
+  libraw1394:
+    specfile_path: libraw1394.spec
+    upstream_package_name: libraw1394
+    downstream_package_name: libraw1394
+    paths:
+      - packages/libraw1394
   librist:
     specfile_path: librist.spec
     upstream_package_name: librist

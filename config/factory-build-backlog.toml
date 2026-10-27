@@ -47,7 +47,6 @@ packages = [
     "ffmpegthumbnailer",
     "ffmpegthumbnailer-libs",
     "gstreamer1-plugins-good-qt6",
-    "libavc1394",
     "libavcodec",
     "libavdevice",
     "libavfilter",
@@ -61,7 +60,6 @@ packages = [
     "libklvanc",
     "libopenjph",
     "libplacebo",
-    "libraw1394",
     "libshaderc",
     "libswresample",
     "libswscale",
@@ -396,6 +394,9 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # FireWire recipe coverage; hosted builds and runtime proof remain outstanding.
+    { name = "libavc1394", pr = 681 },
+    { name = "libraw1394", pr = 681 },
     { name = "pam_yubico", pr = 706 },
     # Smart-card Python binding; hosted build and runtime proof remain in #506.
     { name = "python3-pyscard", pr = 704 },

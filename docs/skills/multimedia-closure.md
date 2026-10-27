@@ -158,7 +158,13 @@ contract is the measurement that will show it, not the work it measures.
   backlog batch. LibRaw's default recipe enables JPEG, LCMS, zlib and
   OpenMP, and emits `LibRaw`, `LibRaw-devel`, `LibRaw-static` and
   `LibRaw-samples`; its upstream release is served directly under
-  `https://www.libraw.org/data/`.
+  `https://www.libraw.org/data/`. `libavc1394` BuildRequires
+  `libraw1394-devel`, and its devel package requires it too, so import and
+  publish `libraw1394` first. These recipes do not enable the disabled
+  FireWire feature in ffmpeg or establish hardware functionality; both need
+  separate validation. Fedora's imported manifests for these two older
+  releases use MD5: compare upstream bytes to that pin, then record their
+  SHA-512 digests in `sources` and the source lock.
 - **Recipe reconciliation is not runtime closure.** A `[resolved]` backlog
   record required by an import tracks recipe coverage only. Keep the batch
   issue open until the hosted build, published binary identities,

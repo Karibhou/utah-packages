@@ -5249,6 +5249,26 @@
       "url": "https://www.jedsoft.org/releases/slang/slang-2.3.3.tar.bz2",
       "filename": "slang-2.3.3.tar.bz2",
       "sha512": "f882f09e3fcd53427de0f233c9fc3ab15497f2323007be9a084696c8cf810ffe2726cd003149e757df26198b390b9f8c1ff411dc6473513457bd0f94722f8490"
+    },
+    {
+      "name": "libraw1394",
+      "version": "2.1.2",
+      "url": "https://www.kernel.org/pub/linux/libs/ieee1394/libraw1394-2.1.2.tar.xz",
+      "filename": "libraw1394-2.1.2.tar.xz",
+      "sha512": "1ef38961b747c4ebb18d823a4c38d5bf019f8bd0ac55547838d153b1899b91ae0ff56f5b6732e309d6975b55725d1ce989917ffcf605cf64f7d33624f54f0567",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libraw1394/libraw1394-2.1.2.tar.xz/md5/118060584c04f1aa5e29c4d22c1c235a/libraw1394-2.1.2.tar.xz"
+      ]
+    },
+    {
+      "name": "libavc1394",
+      "version": "0.5.4",
+      "url": "https://downloads.sourceforge.net/project/libavc1394/libavc1394/libavc1394-0.5.4.tar.gz",
+      "filename": "libavc1394-0.5.4.tar.gz",
+      "sha512": "ef07631cd2de9b79dec9d81247d705be318101e8f8a1fe007b946ffab3dfe7b97f392144614d867ef6b2315b6c0e82d53e915f07855d4e21401645293e18842a",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libavc1394/libavc1394-0.5.4.tar.gz/md5/caf0db059d8b8d35d6f08e6c0e1c7dfe/libavc1394-0.5.4.tar.gz"
+      ]
     }
   ]
 }
