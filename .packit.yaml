@@ -2332,6 +2332,12 @@ packages:
     downstream_package_name: mtdev
     paths:
       - packages/mtdev
+  mtools:
+    specfile_path: mtools.spec
+    upstream_package_name: mtools
+    downstream_package_name: mtools
+    paths:
+      - packages/mtools
   mtr:
     specfile_path: mtr.spec
     upstream_package_name: mtr

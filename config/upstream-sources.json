@@ -5341,6 +5341,13 @@
       "url": "https://codeload.github.com/google/shaderc/tar.gz/2c8cae778eec0283b44acbe7ed1a386865d78799",
       "filename": "2c8cae778eec0283b44acbe7ed1a386865d78799.tar.gz",
       "sha512": "ef112c3338df7cc9acde0526b2ada82fa4139f5df0835e7d8e0d9a54b32f1d57a9001297482b30dc96e2e2f91200c0985b649b4e10edd431ac5e85a4ce8d0adf"
+    },
+    {
+      "name": "mtools",
+      "version": "4.0.49",
+      "url": "https://ftp.gnu.org/gnu/mtools/mtools-4.0.49.tar.gz",
+      "filename": "mtools-4.0.49.tar.gz",
+      "sha512": "30e75cd85916b7c5b81e667fec1e47f19c024a988a643e8fa8ddd4a20b96c58d29c528d033548f9a603119835e414ea6fc671b3dafa08f50b9192991276d2447"
     }
   ]
 }

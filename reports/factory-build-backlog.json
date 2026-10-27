@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 107,
-      "total": 119
+      "pending": 106,
+      "total": 118
     },
     "power": {
       "total": 0
@@ -1087,11 +1087,6 @@
     },
     {
       "area": "long-tail",
-      "name": "mtools",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "net-tools",
       "state": "pending"
     },
@@ -1460,11 +1455,11 @@
   "states": {
     "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 254
+    "pending": 253
   },
   "totals": {
-    "backlog": 281,
-    "resolved": 240,
+    "backlog": 280,
+    "resolved": 241,
     "wontfix": 30
   }
 }

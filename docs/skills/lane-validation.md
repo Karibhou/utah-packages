@@ -80,6 +80,22 @@ pipeline path: its token has no `packages: write`, so `canary.yml` fails it with
 "a fork pull request cannot publish the canary image". The author cannot fix
 that, and neither can an agent working from a fork; do not ask them to.
 
+`tools/canary.py` treats every `config/` path as a pipeline path. A recipe
+import that registers its source in `config/upstream-sources.json` therefore
+needs this proof even when it changes no workflow or build tool. If
+configuration validation passed, the build jobs were skipped, and Canary's
+`Decide` step reports missing maintainer-run proof, classify the failure as a
+review prerequisite, not a failed package build. Keep the source registration
+and the gate intact; removing either does not validate the import.
+
+A repair request naming a generic failed check can refer to this prerequisite.
+Read the failed job before changing code. Do not push an empty commit or
+rerun the fork job without proof: neither supplies the missing build evidence,
+and any new head invalidates proof for the previous commit. Finish necessary
+changes first, then give the maintainer the final full head SHA for review and
+dispatch. The default Canary set still does not build the imported recipe;
+that recipe needs its own scoped build and runtime acceptance evidence.
+
 A maintainer who has reviewed the diff runs **Canary for a fork pull request**
 (Actions tab, `canary-fork-pr.yml`) with the pull request number and the full
 head commit they reviewed. It copies exactly that commit to `canary/pr-<N>`

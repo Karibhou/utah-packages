@@ -107,6 +107,22 @@ evidence; use `Refs`, not an auto-closing keyword, in a partial PR's
 description. A `[resolved]` entry alone proves neither publication nor
 installability.
 
+### Import records and runtime acceptance
+
+A `[resolved]` entry records the recipe import; it does not establish that
+the output is published or usable. For a bounded batch issue, keep the issue
+open when importing only one source family, and name the remaining outputs
+in the PR. Record the upstream recipe commit and source digest separately
+from the hosted build run, binary NEVRA, factory image digest, and runtime
+exercise. Missing build or runtime evidence must remain explicit rather than
+being inferred from a green inventory check.
+
+Use the consumer issue named by the batch assignment when the area's
+`consumer_issue` is stale. Check the consumer's triage for each binary:
+`planned` records intent, while `untriaged` is not a waiver. For existing
+outputs, inspect current published repodata by binary name and its source
+RPM before importing a second recipe.
+
 The `Import Rawhide package` workflow does **not** make this move: its pull
 request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that
