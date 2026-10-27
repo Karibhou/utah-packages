@@ -20,10 +20,10 @@
       "total": 12
     },
     "long-tail": {
-      "already_recipe": 14,
+      "already_recipe": 12,
       "manifest_wants": 1,
       "pending": 114,
-      "total": 129
+      "total": 127
     },
     "power": {
       "total": 0
@@ -1088,11 +1088,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libdhash",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
       "name": "libell",
       "state": "pending"
     },
@@ -1120,11 +1115,6 @@
       "area": "long-tail",
       "name": "libnet",
       "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libnfsidmap",
-      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1619,13 +1609,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 30,
+    "already_recipe": 28,
     "manifest_wants": 1,
     "pending": 282
   },
   "totals": {
-    "backlog": 313,
-    "resolved": 214,
+    "backlog": 311,
+    "resolved": 216,
     "wontfix": 24
   }
 }

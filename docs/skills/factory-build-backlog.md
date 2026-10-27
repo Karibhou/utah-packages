@@ -109,6 +109,20 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+### Reconcile sibling library outputs
+
+Check every binary from an imported source family when reconciling a batch.
+For example, `ding-libs` produces `libdhash` as well as `libini_config`, and
+`nfs-utils` produces `libnfsidmap`; neither needs a separate recipe import.
+An earlier closing record for another sibling does not close these names.
+Move each remaining audited name explicitly and cite the original import PR.
+Verify the binary name and source RPM in the published primary metadata using
+`tools/package_index.py` before reporting publication. Record the OCI digest,
+metadata checksum, and binary epoch/version/release in the reconciliation PR;
+keep runtime installation and behavior claims separate from catalog closure.
+When a reconciliation PR resolves only part of a multi-output batch issue, link
+the issue with `Refs #<n>` rather than `Closes #<n>` so the remaining batch
+outputs stay open.
 For a partial batch PR, use `Refs #<issue>` throughout the PR description.
 Check the final rendered body, including generated footers, for closing keywords
 such as `Closes`, `Fixes` or `Resolves`: they automatically close the batch
