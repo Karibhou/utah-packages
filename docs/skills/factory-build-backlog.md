@@ -566,10 +566,21 @@ run and all requested binary identities in the reconciliation PR. This closes
 recipe accounting only: a metadata listing does not prove the theme's dependency
 transaction or graphical boot behavior. Keep those acceptance items open in the
 batch issue and hand them to Utah's consumer tracking.
+
 For `pam_yubico`, the Fedora source recipe requires `ykclient-devel`,
 `libyubikey-devel`, and `ykpers-devel`; all three source families must precede
 it in the build graph. A recipe and verified source do not prove authentication
 works: verify the hosted RPM, dependency transaction, and configured hardware.
+
+### Long-tail package output reconciliation
+
+When auditing a long-tail batch, check each output against the published
+primary repodata (see "Reconciling published batches" above) before touching
+the catalog: an output may already sit in `[resolved]` without `published_run`
+/ `published_nevra`; fill those in rather than re-importing. Recipes merged on
+main but not yet in the published image stay in `[resolved]` without
+publication fields until a run ships them. Partial reconciliation PRs must
+link the tracking issue with `Refs #<issue>`, not a closing keyword.
 
 ### S-Lang library imports
 
