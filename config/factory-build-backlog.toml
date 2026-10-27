@@ -366,15 +366,10 @@ packages = [
     "uchardet",
     "udftools",
     "uresourced",
-    "uupd",
     "uvg266-libs",
     "v4l2loopback",
     "virtualbox-guest-additions",
-    "xcb-util-cursor",
-    "xdriinfo",
     "xfsprogs",
-    "xrandr",
-    "xset",
 
     "zinnia",
     "zinnia-tomoe-ja",
@@ -455,6 +450,8 @@ packages = [
     { name = "pcsc-lite-libs", commit = "a09ec58", pr = 364 },
     { name = "pcsc-lite-ccid", commit = "a09ec58", pr = 364 },
     { name = "mtools" },
+    # Cursor library import for #508; build/publication/runtime proof remains separate.
+    { name = "xcb-util-cursor", pr = 620 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
@@ -726,6 +723,12 @@ packages = [
 # ``states``; they are surfaced as ``totals.wontfix`` so the count partition
 # (areas + resolved + wontfix) still equals the audit's 551.
 packages = [
+    # Existing consumer waivers, not new exclusions: projectbluefin/utah#263.
+    # https://github.com/projectbluefin/utah/blob/e11a7b297264251704af25d8920d2a2bb58241c9/baselines/triage.toml
+    { name = "xdriinfo", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "xrandr", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "xset", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "uupd", reason = "Utah installs a pinned upstream release; its triage waives the RPM difference (projectbluefin/utah#263; pinned triage above)." },
     { name = "adobe-source-code-pro-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
     { name = "gdouros-symbola-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
     { name = "google-droid-sans-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },

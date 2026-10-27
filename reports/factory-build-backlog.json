@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 106,
-      "total": 118
+      "pending": 101,
+      "total": 113
     },
     "power": {
       "total": 0
@@ -1327,11 +1327,6 @@
     },
     {
       "area": "long-tail",
-      "name": "uupd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "uvg266-libs",
       "state": "pending"
     },
@@ -1347,27 +1342,7 @@
     },
     {
       "area": "long-tail",
-      "name": "xcb-util-cursor",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "xdriinfo",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "xfsprogs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "xrandr",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "xset",
       "state": "pending"
     },
     {
@@ -1455,11 +1430,11 @@
   "states": {
     "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 253
+    "pending": 248
   },
   "totals": {
-    "backlog": 280,
-    "resolved": 241,
-    "wontfix": 30
+    "backlog": 275,
+    "resolved": 242,
+    "wontfix": 34
   }
 }

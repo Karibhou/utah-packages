@@ -3400,6 +3400,12 @@ packages:
     downstream_package_name: xcb-util
     paths:
       - packages/xcb-util
+  xcb-util-cursor:
+    specfile_path: xcb-util-cursor.spec
+    upstream_package_name: xcb-util-cursor
+    downstream_package_name: xcb-util-cursor
+    paths:
+      - packages/xcb-util-cursor
   xcb-util-image:
     specfile_path: xcb-util-image.spec
     upstream_package_name: xcb-util-image

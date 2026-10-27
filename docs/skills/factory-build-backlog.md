@@ -85,6 +85,20 @@ Two edits — never one, never none:
     informational and not validated. Catalog comments should describe the
     structure rather than current list occupancy, since decisions accumulate.
 
+The catalog's `[resolved]` record closes **recipe-import accounting**, not a
+batch issue's build, publication, dependency-resolution, or runtime acceptance.
+For a partial source-family PR, keep the batch issue open and list the remaining
+outputs and missing evidence explicitly.
+
+Before importing an audit name, read Utah's current `baselines/triage.toml` and
+pin the decision's commit when reconciling an existing `waived` entry into
+`[wontfix]`. The audit can include deliberately absent X11 client utilities
+(`xrandr`, `xset`, `xdriinfo`) or an updater installed directly from a pinned
+release (`uupd`); their absence is not permission to reverse those decisions.
+Do not extend a client-tool waiver to an X11 library such as `xcb-util-cursor`:
+Wayland sessions still run applications through Xwayland. Check each exact
+binary name, not a shared prefix.
+
 `[resolved]` is the only closing record. A recipe import PR makes this
 two-edit move in the same PR; `already_recipe` is the auditor's observation
 of an area name whose move is still owed (for example a recipe that landed
