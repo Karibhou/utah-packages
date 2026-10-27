@@ -462,6 +462,17 @@ example UTF-8 text) and record its reported encoding alongside the permitted
 repository transaction. Matching an upstream archive checksum proves source
 identity, not that the installed detector works.
 
+### Handwriting models share the recognizer recipe
+
+`zinnia-tomoe-ja` is an unconditional subpackage of `zinnia`, not a separate
+Fedora source package. Its model is trained during the build from the `tomoe`
+build dependency's XML dictionary, using `Makefile.tomoe` and `tomoe2s.pl`
+carried in the pinned dist-git tree. Keep both binary names tied to the same
+source lock and validate model loading as well as the Python binding import.
+`tomoe` is a build-time input here; it is not a runtime requirement of the
+recognizer or generated model. Do not add a runtime recipe just because a
+BuildRequires is absent from Hummingbird (the build root also uses Fedora).
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —

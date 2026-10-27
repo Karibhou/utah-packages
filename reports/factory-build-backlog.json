@@ -21,8 +21,8 @@
     "long-tail": {
       "already_recipe": 3,
       "manifest_wants": 1,
-      "pending": 96,
-      "total": 100
+      "pending": 93,
+      "total": 97
     },
     "power": {
       "total": 0
@@ -1200,21 +1200,6 @@
       "state": "pending"
     },
     {
-      "area": "long-tail",
-      "name": "zinnia",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "zinnia-tomoe-ja",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "zix",
-      "state": "pending"
-    },
-    {
       "area": "unblockers",
       "name": "qt6-qtdeclarative",
       "state": "pending"
@@ -1284,11 +1269,11 @@
   "states": {
     "already_recipe": 17,
     "manifest_wants": 1,
-    "pending": 228
+    "pending": 225
   },
   "totals": {
-    "backlog": 246,
-    "resolved": 271,
+    "backlog": 243,
+    "resolved": 274,
     "wontfix": 34
   }
 }

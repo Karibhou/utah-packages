@@ -343,10 +343,6 @@ packages = [
     "v4l2loopback",
     "virtualbox-guest-additions",
     "xfsprogs",
-
-    "zinnia",
-    "zinnia-tomoe-ja",
-    "zix",
 ]
 
 [resolved]
@@ -724,6 +720,10 @@ packages = [
     { name = "liburing", pr = 742 },
     { name = "lrzsz", pr = 742 },
     { name = "qpdf-libs", pr = 640 },
+    # Handwriting recognition (zinnia also builds zinnia-tomoe-ja) and zix (#509).
+    { name = "zinnia", pr = 630 },
+    { name = "zinnia-tomoe-ja", pr = 630 },
+    { name = "zix", pr = 630 },
 ]
 
 [wontfix]
