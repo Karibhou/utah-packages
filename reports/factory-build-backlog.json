@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 13,
       "manifest_wants": 1,
-      "pending": 130,
-      "total": 144
+      "pending": 127,
+      "total": 141
     },
     "power": {
       "total": 0
@@ -1415,22 +1415,7 @@
     },
     {
       "area": "long-tail",
-      "name": "pam_passwdqc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "paps",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "passwdqc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "passwdqc-utils",
       "state": "pending"
     },
     {
@@ -1833,11 +1818,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 321
+    "pending": 318
   },
   "totals": {
-    "backlog": 355,
-    "resolved": 183,
+    "backlog": 352,
+    "resolved": 186,
     "wontfix": 13
   }
 }

@@ -2350,6 +2350,12 @@ packages:
     downstream_package_name: passim
     paths:
       - packages/passim
+  passwdqc:
+    specfile_path: passwdqc.spec
+    upstream_package_name: passwdqc
+    downstream_package_name: passwdqc
+    paths:
+      - packages/passwdqc
   pcaudiolib:
     specfile_path: pcaudiolib.spec
     upstream_package_name: pcaudiolib

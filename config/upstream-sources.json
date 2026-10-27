@@ -4951,6 +4951,16 @@
       "url": "https://github.com/kergoth/tslib/releases/download/1.24/tslib-1.24.tar.bz2",
       "filename": "tslib-1.24.tar.bz2",
       "sha512": "4d271a5f3e7d5e70daf7581f1c6417b77effa3d84ac34ce8d74acd9557407ffe7a293f28a4239c8a750e05f21dd04616d91361e2d049ecae0d1b7b0a330cdb98"
+    },
+    {
+      "name": "passwdqc",
+      "version": "2.0.3",
+      "url": "https://www.openwall.com/passwdqc/passwdqc-2.0.3.tar.gz",
+      "filename": "passwdqc-2.0.3.tar.gz",
+      "sha512": "08a1ee0e7efe0be8af8b253147836c479247a849baf598a1ad573a050ef4b8700fdb725fd887877f82f9207f3654f489f71267cc4051ce8ebf2405125b77b6b9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/passwdqc/passwdqc-2.0.3.tar.gz/sha512/08a1ee0e7efe0be8af8b253147836c479247a849baf598a1ad573a050ef4b8700fdb725fd887877f82f9207f3654f489f71267cc4051ce8ebf2405125b77b6b9/passwdqc-2.0.3.tar.gz"
+      ]
     }
   ]
 }

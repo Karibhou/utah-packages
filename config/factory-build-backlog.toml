@@ -393,10 +393,7 @@ packages = [
     "openexr-libs",
     "oversteer-udev",
     "pam_afs_session",
-    "pam_passwdqc",
     "paps",
-    "passwdqc",
-    "passwdqc-utils",
     "perl-Unicode-Normalize",
     "plymouth",
     "plymouth-core-libs",
@@ -459,6 +456,10 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Password-quality source family: passwdqc builds all three (projectbluefin/utah-packages#644, #505).
+    { name = "pam_passwdqc", pr = 644 },
+    { name = "passwdqc", pr = 644 },
+    { name = "passwdqc-utils", pr = 644 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
