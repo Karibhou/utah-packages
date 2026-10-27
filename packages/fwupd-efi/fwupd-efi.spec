@@ -2,7 +2,7 @@
 
 Summary:   Firmware update EFI binaries
 Name:      fwupd-efi
-Version:   1.8
+Version:   1.9
 Release:   %autorelease
 License:   LGPL-2.1-or-later
 URL:       https://github.com/fwupd/fwupd-efi
