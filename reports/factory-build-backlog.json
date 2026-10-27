@@ -6,9 +6,9 @@
       "total": 37
     },
     "dev-tools": {
-      "already_recipe": 2,
+      "already_recipe": 1,
       "pending": 90,
-      "total": 92
+      "total": 91
     },
     "fonts-i18n": {
       "pending": 29,
@@ -391,11 +391,6 @@
       "area": "dev-tools",
       "name": "ntfs-3g-system-compression",
       "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nvtop",
-      "state": "already_recipe"
     },
     {
       "area": "dev-tools",
@@ -1660,13 +1655,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 33,
+    "already_recipe": 32,
     "manifest_wants": 1,
     "pending": 287
   },
   "totals": {
-    "backlog": 321,
-    "resolved": 206,
+    "backlog": 320,
+    "resolved": 207,
     "wontfix": 24
   }
 }

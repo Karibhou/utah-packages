@@ -109,6 +109,15 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+### Reconciling recipes imported before the audit
+
+For a name still marked `already_recipe`, verify the original import PR is
+merged and its commit is on the target branch before moving the name to
+`[resolved]`. Record that existing PR and commit rather than importing the
+same source again. This closes the recipe catalog record only: keep the
+tracking issue open when publication, runtime dependency resolution, or a
+representative command has not been verified. A reconciliation PR must state
+those remaining checks explicitly; `[resolved]` is not installability proof.
 ### Touchscreen library imports
 
 `tslib` builds its SDL2 test utilities with `SDL2-devel`. The factory

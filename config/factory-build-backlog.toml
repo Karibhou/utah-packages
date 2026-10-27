@@ -170,7 +170,6 @@ packages = [
     "lsb_release",
     "nilfs-utils",
     "ntfs-3g-system-compression",
-    "nvtop",
     "oddjob",
     "oddjob-mkhomedir",
     "open-vm-tools",
@@ -425,6 +424,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Existing GPU monitor recipe; publication/runtime proof remains in #488.
+    { name = "nvtop", commit = "e19a229", pr = 410 },
     # Long-tail batch (projectbluefin/utah-packages#607, part of #500).
     # Six source packages imported from Fedora rawhide dist-git, each now
     # source-locked in config/upstream-sources.json.
