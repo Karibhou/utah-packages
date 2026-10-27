@@ -80,6 +80,11 @@ its entry in `already_recipe` pending hosted build and runtime verification —
 must link the tracking issue with `Refs #<n>`, never `Closes #<n>`, so merging
 does not auto-close the batch while other outputs remain open.
 
+For font and language batches, follow
+[Reconcile consumer decisions before importing](font-package-recipes.md#reconcile-consumer-decisions-before-importing).
+A partial waiver PR should reference the batch issue and name the remaining
+outputs so it stays open. Note any in-repo recipe that requires a waived name.
+
 The `Import Rawhide package` workflow does **not** make this move: its pull
 request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that
