@@ -241,6 +241,15 @@ archive). Lock that archive by SHA-512, update `sources`, and set `%setup -n`
 to its commit-based directory; do not reuse the original archive's digest.
 This source-tree comparison is not a package build or runtime closure test.
 
+The `liblouisutdml` recipe builds a PDF manual with `texinfo-tex`, whose
+Fedora TeX Live dependency chain needs ICU 77 in the build root. Like
+`liblouis`, it opts in to that build-only dependency; its configure script
+links liblouis and libxml2, not ICU directly. Do not remove the manual or the
+upstream test suite to avoid the dependency. A successful build is still
+needed: inspect every built RPM's requirements for ICU 77 and resolve the
+runtime transaction using only Hummingbird and the factory. The opt-in does
+not prove the outputs are safe or published.
+
 A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
 links `libraqm.so.0` (hence `libraqm`, imported with it) and its
 `python3-pillow-qt` subpackage needs `python3-qt5`, which neither Hummingbird
