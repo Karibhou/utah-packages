@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 84,
-      "total": 85
+      "pending": 83,
+      "total": 84
     },
     "fonts-i18n": {
       "pending": 24,
@@ -22,8 +22,8 @@
     "long-tail": {
       "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 109,
-      "total": 121
+      "pending": 107,
+      "total": 119
     },
     "power": {
       "total": 0
@@ -233,11 +233,6 @@
     {
       "area": "dev-tools",
       "name": "cryfs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "davfs2",
       "state": "pending"
     },
     {
@@ -1017,11 +1012,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libntlm",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libpaper",
       "state": "pending"
     },
@@ -1108,11 +1098,6 @@
     {
       "area": "long-tail",
       "name": "mtools",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "neon",
       "state": "pending"
     },
     {
@@ -1485,11 +1470,11 @@
   "states": {
     "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 259
+    "pending": 256
   },
   "totals": {
-    "backlog": 286,
-    "resolved": 235,
+    "backlog": 283,
+    "resolved": 238,
     "wontfix": 30
   }
 }

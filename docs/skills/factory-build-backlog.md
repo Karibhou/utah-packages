@@ -61,9 +61,9 @@ blocking decisions for every named output. Before pushing a review fix,
 check the entire PR description for closing keywords: an automatically added
 footer can contradict an earlier partial-progress statement. After editing the body,
 read it back with `gh pr view <pr> --json body --jq .body` and verify the
-saved description, including any generated footer. A branch push alone
-does not correct the PR description. Once the PR number is known, fill in
-the recipe record's `pr` field so reviewers can trace the partial import.
+saved description, including any generated footer; local prose alone does not establish
+that the live PR will keep the batch open. A branch push alone does not correct the PR description.
+Once the PR number is known, fill in the recipe record's `pr` field so reviewers can trace the partial import.
 
 Two edits — never one, never none:
 
@@ -392,6 +392,18 @@ orders these from the existing BuildRequires; no manual stage is needed.
 Both recipes carry detached signatures in `sources` and a checked-in signing
 key. Preserve their `%{gpgverify}` checks and SHA-512 signature pins when
 locking the release tarballs from `libbsd.freedesktop.org`.
+
+### WebDAV filesystem runtime closure
+
+`davfs2` uses the `neon` HTTP/WebDAV library; its default build in turn links
+`libntlm` for authentication. Check both libraries in the current factory and
+Hummingbird metadata before importing the filesystem helper. When neither
+repository supplies them, import all three sources together and let the
+BuildRequires graph order `libntlm` before `neon` before `davfs2`. Retain
+`davfs2`'s detached upstream signature and bundled verification keyring;
+verify the signature download against its own `sources` digest as well as
+checking the main archive. Recipe-level closing records do not establish
+publication, runtime dependency resolution, or a working WebDAV mount.
 
 ## Diagnosing drift
 

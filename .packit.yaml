@@ -268,6 +268,12 @@ packages:
     downstream_package_name: cups-pk-helper
     paths:
       - packages/cups-pk-helper
+  davfs2:
+    specfile_path: davfs2.spec
+    upstream_package_name: davfs2
+    downstream_package_name: davfs2
+    paths:
+      - packages/davfs2
   dconf:
     specfile_path: dconf.spec
     upstream_package_name: dconf
@@ -1804,6 +1810,12 @@ packages:
     downstream_package_name: libnotify
     paths:
       - packages/libnotify
+  libntlm:
+    specfile_path: libntlm.spec
+    upstream_package_name: libntlm
+    downstream_package_name: libntlm
+    paths:
+      - packages/libntlm
   libnvme:
     specfile_path: libnvme.spec
     upstream_package_name: libnvme
@@ -2338,6 +2350,12 @@ packages:
     downstream_package_name: nautilus-python
     paths:
       - packages/nautilus-python
+  neon:
+    specfile_path: neon.spec
+    upstream_package_name: neon
+    downstream_package_name: neon
+    paths:
+      - packages/neon
   net-snmp:
     specfile_path: net-snmp.spec
     upstream_package_name: net-snmp

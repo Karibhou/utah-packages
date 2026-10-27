@@ -129,7 +129,6 @@ packages = [
     "adcli-selinux",
     "bcache-tools",
     "cryfs",
-    "davfs2",
     "distribution-gpg-keys",
     "fedora-release-common",
     "fedora-release-identity-silverblue",
@@ -302,7 +301,6 @@ packages = [
     "liblqr-1",
     "libmspack",
     "libnet",
-    "libntlm",
     "libpaper",
     "libpasswdqc",
     "libpfm",
@@ -321,7 +319,6 @@ packages = [
     "mkpasswd",
     "mod_http2",
     "mtools",
-    "neon",
     "net-tools",
     "nm-connection-editor",
     "nss-altfiles",
@@ -393,6 +390,9 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    { name = "davfs2", pr = 696 },
+    { name = "neon", pr = 696 },
+    { name = "libntlm", pr = 696 },
     # FireWire recipe coverage; hosted builds and runtime proof remain outstanding.
     { name = "libavc1394", pr = 681 },
     { name = "libraw1394", pr = 681 },

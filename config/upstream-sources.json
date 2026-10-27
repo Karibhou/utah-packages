@@ -5289,6 +5289,27 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libavc1394/libavc1394-0.5.4.tar.gz/md5/caf0db059d8b8d35d6f08e6c0e1c7dfe/libavc1394-0.5.4.tar.gz"
       ]
+    },
+    {
+      "name": "davfs2",
+      "version": "1.7.3",
+      "url": "https://download.savannah.gnu.org/releases/davfs2/davfs2-1.7.3.tar.gz",
+      "filename": "davfs2-1.7.3.tar.gz",
+      "sha512": "300c49bb2556c1c0dc63ffbc8b19882f480d3184fe25d8e599092a2ae194a76d206b69dbb7691c26e1ea9c7852ffb651621d30d3ef4a226f9b286d5cfcbd378c"
+    },
+    {
+      "name": "neon",
+      "version": "0.37.1",
+      "url": "https://notroj.github.io/neon/neon-0.37.1.tar.gz",
+      "filename": "neon-0.37.1.tar.gz",
+      "sha512": "3d3e369b91f2aad336c682f5cc47ec25726409c29bf85ff407ae5ad3a81300fd227df82877efc2a6d461301dafcd3a40ee3556ce803e5e766b18b5dca2d35500"
+    },
+    {
+      "name": "libntlm",
+      "version": "1.8",
+      "url": "https://download.savannah.nongnu.org/releases/libntlm/libntlm-1.8.tar.gz",
+      "filename": "libntlm-1.8.tar.gz",
+      "sha512": "8d1563608b725008abcf948146d1ffce2d9cceab8264196d349be7faded51c61bcaf45ddb92b5c7dca2948fca554856a20198bb2e3bda0f93c8259335e14c377"
     }
   ]
 }
