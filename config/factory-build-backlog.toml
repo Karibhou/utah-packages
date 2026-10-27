@@ -679,18 +679,22 @@ packages = [
     { name = "libbasicobjects", pr = 597 },
     { name = "libpath_utils", pr = 597 },
     { name = "libref_array", pr = 597 },
-    { name = "urw-base35-bookman-fonts", pr = 631 },
-    { name = "urw-base35-c059-fonts", pr = 631 },
-    { name = "urw-base35-d050000l-fonts", pr = 631 },
-    { name = "urw-base35-fonts", pr = 631 },
-    { name = "urw-base35-fonts-common", pr = 631 },
-    { name = "urw-base35-gothic-fonts", pr = 631 },
-    { name = "urw-base35-nimbus-mono-ps-fonts", pr = 631 },
-    { name = "urw-base35-nimbus-roman-fonts", pr = 631 },
-    { name = "urw-base35-nimbus-sans-fonts", pr = 631 },
-    { name = "urw-base35-p052-fonts", pr = 631 },
-    { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
-    { name = "urw-base35-z003-fonts", pr = 631 },
+    # urw-base35-fonts (#631): built by job 121701868428 of run 40346690119 (that
+    # aggregate run failed on other packages); published by run 40481255792 in
+    # ghcr.io/projectbluefin/utah-packages@sha256:710195827218db354cd1d0033d68db8b96efec97f1aaf3f45f8973479c6e7215.
+    # vazirmatn-vf-fonts from the same batch (#496) is [wontfix] under utah#393.
+    { name = "urw-base35-bookman-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-bookman-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-c059-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-c059-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-d050000l-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-d050000l-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-fonts-common", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-fonts-common-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-gothic-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-gothic-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-nimbus-mono-ps-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-nimbus-mono-ps-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-nimbus-roman-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-nimbus-roman-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-nimbus-sans-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-nimbus-sans-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-p052-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-p052-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-standard-symbols-ps-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-standard-symbols-ps-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-z003-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-z003-fonts-0:20200910-29.hum1.bfin.noarch" },
     { name = "libXres", pr = 646 },
     # VPN / smart-card PKCS#11 provider and Yubico C/personalization stack (projectbluefin/utah-packages#479, utah#389).
     # libyubikey is ykpers's build and runtime dependency (libyubikey.so.0).
