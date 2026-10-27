@@ -161,6 +161,24 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+### Python recipe names and dependency evidence
+
+For `python3-six` and `python3-dateutil`, import the source recipes
+`python-six` and `python-dateutil`, not a second recipe named after the binary.
+Their `%pypi_source` archives are upstream releases on
+`files.pythonhosted.org`; compare the downloaded SHA-512 with the dist-git
+`sources` file before registering the lock. If the bootstrap tool cannot
+expand the macro without `rpmspec`, that is not evidence the source is missing.
+Do not replace it with a Fedora-primary URL.
+
+Do not infer dependency edges from upstream Python metadata alone:
+Rawhide's `python-dateutil` recipe carries `remove-six.patch`, which removes
+its dependency on six. Preserve the imported patch set and let the build graph
+read the actual recipe; no manual stage is needed for these two imports.
+Keep their default test suites enabled. A `[resolved]` entry records recipe
+coverage, not successful publication or a working import in the consumer;
+keep those outstanding proofs on the implementation issue until a pinned
+factory build and permitted-repository runtime check establish them.
 ### BSD compatibility library closure
 
 Import `libbsd` with `libmd`: the former BuildRequires `libmd-devel`, its

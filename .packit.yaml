@@ -2548,6 +2548,12 @@ packages:
     downstream_package_name: python-dasbus
     paths:
       - packages/python-dasbus
+  python-dateutil:
+    specfile_path: python-dateutil.spec
+    upstream_package_name: python-dateutil
+    downstream_package_name: python-dateutil
+    paths:
+      - packages/python-dateutil
   python-dbus-next:
     specfile_path: python-dbus-next.spec
     upstream_package_name: python-dbus-next
@@ -2632,6 +2638,12 @@ packages:
     downstream_package_name: python-pyudev
     paths:
       - packages/python-pyudev
+  python-six:
+    specfile_path: python-six.spec
+    upstream_package_name: python-six
+    downstream_package_name: python-six
+    paths:
+      - packages/python-six
   python-typing-inspection:
     specfile_path: python-typing-inspection.spec
     upstream_package_name: python-typing-inspection

@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 2,
-      "pending": 93,
-      "total": 95
+      "pending": 91,
+      "total": 93
     },
     "fonts-i18n": {
       "pending": 29,
@@ -445,11 +445,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-dateutil",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-dns",
       "state": "pending"
     },
@@ -576,11 +571,6 @@
     {
       "area": "dev-tools",
       "name": "python3-shtab",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-six",
       "state": "pending"
     },
     {
@@ -1743,11 +1733,11 @@
   "states": {
     "already_recipe": 33,
     "manifest_wants": 1,
-    "pending": 303
+    "pending": 301
   },
   "totals": {
-    "backlog": 337,
-    "resolved": 190,
+    "backlog": 335,
+    "resolved": 192,
     "wontfix": 24
   }
 }
