@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 89,
-      "total": 90
+      "pending": 88,
+      "total": 89
     },
     "fonts-i18n": {
       "pending": 24,
@@ -328,11 +328,6 @@
     {
       "area": "dev-tools",
       "name": "libcaca",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "libchromaprint",
       "state": "pending"
     },
     {
@@ -1550,11 +1545,11 @@
   "states": {
     "already_recipe": 27,
     "manifest_wants": 1,
-    "pending": 271
+    "pending": 270
   },
   "totals": {
-    "backlog": 299,
-    "resolved": 222,
+    "backlog": 298,
+    "resolved": 223,
     "wontfix": 30
   }
 }
