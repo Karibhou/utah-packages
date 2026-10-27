@@ -487,6 +487,15 @@ For `pam_yubico`, the Fedora source recipe requires `ykclient-devel`,
 it in the build graph. A recipe and verified source do not prove authentication
 works: verify the hosted RPM, dependency transaction, and configured hardware.
 
+### S-Lang library imports
+
+The `slang` source produces the audited `slang` library and a separate
+`slang-slsh` interpreter. Its Fedora recipe enables Oniguruma conditionally
+on the target's `%{?fedora}` macro; check the actual pinned buildroot and
+resulting RPM dependencies rather than assuming the conditional is on or off.
+The upstream test suite covers terminal capabilities, syntax parsing, and
+UTF-8 support; run it on every recipe bump.
+
 ### NILFS utilities signature sources
 
 For `nilfs-utils`, the release archive and detached signature are separate

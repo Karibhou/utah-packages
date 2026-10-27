@@ -5242,6 +5242,13 @@
       "url": "https://developers.yubico.com/yubico-pam/Releases/pam_yubico-2.27.tar.gz",
       "filename": "pam_yubico-2.27.tar.gz",
       "sha512": "8b6e4edc8bd6d24f0f512abfc6b43359e0ea2a5a60aeb855898f51904ddfd1978bd6845ac9a0af063814301c742b2f7dc42ff0a8ca59e4d7ead8994dfdce0ba6"
+    },
+    {
+      "name": "slang",
+      "version": "2.3.3",
+      "url": "https://www.jedsoft.org/releases/slang/slang-2.3.3.tar.bz2",
+      "filename": "slang-2.3.3.tar.bz2",
+      "sha512": "f882f09e3fcd53427de0f233c9fc3ab15497f2323007be9a084696c8cf810ffe2726cd003149e757df26198b390b9f8c1ff411dc6473513457bd0f94722f8490"
     }
   ]
 }

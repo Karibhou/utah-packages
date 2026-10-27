@@ -2926,6 +2926,12 @@ packages:
     downstream_package_name: simdutf
     paths:
       - packages/simdutf
+  slang:
+    specfile_path: slang.spec
+    upstream_package_name: slang
+    downstream_package_name: slang
+    paths:
+      - packages/slang
   smartmontools:
     specfile_path: smartmontools.spec
     upstream_package_name: smartmontools
