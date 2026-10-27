@@ -418,6 +418,8 @@ When rebasing a recipe PR, resolve conflicts in this generated report by rerunni
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.
 
+### NILFS utilities signature sources
+
 For `nilfs-utils`, the release archive and detached signature are separate
 `Source` entries. Verify both against `sources` and the bundled signing key;
 the source pipeline stages the signature from the digest-addressed lookaside.

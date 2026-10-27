@@ -633,7 +633,7 @@ packages = [
     # GStreamer-to-FFmpeg bridge, imported at the 1.28.6 gstreamer1 pin (PR #584).
     { name = "gstreamer1-plugin-libav", pr = 584 },
     # NILFS filesystem utilities imported for issue #488; publication still requires validation.
-    { name = "nilfs-utils", issue = 488 },
+    { name = "nilfs-utils", pr = 702 },
     # Dev-tools wave (landing PR #587): user-facing CLI tools from projectbluefin/utah#392.
     { name = "bc", pr = 587 },
     { name = "bolt", pr = 587 },
