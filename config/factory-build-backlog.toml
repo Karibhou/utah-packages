@@ -96,9 +96,6 @@ packages = [
     "pam-u2f",
     "pam_yubico",
     "pamu2fcfg",
-    "pcsc-lite",
-    "pcsc-lite-ccid",
-    "pcsc-lite-libs",
     "pkcs11-provider",
     "python3-yubikey-manager",
     "ykclient",
@@ -455,6 +452,10 @@ packages = [
     { name = "pam_passwdqc", pr = 644 },
     { name = "passwdqc", pr = 644 },
     { name = "passwdqc-utils", pr = 644 },
+    # Smart-card recipes imported in #364; publication verified for #478.
+    { name = "pcsc-lite", commit = "a09ec58", pr = 364 },
+    { name = "pcsc-lite-libs", commit = "a09ec58", pr = 364 },
+    { name = "pcsc-lite-ccid", commit = "a09ec58", pr = 364 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },

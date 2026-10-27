@@ -128,6 +128,24 @@ and touchscreen tools. A successful package build does not establish touch
 input or calibration behavior: exercise those tools with a real input device
 in the consumer image before claiming hardware parity.
 
+### Reconciling recipes imported before the catalog
+
+For an existing source recipe, check the published OCI repodata for each
+audited binary before moving its closing record. `pcsc-lite-libs`, for
+example, is an unconditional subpackage of `pcsc-lite`; it does not need a
+second recipe. Record the original import PR and commit in `[resolved]`,
+and cite the observed image digest and binary versions in the reconciliation
+PR. This closes the recipe backlog record only: publication does not prove
+runtime dependency resolution or hardware operation, so leave the consumer
+validation task open until those checks have evidence.
+
+When a PR resolves only part of a batch issue, use `Refs #<issue>` in its
+description. Reserve `Closes #<issue>` for a batch whose named outputs and
+acceptance requirements are all resolved or explicitly blocked by linked
+decisions, as required by that issue. Check the entire description for closing
+keywords before pushing: a trailing `Closes` still auto-closes the issue even
+when the summary describes partial progress.
+
 ### Locking sources for a hand import
 
 For GNU recipes such as `bison`, preserve the detached signature in `sources`,
@@ -234,6 +252,14 @@ locking the release tarballs from `libbsd.freedesktop.org`.
 - `--check` compares the whole live report with the committed snapshot —
   totals, states, the per-area rollup and every entry — so a name moving
   between areas fails the gate even though the counts are unchanged.
+- When a rebase conflicts in `reports/factory-build-backlog.json`, resolve the
+  catalog changes first, then run `python3 tools/factory_build_backlog.py` to
+  regenerate the snapshot from the merged inventory. Do not choose one side's
+  generated totals: that can discard resolutions or recipe imports from the
+  other branch. Stage the regenerated report before continuing the rebase.
+  If the catalog conflict is two independent additions to `[resolved]`, keep
+  both sets of records; neither supersedes the other. Preserve unrelated skill
+  sections added on `main` when the reconciliation guidance conflicts too.
 - A `pending` count that grows means a name was added to the catalog
   without a recipe; re-run `tools/factory_build_backlog.py` and inspect
   `reports/factory-build-backlog.json`.
