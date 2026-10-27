@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 85,
-      "total": 86
+      "pending": 84,
+      "total": 85
     },
     "fonts-i18n": {
       "pending": 24,
@@ -548,11 +548,6 @@
     {
       "area": "dev-tools",
       "name": "rpm-ostree-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "spice-vdagent",
       "state": "pending"
     },
     {
@@ -1490,11 +1485,11 @@
   "states": {
     "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 260
+    "pending": 259
   },
   "totals": {
-    "backlog": 287,
-    "resolved": 234,
+    "backlog": 286,
+    "resolved": 235,
     "wontfix": 30
   }
 }

@@ -9,6 +9,26 @@
       "sha512": "73d9612abe689f290b333e89506449bfc3c9b1f2c2c5a9302bef01b87d14ac37f612c9979f07e7c409b3e9fd7a89f384caaf5892c0b27b700fee015de7a704a4"
     },
     {
+      "name": "spice-protocol",
+      "version": "0.14.5",
+      "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.5.tar.xz",
+      "filename": "spice-protocol-0.14.5.tar.xz",
+      "sha512": "45bec8b427f3ae8df62e946eb21d3d31deed5e404d58cb9cd143669a2abb94d9ceb8add4f28b483a9c4215a8edba25be9308b6d3b63ad1ddc21653e0ab068dbc",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/spice-protocol/spice-protocol-0.14.5.tar.xz/sha512/45bec8b427f3ae8df62e946eb21d3d31deed5e404d58cb9cd143669a2abb94d9ceb8add4f28b483a9c4215a8edba25be9308b6d3b63ad1ddc21653e0ab068dbc/spice-protocol-0.14.5.tar.xz"
+      ]
+    },
+    {
+      "name": "spice-vdagent",
+      "version": "0.23.0",
+      "url": "https://spice-space.org/download/releases/spice-vdagent-0.23.0.tar.bz2",
+      "filename": "spice-vdagent-0.23.0.tar.bz2",
+      "sha512": "ab7e6ad34d5fa8ff7aa56f26307bf20f08a3b265713a37a08588d59f224e521f602a4f43084a95f7fa32a6aa67d09f5126a6c5a01412346b8044fea6d91dad30",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/spice-vdagent/spice-vdagent-0.23.0.tar.bz2/sha512/ab7e6ad34d5fa8ff7aa56f26307bf20f08a3b265713a37a08588d59f224e521f602a4f43084a95f7fa32a6aa67d09f5126a6c5a01412346b8044fea6d91dad30/spice-vdagent-0.23.0.tar.bz2"
+      ]
+    },
+    {
       "name": "sshpass",
       "version": "1.09",
       "url": "https://downloads.sourceforge.net/sshpass/sshpass-1.09.tar.gz",

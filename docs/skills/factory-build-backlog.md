@@ -180,6 +180,16 @@ same source again. This closes the recipe catalog record only: keep the
 tracking issue open when publication, runtime dependency resolution, or a
 representative command has not been verified. A reconciliation PR must state
 those remaining checks explicitly; `[resolved]` is not installability proof.
+
+### Virtual machine guest integration
+
+`spice-vdagent` BuildRequires `spice-protocol` headers. Import the protocol
+source alongside the agent when neither build root nor factory supplies it;
+the graph can then place the headers before the agent from the package-name
+BuildRequires. The protocol recipe disables its Windows cross-build by default;
+that does not remove Linux headers. A successful build alone does not prove
+clipboard or display integration: test those in a SPICE guest after publication.
+
 ### Touchscreen library imports
 
 `tslib` builds its SDL2 test utilities with `SDL2-devel`. The factory

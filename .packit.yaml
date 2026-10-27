@@ -2998,6 +2998,18 @@ packages:
     downstream_package_name: speex
     paths:
       - packages/speex
+  spice-protocol:
+    specfile_path: spice-protocol.spec
+    upstream_package_name: spice-protocol
+    downstream_package_name: spice-protocol
+    paths:
+      - packages/spice-protocol
+  spice-vdagent:
+    specfile_path: spice-vdagent.spec
+    upstream_package_name: spice-vdagent
+    downstream_package_name: spice-vdagent
+    paths:
+      - packages/spice-vdagent
   spirv-tools:
     specfile_path: spirv-tools.spec
     upstream_package_name: spirv-tools
