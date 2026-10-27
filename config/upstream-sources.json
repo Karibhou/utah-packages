@@ -5310,6 +5310,16 @@
       "url": "https://download.savannah.nongnu.org/releases/libntlm/libntlm-1.8.tar.gz",
       "filename": "libntlm-1.8.tar.gz",
       "sha512": "8d1563608b725008abcf948146d1ffce2d9cceab8264196d349be7faded51c61bcaf45ddb92b5c7dca2948fca554856a20198bb2e3bda0f93c8259335e14c377"
+    },
+    {
+      "name": "ifuse",
+      "version": "1.2.1",
+      "url": "https://github.com/libimobiledevice/ifuse/releases/download/1.2.1/ifuse-1.2.1.tar.bz2",
+      "filename": "ifuse-1.2.1.tar.bz2",
+      "sha512": "92e829b902839e4457f9272753a5bbecef387d87c6523d067a1b90a2446c9ae64cf42ac7293c589c6c3fb041147928693ab99d21ab63ff4ab611fa80b778fd83",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/ifuse/ifuse-1.2.1.tar.bz2/sha512/92e829b902839e4457f9272753a5bbecef387d87c6523d067a1b90a2446c9ae64cf42ac7293c589c6c3fb041147928693ab99d21ab63ff4ab611fa80b778fd83/ifuse-1.2.1.tar.bz2"
+      ]
     }
   ]
 }

@@ -393,6 +393,12 @@ Both recipes carry detached signatures in `sources` and a checked-in signing
 key. Preserve their `%{gpgverify}` checks and SHA-512 signature pins when
 locking the release tarballs from `libbsd.freedesktop.org`.
 
+### ifuse dependencies and device test
+
+The `ifuse` recipe builds against the existing `libimobiledevice`,
+`libimobiledevice-glue`, and `libplist` recipes and needs `usbmuxd` at
+runtime. An imported recipe alone does not prove a device can be mounted;
+verify the published package and its runtime dependencies on a real device.
 ### WebDAV filesystem runtime closure
 
 `davfs2` uses the `neon` HTTP/WebDAV library; its default build in turn links
