@@ -5235,6 +5235,13 @@
       "url": "https://github.com/LudovicRousseau/pyscard/archive/2.2.2/pyscard-2.2.2.tar.gz",
       "filename": "pyscard-2.2.2.tar.gz",
       "sha512": "2f5f4bbbdc65c4116ea04a01241c5c714cf62335a65591eb60a400499792749dd2c3408624be374d46885636cdef573db58d72b207512375318069cad3abb187"
+    },
+    {
+      "name": "pam_yubico",
+      "version": "2.27",
+      "url": "https://developers.yubico.com/yubico-pam/Releases/pam_yubico-2.27.tar.gz",
+      "filename": "pam_yubico-2.27.tar.gz",
+      "sha512": "8b6e4edc8bd6d24f0f512abfc6b43359e0ea2a5a60aeb855898f51904ddfd1978bd6845ac9a0af063814301c742b2f7dc42ff0a8ca59e4d7ead8994dfdce0ba6"
     }
   ]
 }

@@ -91,7 +91,6 @@ packages = [
     "opensc",
     "opensc-libs",
     "pam-u2f",
-    "pam_yubico",
     "pamu2fcfg",
     "python3-yubikey-manager",
     "yubikey-manager",
@@ -397,6 +396,7 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    { name = "pam_yubico", pr = 706 },
     # Smart-card Python binding; hosted build and runtime proof remain in #506.
     { name = "python3-pyscard", pr = 704 },
     # NILFS filesystem utilities imported for issue #488; publication still requires validation.
