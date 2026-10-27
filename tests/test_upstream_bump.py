@@ -404,6 +404,7 @@ class ManualChangelogTests(unittest.TestCase):
             ("13%{?dist}", "1.1~beta-1"),
             ("3.2%{?dist} # comment", "1.1~beta-1"),
             ("0.bootstrap%{?dist}", "1.1~beta-1.bootstrap"),
+            ("3%{dist}", "1.1~beta-1"),
             ("%autorelease", "1.1~beta"),
             ("%{baserelease}%{?dist}", "1.1~beta"),
             ("2%{?pre_tag}%{?dist}", "1.1~beta"),

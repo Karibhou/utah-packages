@@ -579,7 +579,7 @@ def update_changelog(text: str, version: str) -> str:
     epoch = re.search(r"(?m)^Epoch:[ \t]*(\d+)[ \t]*(?:#.*)?$", main)
     evr = f"{epoch.group(1)}:{version}" if epoch else version
     if release:
-        literal = release.group(1).replace("%{?dist}", "")
+        literal = release.group(1).replace("%{?dist}", "").replace("%{dist}", "")
         if literal and "%" not in literal:
             evr += f"-{literal}"
     # formatdate is English and UTC regardless of the process locale/timezone.
