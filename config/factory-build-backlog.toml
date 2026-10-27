@@ -707,9 +707,8 @@ packages = [
 
 [wontfix]
 # Packages deliberately decided not to carry. Each entry: package
-# name and a short reason with an issue link. Empty until a
-# maintainer records a decision. Wontfixed names are NOT in ``states``;
-# they are surfaced as ``totals.wontfix`` so the count partition
+# name and a short reason with an issue link. Wontfixed names are NOT in
+# ``states``; they are surfaced as ``totals.wontfix`` so the count partition
 # (areas + resolved + wontfix) still equals the audit's 551.
 packages = [
     { name = "adobe-source-code-pro-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
