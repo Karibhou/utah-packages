@@ -109,9 +109,7 @@ consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
 
-    "gnome-classic-session",
 
-    "gnome-rounded-blur",
 
 
 
@@ -401,9 +399,14 @@ packages = [
 ]
 
 [resolved]
+# GNOME batch #483 publication: ghcr.io/projectbluefin/utah-packages@sha256:7a18f83ef345e1c4f101e2ec00a2c8dffd7e5ef679089bf9d90238a58d99a593
+# Run: https://github.com/projectbluefin/utah-packages/actions/runs/40151594832
+# Published binaries can survive newer failed rebuilds; this is not a runtime validation claim.
+# Latest rebuilds of gnome-tour, gnome-browser-connector and gnome-remote-desktop failed in run 40151594832; their earlier RPMs remain published.
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    { name = "gnome-rounded-blur", commit = "f8589ccd95a48a1f26826c8764330c9f7811a09d", pr = 440, published_run = 40151594832, published_nevra = "gnome-rounded-blur-0:1.0.1^20260809gitf3bfcc7-1.hum1.bfin.x86_64" },
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
     { name = "libudfread", pr = 658 },
     { name = "libbluray", pr = 658 },
@@ -530,7 +533,7 @@ packages = [
     # Thumbnailers + Disks wave (landing PR #523). libspelling ships as a
     # standalone recipe; papers/gst-thumbnailers deferred to #527.
     { name = "gnome-disk-utility", pr = 523 },
-    { name = "gnome-epub-thumbnailer", pr = 523 },
+    { name = "gnome-epub-thumbnailer", pr = 523, published_run = 40151594832, published_nevra = "gnome-epub-thumbnailer-0:1.8-6.hum1.bfin.x86_64" },
     { name = "libspelling", pr = 523 },
     # Printing/scanning core wave (landing PR #525). hplip-common,
     # hplip-libs and libsane-hpaio are %package subpackages of hplip.spec;
@@ -549,16 +552,16 @@ packages = [
     { name = "papers-previewer", pr = 532 },
     { name = "papers-thumbnailer", pr = 532 },
     # GNOME Tour import (PR #549).
-    { name = "gnome-tour", pr = 549 },
+    { name = "gnome-tour", pr = 549, published_run = 40151594832, published_nevra = "gnome-tour-0:50.0-1.hum1.bfin.x86_64" },
     # GNOME display and sharing apps: importer source URLs normalized to HTTPS (PR #556).
-    { name = "gnome-color-manager", pr = 556 },
-    { name = "gnome-user-share", pr = 556 },
+    { name = "gnome-color-manager", pr = 556, published_run = 40151594832, published_nevra = "gnome-color-manager-0:3.36.2-1.hum1.bfin.x86_64" },
+    { name = "gnome-user-share", pr = 556, published_run = 40151594832, published_nevra = "gnome-user-share-0:48.3-1.hum1.bfin.x86_64" },
     # GNOME C++ binding recipes (PR #544).
     { name = "cairomm1.16", pr = 544 },
     { name = "gtkmm4.0", pr = 544 },
     { name = "pangomm2.48", pr = 544 },
     # GNOME wallpaper package import (PR #546).
-    { name = "gnome-backgrounds", pr = 546 },
+    { name = "gnome-backgrounds", pr = 546, published_run = 40151594832, published_nevra = "gnome-backgrounds-0:51.0.1-1.hum1.bfin.noarch" },
     { name = "glibmm2.68", pr = 543 },
     # freerdp-libs and libwinpr are %package subpackages of freerdp.spec (PR #559).
     { name = "freerdp-libs", pr = 559 },
@@ -566,17 +569,17 @@ packages = [
     # libsigc++30 is built by its own source package (PR #560).
     { name = "libsigc++30", pr = 560 },
     # GNOME System Monitor import (PR #542).
-    { name = "gnome-system-monitor", pr = 542 },
+    { name = "gnome-system-monitor", pr = 542, published_run = 40151594832, published_nevra = "gnome-system-monitor-0:51.1-1.hum1.bfin.x86_64" },
     # GNOME menus import (PR #548).
-    { name = "gnome-menus", pr = 548 },
+    { name = "gnome-menus", pr = 548, published_run = 40151594832, published_nevra = "gnome-menus-0:3.38.1-1.hum1.bfin.x86_64" },
     # GNOME app list import (PR #550).
-    { name = "gnome-app-list", pr = 550 },
+    { name = "gnome-app-list", pr = 550, published_run = 40151594832, published_nevra = "gnome-app-list-0:2026.08-1.hum1.bfin.noarch" },
     # GNOME remote desktop import (PR #555).
-    { name = "gnome-remote-desktop", pr = 555 },
+    { name = "gnome-remote-desktop", pr = 555, published_run = 40151594832, published_nevra = "gnome-remote-desktop-0:51.0-1.hum1.bfin.x86_64" },
     # GNOME browser connector import (PR #547).
-    { name = "gnome-browser-connector", pr = 547 },
+    { name = "gnome-browser-connector", pr = 547, published_run = 40151594832, published_nevra = "gnome-browser-connector-0:42.1-1.hum1.bfin.x86_64" },
     # GNOME user documentation import (PR #551).
-    { name = "gnome-user-docs", pr = 551 },
+    { name = "gnome-user-docs", pr = 551, published_run = 40151594832, published_nevra = "gnome-user-docs-0:51.0-1.hum1.bfin.noarch" },
     # Yelp XSL import (PR #552).
     { name = "yelp-xsl", pr = 552 },
     # Yelp runtime libraries are built by the yelp source package (PR #553).
@@ -714,6 +717,7 @@ packages = [
     { name = "google-noto-emoji-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
     { name = "google-noto-sans-cjk-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
     { name = "google-noto-serif-cjk-vf-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
+    { name = "gnome-classic-session", reason = "Utah waives GNOME Classic (projectbluefin/utah baselines/triage.toml; projectbluefin/utah#391). Approved in projectbluefin/utah-packages#483: its source would introduce the shell-extension RPMs excluded in #556." },
     { name = "jetbrains-mono-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
     { name = "jetbrains-mono-fonts-all", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
     { name = "jetbrains-mono-nl-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },

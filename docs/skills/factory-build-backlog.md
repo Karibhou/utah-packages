@@ -65,7 +65,7 @@ Two edits — never one, never none:
 
 - Remove the entry from `[areas.<area>].packages`.
 - Add the entry to either:
-  - `[resolved].packages` (`{ name = "<n>", commit = "<sha>", pr = <n> }`) —
+  - `[resolved].packages` (`{ name = "<n>", commit = "<sha>", pr = <n>, published_run = <run-id>, published_nevra = "<n>-<e>:<v>-<r>.<arch>" }`) —
     a recipe was imported. `commit` and `pr` are both informational; the
     closing record is the import PR (the one this two-edit move ships in)
     and `tools/factory_build_backlog.py:356-357` only reads `entry["name"]`.
@@ -377,6 +377,27 @@ After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the in
 After combining recipe inventories during a rebase, also rerun `python3 tools/render_packit_config.py --write` and `python3 tools/render_architecture_counts.py --write` before `just check` to reconcile derived package lists and counts.
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
 
+When concurrent disposition PRs conflict during rebase, retain each distinct
+`[resolved]` and `[wontfix]` record in the catalog, then regenerate the report
+with `python3 tools/factory_build_backlog.py`. Do not choose one side of the
+generated JSON: it must reflect both sets of catalog changes. Verify the result
+with `python3 tools/factory_build_backlog.py --check` before continuing the rebase.
+
+### Reconciling published batches
+
+A failed aggregate rebuild can still publish successful packages and retain older
+RPMs from its seed repository. Reconcile each binary against the published
+repodata and digest, rather than treating the run conclusion or a newer failed
+rebuild as evidence that it is absent. Keep publication evidence separate from
+current build health and consumer validation. An approved consumer waiver also
+applies to a session subpackage whose source would reintroduce excluded shell
+extensions; link that decision in its `[wontfix]` record.
+
+`published_run` / `published_nevra` are optional and also informational (the
+tool reads only `name`); set them from the publication run's repodata when
+reconciling a published batch. Record any known newer failed rebuilds by package
+name and run in the catalog comments so publication evidence does not hide
+current build health.
 ### X11 resource library imports
 
 The audited `libXres` binary is the main output of source recipe `libXres`;
