@@ -409,8 +409,8 @@ packages = [
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
     { name = "libudfread", pr = 658 },
     { name = "libbluray", pr = 658 },
-    # iFuse source import; publication and consumer validation remain tracked in #486.
-    { name = "ifuse" },
+    # ifuse source import; publication and consumer validation remain tracked in #486.
+    { name = "ifuse", pr = 703 },
     # Flex source import; publication and consumer validation remain tracked in #486.
     { name = "flex", pr = 654 },
     # Existing GPU monitor recipe; publication/runtime proof remains in #488.
