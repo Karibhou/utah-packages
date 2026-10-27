@@ -155,7 +155,6 @@ packages = [
     "libsss_nss_idmap",
     "libsss_sudo",
     "lsb_release",
-    "nilfs-utils",
     "ntfs-3g-system-compression",
     "oddjob",
     "oddjob-mkhomedir",
@@ -399,6 +398,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # NILFS filesystem utilities imported for issue #488; publication still requires validation.
+    { name = "nilfs-utils", pr = 702 },
     # Recipe imported; hosted build, publication and runtime proof remain in #501.
     { name = "iptstate", pr = 697 },
     # Recipe coverage; publication and runtime proof remain tracked in #502.

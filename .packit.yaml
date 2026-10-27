@@ -2338,6 +2338,12 @@ packages:
     downstream_package_name: nfs-utils
     paths:
       - packages/nfs-utils
+  nilfs-utils:
+    specfile_path: nilfs-utils.spec
+    upstream_package_name: nilfs-utils
+    downstream_package_name: nilfs-utils
+    paths:
+      - packages/nilfs-utils
   noopenh264:
     specfile_path: noopenh264.spec
     upstream_package_name: noopenh264

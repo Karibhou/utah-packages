@@ -5218,6 +5218,16 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/iptstate/v2.3.0.tar.gz/sha512/355f48f45965ed7bf79a59249c20505c96ec51a06711cf9df02b5a32dcf4bfd5e90d2aa97c08ee9b19ae738583b4d16094050a469bece295910926253eb6acc7/v2.3.0.tar.gz"
       ]
+    },
+    {
+      "name": "nilfs-utils",
+      "version": "2.2.11",
+      "url": "https://nilfs.sourceforge.io/download/nilfs-utils-2.2.11.tar.bz2",
+      "filename": "nilfs-utils-2.2.11.tar.bz2",
+      "sha512": "8c238f961f429c12674695d2481202c8fac4582d04e838ce7244647b8a9997e38b4dafa280314acb57ae40137711c7678de6aaf65708c110028df97c1c76089e",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/nilfs-utils/nilfs-utils-2.2.11.tar.bz2/sha512/8c238f961f429c12674695d2481202c8fac4582d04e838ce7244647b8a9997e38b4dafa280314acb57ae40137711c7678de6aaf65708c110028df97c1c76089e/nilfs-utils-2.2.11.tar.bz2"
+      ]
     }
   ]
 }

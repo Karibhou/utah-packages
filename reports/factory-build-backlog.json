@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 86,
-      "total": 87
+      "pending": 85,
+      "total": 86
     },
     "fonts-i18n": {
       "pending": 24,
@@ -358,11 +358,6 @@
     {
       "area": "dev-tools",
       "name": "lsb_release",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nilfs-utils",
       "state": "pending"
     },
     {
@@ -1515,11 +1510,11 @@
   "states": {
     "already_recipe": 25,
     "manifest_wants": 1,
-    "pending": 266
+    "pending": 265
   },
   "totals": {
-    "backlog": 292,
-    "resolved": 229,
+    "backlog": 291,
+    "resolved": 230,
     "wontfix": 30
   }
 }
