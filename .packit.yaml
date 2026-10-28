@@ -160,6 +160,12 @@ packages:
     downstream_package_name: bison
     paths:
       - packages/bison
+  bluefin-artwork-logos:
+    specfile_path: bluefin-artwork-logos.spec
+    upstream_package_name: bluefin-artwork-logos
+    downstream_package_name: bluefin-artwork-logos
+    paths:
+      - packages/bluefin-artwork-logos
   bluez:
     specfile_path: bluez.spec
     upstream_package_name: bluez
