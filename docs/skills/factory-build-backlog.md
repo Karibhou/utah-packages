@@ -952,3 +952,10 @@ then destroy the set. A version or help command does not exercise that path.
 A spec using `%global with_selinux 1` can emit a SELinux subpackage even when the backlog auditor cannot evaluate its `%{with selinux}` guard. Check the default RPM expansion and retain build and publication verification as separate evidence; a recipe classification alone does not prove an installable binary.
 
 The adcli recipe BuildRequires `libnetapi-devel` from the factory samba recipe. Keep its recorded stage later than samba for the ICU staging guard, and verify the generated build graph still orders the dependency before adcli.
+
+## Serd source verification
+
+The `serd` recipe checks a detached upstream signature using the signing key
+carried in the recipe directory. Preserve the signature entry in `sources`
+and compare its SHA-512 independently from the release archive; a source lock
+for the archive alone does not establish that the signature is available.

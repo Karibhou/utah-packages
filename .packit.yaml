@@ -3202,6 +3202,12 @@ packages:
     downstream_package_name: sdl2-compat
     paths:
       - packages/sdl2-compat
+  serd:
+    specfile_path: serd.spec
+    upstream_package_name: serd
+    downstream_package_name: serd
+    paths:
+      - packages/serd
   setools:
     specfile_path: setools.spec
     upstream_package_name: setools
