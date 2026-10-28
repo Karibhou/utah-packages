@@ -2,6 +2,13 @@
   "schema": 1,
   "packages": [
     {
+      "name": "leptonica",
+      "version": "1.87.0",
+      "url": "https://github.com/DanBloomberg/leptonica/archive/1.87.0/leptonica-1.87.0.tar.gz",
+      "filename": "leptonica-1.87.0.tar.gz",
+      "sha512": "2a1953dd0c962a05dac9bb30eac311896f414c658d976008b0c2d1b3b85ec25c5fd811be3f98a37f2131ded134799ea609a667fb1eaacf42d1aca9cc5cf1bd92"
+    },
+    {
       "name": "chromaprint",
       "version": "1.6.2",
       "url": "https://github.com/acoustid/chromaprint/releases/download/v1.6.2/chromaprint-1.6.2.tar.gz",

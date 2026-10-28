@@ -715,3 +715,11 @@ Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 (`imath`, `libgee`, `libmediaart`, `libwnck3`, `rygel`) stay pending in
 `[areas.gnome-apps]`, and the batch issue remains open with `Refs #484`.
 
+
+### Image-processing library
+
+`leptonica` builds its image-processing library from its own source recipe.
+Its optional gnuplot and MinGW build requirements depend on target macros;
+check the pinned buildroot and resulting binaries rather than assuming they
+are enabled. Recipe accounting does not establish publication or image-processing
+behavior; verify both with the hosted build and a representative image.

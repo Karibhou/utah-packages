@@ -6,8 +6,8 @@
       "total": 30
     },
     "dev-tools": {
-      "pending": 72,
-      "total": 72
+      "pending": 71,
+      "total": 71
     },
     "fonts-i18n": {
       "pending": 19,
@@ -281,11 +281,6 @@
     {
       "area": "dev-tools",
       "name": "kernel-tools-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "leptonica",
       "state": "pending"
     },
     {
@@ -1218,11 +1213,11 @@
   "states": {
     "already_recipe": 13,
     "manifest_wants": 1,
-    "pending": 219
+    "pending": 218
   },
   "totals": {
-    "backlog": 233,
-    "resolved": 284,
+    "backlog": 232,
+    "resolved": 285,
     "wontfix": 34
   }
 }
