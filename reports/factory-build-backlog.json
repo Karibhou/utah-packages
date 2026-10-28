@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 19,
-      "total": 29
+      "pending": 18,
+      "total": 28
     },
     "dev-tools": {
       "pending": 66,
@@ -131,11 +131,6 @@
     {
       "area": "codecs-media",
       "name": "libfdk-aac",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libiec61883",
       "state": "pending"
     },
     {
@@ -1143,11 +1138,11 @@
   "states": {
     "already_recipe": 13,
     "manifest_wants": 1,
-    "pending": 204
+    "pending": 203
   },
   "totals": {
-    "backlog": 218,
-    "resolved": 297,
+    "backlog": 217,
+    "resolved": 298,
     "wontfix": 36
   }
 }
