@@ -638,6 +638,16 @@ main but not yet in the published image stay in `[resolved]` without
 publication fields until a run ships them. Partial reconciliation PRs must
 link the tracking issue with `Refs #<issue>`, not a closing keyword.
 
+The `passwdqc` source also builds `libpasswdqc` through `%package -n
+lib%name`. The inventory auditor does not expand that concatenated macro, so
+this output can appear `pending` even with a registered, source-locked recipe.
+Verify the expanded binary name and `passwdqc` source RPM in published metadata
+before reconciling it; do not import a second recipe named `libpasswdqc`.
+Its merged import is #676 (which adopted the closed #644), so use the merged
+PR and its target-branch commit for provenance rather than the earlier proposal.
+Publication of the library does not verify password policy or PAM integration;
+keep those consumer checks separate from catalog accounting.
+
 ### S-Lang library imports
 
 The `slang` source produces the audited `slang` library and a separate
