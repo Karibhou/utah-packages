@@ -6,8 +6,8 @@
       "total": 30
     },
     "dev-tools": {
-      "pending": 71,
-      "total": 71
+      "pending": 70,
+      "total": 70
     },
     "fonts-i18n": {
       "pending": 19,
@@ -381,11 +381,6 @@
     {
       "area": "dev-tools",
       "name": "python3-fido2",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-h11",
       "state": "pending"
     },
     {
