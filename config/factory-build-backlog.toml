@@ -420,10 +420,10 @@ packages = [
     { name = "libmd", pr = 614, published_run = 40626803772, published_nevra = "libmd-0:1.3.0-1.hum1.bfin.x86_64" },
     { name = "spice-vdagent", pr = 679 }, # Recipe import; publication/installability tracked in #490.
     { name = "sshpass", pr = 611 }, # Recipe import; publication/installability tracked in #490.
-    # Password-quality source family: passwdqc builds all three (projectbluefin/utah-packages#644, #505).
-    { name = "pam_passwdqc", pr = 644 },
-    { name = "passwdqc", pr = 644 },
-    { name = "passwdqc-utils", pr = 644 },
+    # Password-quality source family: #676 merged the recipes from #644; publication is not runtime acceptance (#505).
+    { name = "pam_passwdqc", commit = "dfd06b47175b8c94d511c12ac995ecb5e25d7efa", pr = 676, published_run = 40626803772, published_nevra = "pam_passwdqc-0:2.0.3-10.hum1.bfin.x86_64" },
+    { name = "passwdqc", commit = "dfd06b47175b8c94d511c12ac995ecb5e25d7efa", pr = 676, published_run = 40626803772, published_nevra = "passwdqc-0:2.0.3-10.hum1.bfin.x86_64" },
+    { name = "passwdqc-utils", commit = "dfd06b47175b8c94d511c12ac995ecb5e25d7efa", pr = 676, published_run = 40626803772, published_nevra = "passwdqc-utils-0:2.0.3-10.hum1.bfin.x86_64" },
     # Smart-card recipes imported in #364; publication verified for #478.
     { name = "pcsc-lite", commit = "a09ec58", pr = 364 },
     { name = "pcsc-lite-libs", commit = "a09ec58", pr = 364 },
@@ -633,7 +633,7 @@ packages = [
     { name = "man-pages", pr = 587 },
     { name = "mtr", pr = 587 },
     { name = "nvme-cli", pr = 587 },
-    { name = "pinfo", pr = 587 },
+    { name = "pinfo", commit = "c2c7cd8c3f440a81b9aafe204bc9d22b0532fe0e", pr = 587, published_run = 40626803772, published_nevra = "pinfo-0:0.6.13-11.hum1.bfin.x86_64" },
     { name = "python3-llfuse", pr = 587 },
     { name = "python3-msgpack", pr = 587 },
     { name = "smartmontools", pr = 587 },
@@ -734,7 +734,8 @@ packages = [
     { name = "svt-vp9-libs", pr = 626 },
     # PyAudio (Python bindings for audio capture/playback) and the PortAudio
     # library it links against (#506); both long-tail names.
-    { name = "portaudio", pr = 748 },
+    # #752 adopted #748 and merged its source family.
+    { name = "portaudio", commit = "da68d0f0b38c2f8bacf3fbfc6dd13c0b17681134", pr = 752, published_run = 40626803772, published_nevra = "portaudio-0:19.7.0-1.hum1.bfin.x86_64" },
     { name = "python3-pyaudio", pr = 748, published_run = 40626803772, published_nevra = "python3-pyaudio-0:0.2.13-14.hum1.bfin.x86_64" },
     # Terminal and VTE emulator outputs (PR #413); publication verified in run 40569848351.
     # vte-profile and vte291-gtk4 are subpackages of vte291.spec.

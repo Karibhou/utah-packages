@@ -674,6 +674,18 @@ PR and its target-branch commit for provenance rather than the earlier proposal.
 Publication of the library does not verify password policy or PAM integration;
 keep those consumer checks separate from catalog accounting.
 
+A closed import PR is not necessarily a rejected import: maintainers can adopt
+its commits in another PR. Follow its closing comment, verify the adoption PR
+is merged and its merge commit is on the target branch, then use that merged
+PR and stable commit for the catalog record. For example, `passwdqc` came
+through #676 (adopting #644), and `portaudio` through #752 (adopting #748).
+The `passwdqc` source emits `pam_passwdqc`, `passwdqc`, and `passwdqc-utils`;
+check all three binary versions in primary metadata before filling publication
+fields. Updating optional publication fields does not change the auditor's
+name-only snapshot; rerun it anyway and expect no report diff when no names
+or recipe classifications changed. Publication still does not prove password
+policy integration, audio-device operation, or a permitted-repository install.
+
 ### S-Lang library imports
 
 The `slang` source produces the audited `slang` library and a separate
