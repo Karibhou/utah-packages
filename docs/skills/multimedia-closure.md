@@ -268,4 +268,7 @@ hosted build and exercise a compatible device after installation.
 `libraw1394` recipe must build first. The upstream 1.2.0 gzip archive
 and Fedora lookaside archive have different compressed hashes but unpack
 to identical file trees; lock the upstream bytes and update the source
-manifest to match. A recipe does not prove streaming or hardware support.
+manifest to match. Fedora's channel-allocation patch returns success
+when allocation fails; the Utah-local follow-up patch reads the IRM and
+returns an error unless the channel is already allocated. A recipe does
+not prove streaming or hardware support.
