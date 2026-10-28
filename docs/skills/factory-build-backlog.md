@@ -662,6 +662,16 @@ the raw metadata so a moving `latest` tag cannot mix two publications.
 Metadata publication is independent of the workflow's aggregate conclusion;
 it does not establish a successful runtime transaction or payload exercise.
 
+The `passwdqc` source also builds `libpasswdqc` through `%package -n
+lib%name`. The inventory auditor does not expand that concatenated macro, so
+this output can appear `pending` even with a registered, source-locked recipe.
+Verify the expanded binary name and `passwdqc` source RPM in published metadata
+before reconciling it; do not import a second recipe named `libpasswdqc`.
+Its merged import is #676 (which adopted the closed #644), so use the merged
+PR and its target-branch commit for provenance rather than the earlier proposal.
+Publication of the library does not verify password policy or PAM integration;
+keep those consumer checks separate from catalog accounting.
+
 ### S-Lang library imports
 
 The `slang` source produces the audited `slang` library and a separate
