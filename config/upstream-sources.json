@@ -6055,6 +6055,13 @@
       "url": "https://github.com/caolanm/libwmf/archive/v0.2.17.tar.gz",
       "filename": "v0.2.17.tar.gz",
       "sha512": "758f62abf36d6993124b064eb1ec4295b0f571c02945861375474b93a1d68b4f298d64d295c836f4c34fc882192995845021ae69bb16d1e8e88630b7de4a5f08"
+    },
+    {
+      "name": "pam-u2f",
+      "version": "1.4.0",
+      "url": "https://developers.yubico.com/pam-u2f/Releases/pam_u2f-1.4.0.tar.gz",
+      "filename": "pam_u2f-1.4.0.tar.gz",
+      "sha512": "6ee4c5538a3b290748fae3b8c285b20a784fe2c0fdeff3a0bf250ec9b03659c6ddda4ea2d668c93d606f810e4f68cf3fc4130584a8532db9c9833a684d78f51f"
     }
   ]
 }

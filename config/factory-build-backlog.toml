@@ -86,8 +86,6 @@ packages = [
     "openpace",
     "opensc",
     "opensc-libs",
-    "pam-u2f",
-    "pamu2fcfg",
     "python3-yubikey-manager",
     "yubikey-manager",
 ]
@@ -345,6 +343,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    { name = "pam-u2f" },
+    { name = "pamu2fcfg" },
     # Language data recipe; build/publication and consumer proof remain tracked in #494.
     { name = "langtable", pr = 700 },
     { name = "python3-langtable", pr = 700 },

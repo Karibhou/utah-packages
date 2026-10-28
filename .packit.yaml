@@ -2584,6 +2584,12 @@ packages:
     downstream_package_name: osinfo-db-tools
     paths:
       - packages/osinfo-db-tools
+  pam-u2f:
+    specfile_path: pam-u2f.spec
+    upstream_package_name: pam-u2f
+    downstream_package_name: pam-u2f
+    paths:
+      - packages/pam-u2f
   pam_yubico:
     specfile_path: pam_yubico.spec
     upstream_package_name: pam_yubico
