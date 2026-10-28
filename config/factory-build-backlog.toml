@@ -299,11 +299,9 @@ packages = [
     "pam_afs_session",
     "paps",
     "perl-Unicode-Normalize",
-    "portaudio",
     "prefixdevname",
     "python3-perf",
     "python3-pskc",
-    "python3-pyaudio",
     "qadwaitadecorations-qt5",
     "qrencode-libs",
     "qt5-qtdeclarative",
@@ -722,6 +720,10 @@ packages = [
     # standalone SVT VP9 encoder (library, CLI, GStreamer plug-in).
     { name = "libultrahdr", pr = 626 },
     { name = "svt-vp9-libs", pr = 626 },
+    # PyAudio (Python bindings for audio capture/playback) and the PortAudio
+    # library it links against (#506); both long-tail names.
+    { name = "portaudio", pr = 748 },
+    { name = "python3-pyaudio", pr = 748 },
     # Terminal and VTE emulator outputs (PR #413); publication verified in run 40569848351.
     # vte-profile and vte291-gtk4 are subpackages of vte291.spec.
     # Recipe and publication closure for projectbluefin/utah-packages#484.

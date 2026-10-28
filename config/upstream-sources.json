@@ -6006,6 +6006,20 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libultrahdr/libultrahdr-8cbc983d2f6c2171af5cbcdb8801102f83fe92ab.tar.gz/sha512/55bc2711ebea273023afb5c9901f864004247dac6f87c9ee2f699705ee94610be3e917bdea622db17bf0749ae090cb8246f3df0a08bfe64c528ca1353f4284b5/libultrahdr-8cbc983d2f6c2171af5cbcdb8801102f83fe92ab.tar.gz"
       ]
+    },
+    {
+      "name": "portaudio",
+      "version": "19.7.0",
+      "url": "https://github.com/PortAudio/portaudio/archive/v19.7.0/portaudio-19.7.0.tar.gz",
+      "filename": "portaudio-19.7.0.tar.gz",
+      "sha512": "7e347a174109b661a685bcd617cc8fe00929c6fbf28f142fd7709a8ddbb9b5ed6e805be6647a44b4b9441b79e3474561de6f8e351b4ffc024952ed3e0e27ac1c"
+    },
+    {
+      "name": "pyaudio",
+      "version": "0.2.13",
+      "url": "https://files.pythonhosted.org/packages/91/a0/f439da954d78a987298cb8d1ca1b141c53b1d1d1c7a50e17198ed061b9ac/PyAudio-0.2.13.tar.gz",
+      "filename": "PyAudio-0.2.13.tar.gz",
+      "sha512": "1ae453cae442118ae1b0db44ca8736621a361af3686e47561bffa0d43352039ed5f882412ca22a2a4320b362f966e727b0e38bb9706e99b85d99bc16cc943008"
     }
   ]
 }

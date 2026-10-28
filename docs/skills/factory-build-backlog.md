@@ -93,6 +93,12 @@ batch issue's build, publication, dependency-resolution, or runtime acceptance.
 For a partial source-family PR, keep the batch issue open and list the remaining
 outputs and missing evidence explicitly.
 
+A 404 on a guessed dist-git name is not evidence that a source was removed
+from Fedora. Resolve the binary's actual source package first (the
+`sourcerpm` of the binary in Fedora's repodata): `python3-pyaudio` comes from
+`pyaudio` and `python3-pskc` from `python-pskc`; #506 once recorded these as
+"removed from dist-git" because `PyAudio` and `python-libpskc` 404.
+
 Before importing an audit name, read Utah's current `baselines/triage.toml` and
 pin the decision's commit when reconciling an existing `waived` entry into
 `[wontfix]`. The audit can include deliberately absent X11 client utilities
