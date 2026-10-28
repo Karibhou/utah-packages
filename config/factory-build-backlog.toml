@@ -411,7 +411,7 @@ packages = [
     { name = "libchromaprint", pr = 692 },
     # BSD compatibility library and its digest-library dependency (#487).
     # Recipe import only; build/publication and Utah consumption remain separate proof.
-    { name = "leptonica" }, # Recipe import; publication and runtime proof remain.
+    { name = "leptonica", pr = 772 }, # Recipe import; publication and runtime proof remain.
     { name = "libbsd", pr = 614 },
     { name = "libmd", pr = 614 },
     { name = "spice-vdagent", pr = 679 }, # Recipe import; publication/installability tracked in #490.
