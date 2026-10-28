@@ -64,6 +64,8 @@ read it back with `gh pr view <pr> --json body --jq .body` and verify the
 saved description, including any generated footer; local prose alone does not establish
 that the live PR will keep the batch open. A branch push alone does not correct the PR description.
 Once the PR number is known, fill in the recipe record's `pr` field so reviewers can trace the partial import.
+Keep package-specific comment blocks adjacent to the entries they describe;
+insert unrelated records before the block rather than between it and its entries.
 
 Two edits — never one, never none:
 
