@@ -6008,6 +6008,17 @@
       ]
     },
     {
+      "name": "bluefin-artwork-logos",
+      "version": "0^%{gitdate}git%{shortcommit}",
+      "filename": "bluefin-artwork-logos-9ab493b.tar.xz",
+      "sha512": "0cd3ce399f649d02d8ff5d1994fae9a28c717e48d45c5039bbe82044614e0c60c9804bbe397ee0e106878ebfa0a23a069f5de609fac87e94bd270a6fb47fc262",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://raw.githubusercontent.com/projectbluefin/artwork/9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01/LICENSE, https://raw.githubusercontent.com/projectbluefin/artwork/9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01/assets/vector/logos/bluefin/bluefin-logo-dark.svg, https://raw.githubusercontent.com/projectbluefin/artwork/9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01/assets/vector/logos/bluefin/bluefin-logo-light.svg (each sha512-pinned)",
+        "method": "fetch each file from projectbluefin/artwork at 9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01 and pack them flat and deterministically as bluefin-artwork-logos-9ab493b.tar.xz"
+      }
+    },
+    {
       "name": "portaudio",
       "version": "19.7.0",
       "url": "https://github.com/PortAudio/portaudio/archive/v19.7.0/portaudio-19.7.0.tar.gz",

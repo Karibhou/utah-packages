@@ -104,6 +104,9 @@ inventoried. Extend `parse_packages`, not the container.
 Every recipe in `packages/<name>/` carries `.hummingbird-upstream.json`, and
 `tools/validate.py` rejects the tree without it:
 
+- The `package` field must match the recipe directory name (`packages/<name>`),
+  ensuring any remote or identity derivation bound to the package name cannot
+  be bypassed by a mislabeled provenance file.
 - **`branch: rawhide`** — the Fedora dist-git snapshot, pinned by full
   40-character `commit` and `tree` SHAs. An abbreviated SHA is not a pin: it
   is ambiguous and it is not what `git` resolved at import.
@@ -182,6 +185,20 @@ When a primary host dies:
   into a red pipeline.
 - Leave the recipe's `Source:` line alone: the spec is Fedora's, and the build
   stages sources from the lock, not from the spec URL.
+
+## A source with no release and a huge archive: pick files, pin each
+
+A recipe can only take one primary source from the lock; a second `sources`
+line is fetched from Fedora's lookaside, so a Utah-only recipe cannot use one.
+When the upstream has no release and its commit archive is far larger than
+what the recipe needs, add a `tools/generated_sources.py` generator that
+fetches only the needed files at a pinned commit, checks a SHA-512 per file,
+and packs them deterministically (sorted, owner-less, fixed mtime, single xz
+stream). `bluefin-artwork-logos` does this for three files of
+`projectbluefin/artwork`, whose archive carries every wallpaper. Take the
+commit from the spec's `%global commit`, so moving the pin is one spec edit
+plus a new digest table entry, and include the upstream `LICENSE` so the
+package can ship it.
 
 ## Source verification reporting
 
