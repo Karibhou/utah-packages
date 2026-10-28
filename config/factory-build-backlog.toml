@@ -343,8 +343,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
-    { name = "pam-u2f" },
-    { name = "pamu2fcfg" },
+    { name = "pam-u2f", pr = 776 },
+    { name = "pamu2fcfg", pr = 776 },
     # Language data recipe; build/publication and consumer proof remain tracked in #494.
     { name = "langtable", pr = 700 },
     { name = "python3-langtable", pr = 700 },
