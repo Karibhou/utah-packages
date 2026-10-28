@@ -440,6 +440,14 @@ Both recipes carry detached signatures in `sources` and a checked-in signing
 key. Preserve their `%{gpgverify}` checks and SHA-512 signature pins when
 locking the release tarballs from `libbsd.freedesktop.org`.
 
+For `python-pskc`, Fedora carries the detached signature and signing key in
+dist-git rather than its lookaside manifest. Keep both beside the spec: the
+recipe verifies them in `%prep`, while the upstream archive remains SHA-512
+locked. Neither `arthur.asc` nor `python_pskc-<version>.tar.gz.asc` matches the
+root `.gitignore` keyring exceptions, so keep `!packages/python-pskc/*.asc`
+there; without it a renamed signature on a version bump is silently skipped by
+`git add`. Verify the signing key independently before treating it as trusted.
+
 ### ifuse dependencies and device test
 
 The `ifuse` recipe builds against the existing `libimobiledevice`,
@@ -715,8 +723,3 @@ Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 (`imath`, `libgee`, `libmediaart`, `libwnck3`, `rygel`) stay pending in
 `[areas.gnome-apps]`, and the batch issue remains open with `Refs #484`.
 
-
-For `python-pskc`, Fedora carries the detached signature and signing key in
-dist-git rather than its lookaside manifest. Keep both beside the spec: the
-recipe verifies them in `%prep`, while the upstream archive remains SHA-512
-locked. Verify the signing key independently before treating it as trusted.

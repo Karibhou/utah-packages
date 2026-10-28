@@ -442,10 +442,11 @@ packages = [
     { name = "stoken-libs", pr = 585 },
     { name = "pkcs11-helper", pr = 585 },
     { name = "libpskc", pr = 585 },
-    # Recipe import only; publication and runtime proof remain outstanding.
-    { name = "python3-pskc", pr = 775 },
     { name = "libuser", pr = 585 },
     { name = "usermode", pr = 585 },
+    # PSKC library for yubikey-manager (projectbluefin/utah-packages#479); long-tail #506.
+    # Recipe import only; publication and runtime proof remain outstanding.
+    { name = "python3-pskc", pr = 775 },
     # Screen-reader stack (projectbluefin/utah-packages#447).
     { name = "brlapi", pr = 466 },
     { name = "brltty", pr = 466 },
