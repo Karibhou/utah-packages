@@ -255,7 +255,20 @@ description. Reserve `Closes #<issue>` for a batch whose named outputs and
 acceptance requirements are all resolved or explicitly blocked by linked
 decisions, as required by that issue. Check the entire description for closing
 keywords before pushing: a trailing `Closes` still auto-closes the issue even
-when the summary describes partial progress.
+when the summary describes partial progress. Repeat the live-body readback after
+the push and any automation that rewrites the description. If a closing footer
+returns, replace it with `Refs` in the saved PR body and read it back again;
+a new branch head does not by itself resolve a description-only review finding.
+
+### Collection-library imports
+
+`libgee` produces `libgee` and `libgee-devel` from one source recipe; do not
+import the development output separately. Its upstream archive includes C
+sources, but the Fedora recipe touches the Vala inputs and explicitly enables
+Vala regeneration for compiler compatibility. Retain the `vala` BuildRequires,
+`--enable-vala`, and the real `make check` step when importing it. A source lock
+and catalog closing record establish the recipe import only; scoped hosted
+build, publication and runtime evidence are still required for the output batch.
 
 ### Locking sources for a hand import
 
@@ -712,6 +725,5 @@ in `ghcr.io/projectbluefin/utah-packages:latest` and move them from
 Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 `libhandy`, `libspelling`) also populate their observed `published_run` and
 `published_nevra` fields. Remaining outputs without recipes or source locks
-(`imath`, `libgee`, `libmediaart`, `libwnck3`, `rygel`) stay pending in
+(`imath`, `libmediaart`, `libwnck3`, `rygel`) stay pending in
 `[areas.gnome-apps]`, and the batch issue remains open with `Refs #484`.
-
