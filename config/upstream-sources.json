@@ -6083,6 +6083,13 @@
       "url": "https://github.com/pallets/click/archive/8.4.2/click-8.4.2.tar.gz",
       "filename": "click-8.4.2.tar.gz",
       "sha512": "2731993c89d7386a8bfd4f51131384a2a67c4ee33e54f92a055b685ba4cf74c854fb5aca0c92e3a24d04bf7725e169edf457d1f18a660b5361aabbbcdd550657"
+    },
+    {
+      "name": "libpinyin",
+      "version": "2.11.92",
+      "url": "https://downloads.sourceforge.net/libpinyin/libpinyin/libpinyin-2.11.92.tar.gz",
+      "filename": "libpinyin-2.11.92.tar.gz",
+      "sha512": "b0b355469f6aeb85c72bed7df38ea033459032ab1a3d8686dd7cb4ed60f1091a5d962c6e5055e420e739f3ddd5bfc17de0e8b66ac541233107ddcfe46412ecf5"
     }
   ]
 }
