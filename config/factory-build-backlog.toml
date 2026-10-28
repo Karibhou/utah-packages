@@ -278,11 +278,9 @@ packages = [
     "libpaper",
     "libpasswdqc",
     "libpfm",
-    "librabbitmq",
     "libreport-filesystem",
     "librtmp",
     "libslirp",
-    "libwmf-lite",
     "lilv-libs",
     "lockdev",
     "mcelog",
@@ -709,6 +707,9 @@ packages = [
     { name = "libvarlink", commit = "26ebd2a8ecc9fdd617061452449c71a9fdcdf34d", pr = 519, published_nevra = "libvarlink-0:24.0.1-1.hum1.bfin.x86_64" },
     { name = "liburing", pr = 742 },
     { name = "lrzsz", pr = 742 },
+    # librabbitmq (source librabbitmq) and libwmf-lite (source libwmf) recipe imports (#503).
+    { name = "librabbitmq", pr = 756 },
+    { name = "libwmf-lite", pr = 756 },
     { name = "qpdf-libs", pr = 640 },
     # Handwriting recognition (zinnia also builds zinnia-tomoe-ja) and zix (#509).
     { name = "zinnia", pr = 630 },

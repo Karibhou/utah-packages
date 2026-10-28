@@ -20,8 +20,8 @@
     "long-tail": {
       "already_recipe": 3,
       "manifest_wants": 1,
-      "pending": 91,
-      "total": 95
+      "pending": 89,
+      "total": 93
     },
     "power": {
       "total": 0
@@ -905,11 +905,6 @@
     },
     {
       "area": "long-tail",
-      "name": "librabbitmq",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libreport-filesystem",
       "state": "pending"
     },
@@ -921,11 +916,6 @@
     {
       "area": "long-tail",
       "name": "libslirp",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libwmf-lite",
       "state": "pending"
     },
     {
@@ -1228,11 +1218,11 @@
   "states": {
     "already_recipe": 13,
     "manifest_wants": 1,
-    "pending": 221
+    "pending": 219
   },
   "totals": {
-    "backlog": 235,
-    "resolved": 282,
+    "backlog": 233,
+    "resolved": 284,
     "wontfix": 34
   }
 }
