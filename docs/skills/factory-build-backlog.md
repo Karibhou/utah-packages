@@ -333,6 +333,8 @@ needed: inspect every built RPM's requirements for ICU 77 and resolve the
 runtime transaction using only Hummingbird and the factory. The opt-in does
 not prove the outputs are safe or published.
 
+The `python-h11` source archive has no runtime dependencies; its recipe runs the bundled pytest suite. Recipe coverage still requires a hosted build and a factory-plus-Hummingbird installation test before claiming publication or installability.
+
 A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
 links `libraqm.so.0` (hence `libraqm`, imported with it) and its
 `python3-pillow-qt` subpackage needs `python3-qt5`, which neither Hummingbird
