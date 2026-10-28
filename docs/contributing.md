@@ -14,7 +14,8 @@ looking for, which is why searching for the binary finds nothing to fork.
 `perf` is the extreme case: it has no dist-git of its own and is built from
 the `kernel` source package (`%package -n perf` in `kernel.spec`, sharing the
 kernel's version and release), so carrying it means importing the whole kernel
-recipe, not a small tool. `strace` (#625) is an ordinary standalone import.
+recipe, not a small tool. `strace` is an ordinary standalone import (see #625);
+the `perf` work in that issue remains separate and unresolved.
 
 Flatpak-first (standing policy): do not import recipes for end-user
 applications Utah already ships as Flatpaks (see the `[flatpak]` app list in
