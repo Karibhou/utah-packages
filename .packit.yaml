@@ -1954,6 +1954,12 @@ packages:
     downstream_package_name: libqrtr-glib
     paths:
       - packages/libqrtr-glib
+  librabbitmq:
+    specfile_path: librabbitmq.spec
+    upstream_package_name: librabbitmq
+    downstream_package_name: librabbitmq
+    paths:
+      - packages/librabbitmq
   libraqm:
     specfile_path: libraqm.spec
     upstream_package_name: libraqm
@@ -2188,6 +2194,12 @@ packages:
     downstream_package_name: libwacom
     paths:
       - packages/libwacom
+  libwmf:
+    specfile_path: libwmf.spec
+    upstream_package_name: libwmf
+    downstream_package_name: libwmf
+    paths:
+      - packages/libwmf
   libx86emu:
     specfile_path: libx86emu.spec
     upstream_package_name: libx86emu

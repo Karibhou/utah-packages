@@ -680,6 +680,14 @@ pin, repin `sources` to SHA-512, and use the `/md5/<md5>/` lookaside path as
 the fallback. `liburing` locks only `Source0`; like `dnsmasq`, its `.asc`
 signature is fetched from Fedora's lookaside by its `sources` SHA-512.
 
+`librabbitmq` and `libwmf-lite` (a subpackage of `libwmf`) lock their GitHub
+tag archives directly: those bytes equal the dist-git SHA-512 pins. Two
+outputs need more than a lock. `libslirp`'s GitLab tag archive differs from
+Fedora's `.tar.xz` pin, so it needs a `generate` entry or a matching upstream
+release asset. `librtmp` comes from `rtmpdump`, whose `Source0` is a local
+`git archive` of tag `v2.6` with no download URL. Check the archive bytes
+against the pin before you lock a source.
+
 ### GNOME apps batch #484: terminal outputs and publication reconciliation
 
 The terminal and terminal-widget outputs (`ptyxis`, `vte291`, `vte-profile`,
