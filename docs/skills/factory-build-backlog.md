@@ -542,7 +542,6 @@ BuildRequires is absent from Hummingbird (the build root also uses Fedora).
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs. If a rebase conflicts in this generated report, resolve the catalog and recipe inputs first, then run `python3 tools/factory_build_backlog.py`; choosing either report wholesale can discard the other branch’s backlog updates.
 
 After combining recipe inventories during a rebase, also rerun `python3 tools/render_packit_config.py --write` and `python3 tools/render_architecture_counts.py --write` before `just check` to reconcile derived package lists and counts. A conflict resolution can leave valid package entries but stale architecture counts; regenerate from the final combined inventory even if the document itself had no conflict.
-After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
 
 When concurrent disposition PRs conflict during rebase, retain each distinct
 `[resolved]` and `[wontfix]` record in the catalog, then regenerate the report
