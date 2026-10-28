@@ -727,3 +727,12 @@ Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 `published_nevra` fields. Remaining outputs without recipes or source locks
 (`imath`, `libmediaart`, `libwnck3`, `rygel`) stay pending in
 `[areas.gnome-apps]`, and the batch issue remains open with `Refs #484`.
+
+
+### NTFS system compression plugin
+
+The `ntfs-3g-system-compression` source produces a plugin for the existing
+`ntfs-3g` driver, not a second driver recipe. Its build requires
+`pkgconfig(libntfs-3g)`, so keep the existing source in the factory graph.
+A catalog record for the recipe does not prove the plugin has been built,
+published, or loaded with the driver.
