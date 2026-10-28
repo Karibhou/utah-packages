@@ -6,8 +6,8 @@
       "total": 21
     },
     "dev-tools": {
-      "pending": 60,
-      "total": 60
+      "pending": 58,
+      "total": 58
     },
     "fonts-i18n": {
       "pending": 15,
@@ -151,16 +151,6 @@
     {
       "area": "codecs-media",
       "name": "xavs2-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "adcli",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "adcli-selinux",
       "state": "pending"
     },
     {
@@ -993,11 +983,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 180
+    "pending": 178
   },
   "totals": {
-    "backlog": 188,
-    "resolved": 326,
+    "backlog": 186,
+    "resolved": 328,
     "wontfix": 37
   }
 }
