@@ -715,3 +715,8 @@ Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 (`imath`, `libgee`, `libmediaart`, `libwnck3`, `rygel`) stay pending in
 `[areas.gnome-apps]`, and the batch issue remains open with `Refs #484`.
 
+
+For `python-pskc`, Fedora carries the detached signature and signing key in
+dist-git rather than its lookaside manifest. Keep both beside the spec: the
+recipe verifies them in `%prep`, while the upstream archive remains SHA-512
+locked. Verify the signing key independently before treating it as trusted.
