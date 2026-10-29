@@ -6,8 +6,8 @@
       "total": 29
     },
     "dev-tools": {
-      "pending": 66,
-      "total": 66
+      "pending": 64,
+      "total": 64
     },
     "fonts-i18n": {
       "pending": 17,
@@ -311,16 +311,6 @@
     {
       "area": "dev-tools",
       "name": "lsb_release",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "oddjob",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "oddjob-mkhomedir",
       "state": "pending"
     },
     {
