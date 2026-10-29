@@ -3,7 +3,7 @@
 %global pypi_name jaraco.classes
 # waiting on jaraco-packaging and rst-linker to build docs
 # neither is in the factory build root; disable docs so the recipe builds
-%bcond_without doc
+%bcond_with docs
 
 Name:           python-jaraco-classes
 Version:        3.4.0

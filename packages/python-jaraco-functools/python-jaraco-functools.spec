@@ -1,6 +1,6 @@
 # Created by pyp2rpm-3.3.2
 # Fedora doesn't have all the docs deps yet; disable docs so the recipe builds
-%bcond_without docs
+%bcond_with docs
 
 Name:           python-jaraco-functools
 Version:        4.6.0
