@@ -1198,6 +1198,12 @@ packages:
     downstream_package_name: ipp-usb
     paths:
       - packages/ipp-usb
+  ipset:
+    specfile_path: ipset.spec
+    upstream_package_name: ipset
+    downstream_package_name: ipset
+    paths:
+      - packages/ipset
   iptstate:
     specfile_path: iptstate.spec
     upstream_package_name: iptstate
