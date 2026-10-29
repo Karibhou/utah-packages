@@ -843,6 +843,19 @@ The `ntfs-3g-system-compression` source produces a plugin for the existing
 A catalog record for the recipe does not prove the plugin has been built,
 published, or loaded with the driver.
 
+### Perl modules split out of Hummingbird's perl
+
+Fedora splits dual-life core modules such as `perl-Unicode-Normalize` into
+their own source recipes. Hummingbird's `perl` metapackage still requires
+`perl-Unicode-Normalize` but does not ship it, so a full `perl` install needs
+the factory output; check `perl(...)` provides in Hummingbird's primary
+metadata before assuming a module is supplied. The Fedora recipe builds from
+the older CPAN archive (`base_version`) plus an upgrade patch, so its source
+lock pins that CPAN archive while `version` stays the RPM `Version:`. Its
+`-tests` subpackage requires `perl-Test-Harness`, which Hummingbird lacks;
+the audited name is the main package, and runtime acceptance is
+`perl -MUnicode::Normalize=NFD,NFC -e` round-tripping a composed string.
+
 ### ImageMagick recipe (codecs-media, #474)
 
 `ImageMagick.spec` builds both `ImageMagick` and `ImageMagick-libs` (its
