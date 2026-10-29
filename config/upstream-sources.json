@@ -6146,6 +6146,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libdc1394/libdc1394-2.2.7.tar.gz/sha512/0d0b1861612f7c69753af7109ef226ea4e550353222e02663dfaac3fa8f456b94c2dd2579cac840047a42bac97692da436f10be3def1fa29109de05c1e871257/libdc1394-2.2.7.tar.gz"
       ]
+    },
+    {
+      "name": "python-jmespath",
+      "version": "1.0.1",
+      "url": "https://github.com/jmespath/jmespath.py/archive/1.0.1/jmespath.py-1.0.1.tar.gz",
+      "filename": "jmespath.py-1.0.1.tar.gz",
+      "sha512": "c1676a4b7565d25c2948569005c503a0ca33908de6ed16536767da2c00c634e4ee345bcaf88a01bf6cd2996aaf722faaedff80061ab65ee77e5bc0f494f86a70"
     }
   ]
 }

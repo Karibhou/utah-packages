@@ -562,6 +562,12 @@ metadata only requires colorama on Windows, but its Fedora recipe also
 requires `less` for the default terminal pager. Recipe coverage alone does not
 prove that dependency resolves in an installed factory build.
 
+The AWS client libraries in the dev-tools area form one dependency chain:
+`python3-boto3` needs `python3-botocore` and `python3-s3transfer`, and
+`python3-botocore` needs `python3-jmespath` and `python3-dateutil` at runtime.
+Import the leaves first (`python-jmespath`, then `python-botocore`) so each
+recipe's runtime requirements already have a factory recipe when it lands.
+
 When concurrent disposition PRs conflict during rebase, retain each distinct
 `[resolved]` and `[wontfix]` record in the catalog, then regenerate the report
 with `python3 tools/factory_build_backlog.py`. Do not choose one side of the

@@ -154,7 +154,6 @@ packages = [
     "python3-jaraco-context",
     "python3-jaraco-functools",
     "python3-jeepney",
-    "python3-jmespath",
     "python3-keyring",
     "python3-keyring+completion",
     "python3-more-itertools",
@@ -406,6 +405,7 @@ packages = [
     { name = "python3-six", pr = 613 },
     { name = "python3-h11" },
     { name = "python3-click" },
+    { name = "python3-jmespath", pr = 798 },
     # Chromaprint recipe coverage only; publication and runtime proof remain in #487.
     { name = "libchromaprint", pr = 692 },
     # BSD compatibility library and its digest-library dependency (#487).

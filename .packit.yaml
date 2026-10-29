@@ -2896,6 +2896,12 @@ packages:
     downstream_package_name: python-h11
     paths:
       - packages/python-h11
+  python-jmespath:
+    specfile_path: python-jmespath.spec
+    upstream_package_name: python-jmespath
+    downstream_package_name: python-jmespath
+    paths:
+      - packages/python-jmespath
   python-linux-procfs:
     specfile_path: python-linux-procfs.spec
     upstream_package_name: python-linux-procfs
