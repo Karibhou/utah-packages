@@ -354,12 +354,12 @@ packages = [
     # still needs the freeworld codec deps (x264-libs, x265-libs, libfdk-aac)
     # and a hosted build first. Build/publication proof stays tracked in
     # projectbluefin/utah#383.
-    { name = "ffmpeg", pr = 815 },
-    { name = "ffmpeg-libs", pr = 815 },
+    { name = "ffmpeg", pr = 414 },
+    { name = "ffmpeg-libs", pr = 414 },
     { name = "ffmpegthumbnailer", pr = 414 },
     { name = "ffmpegthumbnailer-libs", pr = 414 },
-    { name = "libavcodec", pr = 815 },
-    { name = "libavdevice", pr = 815 },
+    { name = "libavcodec", pr = 414 },
+    { name = "libavdevice", pr = 414 },
     { name = "libdc1394", pr = 794 },
     { name = "libraw1394", pr = 681 },
     { name = "pam_yubico", pr = 706 },
