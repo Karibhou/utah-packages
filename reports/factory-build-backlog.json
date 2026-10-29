@@ -1,9 +1,9 @@
 {
   "areas": {
     "codecs-media": {
-      "already_recipe": 10,
-      "pending": 17,
-      "total": 27
+      "already_recipe": 5,
+      "pending": 16,
+      "total": 21
     },
     "dev-tools": {
       "pending": 64,
@@ -60,38 +60,8 @@
     },
     {
       "area": "codecs-media",
-      "name": "ffmpeg",
-      "state": "already_recipe"
-    },
-    {
-      "area": "codecs-media",
-      "name": "ffmpeg-libs",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "ffmpegthumbnailer",
-      "state": "already_recipe"
-    },
-    {
-      "area": "codecs-media",
-      "name": "ffmpegthumbnailer-libs",
-      "state": "already_recipe"
-    },
-    {
-      "area": "codecs-media",
       "name": "gstreamer1-plugins-good-qt6",
       "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libavcodec",
-      "state": "already_recipe"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libavdevice",
-      "state": "already_recipe"
     },
     {
       "area": "codecs-media",
@@ -1071,13 +1041,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 12,
+    "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 191
+    "pending": 190
   },
   "totals": {
-    "backlog": 204,
-    "resolved": 310,
+    "backlog": 198,
+    "resolved": 316,
     "wontfix": 37
   }
 }
