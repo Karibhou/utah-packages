@@ -6233,6 +6233,26 @@
       "url": "https://github.com/DanBloomberg/leptonica/archive/1.87.0/leptonica-1.87.0.tar.gz",
       "filename": "leptonica-1.87.0.tar.gz",
       "sha512": "2a1953dd0c962a05dac9bb30eac311896f414c658d976008b0c2d1b3b85ec25c5fd811be3f98a37f2131ded134799ea609a667fb1eaacf42d1aca9cc5cf1bd92"
-    }
+    },
+    {
+      "name": "python-jaraco-context",
+      "version": "6.1.0",
+      "url": "https://files.pythonhosted.org/packages/source/j/jaraco_context/jaraco_context-6.1.0.tar.gz",
+      "filename": "jaraco_context-6.1.0.tar.gz",
+      "sha512": "19f9fe4e00cc94f46177604e2a6e44af3c21be22b2059f8f7d0c586a77007196a163df68e545808b5f73d10c4e429903ff33274f110a15601481f4eff8cf9f8f"
+    },
+    {
+      "name": "python-jaraco-classes",
+      "version": "3.4.0",
+      "url": "https://files.pythonhosted.org/packages/source/j/jaraco.classes/jaraco.classes-3.4.0.tar.gz",
+      "filename": "jaraco.classes-3.4.0.tar.gz",
+      "sha512": "94e5163120117c51f129d43e85f92ee19efcf8b10683142679511f8b33f4a1fd6c51516b7551aeab9d68c1936791bafc47328b5560ee3fe28e553fe463ea968f"
+    },
+    {
+      "name": "python-jaraco-functools",
+      "version": "4.6.0",
+      "url": "https://files.pythonhosted.org/packages/source/j/jaraco_functools/jaraco_functools-4.6.0.tar.gz",
+      "filename": "jaraco_functools-4.6.0.tar.gz",
+      "sha512": "c35d786c3432177b403bba06b4b70a9f9c1f0432d155dd52bbba69dc79ed26b48ebc98cce95a4bbf004bd5e0e584c98b6c689ab4dc54f00d2187acf8e72dc0ea"    }
   ]
 }

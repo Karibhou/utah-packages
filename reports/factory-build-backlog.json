@@ -6,8 +6,8 @@
       "total": 21
     },
     "dev-tools": {
-      "pending": 63,
-      "total": 63
+      "pending": 60,
+      "total": 60
     },
     "fonts-i18n": {
       "pending": 17,
@@ -326,21 +326,6 @@
     {
       "area": "dev-tools",
       "name": "python3-httpx",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-jaraco-classes",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-jaraco-context",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-jaraco-functools",
       "state": "pending"
     },
     {
@@ -1033,11 +1018,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 188
+    "pending": 185
   },
   "totals": {
-    "backlog": 196,
-    "resolved": 318,
+    "backlog": 193,
+    "resolved": 321,
     "wontfix": 37
   }
 }
