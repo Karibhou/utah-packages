@@ -6,8 +6,8 @@
       "total": 29
     },
     "dev-tools": {
-      "pending": 67,
-      "total": 67
+      "pending": 66,
+      "total": 66
     },
     "fonts-i18n": {
       "pending": 17,
@@ -401,11 +401,6 @@
     {
       "area": "dev-tools",
       "name": "python3-jeepney",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-jmespath",
       "state": "pending"
     },
     {
@@ -1153,11 +1148,11 @@
   "states": {
     "already_recipe": 13,
     "manifest_wants": 1,
-    "pending": 206
+    "pending": 205
   },
   "totals": {
-    "backlog": 220,
-    "resolved": 295,
+    "backlog": 219,
+    "resolved": 296,
     "wontfix": 36
   }
 }
