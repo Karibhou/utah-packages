@@ -823,3 +823,12 @@ specs use `http://kernel.org/...`; lock the `https://cdn.kernel.org/...` URL
 instead, since `tools/validate.py` rejects plain-http locks. Then run
 `render_packit_config.py --write` and `render_architecture_counts.py --write`.
 Hosted build evidence is still owed; a lock alone does not resolve a runtime gap.
+
+## IP set package family
+
+The `ipset` source builds both the command and `ipset-libs`; track both
+outputs from the same recipe. Its optional `ipset-service` subpackage also
+requires `iptables-services`, so check that provider when verifying the full
+built RPM set. Runtime verification needs a network namespace with the kernel
+IP set support and `CAP_NET_ADMIN`: create a set, add and query an address,
+then destroy the set. A version or help command does not exercise that path.
