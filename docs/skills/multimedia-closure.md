@@ -270,5 +270,6 @@ and Fedora lookaside archive have different compressed hashes but unpack
 to identical file trees; lock the upstream bytes and update the source
 manifest to match. Fedora's channel-allocation patch returns success
 when allocation fails; the Utah-local follow-up patch reads the IRM and
-returns an error unless the channel is already allocated. A recipe does
+returns an error unless the channel is already allocated. The availability
+mask must use an unsigned shift because channel 0 maps to bit 31. A recipe does
 not prove streaming or hardware support.

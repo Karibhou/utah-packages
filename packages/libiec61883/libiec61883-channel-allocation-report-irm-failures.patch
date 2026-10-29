@@ -40,7 +40,7 @@ A successful allocation still needs no access to the IRM's device file.
 +		sizeof (quadlet_t), &buffer) < 0)
 +		FAIL ("Failed to allocate channel %u: can't reach IRM", channel);
 +
-+	if ((ntohl (buffer) & (1 << c)) != 0)
++	if ((ntohl (buffer) & (1U << c)) != 0)
 +		FAIL ("Failed to allocate channel %u", channel);
 +
 +	DEBUG ("Channel %u already allocated", channel);
