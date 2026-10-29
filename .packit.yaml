@@ -1240,6 +1240,12 @@ packages:
     downstream_package_name: iw
     paths:
       - packages/iw
+  jbig2dec:
+    specfile_path: jbig2dec.spec
+    upstream_package_name: jbig2dec
+    downstream_package_name: jbig2dec
+    paths:
+      - packages/jbig2dec
   jpegxl:
     specfile_path: jpegxl.spec
     upstream_package_name: jpegxl

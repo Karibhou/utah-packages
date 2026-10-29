@@ -903,3 +903,7 @@ requires `iptables-services`, so check that provider when verifying the full
 built RPM set. Runtime verification needs a network namespace with the kernel
 IP set support and `CAP_NET_ADMIN`: create a set, add and query an address,
 then destroy the set. A version or help command does not exercise that path.
+
+## JBIG2 decoder library
+
+`jbig2dec-libs` is an output of the `jbig2dec` source recipe, not a separate source. Ghostscript currently builds its bundled copy, so that does not establish availability of the separate library. The upstream recipe warns that consumers of its shared library must be rebuilt together on version changes; verify the hosted build, dependency transaction, and representative decoding before claiming runtime closure.

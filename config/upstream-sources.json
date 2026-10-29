@@ -2,6 +2,13 @@
   "schema": 1,
   "packages": [
     {
+      "name": "jbig2dec",
+      "version": "0.20",
+      "url": "https://github.com/ArtifexSoftware/jbig2dec/releases/download/0.20/jbig2dec-0.20.tar.gz",
+      "filename": "jbig2dec-0.20.tar.gz",
+      "sha512": "74d40b4d5b21dcb2b6ed15de84e9ef292774783547d0a36c7185740f3fe34341665b4aa756369d27d158404f15f36f3edd2fd1a8187a196d08c9b06ab3d04101"
+    },
+    {
       "name": "ipset",
       "version": "7.24",
       "url": "https://ipset.netfilter.org/ipset-7.24.tar.bz2",
