@@ -188,8 +188,6 @@ packages = [
     "ibus-typing-booster",
     "kasumi-common",
     "kasumi-unicode",
-    "libpinyin",
-    "libpinyin-data",
     "m17n-lib",
 ]
 
@@ -719,6 +717,12 @@ packages = [
     { name = "unicode-ucd", pr = 731 },
     { name = "libhangul", pr = 731 },
     { name = "m17n-db", pr = 731 },
+    # libpinyin.spec builds libpinyin plus its -data, -devel, -tools and
+    # libzhuyin subpackages; recipe only (#495). It BuildRequires
+    # kyotocabinet-devel, imported by #767 and already in [resolved].
+    # Publication and runtime proof remain on #495.
+    { name = "libpinyin", pr = 796 },
+    { name = "libpinyin-data", pr = 796 },
     # Dev-tools recipes imported from PR #655; remaining USB/IP work stays open in #491.
     { name = "tpm2-tools", commit = "a09ec58", pr = 364 },
     { name = "symlinks", pr = 655 },

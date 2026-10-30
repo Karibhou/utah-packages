@@ -6254,6 +6254,13 @@
       "url": "https://files.pythonhosted.org/packages/source/j/jaraco_functools/jaraco_functools-4.6.0.tar.gz",
       "filename": "jaraco_functools-4.6.0.tar.gz",
       "sha512": "c35d786c3432177b403bba06b4b70a9f9c1f0432d155dd52bbba69dc79ed26b48ebc98cce95a4bbf004bd5e0e584c98b6c689ab4dc54f00d2187acf8e72dc0ea"
+    },
+    {
+      "name": "libpinyin",
+      "version": "2.11.92",
+      "url": "https://downloads.sourceforge.net/libpinyin/libpinyin/libpinyin-2.11.92.tar.gz",
+      "filename": "libpinyin-2.11.92.tar.gz",
+      "sha512": "b0b355469f6aeb85c72bed7df38ea033459032ab1a3d8686dd7cb4ed60f1091a5d962c6e5055e420e739f3ddd5bfc17de0e8b66ac541233107ddcfe46412ecf5"
     }
   ]
 }
