@@ -20,8 +20,8 @@
     "long-tail": {
       "already_recipe": 2,
       "manifest_wants": 1,
-      "pending": 75,
-      "total": 78
+      "pending": 74,
+      "total": 77
     },
     "power": {
       "total": 0
@@ -840,11 +840,6 @@
     },
     {
       "area": "long-tail",
-      "name": "serd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "shim-ia32",
       "state": "pending"
     },
@@ -983,11 +978,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 178
+    "pending": 177
   },
   "totals": {
-    "backlog": 186,
-    "resolved": 328,
+    "backlog": 185,
+    "resolved": 329,
     "wontfix": 37
   }
 }
