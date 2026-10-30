@@ -6226,6 +6226,13 @@
       "url": "https://github.com/jmespath/jmespath.py/archive/1.0.1/jmespath.py-1.0.1.tar.gz",
       "filename": "jmespath.py-1.0.1.tar.gz",
       "sha512": "c1676a4b7565d25c2948569005c503a0ca33908de6ed16536767da2c00c634e4ee345bcaf88a01bf6cd2996aaf722faaedff80061ab65ee77e5bc0f494f86a70"
+    },
+    {
+      "name": "leptonica",
+      "version": "1.87.0",
+      "url": "https://github.com/DanBloomberg/leptonica/archive/1.87.0/leptonica-1.87.0.tar.gz",
+      "filename": "leptonica-1.87.0.tar.gz",
+      "sha512": "2a1953dd0c962a05dac9bb30eac311896f414c658d976008b0c2d1b3b85ec25c5fd811be3f98a37f2131ded134799ea609a667fb1eaacf42d1aca9cc5cf1bd92"
     }
   ]
 }

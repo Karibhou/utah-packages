@@ -1306,6 +1306,12 @@ packages:
     downstream_package_name: lcms2
     paths:
       - packages/lcms2
+  leptonica:
+    specfile_path: leptonica.spec
+    upstream_package_name: leptonica
+    downstream_package_name: leptonica
+    paths:
+      - packages/leptonica
   libICE:
     specfile_path: libICE.spec
     upstream_package_name: libICE

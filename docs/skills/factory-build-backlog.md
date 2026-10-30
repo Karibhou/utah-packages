@@ -64,6 +64,8 @@ read it back with `gh pr view <pr> --json body --jq .body` and verify the
 saved description, including any generated footer; local prose alone does not establish
 that the live PR will keep the batch open. A branch push alone does not correct the PR description.
 Once the PR number is known, fill in the recipe record's `pr` field so reviewers can trace the partial import.
+Keep package-specific comment blocks adjacent to the entries they describe;
+insert unrelated records before the block rather than between it and its entries.
 
 Two edits — never one, never none:
 
@@ -834,6 +836,14 @@ Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 (`imath`, `rygel`) stay pending in `[areas.gnome-apps]`, and
 the batch issue remains open with `Refs #484`.
 
+
+### Image-processing library
+
+`leptonica` builds its image-processing library from its own source recipe.
+Its optional gnuplot and MinGW build requirements depend on target macros;
+check the pinned buildroot and resulting binaries rather than assuming they
+are enabled. Recipe accounting does not establish publication or image-processing
+behavior; verify both with the hosted build and a representative image.
 `libwnck3` is the X11 window-list library (GTK 3); Orca `Recommends` it and
 Utah triages it as `planned`. Fedora's source package is `libwnck3` but the
 upstream tarball is `libwnck`: lock
