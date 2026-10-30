@@ -872,6 +872,7 @@ Its optional gnuplot and MinGW build requirements depend on target macros;
 check the pinned buildroot and resulting binaries rather than assuming they
 are enabled. Recipe accounting does not establish publication or image-processing
 behavior; verify both with the hosted build and a representative image.
+
 `libwnck3` is the X11 window-list library (GTK 3); Orca `Recommends` it and
 Utah triages it as `planned`. Fedora's source package is `libwnck3` but the
 upstream tarball is `libwnck`: lock
