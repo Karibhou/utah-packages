@@ -236,7 +236,6 @@ packages = [
     "gvfs-afp",
     "gvfs-archive",
     "intel-vaapi-driver",
-    "jbig2dec-libs",
     "kf6-filesystem",
     "kf6-karchive",
     "kf6-kimageformats",
@@ -368,6 +367,7 @@ packages = [
     # NILFS filesystem utilities imported for issue #488; publication still requires validation.
     { name = "nilfs-utils", pr = 702 },
     # Recipe imported; hosted build, publication and runtime proof remain in #501.
+    { name = "jbig2dec-libs", pr = 817 },
     { name = "ipset" },
     { name = "ipset-libs" },
     { name = "iptstate", pr = 697 },
