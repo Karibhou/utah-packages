@@ -452,6 +452,11 @@ alone must not be presented as a working compression measurement; keep the
 batch open until publication, dependency solving and that payload probe are
 recorded.
 Yubico C releases (`libyubikey`, `ykclient`, `ykpers`) still declare `http://opensource.yubico.com/...` `Source0` URLs in Fedora Rawhide, and `libyubikey` and `ykclient` still carry legacy MD5 `sources` lines: repin `sources` to `SHA512 (<file>) = <hex>`, lock `https://opensource.yubico.com/...` as the primary `url`, and pair `https://developers.yubico.com/<project>/Releases/<file>` with Fedora's `/md5/<md5>/` lookaside path in `fallback_urls`. `ykpers` builds and links against `libyubikey` (`libyubikey.so.0`), so import `libyubikey` in the same PR. When a recipe carries a committed OpenPGP keyring whose filename does not match `*key*.asc`, `*keyring*.asc`, or `[0-9A-F]*.asc` (`packages/pkcs11-provider/simo_redhat.asc`, `packages/bc/kevin_pizzini.asc`), unignore it explicitly in the root `.gitignore` (`!packages/<pkg>/<name>.asc`) so `git add` tracks `SourceN` for `%{openpgpverify}`. By contrast, `yubikey-manager` (`python3-yubikey-manager`) is a `pyproject` package whose `[project].dependencies` generate runtime `python3dist(...)` `Requires` across multiple backlog areas (`python3-click`, `python3-fido2`, `python3-keyring` plus `secretstorage`/`jeepney`/`jaraco` in `dev-tools`, and `python3-pyscard`, `python3-pskc` in `long-tail`); keep `yubikey-manager` and `python3-yubikey-manager` pending until those Python runtime providers land in the factory.
+
+The `pam-u2f` source recipe also produces `pamu2fcfg`; its detached
+signature is a separate SHA-512-locked source and its bundled keyring is
+used during `%prep`. Recipe coverage does not prove that authentication works.
+
 ### Python recipe names and dependency evidence
 
 For `python3-six` and `python3-dateutil`, import the source recipes
@@ -834,10 +839,6 @@ Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 (`imath`, `rygel`) stay pending in `[areas.gnome-apps]`, and
 the batch issue remains open with `Refs #484`.
 
-
-The `pam-u2f` source recipe also produces `pamu2fcfg`; its detached
-signature is a separate SHA-512-locked source and its bundled keyring is
-used during `%prep`. Recipe coverage does not prove that authentication works.
 `libwnck3` is the X11 window-list library (GTK 3); Orca `Recommends` it and
 Utah triages it as `planned`. Fedora's source package is `libwnck3` but the
 upstream tarball is `libwnck`: lock
