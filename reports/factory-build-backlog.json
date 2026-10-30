@@ -37,8 +37,8 @@
       "total": 4
     },
     "vpn": {
-      "pending": 9,
-      "total": 9
+      "pending": 7,
+      "total": 7
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -980,16 +980,6 @@
     },
     {
       "area": "vpn",
-      "name": "pam-u2f",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "pamu2fcfg",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "python3-yubikey-manager",
       "state": "pending"
     },
@@ -1003,11 +993,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 182
+    "pending": 180
   },
   "totals": {
-    "backlog": 190,
-    "resolved": 324,
+    "backlog": 188,
+    "resolved": 326,
     "wontfix": 37
   }
 }

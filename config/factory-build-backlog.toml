@@ -83,8 +83,6 @@ packages = [
     "openpace",
     "opensc",
     "opensc-libs",
-    "pam-u2f",
-    "pamu2fcfg",
     "python3-yubikey-manager",
     "yubikey-manager",
 ]
@@ -306,6 +304,9 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Recipe import only; build, publication and runtime proof remain on #478.
+    { name = "pam-u2f", pr = 776 },
+    { name = "pamu2fcfg", pr = 776 },
     # jaraco-family parity for #489 (partial source-family PR); hosted build,
     # publication and runtime proof remain open until #489 closes.
     { name = "python3-jaraco-context", pr = 808 },
