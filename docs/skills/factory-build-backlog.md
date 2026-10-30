@@ -99,6 +99,12 @@ from Fedora. Resolve the binary's actual source package first (the
 `pyaudio` and `python3-pskc` from `python-pskc`; #506 once recorded these as
 "removed from dist-git" because `PyAudio` and `python-libpskc` 404.
 
+For the audited `libell` binary, Fedora Rawhide's source package is named
+`libell`. Do not import the similarly named `ell` source package: its current
+recipe builds an unrelated, header-only EBNF library and does not provide
+`libell`. Check the binary's `sourcerpm` before inferring a source name from a
+shared prefix.
+
 Before importing an audit name, read Utah's current `baselines/triage.toml` and
 pin the decision's commit when reconciling an existing `waived` entry into
 `[wontfix]`. The audit can include deliberately absent X11 client utilities
@@ -151,9 +157,14 @@ request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that
 PR's number) and rerun the auditor, or `--check` reports `entries drift` on
 `main`. Two such PRs open at once also conflict on the lock's last entry and
-the `docs/architecture.md` counts: merge `main` into the second, keep both lock
-entries, and regenerate the counts (`tools/render_packit_config.py --write`,
-`tools/render_architecture_counts.py --write`).
+the `docs/architecture.md` counts: rebase the existing PR branch onto `main`,
+keep both lock entries, and regenerate the counts
+(`tools/render_packit_config.py --write`,
+`tools/render_architecture_counts.py --write`) and backlog snapshot
+(`tools/factory_build_backlog.py`) from the combined inventory. Resolve these
+conflicts by regeneration, not by selecting either branch's stale totals.
+Use `git rebase --signoff` to preserve DCO coverage, then push to the same PR
+branch with `--force-with-lease` after validation.
 
 The catalog test (`tests/test_factory_build_backlog.py::CatalogConsistencyTests`)
 pins the count and sorted-name SHA-256 against the original audit. The auditor
@@ -231,6 +242,35 @@ same source again. This closes the recipe catalog record only: keep the
 tracking issue open when publication, runtime dependency resolution, or a
 representative command has not been verified. A reconciliation PR must state
 those remaining checks explicitly; `[resolved]` is not installability proof.
+
+### D-Bus helper services
+
+`oddjob-mkhomedir` is an unconditional subpackage of `oddjob.spec`; one
+`oddjob` import closes both names. Its `Source0` host, `releases.pagure.org`,
+is gone and the project has published no new release location, so the lock
+keeps the pagure URL as primary with the SHA-512-verified Fedora lookaside in
+`fallback_urls` (see
+[dead upstream hosts](supply-chain-provenance.md#dead-upstream-hosts-releasespagureorg)).
+Before relying on the Fedora 44 build root, check the runtime `Requires`
+against Hummingbird's primary metadata by name, file and SONAME provide:
+`dbus`, `dbus-tools` (`/usr/bin/dbus-send`), `psmisc`, `systemd` (provides
+`systemd-sysv`), `pam-libs`, `openldap`, `cyrus-sasl-lib`, `krb5-libs` and
+`libxml2` (`libxml2.so.16`) all resolve there. That static check is not a
+transaction: home-directory creation still needs a login on an enrolled host.
+
+### Legacy service wrapper waiver
+
+`initscripts-service` comes from the `initscripts` source recipe, but Utah's
+[committed consumer triage](https://github.com/projectbluefin/utah/blob/1bc07242296d039bca80412ec2b0e68579a61d3e/baselines/triage.toml#L384-L386)
+already waives it as a legacy SysV service shim. Reconcile that exact binary
+into `[wontfix]` with the pinned decision instead of importing the parent
+legacy-init suite. This is an existing consumer decision, not a new policy
+exclusion or evidence of publication. The existing `autofs` recipe still
+requires `/sbin/service` in its preun/postun scriptlets; preserve and report
+that dependency when reconciling the waiver rather than silently deleting it
+or claiming runtime closure. Do not extend the waiver to other pending
+long-tail names; each needs its own disposition. Keep the batch issue open
+when other outputs or their build/runtime evidence remain outstanding.
 
 ### Virtual machine guest integration
 
@@ -378,7 +418,14 @@ them together. When an upstream host answers `HTTP 503` (`ibiblio.org` for
 in `fallback_urls` instead of growing `config/fedora-primary-sources.txt`.
 `usbip` requires `kernel-modules-extra` and `kmod(usbip-*.ko)` /
 `kmod(vhci-hcd.ko)` at runtime and extracts its archive from the kernel source
-tree (`extract_usbip.sh`), so it remains `pending` on kernel policy (#487).
+tree (`extract_usbip.sh`). The [approved kernel-policy decision](https://github.com/projectbluefin/utah-packages/issues/491#issuecomment-6475648707)
+keeps both `usbip` and `kernel-modules-extra` in `[wontfix]`: Utah's D4
+excludes the extra modules until a named use case is accepted. Do not import
+the userspace tool while its mandatory kernel providers are excluded.
+Reconcile both catalog names against that explicit decision, not an assumed
+waiver for every kernel-related package. Consumer triage belongs in the Utah
+repository; a factory catalog change does not update that separate ledger or
+prove runtime acceptance of the other outputs in the batch.
 
 ### Optional changelog viewer
 
@@ -554,13 +601,18 @@ BuildRequires is absent from Hummingbird (the build root also uses Fedora).
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs. If a rebase conflicts in this generated report, resolve the catalog and recipe inputs first, then run `python3 tools/factory_build_backlog.py`; choosing either report wholesale can discard the other branch’s backlog updates.
 
 After combining recipe inventories during a rebase, also rerun `python3 tools/render_packit_config.py --write` and `python3 tools/render_architecture_counts.py --write` before `just check` to reconcile derived package lists and counts. A conflict resolution can leave valid package entries but stale architecture counts; regenerate from the final combined inventory even if the document itself had no conflict.
-After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
 
 For Python recipes, check both the upstream project metadata and explicit RPM
 requirements when assessing runtime closure. For example, Click's upstream
 metadata only requires colorama on Windows, but its Fedora recipe also
 requires `less` for the default terminal pager. Recipe coverage alone does not
 prove that dependency resolves in an installed factory build.
+
+The AWS client libraries in the dev-tools area form one dependency chain:
+`python3-boto3` needs `python3-botocore` and `python3-s3transfer`, and
+`python3-botocore` needs `python3-jmespath` and `python3-dateutil` at runtime.
+Import the leaves first (`python-jmespath`, then `python-botocore`) so each
+recipe's runtime requirements already have a factory recipe when it lands.
 
 When concurrent disposition PRs conflict during rebase, retain each distinct
 `[resolved]` and `[wontfix]` record in the catalog, then regenerate the report
@@ -671,6 +723,12 @@ main but not yet in the published image stay in `[resolved]` without
 publication fields until a run ships them. Partial reconciliation PRs must
 link the tracking issue with `Refs #<issue>`, not a closing keyword.
 
+When rebasing an import over other backlog changes, retain the base branch's
+publication evidence and add only the new recipe's closing record. Regenerate
+`reports/factory-build-backlog.json` with `python3 tools/factory_build_backlog.py`
+after resolving the catalog; neither side's old totals describe the combined
+inventory. Recount the recipe totals in `docs/architecture.md` as well.
+
 Use `parse_primary(primary_from_layer(blob))` from `tools/package_index.py`
 when recording each binary's NEVRA. The rendered site's `packages` entries
 are grouped by source RPM: their version and release come from that source,
@@ -703,6 +761,24 @@ fields. Updating optional publication fields does not change the auditor's
 name-only snapshot; rerun it anyway and expect no report diff when no names
 or recipe classifications changed. Publication still does not prove password
 policy integration, audio-device operation, or a permitted-repository install.
+
+### Kyoto Cabinet library imports
+
+`kyotocabinet-libs` comes from source recipe `kyotocabinet`, which also
+builds the command-line tools, development files and API documentation. The
+recipe enables LZO and LZMA compression; check `lzo`, `xz-libs`, and the zlib
+provider in Hummingbird before importing additional runtime dependencies.
+Hummingbird's `zlib-ng-compat-devel` provides `zlib-devel`; match capabilities,
+not just package names. Keep the upstream `make check` enabled. Dist-git also
+carries an old random-failure suppression patch, but the imported spec does not
+declare it: do not enable it to turn a failing build green.
+
+After a hosted build and permitted-repository installation, exercise persistent
+storage rather than only loading the library: use `kchashmgr create test.kch`,
+`kchashmgr set test.kch key value`, `kchashmgr get test.kch key` (expect
+`value`), then `kchashmgr check test.kch`. These tools come from the main
+`kyotocabinet` binary and link the library subpackage. Record the transaction,
+NEVRAs and command results separately from the recipe closing record.
 
 ### S-Lang library imports
 
@@ -767,9 +843,27 @@ in `ghcr.io/projectbluefin/utah-packages:latest` and move them from
 Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 `libhandy`, `libspelling`) also populate their observed `published_run` and
 `published_nevra` fields. Remaining outputs without recipes or source locks
-(`imath`, `libmediaart`, `libwnck3`, `rygel`) stay pending in
-`[areas.gnome-apps]`, and the batch issue remains open with `Refs #484`.
+(`imath`, `rygel`) stay pending in `[areas.gnome-apps]`, and
+the batch issue remains open with `Refs #484`.
 
+`libwnck3` is the X11 window-list library (GTK 3); Orca `Recommends` it and
+Utah triages it as `planned`. Fedora's source package is `libwnck3` but the
+upstream tarball is `libwnck`: lock
+`download.gnome.org/sources/libwnck/43/libwnck-<version>.tar.xz`, not a
+`libwnck3` path. The Rawhide recipe ships five patches with their `Patch`
+lines commented out (an unmerged upstream MR); import them unchanged and do
+not re-enable them. Its build and runtime dependencies (`gtk3`, `libXres`,
+`startup-notification`) are already factory recipes, so no extra source
+family is needed.
+
+`libmediaart` also emits `libmediaart-devel` from the same recipe. Rawhide
+1.9.7 carries `21.patch` to use Glycin instead of GdkPixbuf; keep that patch,
+`pkgconfig(glycin-2)`, `-Dimage_library=glycin`, and `%meson_test` together.
+The existing `glycin` recipe provides the development files and the runtime
+`glycin-libs` / `glycin-loaders` outputs; no second source import is needed.
+Runtime acceptance must exercise JPEG extraction/cache creation with the
+published Glycin loaders, not just load `libmediaart-2.0.so.0`. A recipe-only
+closing record does not prove sandboxed image decoding or publication.
 
 ### NTFS system compression plugin
 
@@ -778,3 +872,50 @@ The `ntfs-3g-system-compression` source produces a plugin for the existing
 `pkgconfig(libntfs-3g)`, so keep the existing source in the factory graph.
 A catalog record for the recipe does not prove the plugin has been built,
 published, or loaded with the driver.
+
+### Perl modules split out of Hummingbird's perl
+
+Fedora splits dual-life core modules such as `perl-Unicode-Normalize` into
+their own source recipes. Hummingbird's `perl` metapackage still requires
+`perl-Unicode-Normalize` but does not ship it, so a full `perl` install needs
+the factory output; check `perl(...)` provides in Hummingbird's primary
+metadata before assuming a module is supplied. The Fedora recipe builds from
+the older CPAN archive (`base_version`) plus an upgrade patch, so its source
+lock pins that CPAN archive while `version` stays the RPM `Version:`. Its
+`-tests` subpackage requires `perl-Test-Harness`, which Hummingbird lacks;
+the audited name is the main package, and runtime acceptance is
+`perl -MUnicode::Normalize=NFD,NFC -e` round-tripping a composed string.
+
+### ImageMagick recipe (codecs-media, #474)
+
+`ImageMagick.spec` builds both `ImageMagick` and `ImageMagick-libs` (its
+`%package libs`), so one import resolves both names. It was imported without
+`rpmspec` or a container: the `Source0` SHA-512 in `packages/ImageMagick/sources`
+was checked against the upstream tarball before locking it. Its BuildRequires
+(libheif, libjxl, libuhdr, jasper and others) are separate graph dependencies;
+a catalog record does not prove the build succeeds. The ffmpeg family,
+`LCEVCdec`, `davs2-libs` and `gstreamer1-plugins-good-qt6` stay pending in
+`[areas.codecs-media]`, so `#474` stays open.
+
+## Hand-locking an import without `rpmspec`
+
+When the import workflow cannot be dispatched, import with
+`tools/import_rawhide.py`, download `Source0`, and confirm its SHA-512 equals
+the digest in the recipe's `sources` before adding the lock entry. Some Fedora
+specs use `http://kernel.org/...`; lock the `https://cdn.kernel.org/...` URL
+instead, since `tools/validate.py` rejects plain-http locks. Then run
+`render_packit_config.py --write` and `render_architecture_counts.py --write`.
+Hosted build evidence is still owed; a lock alone does not resolve a runtime gap.
+
+## IP set package family
+
+The `ipset` source builds both the command and `ipset-libs`; track both
+outputs from the same recipe. Its optional `ipset-service` subpackage also
+requires `iptables-services`, so check that provider when verifying the full
+built RPM set. Runtime verification needs a network namespace with the kernel
+IP set support and `CAP_NET_ADMIN`: create a set, add and query an address,
+then destroy the set. A version or help command does not exercise that path.
+
+## JBIG2 decoder library
+
+`jbig2dec-libs` is an output of the `jbig2dec` source recipe, not a separate source. Ghostscript currently builds its bundled copy, so that does not establish availability of the separate library. The upstream recipe warns that consumers of its shared library must be rebuilt together on version changes; verify the hosted build, dependency transaction, and representative decoding before claiming runtime closure.
