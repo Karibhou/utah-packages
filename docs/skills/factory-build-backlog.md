@@ -1016,13 +1016,19 @@ for the recipe does not prove the shared library or the Python module was built
 or importable.
 
 `rygel` is a UPnP/DLNA home media server that pulls the largest dependency set
-in this batch: `gupnp-1.6`, `gupnp-av-1.0`, `gupnp-dlna-2.0`,
-`gst-editing-services-1.0`, `gee-0.8`, `libmediaart-2.0`, `libsoup-3.0`,
-`tinysparql-3.0`, `gtk4`, and `sqlite3`, all already factory recipes. It emits a
-`rygel-localsearch` subpackage that obsoletes `rygel-tracker`, and installs a
-systemd user service, so keep the `%systemd_user_post` / `%postun` macros and
-the `localsearch` `%files` section. A catalog record for the recipe does not
-prove the UPnP MediaServer responds or the user service starts.
+in this batch. `gupnp-1.6`, `gupnp-dlna-2.0`, `gst-editing-services-1.0`,
+`gee-0.8`, `libmediaart-2.0`, `libsoup-3.0`, `gtk4` and `sqlite3` already have
+factory recipes, and `tinysparql-3.0` comes from the Hummingbird base. Its
+`pkgconfig(gupnp-av-1.0)` BuildRequires is a concrete blocker: `gupnp-av` has no
+factory recipe and is still pending in `[areas.long-tail]`
+(projectbluefin/utah#396), so rygel cannot build until `gupnp-av` is imported.
+It emits a `rygel-localsearch` subpackage that obsoletes `rygel-tracker`, and
+installs a systemd user service; keep the `localsearch` `%files` section. The
+Rawhide spec places `%systemd_user_post` inside `%install` with no `%post`
+header, so the built package has no `%post` scriptlet and the user unit is not
+preset-enabled on install; it is carried unchanged, so the runtime probe must
+not assume the unit is enabled. A catalog record for the recipe does not prove
+the UPnP MediaServer responds or the user service starts.
 
 ### NTFS system compression plugin
 
