@@ -6,8 +6,8 @@
       "total": 20
     },
     "dev-tools": {
-      "pending": 64,
-      "total": 64
+      "pending": 60,
+      "total": 60
     },
     "fonts-i18n": {
       "pending": 17,
@@ -230,11 +230,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "leptonica",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "libcaca",
       "state": "pending"
     },
@@ -326,21 +321,6 @@
     {
       "area": "dev-tools",
       "name": "python3-httpx",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-jaraco-classes",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-jaraco-context",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-jaraco-functools",
       "state": "pending"
     },
     {
@@ -1033,11 +1013,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 188
+    "pending": 184
   },
   "totals": {
-    "backlog": 196,
-    "resolved": 318,
+    "backlog": 192,
+    "resolved": 322,
     "wontfix": 37
   }
 }
