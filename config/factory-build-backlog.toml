@@ -262,7 +262,6 @@ packages = [
     "paps",
     "prefixdevname",
     "python3-perf",
-    "python3-pskc",
     "qadwaitadecorations-qt5",
     "qrencode-libs",
     "qt5-qtdeclarative",
@@ -461,6 +460,9 @@ packages = [
     { name = "libpskc", pr = 585, published_run = 40626803772, published_nevra = "libpskc-0:2.6.15-1.hum1.bfin.x86_64" },
     { name = "libuser", pr = 585 },
     { name = "usermode", pr = 585 },
+    # PSKC library for yubikey-manager (projectbluefin/utah-packages#479); long-tail #506.
+    # Recipe import only; publication and runtime proof remain outstanding.
+    { name = "python3-pskc", pr = 775 },
     # Screen-reader stack (projectbluefin/utah-packages#447).
     { name = "brlapi", pr = 466 },
     { name = "brltty", pr = 466 },

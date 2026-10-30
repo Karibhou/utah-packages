@@ -6268,6 +6268,13 @@
       "url": "https://downloads.sourceforge.net/libpinyin/libpinyin/libpinyin-2.11.92.tar.gz",
       "filename": "libpinyin-2.11.92.tar.gz",
       "sha512": "b0b355469f6aeb85c72bed7df38ea033459032ab1a3d8686dd7cb4ed60f1091a5d962c6e5055e420e739f3ddd5bfc17de0e8b66ac541233107ddcfe46412ecf5"
+    },
+    {
+      "name": "python-pskc",
+      "version": "1.4",
+      "url": "https://arthurdejong.org/python-pskc/python_pskc-1.4.tar.gz",
+      "filename": "python_pskc-1.4.tar.gz",
+      "sha512": "e2e1999dc108936b91d19b015a446387db11d8d166a2e25a151da0080bd68f91bf701bab1ff02e04862da95991a8d399fbe0389483788451f1d7fcd588df2c06"
     }
   ]
 }

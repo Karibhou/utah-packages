@@ -3034,6 +3034,12 @@ packages:
     downstream_package_name: python-pillow
     paths:
       - packages/python-pillow
+  python-pskc:
+    specfile_path: python-pskc.spec
+    upstream_package_name: python-pskc
+    downstream_package_name: python-pskc
+    paths:
+      - packages/python-pskc
   python-psutil:
     specfile_path: python-psutil.spec
     upstream_package_name: python-psutil

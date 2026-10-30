@@ -20,8 +20,8 @@
     "long-tail": {
       "already_recipe": 2,
       "manifest_wants": 1,
-      "pending": 76,
-      "total": 79
+      "pending": 75,
+      "total": 78
     },
     "power": {
       "total": 0
@@ -810,11 +810,6 @@
     },
     {
       "area": "long-tail",
-      "name": "python3-pskc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "qadwaitadecorations-qt5",
       "state": "pending"
     },
@@ -998,11 +993,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 181
+    "pending": 180
   },
   "totals": {
-    "backlog": 189,
-    "resolved": 325,
+    "backlog": 188,
+    "resolved": 326,
     "wontfix": 37
   }
 }
