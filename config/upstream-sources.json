@@ -6261,6 +6261,13 @@
       "url": "https://developers.yubico.com/pam-u2f/Releases/pam_u2f-1.4.0.tar.gz",
       "filename": "pam_u2f-1.4.0.tar.gz",
       "sha512": "6ee4c5538a3b290748fae3b8c285b20a784fe2c0fdeff3a0bf250ec9b03659c6ddda4ea2d668c93d606f810e4f68cf3fc4130584a8532db9c9833a684d78f51f"
+    },
+    {
+      "name": "libpinyin",
+      "version": "2.11.92",
+      "url": "https://downloads.sourceforge.net/libpinyin/libpinyin/libpinyin-2.11.92.tar.gz",
+      "filename": "libpinyin-2.11.92.tar.gz",
+      "sha512": "b0b355469f6aeb85c72bed7df38ea033459032ab1a3d8686dd7cb4ed60f1091a5d962c6e5055e420e739f3ddd5bfc17de0e8b66ac541233107ddcfe46412ecf5"
     }
   ]
 }

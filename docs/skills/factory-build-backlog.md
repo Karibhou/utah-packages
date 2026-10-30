@@ -203,6 +203,18 @@ and publication evidence exist.
 A mixed batch can therefore be reconciled in a partial PR: name every remaining
 output and keep the tracking issue open. Use `Refs #<issue>` in the PR
 description and remove any automatic closing keywords for that batch issue.
+
+### Build dependencies imported by another PR
+
+An input-method library can BuildRequire a library that a different batch
+imports. `libpinyin` (#495) BuildRequires `kyotocabinet-devel`, whose recipe
+arrived in the long-tail PR #767 (`kyotocabinet-libs`, #501). Pull-request CI
+only validates configuration, and the post-merge rebuild orders packages by
+BuildRequires, so the dependent recipe can be reviewed in parallel. Name the
+providing PR in the PR body and the `[resolved]` comment, and merge it first:
+merged alone, the dependent recipe fails its first hosted build on a missing
+BuildRequires. `m17n-lib` likewise waits on its providers in #788.
+
 ### Reconcile sibling library outputs
 
 Check every binary from an imported source family when reconciling a batch.
@@ -453,6 +465,9 @@ only tests the unsupported-filesystem error. A recipe or successful build
 alone must not be presented as a working compression measurement; keep the
 batch open until publication, dependency solving and that payload probe are
 recorded.
+
+### Security key sign-in (Yubico)
+
 Yubico C releases (`libyubikey`, `ykclient`, `ykpers`) still declare `http://opensource.yubico.com/...` `Source0` URLs in Fedora Rawhide, and `libyubikey` and `ykclient` still carry legacy MD5 `sources` lines: repin `sources` to `SHA512 (<file>) = <hex>`, lock `https://opensource.yubico.com/...` as the primary `url`, and pair `https://developers.yubico.com/<project>/Releases/<file>` with Fedora's `/md5/<md5>/` lookaside path in `fallback_urls`. `ykpers` builds and links against `libyubikey` (`libyubikey.so.0`), so import `libyubikey` in the same PR. When a recipe carries a committed OpenPGP keyring whose filename does not match `*key*.asc`, `*keyring*.asc`, or `[0-9A-F]*.asc` (`packages/pkcs11-provider/simo_redhat.asc`, `packages/bc/kevin_pizzini.asc`), unignore it explicitly in the root `.gitignore` (`!packages/<pkg>/<name>.asc`) so `git add` tracks `SourceN` for `%{openpgpverify}`. By contrast, `yubikey-manager` (`python3-yubikey-manager`) is a `pyproject` package whose `[project].dependencies` generate runtime `python3dist(...)` `Requires` across multiple backlog areas (`python3-click`, `python3-fido2`, `python3-keyring` plus `secretstorage`/`jeepney`/`jaraco` in `dev-tools`, and `python3-pyscard`, `python3-pskc` in `long-tail`); keep `yubikey-manager` and `python3-yubikey-manager` pending until those Python runtime providers land in the factory.
 
 The `pam-u2f` source recipe also produces `pamu2fcfg`; its detached
