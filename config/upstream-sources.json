@@ -6302,6 +6302,20 @@
       ]
     },
     {
+      "name": "openpace",
+      "version": "1.1.4",
+      "url": "https://github.com/frankmorgner/openpace/releases/download/1.1.4/openpace-1.1.4.tar.gz",
+      "filename": "openpace-1.1.4.tar.gz",
+      "sha512": "962495803b351965ad0d2cda67563ca3f60f36360a1b1523b68715b79b7c6acb413b5bdf483d01a5d11ee936262ff5b45645363bf2857c3e7704a196dc2447a7"
+    },
+    {
+      "name": "opensc",
+      "version": "0.27.1",
+      "url": "https://github.com/OpenSC/OpenSC/releases/download/0.27.1/opensc-0.27.1.tar.gz",
+      "filename": "opensc-0.27.1.tar.gz",
+      "sha512": "1d435938d5db45ffc60e2ac2512c42bc7ee893991d213b19033a60cabca19a7ddd5bf1f71bb172dcb77220bfa87abe92564b3edc878f22a87dfd4e7bcacf662f"
+    },
+    {
       "name": "libslirp",
       "version": "4.9.6",
       "filename": "libslirp-4.9.6.tar.xz",
