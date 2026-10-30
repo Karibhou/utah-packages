@@ -1306,6 +1306,12 @@ packages:
     downstream_package_name: lcms2
     paths:
       - packages/lcms2
+  leptonica:
+    specfile_path: leptonica.spec
+    upstream_package_name: leptonica
+    downstream_package_name: leptonica
+    paths:
+      - packages/leptonica
   libICE:
     specfile_path: libICE.spec
     upstream_package_name: libICE
@@ -2956,6 +2962,24 @@ packages:
     downstream_package_name: python-h11
     paths:
       - packages/python-h11
+  python-jaraco-classes:
+    specfile_path: python-jaraco-classes.spec
+    upstream_package_name: python-jaraco-classes
+    downstream_package_name: python-jaraco-classes
+    paths:
+      - packages/python-jaraco-classes
+  python-jaraco-context:
+    specfile_path: python-jaraco-context.spec
+    upstream_package_name: python-jaraco-context
+    downstream_package_name: python-jaraco-context
+    paths:
+      - packages/python-jaraco-context
+  python-jaraco-functools:
+    specfile_path: python-jaraco-functools.spec
+    upstream_package_name: python-jaraco-functools
+    downstream_package_name: python-jaraco-functools
+    paths:
+      - packages/python-jaraco-functools
   python-jmespath:
     specfile_path: python-jmespath.spec
     upstream_package_name: python-jmespath
