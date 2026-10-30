@@ -204,11 +204,11 @@ A mixed batch can therefore be reconciled in a partial PR: name every remaining
 output and keep the tracking issue open. Use `Refs #<issue>` in the PR
 description and remove any automatic closing keywords for that batch issue.
 
-### Build dependencies imported by another open PR
+### Build dependencies imported by another PR
 
 An input-method library can BuildRequire a library that a different batch
 imports. `libpinyin` (#495) BuildRequires `kyotocabinet-devel`, whose recipe
-arrives in the long-tail PR #767 (`kyotocabinet-libs`, #501). Pull-request CI
+arrived in the long-tail PR #767 (`kyotocabinet-libs`, #501). Pull-request CI
 only validates configuration, and the post-merge rebuild orders packages by
 BuildRequires, so the dependent recipe can be reviewed in parallel. Name the
 providing PR in the PR body and the `[resolved]` comment, and merge it first:
