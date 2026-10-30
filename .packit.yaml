@@ -64,6 +64,12 @@ packages:
     downstream_package_name: accountsservice
     paths:
       - packages/accountsservice
+  adcli:
+    specfile_path: adcli.spec
+    upstream_package_name: adcli
+    downstream_package_name: adcli
+    paths:
+      - packages/adcli
   adw-gtk3-theme:
     specfile_path: adw-gtk3-theme.spec
     upstream_package_name: adw-gtk3-theme

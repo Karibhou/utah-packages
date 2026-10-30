@@ -872,6 +872,7 @@ Its optional gnuplot and MinGW build requirements depend on target macros;
 check the pinned buildroot and resulting binaries rather than assuming they
 are enabled. Recipe accounting does not establish publication or image-processing
 behavior; verify both with the hosted build and a representative image.
+
 `libwnck3` is the X11 window-list library (GTK 3); Orca `Recommends` it and
 Utah triages it as `planned`. Fedora's source package is `libwnck3` but the
 upstream tarball is `libwnck`: lock
@@ -945,3 +946,9 @@ then destroy the set. A version or help command does not exercise that path.
 ## JBIG2 decoder library
 
 `jbig2dec-libs` is an output of the `jbig2dec` source recipe, not a separate source. Ghostscript currently builds its bundled copy, so that does not establish availability of the separate library. The upstream recipe warns that consumers of its shared library must be rebuilt together on version changes; verify the hosted build, dependency transaction, and representative decoding before claiming runtime closure.
+
+## Windows domain enrollment (adcli)
+
+A spec using `%global with_selinux 1` can emit a SELinux subpackage even when the backlog auditor cannot evaluate its `%{with selinux}` guard. Check the default RPM expansion and retain build and publication verification as separate evidence; a recipe classification alone does not prove an installable binary.
+
+The adcli recipe BuildRequires `libnetapi-devel` from the factory samba recipe. Keep its recorded stage later than samba for the ICU staging guard, and verify the generated build graph still orders the dependency before adcli.

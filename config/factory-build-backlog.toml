@@ -106,8 +106,6 @@ packages = [
 # projectbluefin/utah#392 - 147 names
 consumer_issue = "projectbluefin/utah#392"
 packages = [
-    "adcli",
-    "adcli-selinux",
     "bcache-tools",
     "cryfs",
     "distribution-gpg-keys",
@@ -320,6 +318,9 @@ packages = [
     { name = "libmediaart", pr = 816 },
     # NTFS-3G read-only plugin recipe for #488; hosted build, publication and runtime proof remain open.
     { name = "ntfs-3g-system-compression", pr = 771 },
+    # Recipe import only; build, publication and runtime proof remain on #485.
+    { name = "adcli", pr = 774 },
+    { name = "adcli-selinux", pr = 774 },
     # Language data recipe; build/publication and consumer proof remain tracked in #494.
     { name = "langtable", pr = 700 },
     { name = "python3-langtable", pr = 700 },
