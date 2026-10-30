@@ -10,10 +10,6 @@ ExcludeArch:    s390 s390x
 # Fedora specific patches.
 Patch0:         libiec61883-1.2.0-installtests.patch
 Patch1:         libiec61883-channel-allocation-without-local-node-rw.patch
-# Utah-local: Patch1 reports success when channel allocation fails, including
-# when the IRM cannot be reached. Confirm with the IRM that the channel is
-# already allocated, and otherwise return an error.
-Patch2:         libiec61883-channel-allocation-report-irm-failures.patch
 
 BuildRequires:  autoconf
 BuildRequires:  automake
