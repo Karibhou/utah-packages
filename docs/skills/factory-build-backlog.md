@@ -1005,20 +1005,20 @@ Runtime acceptance must exercise JPEG extraction/cache creation with the
 published Glycin loaders, not just load `libmediaart-2.0.so.0`. A recipe-only
 closing record does not prove sandboxed image decoding or publication.
 
-`imath` is the C++ vector/matrix library the OpenEXR family (`openexr`,
-`openxr`) builds on; it is the cross-batch dependency behind gnome-apps #483.
+`imath` is the C++ vector/matrix library OpenEXR builds on; `openexr-libs`
+itself has no factory recipe yet and is still pending in `[areas.long-tail]`.
 The Rawhide recipe ships two patches that disable failing Python bindings tests
 (`imath-disable-python-testPlane.patch`,
 `imath-disable-python-testM44fArray.patch`); keep them unchanged. Its build
-requires `boost-devel` and `python3-devel`, both already factory recipes, and
-ships the `imath` and `python3-imath` binaries from one source. A catalog record
+requires `boost-devel` and `python3-devel`, which have no factory recipes and
+come from the Fedora 44 buildroot, and it ships the `imath` and `python3-imath` binaries from one source. A catalog record
 for the recipe does not prove the shared library or the Python module was built
 or importable.
 
 `rygel` is a UPnP/DLNA home media server that pulls the largest dependency set
 in this batch. `gupnp-1.6`, `gupnp-dlna-2.0`, `gst-editing-services-1.0`,
-`gee-0.8`, `libmediaart-2.0`, `libsoup-3.0`, `gtk4` and `sqlite3` already have
-factory recipes, and `tinysparql-3.0` comes from the Hummingbird base. Its
+`gee-0.8`, `libmediaart-2.0`, `libsoup-3.0` and `gtk4` have factory recipes;
+`sqlite3` and `tinysparql-3.0` have none and come from the Hummingbird base. Its
 `pkgconfig(gupnp-av-1.0)` BuildRequires is a concrete blocker: `gupnp-av` has no
 factory recipe and is still pending in `[areas.long-tail]`
 (projectbluefin/utah#396), so rygel cannot build until `gupnp-av` is imported.
