@@ -971,9 +971,11 @@ in `ghcr.io/projectbluefin/utah-packages:latest` and move them from
 
 Previously resolved GNOME outputs (`gtkmm4.0`, `pangomm2.48`, `gtksourceview5`,
 `libhandy`, `libspelling`) also populate their observed `published_run` and
-`published_nevra` fields. Remaining outputs without recipes or source locks
-(`imath`, `rygel`) stay pending in `[areas.gnome-apps]`, and
-the batch issue remains open with `Refs #484`.
+`published_nevra` fields. `imath` and `rygel` were imported as source recipes
+with upstream SHA-512 locks (`Imath-3.1.12.tar.gz`, `rygel-46.1.tar.xz`); their
+hosted build, publication and runtime proof remain on #484, recorded in
+`[resolved]` as recipe-import-only. Until a hosted run publishes them, the
+batch issue stays open with `Refs #484`.
 
 
 ### Image-processing library
@@ -1002,6 +1004,25 @@ The existing `glycin` recipe provides the development files and the runtime
 Runtime acceptance must exercise JPEG extraction/cache creation with the
 published Glycin loaders, not just load `libmediaart-2.0.so.0`. A recipe-only
 closing record does not prove sandboxed image decoding or publication.
+
+`imath` is the C++ vector/matrix library the OpenEXR family (`openexr`,
+`openxr`) builds on; it is the cross-batch dependency behind gnome-apps #483.
+The Rawhide recipe ships two patches that disable failing Python bindings tests
+(`imath-disable-python-testPlane.patch`,
+`imath-disable-python-testM44fArray.patch`); keep them unchanged. Its build
+requires `boost-devel` and `python3-devel`, both already factory recipes, and
+ships the `imath` and `python3-imath` binaries from one source. A catalog record
+for the recipe does not prove the shared library or the Python module was built
+or importable.
+
+`rygel` is a UPnP/DLNA home media server that pulls the largest dependency set
+in this batch: `gupnp-1.6`, `gupnp-av-1.0`, `gupnp-dlna-2.0`,
+`gst-editing-services-1.0`, `gee-0.8`, `libmediaart-2.0`, `libsoup-3.0`,
+`tinysparql-3.0`, `gtk4`, and `sqlite3`, all already factory recipes. It emits a
+`rygel-localsearch` subpackage that obsoletes `rygel-tracker`, and installs a
+systemd user service, so keep the `%systemd_user_post` / `%postun` macros and
+the `localsearch` `%files` section. A catalog record for the recipe does not
+prove the UPnP MediaServer responds or the user service starts.
 
 ### NTFS system compression plugin
 

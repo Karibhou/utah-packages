@@ -95,8 +95,6 @@ packages = [
 consumer_issue = "projectbluefin/utah#391"
 packages = [
     "epiphany-runtime",
-    "imath",
-    "rygel",
 ]
 
 [areas.dev-tools]
@@ -312,6 +310,12 @@ packages = [
     { name = "libwnck3", pr = 786 },
     # Recipe import only; hosted build, publication and runtime proof remain on #484.
     { name = "libmediaart", pr = 816 },
+    # imath is the C++ vector/matrix library the OpenEXR family builds on; recipe
+    # import only, hosted build, publication and runtime proof remain on #484.
+    { name = "imath" },
+    # rygel is a UPnP/DLNA home media server; recipe import only, hosted build,
+    # publication and runtime proof remain on #484.
+    { name = "rygel" },
     # NTFS-3G read-only plugin recipe for #488; hosted build, publication and runtime proof remain open.
     { name = "ntfs-3g-system-compression", pr = 771 },
     # Recipe import only; hosted build, publication and device validation remain on #485.
