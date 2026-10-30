@@ -1,3 +1,3 @@
 # python-pskc
 
-The python-pskc package
+Python library for reading, writing, and converting Portable Symmetric Key Container (PSKC) files.
