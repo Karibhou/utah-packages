@@ -10,8 +10,8 @@
       "total": 60
     },
     "fonts-i18n": {
-      "pending": 17,
-      "total": 17
+      "pending": 15,
+      "total": 15
     },
     "gnome-apps": {
       "pending": 3,
@@ -520,16 +520,6 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "libpinyin",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "libpinyin-data",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "m17n-lib",
       "state": "pending"
     },
@@ -1013,11 +1003,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 184
+    "pending": 182
   },
   "totals": {
-    "backlog": 192,
-    "resolved": 322,
+    "backlog": 190,
+    "resolved": 324,
     "wontfix": 37
   }
 }

@@ -1990,6 +1990,12 @@ packages:
     downstream_package_name: libphonenumber
     paths:
       - packages/libphonenumber
+  libpinyin:
+    specfile_path: libpinyin.spec
+    upstream_package_name: libpinyin
+    downstream_package_name: libpinyin
+    paths:
+      - packages/libpinyin
   libplist:
     specfile_path: libplist.spec
     upstream_package_name: libplist
