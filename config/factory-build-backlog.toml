@@ -103,7 +103,7 @@ packages = [
 ]
 
 [areas.dev-tools]
-# projectbluefin/utah#392 - 150 names
+# projectbluefin/utah#392 - 147 names
 consumer_issue = "projectbluefin/utah#392"
 packages = [
     "adcli",
@@ -122,7 +122,6 @@ packages = [
     "kernel-devel-matched",
     "kernel-tools",
     "kernel-tools-libs",
-    "leptonica",
     "libcaca",
     "libsss_autofs",
     "libsss_certmap",
@@ -142,9 +141,6 @@ packages = [
     "python3-html2text",
     "python3-httpcore",
     "python3-httpx",
-    "python3-jaraco-classes",
-    "python3-jaraco-context",
-    "python3-jaraco-functools",
     "python3-jeepney",
     "python3-keyring",
     "python3-keyring+completion",
@@ -313,6 +309,11 @@ packages = [
 packages = [
     { name = "pam-u2f", pr = 776 },
     { name = "pamu2fcfg", pr = 776 },
+    # jaraco-family parity for #489 (partial source-family PR); hosted build,
+    # publication and runtime proof remain open until #489 closes.
+    { name = "python3-jaraco-context", pr = 808 },
+    { name = "python3-jaraco-classes", pr = 808 },
+    { name = "python3-jaraco-functools", pr = 808 },
     # Recipe import only; build, publication and runtime proof remain on #484.
     { name = "libgee" },
     # Recipe import only (Orca recommends it); build, publication and runtime proof remain on #484.
@@ -425,6 +426,7 @@ packages = [
     { name = "python3-jmespath", pr = 798 },
     # Chromaprint recipe coverage only; publication and runtime proof remain in #487.
     { name = "libchromaprint", pr = 692 },
+    { name = "leptonica", pr = 772 }, # Recipe import; publication and runtime proof remain.
     # BSD compatibility library and its digest-library dependency (#487).
     # Recipe import only; build/publication and Utah consumption remain separate proof.
     { name = "libbsd", pr = 614 },
