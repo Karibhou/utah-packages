@@ -6283,6 +6283,16 @@
       "filename": "adcli-0.9.3.1.tar.gz",
       "sha512": "3f501173b5344b38f33a3f65faec9e894da81b44b37bb161da103d8a29459d8807dfe566a5dd0a8c7eec466567b6cca4331c81dd70158b5478a61b03be37355d",
       "stage": 3
+    },
+    {
+      "name": "serd",
+      "version": "0.32.10",
+      "url": "https://download.drobilla.net/serd-0.32.10.tar.xz",
+      "filename": "serd-0.32.10.tar.xz",
+      "sha512": "1ceb7caaa97195e829bec0436930c090698a6be8ba1b7ee0ef3f013c817dd7ae472bb9bcc271e55e8b6e12d110b2d1d3d8fe20c36672d6e63c53f151173cd897",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/serd/serd-0.32.10.tar.xz/sha512/1ceb7caaa97195e829bec0436930c090698a6be8ba1b7ee0ef3f013c817dd7ae472bb9bcc271e55e8b6e12d110b2d1d3d8fe20c36672d6e63c53f151173cd897/serd-0.32.10.tar.xz"
+      ]
     }
   ]
 }
