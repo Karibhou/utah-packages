@@ -20,8 +20,8 @@
     "long-tail": {
       "already_recipe": 2,
       "manifest_wants": 1,
-      "pending": 65,
-      "total": 68
+      "pending": 64,
+      "total": 67
     },
     "power": {
       "total": 0
@@ -655,11 +655,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libmspack",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libnet",
       "state": "pending"
     },
@@ -903,11 +898,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 162
+    "pending": 161
   },
   "totals": {
-    "backlog": 170,
-    "resolved": 344,
+    "backlog": 169,
+    "resolved": 345,
     "wontfix": 37
   }
 }
