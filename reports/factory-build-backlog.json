@@ -6,8 +6,8 @@
       "total": 20
     },
     "dev-tools": {
-      "pending": 60,
-      "total": 60
+      "pending": 55,
+      "total": 55
     },
     "fonts-i18n": {
       "pending": 15,
@@ -20,8 +20,8 @@
     "long-tail": {
       "already_recipe": 2,
       "manifest_wants": 1,
-      "pending": 76,
-      "total": 79
+      "pending": 65,
+      "total": 68
     },
     "power": {
       "total": 0
@@ -37,8 +37,8 @@
       "total": 4
     },
     "vpn": {
-      "pending": 7,
-      "total": 7
+      "pending": 4,
+      "total": 4
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -150,21 +150,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "adcli",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "adcli-selinux",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "bcache-tools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "cryfs",
       "state": "pending"
     },
@@ -201,16 +186,6 @@
     {
       "area": "dev-tools",
       "name": "generic-logos",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "hfsplus-tools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "iwd",
       "state": "pending"
     },
     {
@@ -560,11 +535,6 @@
     },
     {
       "area": "long-tail",
-      "name": "b43-fwcutter",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "b43-openfwwf",
       "state": "pending"
     },
@@ -670,16 +640,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libell",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libev",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libijs",
       "state": "pending"
     },
@@ -711,21 +671,6 @@
     {
       "area": "long-tail",
       "name": "libreport-filesystem",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "librtmp",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libslirp",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "lilv-libs",
       "state": "pending"
     },
     {
@@ -805,11 +750,6 @@
     },
     {
       "area": "long-tail",
-      "name": "python3-pskc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "qadwaitadecorations-qt5",
       "state": "pending"
     },
@@ -850,11 +790,6 @@
     },
     {
       "area": "long-tail",
-      "name": "serd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "shim-ia32",
       "state": "pending"
     },
@@ -865,27 +800,12 @@
     },
     {
       "area": "long-tail",
-      "name": "slirp4netns",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "solaar-udev",
       "state": "pending"
     },
     {
       "area": "long-tail",
-      "name": "sord",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "sos",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "sratom",
       "state": "pending"
     },
     {
@@ -965,21 +885,6 @@
     },
     {
       "area": "vpn",
-      "name": "openpace",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "opensc",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "opensc-libs",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "python3-yubikey-manager",
       "state": "pending"
     },
@@ -993,11 +898,11 @@
   "states": {
     "already_recipe": 7,
     "manifest_wants": 1,
-    "pending": 180
+    "pending": 161
   },
   "totals": {
-    "backlog": 188,
-    "resolved": 326,
+    "backlog": 169,
+    "resolved": 345,
     "wontfix": 37
   }
 }
